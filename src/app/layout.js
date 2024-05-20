@@ -1,8 +1,9 @@
 import "./globals.css";
 import { ThemeProvider } from 'next-themes'
-import MenuNavigation from "@/components/organisms/MenuNavigation";
+import Header from "@/components/organisms/Header";
 import { Yantramanav } from "next/font/google";
 const yan = Yantramanav({ weight: '400', subsets: ["latin"] });
+
 
 
 export const metadata = {
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="es" dir="ltr" suppressHydrationWarning>
       <body className={yan.className}>
         <ThemeProvider attribute="class">
-          <MenuNavigation></MenuNavigation>
+          <Header></Header>
           {children}
         </ThemeProvider>
       </body>
