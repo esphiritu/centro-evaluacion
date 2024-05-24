@@ -7,7 +7,7 @@ export default function Home({Component, pageProps}) {
   return (
       <>
         <main>
-          <section className="py-5 my-5">
+          <section className="py-10 flex flex-col gap-8 items-center">
             <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl py-3">Impulsa tu vida profesional y respalda tu experiencia laboral con certificaciones oficiales</h1>
             <div>
               <Link href="./proyecto" className={buttonVariants({ variant: "outline" })}>Comienza ahora</Link>
