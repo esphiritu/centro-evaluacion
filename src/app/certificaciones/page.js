@@ -1,13 +1,116 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+const estandares = [
+  {
+    id: "EC0217.01",
+    title: "EC0217.01",
+    description: "Servicios educativos",
+    content: "Impartición de cursos de formación de capital humano de manera presencial grupal",
+    snc: "Tres",
+  },
+  {
+    id: "EC0366",
+    title: "EC0366",
+    description: "Servicios educativos",
+    content: "Desarrollo de cursos de formación en línea",
+    snc: "Tres",
+  },
+  {
+    id: "EC0301",
+    title: "EC0301",
+    description: "Servicios educativos",
+    content: "Diseño de cursos de formación del capital humano de manera presencial grupal, sus instrumentos de evaluación y manuales del curso",
+    snc: "Tres",
+  },
+]
+
+
 export default function Certificaciones(params) {
-    return(
-        <>
-            <h1>Certificaciones de competencia laboral</h1>
+  return (
+    <main className="w-full lg:w-5/6 m-auto">
+      <section className="py-5">
+        <h1 className="text-3xl font-bold py-4">¿En que me puedo certificar con Proyecta Empresarial?</h1>
+        <h2 className="text-2xl font-light text-slate-600">Estándares de Competencia laboral</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max p-2 lg:p-10">
+          {estandares.map((estandar => {
+            return (
+              <Card key={estandar.id} className="transition transform dark:hover:bg-slate-800 hover:bg-slate-100 lg:mx-10 py-2">
+                <CardHeader>
+                  <CardTitle>{estandar.title}</CardTitle>
+                  <CardDescription>{estandar.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg">{estandar.content}</p>
+                </CardContent>
+                <CardFooter>
+                  <p>Nivel en el SNC: {estandar.snc}</p>
+                </CardFooter>
+              </Card>
+            )
+          }
+          ))
+          }
+        </div>
+      </section>
+      <section className="py-5">
+        <h1 className="text-3xl font-bold py-2">¿Por qué evaluarme con Proyecta Empresarial?</h1>
+        <p className="text-2xl font-light text-slate-600">Reconocimiento nacional</p>
+        <p className="text-lg text-sl">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
+        <ul className="grid grid-cols-1 lg:grid-cols-4 gap-4 py-10 my-5">
+          <li className="text-2xl text-center font-baseline">Objetividad y confiabilidad</li>
+          <li className="text-2xl text-center font-baseline">Asesoría permanente de expertos</li>
+          <li className="text-2xl text-center font-baseline">Calidad comprobada</li>
+          <li className="text-2xl text-center font-baseline">Respaldo del organismo certificador más grande</li>
+        </ul>
+      </section>
+      <section className="w-full lg:w-1/2 mx-auto my-10">
+        <h2 className="text-center text-3xl font-bold py-6">Preguntas frecuentes</h2>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-lg font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
+            <AccordionContent>
+              Yes. It adheres to the WAI-ARIA design pattern.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-lg font-bold">¿Puedo hacer la evaluación en línea?</AccordionTrigger>
+            <AccordionContent>
+              Yes. Everyone can.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
 
-            <h2>¿En que me puedo certificar?</h2>
-
-            <h2>Centro de evaluación</h2>
-
-            <h2>¿Cuál es el proceso para certificarme?</h2>
-        </>
-    );
+      <footer className="my-10">
+        <h3 className="text-3xl font-bold py-4">Centro de evaluación</h3>
+        <div className="flex flex-col lg:flex-row justify-between">
+          <div className="py-5">
+            <h4 className="text-2xl font-bold">Proyecta empresarial</h4>
+            <p>Cédula de acreditación: CE009241.2024</p>
+          </div>
+          <div className="py-5">
+            <p className="text-2xl font-bold">Contáctanos</p>
+            <p>¿Tienes alguna pregunta sobre algo?<br />
+              Comunícate con nosotros <br />
+              Nos dará un gusto atenderte<br />
+              Teléfono: (951) 980 0101</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
 }

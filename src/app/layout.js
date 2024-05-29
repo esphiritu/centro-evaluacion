@@ -15,7 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" dir="ltr" suppressHydrationWarning>
       <body className={yan.className}>
-        <ThemeProvider attribute="class">
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange>
           <Header></Header>
           {children}
         </ThemeProvider>

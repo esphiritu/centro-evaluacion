@@ -1,9 +1,11 @@
 export default function Socios() {
     return (
-    <>
-      <h1>Sistema Nacional de Competencias</h1>
-      <h2>CONOCER</h2>
-      <h2>ICE México</h2>
-    </>
+    <main className="w-full lg:w-5/6 m-auto">
+      <h1 className="text-3xl font-bold py-4">Alianzas para crear valor</h1>
+      <p>CONOCER</p>
+      <p>Organismo de Certificación</p>
+      <p>Centro de Evaluación</p>
+      <h2 className="text-2xl font-semibold py-4">¿Ya estás certificado y te interesa ser evaluador?</h2>
+    </main>
     );
   }
