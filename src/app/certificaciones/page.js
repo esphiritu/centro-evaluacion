@@ -14,6 +14,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import { MessagesSquare, LockKeyhole, ShieldCheck, Headset, Award } from "lucide-react";
+
 const estandares = [
   {
     id: "EC0217.01",
@@ -43,8 +45,8 @@ export default function Certificaciones(params) {
   return (
     <main className="w-full lg:w-5/6 m-auto">
       <section className="py-5">
-        <h1 className="text-3xl font-bold py-4">¿En que me puedo certificar con Proyecta Empresarial?</h1>
-        <h2 className="text-2xl font-light text-slate-600">Estándares de Competencia laboral</h2>
+        <h1 className="text-4xl text-center font-bold py-4">¿En que me puedo certificar con Proyecta Empresarial?</h1>
+        <h2 className="text-2xl text-center font-light text-slate-600">Estándares de Competencia laboral</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max p-2 lg:p-10">
           {estandares.map((estandar => {
             return (
@@ -67,43 +69,44 @@ export default function Certificaciones(params) {
         </div>
       </section>
       <section className="py-5">
-        <h1 className="text-3xl font-bold py-2">¿Por qué evaluarme con Proyecta Empresarial?</h1>
-        <p className="text-2xl font-light text-slate-600">Reconocimiento nacional</p>
-        <p className="text-lg text-sl">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
+        <h1 className="text-4xl text-center font-bold py-2">¿Por qué evaluarme con Proyecta Empresarial?</h1>
+        <p className="text-2xl text-center font-light text-slate-600">Reconocimiento nacional</p>
+        <p className="text-lg text-baseline text-center">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
         <ul className="grid grid-cols-1 lg:grid-cols-4 gap-4 py-10 my-5">
-          <li className="text-2xl text-center font-baseline">Objetividad y confiabilidad</li>
-          <li className="text-2xl text-center font-baseline">Asesoría permanente de expertos</li>
-          <li className="text-2xl text-center font-baseline">Calidad comprobada</li>
-          <li className="text-2xl text-center font-baseline">Respaldo del organismo certificador más grande</li>
+          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} className="m-auto"/><span className="block my-8">Objetividad y confiabilidad</span></li>
+          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} className="m-auto"/><span className="block my-8">Asesoría de expertos</span></li>
+          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} className="m-auto"/><span className="block my-8">Calidad comprobada</span></li>
+          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} className="m-auto"/><span className="block my-8">Respaldo del organismo certificador más grande</span></li>
         </ul>
       </section>
       <section className="w-full lg:w-1/2 mx-auto my-10">
-        <h2 className="text-center text-3xl font-bold py-6">Preguntas frecuentes</h2>
+        <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              En promedio, 30 días a partir de la evaluación
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger className="text-lg font-bold">¿Puedo hacer la evaluación en línea?</AccordionTrigger>
             <AccordionContent>
-              Yes. Everyone can.
+              En algunos casos, dependiendo del estándar de competencia al que estés aplicando. Algunos estándares de competencia lo permiten, mientras que otros no.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </section>
 
       <footer className="my-10">
-        <h3 className="text-3xl font-bold py-4">Centro de evaluación</h3>
+        <h3 className="text-4xl font-bold py-4">Centro de evaluación</h3>
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="py-5">
             <h4 className="text-2xl font-bold">Proyecta empresarial</h4>
             <p>Cédula de acreditación: CE009241.2024</p>
           </div>
           <div className="py-5">
-            <p className="text-2xl font-bold">Contáctanos</p>
+            <MessagesSquare size={32}/>
+            <p className="text-2xl font-bold py-3">Contáctanos</p>
             <p>¿Tienes alguna pregunta sobre algo?<br />
               Comunícate con nosotros <br />
               Nos dará un gusto atenderte<br />
