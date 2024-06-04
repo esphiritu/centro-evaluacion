@@ -79,7 +79,7 @@ function Header() {
                   <ListItem href="/docs/installation" title="Talleres">
                     Dependencies and structure your app.
                   </ListItem>
-                  <ListItem href="/docs/primitives/typography" title="Servicio personalizado">
+                  <ListItem href="/docs/primitives/typography" title="Coaching">
                     Styles for professionals
                   </ListItem>
                 </ul>

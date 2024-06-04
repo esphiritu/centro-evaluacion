@@ -14,7 +14,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-import { MessagesSquare, LockKeyhole, ShieldCheck, Headset, Award } from "lucide-react";
+import { MessagesSquare } from "lucide-react";
 
 const estandares = [
   {
@@ -68,18 +68,13 @@ export default function Certificaciones(params) {
           }
         </div>
       </section>
-      <section className="py-5">
-        <h1 className="text-4xl text-center font-bold py-2">¿Por qué evaluarme con Proyecta Empresarial?</h1>
-        <p className="text-2xl text-center font-light text-slate-600">Reconocimiento nacional</p>
-        <p className="text-lg text-baseline text-center">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
-        <ul className="grid grid-cols-1 lg:grid-cols-4 gap-4 py-10 my-5">
-          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} className="m-auto"/><span className="block my-8">Objetividad y confiabilidad</span></li>
-          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} className="m-auto"/><span className="block my-8">Asesoría de expertos</span></li>
-          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} className="m-auto"/><span className="block my-8">Calidad comprobada</span></li>
-          <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} className="m-auto"/><span className="block my-8">Respaldo del organismo certificador más grande</span></li>
-        </ul>
-      </section>
-      <section className="w-full lg:w-1/2 mx-auto my-10">
+
+      <section className="py-10 w-3/4">
+          <h4 className="scroll-m-20 text-4xl font-bold tracking-normal lg:text-2xl py-3">La certificación más importante y flexible para todos los perfiles profesionales</h4>
+          <p className="text-lg text-slate-600">Si eres un profesional en educación, un especialista en recursos humanos, o director general de tu organización, la certificación en … te ayudará a ... ¿Quieres saber de la certificación gratuita?</p>
+        </section>
+      
+      <section className="w-full lg:w-1/2 mx-auto mb-15 py-10">
         <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
@@ -97,11 +92,19 @@ export default function Certificaciones(params) {
         </Accordion>
       </section>
 
-      <footer className="my-10">
+      <footer className="my-10 py-10">
         <h3 className="text-4xl font-bold py-4">Centro de evaluación</h3>
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="py-5">
             <h4 className="text-2xl font-bold">Proyecta empresarial</h4>
+            <ul className="flex">
+              <li className="pr-4 text-lg">Certificación</li>
+              <li className="px-4 text-lg">Capacitación</li>
+              <li className="px-4 text-lg">Coaching</li>
+              <li className="px-4 text-lg">Consultoría</li>
+              <li className="px-4 text-lg">Alineación</li>
+              <li className="px-4 text-lg">Evaluación</li>
+            </ul>
             <p>Cédula de acreditación: CE009241.2024</p>
           </div>
           <div className="py-5">
