@@ -1,10 +1,7 @@
 'use client'
-
-import * as React from "react"
+import React, {useState} from "react"
 import Link from "next/link"
-
 import { cn } from "@/lib/utils"
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,7 +12,10 @@ import {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button";
+import { MenuIcon, X } from "lucide-react";
 import { ModeToggle } from "@/utilities/dark-light-functionality/ModeToggle";
+import { useMediaQuery } from "@/utilities/use-media-query"
 
 const services = [
   {
@@ -40,12 +40,13 @@ const services = [
 
 
 function Header() {
-
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const [open, setOpen] = useState(false)
   return (
     <>
-      <header className="flex justify-around">
+      <header className="flex justify-between">
         <Link href="./">Proyecta empresarial</Link>
-        <NavigationMenu>
+        <NavigationMenu className={open ? "top-[5%]" : "top-[-100%]"}>
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="./certificaciones" legacyBehavior passHref>
@@ -118,7 +119,15 @@ function Header() {
           </NavigationMenuList>
         </NavigationMenu>
         {/* <ThemeSwitch></ThemeSwitch> */}
-        <ModeToggle></ModeToggle>
+        <div className="flex">
+          <ModeToggle></ModeToggle>
+          <Button onClick={() => setOpen( open ? false : true)} size="icon" className={"md:hidden ml-3"}>
+            {open ? 
+              <X className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"></X>
+              : <MenuIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-100"></MenuIcon>
+            } 
+          </Button>
+        </div>
       </header>
     </>
   );
