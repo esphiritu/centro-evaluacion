@@ -46,17 +46,17 @@ function Header() {
     <>
       <header className="flex justify-between">
         <Link href="./">Proyecta empresarial</Link>
-        <NavigationMenu className={open ? "top-[5%]" : "top-[-100%]"}>
-          <NavigationMenuList>
+        <NavigationMenu className={open ? "top-[5%]" : "top-[-120%]"}>
+          <NavigationMenuList className="w-screen md:w-auto bg-slate-200 dark:bg-slate-600 md:bg-transparent min-h-screen md:min-h-fit">
             <NavigationMenuItem>
               <Link href="./certificaciones" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <span className="text-lg font-semibold">Certificaciones</span>
+                  <span className="text-2xl md:text-lg font-semibold">Certificaciones</span>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-lg font-semibold">Alineaciones y talleres</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-2xl md:text-lg font-semibold">Alineaciones y talleres</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -65,7 +65,7 @@ function Header() {
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/explora"
                       >
-                        <div className="mb-2 mt-4 text-lg font-medium">
+                        <div className="mb-2 mt-4 md:text-lg font-medium">
                           Para profesionales
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
@@ -87,7 +87,7 @@ function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-lg font-semibold">Soluciones empresariales</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="text-2xl md:text-lg font-semibold">Soluciones empresariales</NavigationMenuTrigger>
                 <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {services.map((service) => (
@@ -105,14 +105,14 @@ function Header() {
             <NavigationMenuItem>
               <Link href="./socios" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <span className="text-lg font-semibold">Socios</span>
+                  <span className="text-2xl md:text-lg font-semibold">Socios</span>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="./blog" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  <span className="text-lg font-semibold">Blog</span>
+                  <span className="text-2xl md:text-lg font-semibold">Blog</span>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -123,7 +123,7 @@ function Header() {
           <ModeToggle></ModeToggle>
           <Button onClick={() => setOpen( open ? false : true)} size="icon" className={"md:hidden ml-3"}>
             {open ? 
-              <X className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"></X>
+              <X className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-100"></X>
               : <MenuIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-100"></MenuIcon>
             } 
           </Button>

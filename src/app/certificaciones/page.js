@@ -97,7 +97,7 @@ export default function Certificaciones(params) {
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="py-5">
             <h4 className="text-2xl font-bold">Proyecta empresarial</h4>
-            <ul className="flex">
+            <ul className="flex flex-col lg:flex-row">
               <li className="pr-4 text-lg">Certificación</li>
               <li className="px-4 text-lg">Capacitación</li>
               <li className="px-4 text-lg">Coaching</li>
