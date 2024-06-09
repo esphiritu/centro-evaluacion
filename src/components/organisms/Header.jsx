@@ -47,7 +47,7 @@ function Header() {
       <header className="flex justify-between">
         <Link href="./">Proyecta empresarial</Link>
         <NavigationMenu className={open ? "top-[5%]" : "top-[-120%]"}>
-          <NavigationMenuList className="w-screen md:w-auto bg-slate-200 dark:bg-slate-600 md:bg-transparent min-h-screen md:min-h-fit">
+          <NavigationMenuList className={isDesktop ? "w-screen md:w-auto min-h-screen md:min-h-fit bg-transparent dark:bg-transparent" : "w-screen md:w-auto min-h-screen md:min-h-fit bg-slate-200  dark:bg-slate-600"}>
             <NavigationMenuItem>
               <Link href="./certificaciones" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
