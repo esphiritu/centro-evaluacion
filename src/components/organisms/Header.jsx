@@ -41,13 +41,13 @@ const services = [
 
 function Header() {
   const isDesktop = useMediaQuery("(min-width: 768px)")
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(null)
   return (
     <>
       <header className="flex justify-between">
         <Link href="./">Proyecta empresarial</Link>
-        <NavigationMenu className={open ? "top-[0%]" : "top-[-120%]"}>
-          <NavigationMenuList className={isDesktop ? "w-screen md:w-auto min-h-screen md:min-h-fit bg-transparent" : "min-h-screen md:min-h-fit bg-slate-200  dark:bg-slate-600"}>
+        <NavigationMenu className={(open ? "top-[0%]" : "top-[-120%]")}>
+          <NavigationMenuList className="w-auto md:min-h-fit md:bg-transparent md:dark:bg-transparent md:py-1 min-h-screen bg-slate-200  dark:bg-slate-600 py-10">
             <NavigationMenuItem>
               <Link href="./certificaciones" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -121,7 +121,7 @@ function Header() {
         {/* <ThemeSwitch></ThemeSwitch> */}
         <div className="flex">
           <ModeToggle></ModeToggle>
-          <Button onClick={() => setOpen( open ? false : true)} size="icon" className={"md:hidden ml-3 z-20"}>
+          <Button onClick={() => setOpen( open ? false : true)} size="icon" className={"md:hidden ml-3 z-20 hover:cursor-pointer"}>
             {open ? 
               <X className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-100"></X>
               : <MenuIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-100"></MenuIcon>
