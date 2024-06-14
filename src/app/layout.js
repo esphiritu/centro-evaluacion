@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" dir="ltr" suppressHydrationWarning>
-      <body className={`"h-screen w-screen" ${yan.className}`}>
+      <body className={yan.className}>
         <ThemeProvider 
           attribute="class" 
           defaultTheme="system"
