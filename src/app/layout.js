@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from 'next-themes'
-import Header from "@/components/organisms/Header";
+// import Header from "@/components/organisms/Header";
+import HybridHeader from "@/components/organisms/HybridHeader";
 import { Yantramanav } from "next/font/google";
 const yan = Yantramanav({ weight: '400', subsets: ["latin"] });
 
@@ -20,7 +21,8 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <Header></Header>
+          {/* <Header></Header> */}
+          <HybridHeader />
           {children}
         </ThemeProvider>
       </body>
