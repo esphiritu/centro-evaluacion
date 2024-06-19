@@ -46,7 +46,7 @@ function Header() {
     <>
       <header className="flex justify-between">
         <Link href="./">Proyecta empresarial</Link>
-        <NavigationMenu className={(open ? "top-[0%]" : "top-[-120%]")}>
+        <NavigationMenu>
           <NavigationMenuList className="w-auto md:min-h-fit md:bg-transparent md:dark:bg-transparent md:py-1 min-h-screen bg-slate-200  dark:bg-slate-600 py-10">
             <NavigationMenuItem>
               <Link href="./certificaciones" legacyBehavior passHref>
@@ -89,17 +89,17 @@ function Header() {
             <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-2xl md:text-lg font-semibold">Soluciones empresariales</NavigationMenuTrigger>
                 <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {services.map((service) => (
-                <ListItem
-                  key={service.title}
-                  title={service.title}
-                  href={service.href}
-                >
-                  {service.description}
-                </ListItem>
-              ))}
-            </ul>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {services.map((service) => (
+                      <ListItem
+                        key={service.title}
+                        title={service.title}
+                        href={service.href}
+                      >
+                        {service.description}
+                      </ListItem>
+                    ))}
+                  </ul>
           </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
