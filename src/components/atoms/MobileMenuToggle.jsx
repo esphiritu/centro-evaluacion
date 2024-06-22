@@ -26,7 +26,7 @@ export default function MobileMenuToggle({links}) {
                 } 
           <span className="sr-only">mobile menu</span>
       </Button>
-      {isOpen && <MobileMenu navigation={links} />}
+      {isOpen && <MobileMenu navigation={links} className="transition-all duration-300"/>}
      </>
   );
 }
@@ -34,11 +34,11 @@ export default function MobileMenuToggle({links}) {
 // Mobile menu component (conditionally rendered based on state)
 export function MobileMenu({navigation}) {
   return (
-    <ul className="mobile-menu absolute z-20 w-full min-h-screen bg-slate-200  dark:bg-slate-600 p-6">
+    <ul className="mobile-menu absolute z-20 top-0 w-full min-h-screen bg-slate-200  dark:bg-slate-600 p-10">
       {/* Render mobile navigation links */}
       {navigation.map((link) => (
         <li key={link.href}>
-          <Link href={link.href} className="text-2xl font-semibold block hover:bg-slate-900 py-6 px-3">{link.text}</Link>
+          <Link href={link.href} className="text-2xl font-semibold block py-6 mt-5 px-8 rounded-md transition-colors duration-300 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">{link.text}</Link>
         </li>
       ))}
     </ul>

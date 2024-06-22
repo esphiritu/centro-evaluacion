@@ -14,7 +14,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import { Button, buttonVariants } from "@/components/ui/button";
+
 import { MessagesSquare } from "lucide-react";
+import Link from "next/link";
 
 const estandares = [
   {
@@ -68,11 +71,16 @@ export default function Certificaciones(params) {
           }
         </div>
       </section>
-
       <section className="py-10 w-3/4">
-          <h4 className="scroll-m-20 text-4xl font-bold tracking-normal lg:text-2xl py-3">La certificación más importante y flexible para todos los perfiles profesionales</h4>
-          <p className="text-lg text-slate-600">Si eres un profesional en educación, un especialista en recursos humanos, o director general de tu organización, la certificación en … te ayudará a ... ¿Quieres saber de la certificación gratuita?</p>
+          <h1 className="text-4xl font-bold py-4">Inicia una evaluación diagnóstica</h1>
+          <Link href="./asesor">
+              Empieza ahora
+          </Link>
         </section>
+      <section className="py-10 w-3/4">
+          <h4 className="scroll-m-20 text-4xl font-bold tracking-normal lg:text-2xl py-3">La certificación básica y flexible para todos los perfiles profesionales</h4>
+          <p className="text-lg text-slate-600">Si eres un profesional en educación, un especialista en recursos humanos, o director general de tu organización, la certificación en … te ayudará a ... ¿Quieres saber de la certificación gratuita?</p>
+      </section>
       
       <section className="w-full lg:w-1/2 mx-auto mb-15 py-10">
         <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
@@ -108,7 +116,7 @@ export default function Certificaciones(params) {
             <p>Cédula de acreditación: CE009241.2024</p>
           </div>
           <div className="py-5">
-            <MessagesSquare size={32}/>
+            <MessagesSquare size={24}/>
             <p className="text-2xl font-bold py-3">Contáctanos</p>
             <p>¿Tienes alguna pregunta sobre algo?<br />
               Comunícate con nosotros <br />

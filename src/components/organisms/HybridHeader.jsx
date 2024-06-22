@@ -13,7 +13,7 @@ export default function HybridHeader () {
       alt: "Some alternative text for  accesibility"
     },
     {
-      text: "Formación",
+      text: "Alineaciones y talleres",
       href: "/explora",
       title:
         "Features in the medical sector",
@@ -42,7 +42,7 @@ export default function HybridHeader () {
     },
   ]
   return (
-    <header className="flex justify-between md:justify-around relative">
+    <header className="flex justify-between md:justify-around relative py-4">
       <span className="block">
         <Link href={"/"}>Proyecta empresarial</Link>
       </span>
