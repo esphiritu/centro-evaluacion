@@ -34,7 +34,7 @@ export default function Home({ Component, pageProps }) {
                   Comienza ahora 
                   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline lucide lucide-chevrons-right ml-2 origin-left hover:translate-x-0.5 transition group-hover:translate-x-2"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                 </Link>
-                <Link className="transition-all duration-300 ease-in-out px-4 py-2 mx-4 hover:bg-black/50 text-base md:text-2xl rounded-sm text-white shadow-md" href="./asesor">
+                <Link className="transition-all duration-300 ease-in-out px-4 py-2 mx-4 hover:underline text-base md:text-2xl rounded-sm text-white shadow-sm" href="./asesor">
                   Comienza con un asesor
                 </Link>
             </div>

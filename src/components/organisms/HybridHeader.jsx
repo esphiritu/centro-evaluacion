@@ -42,11 +42,11 @@ export default function HybridHeader () {
     },
   ]
   return (
-    <header className="flex justify-between md:justify-around relative py-4">
+    <header className="flex justify-between md:justify-around content-center relative py-4">
       <span className="block">
         <Link href={"/"}>Proyecta empresarial</Link>
       </span>
-      <div className="flex justify-end">
+      <div className="flex justify-end items-center">
         {/* Render desktop navigation using server-side data */}
         <DesktopNavigation links={navigation} />
         
