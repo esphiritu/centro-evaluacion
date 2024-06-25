@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+// Shandcn ui
 import {
   Card,
   CardContent,
@@ -6,18 +9,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-
-import { Button, buttonVariants } from "@/components/ui/button";
-
+import { buttonVariants } from "@/components/ui/button";
 import { MessagesSquare } from "lucide-react";
-import Link from "next/link";
+
+// Custom components
+import ProgramsCard from "@/components/molecules/ProgramsCard";
 
 const estandares = [
   {
@@ -44,16 +46,24 @@ const estandares = [
 ]
 
 
+
+
 export default function Certificaciones(params) {
   return (
-    <main className="w-full lg:w-5/6 m-auto">
-      <section className="py-5">
-        <h1 className="text-4xl text-center font-bold py-4">¿En que me puedo certificar con Proyecta Empresarial?</h1>
-        <h2 className="text-2xl text-center font-light text-slate-600">Estándares de Competencia laboral</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max p-2 lg:p-10">
+    <main className="">
+      <div className="flex flex-col justify-center items-center md:flex-row w-full min-h-96 bg-gradient-to-r from-teal-500 to-teal-700 mx-auto">
+          <div className="w-full md:w-3/5 px-10 ">
+              <h5 className="text-4xl md:text-5xl text-center text-teal-100 md:text-left font-bold py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</h5>
+              <p className="text-lg md:text-2xl text-center text-slate-800 md:text-left py-3">Nuestro equipo de expertos posee un profundo conocimiento en la industria</p>
+          </div>
+          <div className="w-full md:w-1/5">Some content here</div>
+      </div>
+      <section className="container py-5">
+        <h1 className="text-2xl md:text-3xl font-bold text-center py-10">Estándares de competencia laboral con la que puedes certificarte con Proyecta Empresarial</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
           {estandares.map((estandar => {
             return (
-              <Card key={estandar.id} className="transition transform dark:hover:bg-slate-800 hover:bg-slate-100 lg:mx-10 py-2">
+              <Card key={estandar.id} className="dark:hover:bg-slate-800 hover:bg-slate-100 lg:mx-10 py-2">
                 <CardHeader>
                   <CardTitle>{estandar.title}</CardTitle>
                   <CardDescription>{estandar.description}</CardDescription>
@@ -71,20 +81,22 @@ export default function Certificaciones(params) {
           }
         </div>
       </section>
-      <section className="py-10 w-3/4">
-          <h1 className="text-4xl font-bold py-4">Inicia una evaluación diagnóstica</h1>
-          <Link href="./asesor">
-              Empieza ahora
+      <section className="container py-10 w-full bg-slate-100 rounded-md mt-8">
+          <h1 className=" text-3xl md:text-4xl font-bold py-5">Inicia una evaluación diagnóstica</h1>
+          <p className="text-lg py-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
+          <Link href="./asesor" className={buttonVariants({ variant: "outline" })}>
+              <span className="py-3 px-3 text-md">Agenda una evaluación</span> 
           </Link>
         </section>
-      <section className="py-10 w-3/4">
-          <h4 className="scroll-m-20 text-4xl font-bold tracking-normal lg:text-2xl py-3">La certificación básica y flexible para todos los perfiles profesionales</h4>
-          <p className="text-lg text-slate-600">Si eres un profesional en educación, un especialista en recursos humanos, o director general de tu organización, la certificación en … te ayudará a ... ¿Quieres saber de la certificación gratuita?</p>
+      <section className="container py-10 w-full">
+          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3">La certificación laboral es para todos los perfiles profesionales</h2>
+          <p className="text-lg ">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu especialidad</p>
+          <ProgramsCard />
       </section>
       
-      <section className="w-full lg:w-1/2 mx-auto mb-15 py-10">
+      <section className="container mx-auto mb-15 py-10">
         <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
-        <Accordion type="single" collapsible>
+        <Accordion type="single" collapsible className="w-full md:w-1/2 m-auto">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
             <AccordionContent>
@@ -95,6 +107,12 @@ export default function Certificaciones(params) {
             <AccordionTrigger className="text-lg font-bold">¿Puedo hacer la evaluación en línea?</AccordionTrigger>
             <AccordionContent>
               En algunos casos, dependiendo del estándar de competencia al que estés aplicando. Algunos estándares de competencia lo permiten, mientras que otros no.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger className="text-lg font-bold">¿Cuál es el costo de la evaluación diagnóstica?</AccordionTrigger>
+            <AccordionContent>
+              Ninguno. La evalución diagnóstica la ofrecemos gratis.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
