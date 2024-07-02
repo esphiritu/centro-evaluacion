@@ -8,7 +8,7 @@ export default function DesktopNavigation({ links }) {
             {links.map((link) => (
               <li key={link.href} className="px-1">
                 <Link 
-                  className="px-3 py-2 text-2xl md:text-lg  text-slate-700 hover:text-slate-950 rounded-md hover:bg-slate-100 bg-transparent transition-all duration-300 ease-in-out"
+                  className="px-3 py-2 text-2xl md:text-lg text-gray-600 hover:bg-slate-100 rounded-md hover:text-teal-700 white bg-transparent transition-all duration-300 ease-in-out"
                   href={link.href} 
                   alt={link.alt}>
                     {link.text}

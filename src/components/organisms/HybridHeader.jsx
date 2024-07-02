@@ -43,13 +43,12 @@ export default function HybridHeader () {
   ]
   return (
     <header className="flex justify-between md:justify-around content-center relative py-4">
-      <span className="block">
-        <Link href={"/"}>Proyecta empresarial</Link>
-      </span>
-      <div className="flex justify-end items-center">
+      <span className="flex justify-start">
+        <Link href={"/"} className="mr-5">Proyecta empresarial</Link>
         {/* Render desktop navigation using server-side data */}
         <DesktopNavigation links={navigation} />
-        
+      </span>
+      <div className="flex justify-between">  
         {/* Mobile menu toggle wrapped with client component */}
         <MobileMenuToggle links={navigation} />
       </div>

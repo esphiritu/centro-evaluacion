@@ -1,16 +1,22 @@
 import "./globals.css";
 import { ThemeProvider } from 'next-themes'
 import HybridHeader from "@/components/organisms/HybridHeader";
-import { Yantramanav } from "next/font/google";
-const yan = Yantramanav({ weight: '400', subsets: ["latin"] });
 
+// Google Fonts
+import { Yantramanav } from "next/font/google";
+const yan = Yantramanav({ 
+  weight: '400',
+  subsets: ["latin"],
+  });
+
+  // Metadata
 export const metadata = {
   title: "Proyecta empresarial",
   description: "Certificación para los profesionales",
-  openGraph: {
-    image: "",
-    url: "",
-  }
+  // openGraph: {
+  //   image: "",
+  //   url: "",
+  // }
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="es" dir="ltr" suppressHydrationWarning={true}>
       <body className={yan.className} suppressHydrationWarning={true}>
         <ThemeProvider 
-          attribute="class" 
+          attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>

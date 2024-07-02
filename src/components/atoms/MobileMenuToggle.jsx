@@ -19,7 +19,7 @@ export default function MobileMenuToggle({links}) {
       <ModeToggle className="npm"><span className="sr-only">dark mode</span></ModeToggle>
       <Button 
         onClick={toggleMenu} 
-        className="flex md:hidden mx-2 z-40"
+        className="flex md:hidden mx-2 z-40 hover:text-teal-800"
         variant="outline" 
         size="icon"
         >
@@ -50,11 +50,30 @@ export function MobileMenu({navigation}) {
   }, [isDesktop, isOpen]);
 
   return (
-    <ul className={isDesktop ? "hidden" : "mobile-menu absolute z-20 top-0 w-full min-h-screen bg-slate-200  dark:bg-slate-600 p-10"}>
+    <ul className={isDesktop ? "hidden" : "mobile-menu absolute z-20 left-0 top-0 w-full min-h-screen bg-slate-200  dark:bg-slate-600 p-10 disabled:scroll"}>
       {/* Render mobile navigation links */}
       {navigation.map((link) => (
         <li key={link.href}>
-          <Link href={link.href} onClick={toggleMenu} className="text-2xl font-semibold block py-6 mt-5 px-8 rounded-md transition-colors duration-300 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">{link.text}</Link>
+          <Link href={link.href} onClick={toggleMenu} className="
+          text-2xl 
+          font-semibold 
+          block 
+          py-6 
+          mt-5 
+          px-8 
+          rounded-md 
+          transition-colors 
+          duration-50 
+          hover:bg-accent 
+          hover:text-accent-foreground 
+          hover:text-teal-600 
+          focus:bg-accent 
+          focus:text-accent-foreground 
+          focus:outline-none 
+          disabled:pointer-events-none 
+          disabled:opacity-50 
+          data-[active]:bg-accent/50 
+          data-[state=open]:bg-accent/50">{link.text}</Link>
         </li>
       ))}
     </ul>
