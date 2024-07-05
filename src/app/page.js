@@ -62,7 +62,7 @@ export default function Home({ Component, pageProps }) {
           <h1 className="text-4xl text-center font-bold py-8 mb-8">Conoce la ruta para la certificación</h1>
 
         </section>
-        <section className="container flex flex-col lg:flex-row rounded-md bg-gray-100 dark:bg-slate-900 py-10 my-10">
+        <section className="container flex flex-col lg:flex-row rounded-md bg-[#B1CCC8] dark:bg-slate-900 py-10 my-10">
           
             <h2 className="w-1/3 scroll-m-20 text-center text-3xl font-extrabold tracking-tight lg:text-4xl py-10 my-5">Casos de éxito</h2>
             
@@ -88,9 +88,9 @@ export default function Home({ Component, pageProps }) {
             loop: true,
           }}>
             <CarouselContent className="p-0 md:p-5">
-              <CarouselItem className="bg-gray-200 dark:bg-slate-900 rounded-sm p-10 text-gray-950 dark:text-gray-50">
+              <CarouselItem className="bg-gray-100 dark:bg-slate-900 rounded-sm p-10 text-gray-950 dark:text-gray-50">
                 <p className="text-xl md:text-2xl text-left">Estás invitad@ al <span className="font-bold">webinar gratuito</span></p>
-                <h1 className="font-bold text-3xl md:text-5xl text-amber-800 text-center mt-10">Estrategias para aumentar productividad</h1>
+                <h1 className="font-bold text-3xl md:text-5xl text-[#4C214D] text-center mt-10">Estrategias para aumentar productividad</h1>
                 <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
               
                 {/* Temario del evento */}
@@ -136,19 +136,19 @@ const benefits = [
   {
     title: "Encuentra mejores oportunidades",
     description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
-    icon: <Key size={84} className="m-auto text-teal-600 bg-slate-100 rounded-full p-5" />,
+    icon: <Key size={84} className="m-auto text-teal-600 bg-[#CACCB1] rounded-full p-5 shadow-lg" />,
     id: "emo",
   },
   {
     title: "Accede a mejores salarios",
     description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
-    icon: <CircleDollarSign size={84} className="m-auto text-teal-600 bg-slate-100 rounded-full p-5" />,
+    icon: <CircleDollarSign size={84} className="m-auto text-teal-600 bg-[#CACCB1] rounded-full p-5 shadow-lg" />,
     id: "ams",
   },
   {
     title: "Mejora tus condiciones laborales",
     description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-    icon: <HandshakeIcon size={84} className="m-auto text-teal-600 bg-slate-100 rounded-full p-5" />,
+    icon: <HandshakeIcon size={84} className="m-auto text-teal-600 bg-[#CACCB1] rounded-full p-5 shadow-lg" />,
     id: "mcl",
   },
   // {
