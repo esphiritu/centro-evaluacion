@@ -97,7 +97,7 @@ export default function Certificaciones(params) {
       <section className="container w-full bg-slate-100 dark:bg-slate-900 rounded-md py-10 my-10">
         <h1 className=" text-3xl md:text-4xl font-bold py-5">Inicia una evaluación diagnóstica</h1>
         <p className="text-lg py-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-        <Link href="./asesor" className="text-lg text-teal-600">
+        <Link href="./asesor" className="text-lg text-teal-600 hover:underline">
             <span className="py-3 px-3 text-md">Agenda una evaluación</span> 
         </Link>
       </section>

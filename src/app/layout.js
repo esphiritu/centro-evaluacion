@@ -1,5 +1,5 @@
 import "./globals.css";
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from 'next-themes';
 import HybridHeader from "@/components/organisms/HybridHeader";
 
 // Google Fonts

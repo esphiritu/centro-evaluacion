@@ -8,16 +8,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
-
-// 
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       pageId: "home_page",
-//       }
-//     }
-//   }
+} from "@/components/ui/carousel";
+import webinarIcon from "@/public/img/webinar-meetings.svg";
 
 
 export default function Home({ Component, pageProps }) {
@@ -26,13 +18,37 @@ export default function Home({ Component, pageProps }) {
       <main className="w-full m-auto">
         <section style={styles.container} className="px-10 h-screen border-b-[9px]">
           <div className="container mx-auto h-full">
-            <div className="flex flex-col items-center justify-center md:items-start gap-y-7 h-full">
-              <h1 className="bg-black/50 scroll-m-20 text-white text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight py-3 md:rounded-md rounded-sm transition-all duration-300 ease-in-out"> Impulsa tu vida profesional al éxito </h1>
+            <div className="
+              flex 
+              flex-col 
+              items-center 
+              justify-center 
+              md:items-start 
+              gap-y-7 
+              h-full">
+              <h1 className="
+              scroll-m-20 
+              text-white 
+              text-3xl 
+              md:text-5xl 
+              lg:text-6xl 
+              font-extrabold 
+              bg-black/50 
+              tracking-tight 
+              py-3 
+              md:rounded-md 
+              rounded-sm 
+              transition-all 
+              duration-300 
+              ease-in-out 
+              px-3"> 
+                Impulsa tu vida profesional al éxito 
+              </h1>
               <p className="text-2xl md:text-3xl text-white">Respalda tus conocimientos y experiencia con certificaciones oficiales</p>
               <div className="flex flex-col md:flex-row mt-5">
-                <Link className="group transition-all duration-300 ease-in-out bg-teal-600 hover:bg-teal-700 px-6 py-3 mx-2 md:mx-4 rounded-sm text-white text-base md:text-lg shadow-md mt-6" href="./proceso">
-                  Comienza ahora 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline lucide lucide-chevrons-right ml-2 origin-left hover:translate-x-0.5 transition group-hover:translate-x-2"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
+                <Link className="group transition-all duration-300 ease-in-out bg-yellow-300 hover:bg-yellow-400 px-6 py-3 mx-2 md:mx-4 rounded-sm text-teal-800 font-bold md:text-lg shadow-md mt-6" href="./proceso">
+                  COMIENZA AHORA 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline lucide lucide-chevrons-right ml-1 origin-left hover:translate-x-0.5 transition group-hover:translate-x-2"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
                 </Link>
                 <Link className="transition-all duration-300 ease-in-out px-4 py-2 mx-4 hover:underline text-base md:text-lg rounded-sm text-white shadow-sm mt-6" href="./asesor">
                   Comienza con un asesor
@@ -62,7 +78,7 @@ export default function Home({ Component, pageProps }) {
           <h1 className="text-4xl text-center font-bold py-8 mb-8">Conoce la ruta para la certificación</h1>
 
         </section>
-        <section className="container flex flex-col lg:flex-row rounded-md bg-[#B1CCC8] dark:bg-slate-900 py-10 my-10">
+        <section className="container flex flex-col lg:flex-row rounded-md bg-gray-100 dark:bg-slate-900 py-10 my-10">
           
             <h2 className="w-1/3 scroll-m-20 text-center text-3xl font-extrabold tracking-tight lg:text-4xl py-10 my-5">Casos de éxito</h2>
             
@@ -88,9 +104,10 @@ export default function Home({ Component, pageProps }) {
             loop: true,
           }}>
             <CarouselContent className="p-0 md:p-5">
-              <CarouselItem className="bg-gray-100 dark:bg-slate-900 rounded-sm p-10 text-gray-950 dark:text-gray-50">
+              <CarouselItem className="bg-gray-100 dark:bg-slate-900 rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
+                <Image src={webinarIcon} width={96} height={96} alt="icon for webinar"/>
                 <p className="text-xl md:text-2xl text-left">Estás invitad@ al <span className="font-bold">webinar gratuito</span></p>
-                <h1 className="font-bold text-3xl md:text-5xl text-[#4C214D] text-center mt-10">Estrategias para aumentar productividad</h1>
+                <h1 className="font-bold text-3xl md:text-5xl text-[#7369E2] text-center mt-10">Estrategias para aumentar productividad</h1>
                 <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
               
                 {/* Temario del evento */}
@@ -116,7 +133,7 @@ export default function Home({ Component, pageProps }) {
                  <div className="">
                    <p>Cupo limitado</p>
                  </div>
-                 <Button className="bg-orange-500 hover:bg-orange-600 px-4 text-lg text-white font-extrabold mt-5">Regístrate ahora</Button>
+                 <Button className="bg-teal-600 hover:bg-teal-700 px-4 text-lg text-white font-extrabold mt-5">Regístrate ahora</Button>
                </div>
               </CarouselItem>
               <CarouselItem><h1 className="text-2xl md:text-3xl">Descarga la guía del candidato</h1></CarouselItem>
@@ -136,19 +153,19 @@ const benefits = [
   {
     title: "Encuentra mejores oportunidades",
     description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
-    icon: <Key size={84} className="m-auto text-teal-600 bg-[#CACCB1] rounded-full p-5 shadow-lg" />,
+    icon: <Key size={84} className="m-auto text-teal-600 bg-gray-50 rounded-full p-5 shadow-lg" />,
     id: "emo",
   },
   {
     title: "Accede a mejores salarios",
     description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
-    icon: <CircleDollarSign size={84} className="m-auto text-teal-600 bg-[#CACCB1] rounded-full p-5 shadow-lg" />,
+    icon: <CircleDollarSign size={84} className="m-auto text-teal-600 bg-gray-50 rounded-full p-5 shadow-lg" />,
     id: "ams",
   },
   {
     title: "Mejora tus condiciones laborales",
     description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-    icon: <HandshakeIcon size={84} className="m-auto text-teal-600 bg-[#CACCB1] rounded-full p-5 shadow-lg" />,
+    icon: <HandshakeIcon size={84} className="m-auto text-teal-600 bg-gray-50 rounded-full p-5 shadow-lg" />,
     id: "mcl",
   },
   // {

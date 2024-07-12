@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-// Image Programs
-import teacherPic from "@/public/img/pexels-divinetechygirl-1181534.jpg"
+// Programs Images
+import teacherPic from "@/public/img/pexels-divinetechygirl-1181534.jpg";
 
 // Programs
 const programs = [
@@ -13,9 +13,9 @@ const programs = [
     programPic: teacherPic,
     flexColDirection: "flex-col-reverse",
     flexRowDirection: "lg:flex-row",
-    bgColor:"bg-orange-500",
+    bgColor:"bg-[#FF8366]",
   },
-]
+];
 
 
 
@@ -32,7 +32,8 @@ export default function ProgramsCard() {
               <li>Evaluación</li>
               <li>Certificado</li>
             </ul>
-            <Link href={program.ProgramHrefLink} className="transition-all duration-300 ease-in-out bg-teal-600 hover:bg-teal-900 px-6 py-3 mx-4 rounded-sm hover:text-white text-base font-bold md:text-lg mt-2 md:mt-6">
+            <Link 
+              href={program.ProgramHrefLink} className="transition-all duration-300 ease-in-out bg-teal-500 hover:bg-teal-600 px-6 py-3 mx-4 rounded-sm hover:text-white text-base font-bold md:text-lg mt-2 md:mt-6">
               Ingresa al programa
             </Link>
           </div>
@@ -50,7 +51,8 @@ export default function ProgramsCard() {
             />
           </div>
         </div>
-    ))
+       )
+      )
     )
   )
 }
