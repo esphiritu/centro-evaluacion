@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 // Shandcn ui
 import {
@@ -15,8 +16,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { buttonVariants } from "@/components/ui/button";
 import { MessagesSquare } from "lucide-react";
+import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 
 // Custom components
 import ProgramsCard from "@/components/molecules/ProgramsCard";
@@ -52,12 +53,13 @@ const estandares = [
 export default function Certificaciones(params) {
   return (
     <main className="">
-      <div className="flex flex-col justify-center items-center md:flex-row w-full min-h-96 bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] mx-auto">
-          <div className="w-full md:w-3/5 px-10 ">
-              <h5 className="text-4xl md:text-6xl text-center text-teal-100 md:text-left font-bold py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</h5>
-              <p className="text-lg md:text-2xl text-center text-white md:text-left py-3">Nuestro equipo de expertos posee un profundo conocimiento en la industria</p>
-          </div>
-          <div className="w-full md:w-1/5">Some content here</div>
+      <div className="flex flex-col justify-center items-center w-full min-h-[32rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] mx-auto">
+        <div className="w-full md:w-3/5 px-10 ">
+          <h5 className="text-3xl md:text-4xl text-center text-teal-100 font-bold py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</h5>
+          <p className="text-lg md:text-2xl text-center text-white py-3">Nuestro equipo de evaluadores posee un profundo conocimiento y experiencia</p>
+        </div>
+        <Link href="./proceso" className="text-xl font-bold transition-all duration-300 ease-in-out rounded-sm bg-yellow-300 hover:bg-yellow-400 px-8 py-3 mt-6">Comienza ahora</Link>
+        <p className="text-lg text-white py-3">¡Obten 20% de descuento!</p>
       </div>
       <section className="container py-5">
         <h1 className="text-2xl md:text-4xl font-bold text-left py-10">Estándares de competencia laboral con la que puedes certificarte con Proyecta Empresarial</h1>
@@ -87,21 +89,22 @@ export default function Certificaciones(params) {
           }
         </div>
       </section>
-  
+
       <section className="container w-full py-10 my-10">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3">Obtenga un certificado de competencia laboral en su área</h2>
-          <p className="text-lg ">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu especialidad</p>
-          <ProgramsCard />
+        <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3">Obtenga un certificado de competencia laboral en su área</h2>
+        <p className="text-lg ">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu especialidad</p>
+        <ProgramsCard />
       </section>
 
-      <section className="container w-full bg-slate-100 dark:bg-slate-900 rounded-md py-10 my-10">
+      <section className="container w-full bg-[#ecfdfc] dark:bg-slate-900 rounded-md py-10 my-10 px-20">
+        <Image src={diagnostico} width={180} height={180} alt="icon for" className="max-w-auto" />
         <h1 className=" text-3xl md:text-4xl font-bold py-5">Inicia una evaluación diagnóstica</h1>
         <p className="text-lg py-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
         <Link href="./asesor" className="text-lg text-teal-600 hover:underline">
-            <span className="py-3 px-3 text-md">Agenda una evaluación</span> 
+          <span className="py-3 px-3 text-md">Agenda una evaluación</span>
         </Link>
       </section>
-      
+
       <section className="container mx-auto mb-15 py-10">
         <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
         <Accordion type="single" collapsible className="w-full md:w-1/2 m-auto ">
@@ -143,7 +146,7 @@ export default function Certificaciones(params) {
           </div>
           <div className="py-5">Buzón de quejas</div>
           <div className="py-5">
-            <MessagesSquare size={24}/>
+            <MessagesSquare size={24} />
             <p className="text-2xl font-bold py-5">Contáctanos</p>
             <p>¿Tienes alguna pregunta sobre algo?<br />
               Comunícate con nosotros <br />

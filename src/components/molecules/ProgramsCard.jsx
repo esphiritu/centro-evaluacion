@@ -13,7 +13,7 @@ const programs = [
     programPic: teacherPic,
     flexColDirection: "flex-col-reverse",
     flexRowDirection: "lg:flex-row",
-    bgColor:"bg-[#FF8366]",
+    bgColor:"bg-gray-500",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function ProgramsCard() {
               style={{
                 width: '100%',
                 height: 'auto',
-                objectFit:'cover',
+                objectFit:'scale-down',
               }}
             />
           </div>
