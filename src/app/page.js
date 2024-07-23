@@ -1,15 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button, buttonVariants } from "@/components/ui/button";
 import { CircleDollarSign, HandshakeIcon, Key, LockKeyhole, ShieldCheck, Headset, Award, CalendarDays, Clock } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import webinarIcon from "@/public/img/webinar-meetings.svg";
 import resultados from "@/public/img/consulta-resultados.svg";
 import estandar from "@/public/img/estandar-de-competencia.svg";
 import evaluacion from "@/public/img/presenta-evaluacion.svg";
@@ -24,10 +15,10 @@ export default function Home({ Component, pageProps }) {
           <div className="container mx-auto h-full">
             <div className="
               flex 
-              flex-col 
-              items-center 
-              justify-center 
-              md:items-start 
+              flex-col
+              justify-end
+              md:justify-center
+              md:items-center 
               gap-y-7 
               h-full">
               <h1 className="
@@ -48,13 +39,13 @@ export default function Home({ Component, pageProps }) {
               px-3">
                 Impulsa tu vida profesional al éxito
               </h1>
-              <p className="text-2xl md:text-3xl text-white">Respalda tus conocimientos y experiencia con certificaciones oficiales</p>
-              <div className="flex flex-col md:flex-row mt-5">
-                <Link className="group transition-all duration-300 ease-in-out bg-yellow-300 hover:bg-yellow-400 px-8 py-3 mx-2 md:mx-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-6" href="./proceso">
+              <p className="text-xl md:text-3xl text-white">Respalda tus conocimientos y experiencia con certificaciones oficiales</p>
+              <div className="flex flex-col md:flex-row mt-1 md:mt-5">
+                <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 px-6 py-3 mx-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
                   Comienza ahora
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline lucide lucide-chevrons-right ml-1 origin-left hover:translate-x-0.5 transition group-hover:translate-x-2"><path d="m6 17 5-5-5-5" /><path d="m13 17 5-5-5-5" /></svg>
                 </Link>
-                <Link className="transition-all duration-300 ease-in-out px-4 py-2 mx-4 hover:underline text-base md:text-lg rounded-sm text-white shadow-sm mt-6" href="./asesor">
+                <Link className="transition-all duration-300 ease-in-out px-4 py-3 mx-4 mb-6 md:mb-1 hover:underline text-center font-bold md:text-lg rounded-sm text-white shadow-sm mt-6" href="./asesor">
                   Comienza con un asesor
                 </Link>
               </div>
@@ -80,7 +71,7 @@ export default function Home({ Component, pageProps }) {
         </section>
         <section className="container py-10 my-10">
           <h1 className="text-4xl md:text-5xl text-center font-bold py-8 mb-8">Conoce la ruta para la certificación</h1>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full md:w-2/3 mx-auto">
             <div className="w-full flex flex-col md:flex-row items-center mb-10">
               <div className="bg-yellow-500 rounded-2xl max-w-[260px]">
                 <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto px-10" />
@@ -114,7 +105,7 @@ export default function Home({ Component, pageProps }) {
         </section>
         <section className="container flex flex-col lg:flex-row py-10 my-10">
           <div className="justify-center items-center w-full lg:w-1/2 pr-5">
-            <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con Proyecta Empresarial?</h1>
+            <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-4">Reconocimiento nacional</p>
             <p className="text-lg text-baseline ">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
           </div>
@@ -125,54 +116,16 @@ export default function Home({ Component, pageProps }) {
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} className="m-auto text-teal-600" /><span className="block my-8">Respaldo de ICE México</span></li>
           </ul>
         </section>
-        <section className="md:container mx-auto py-10 mb-10">
-          <Carousel opts={{
-            align: "center",
-            loop: true,
-          }}>
-            <CarouselContent className="p-0 md:p-5">
-              <CarouselItem className="bg-gray-100 dark:bg-slate-900 rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-                <Image src={webinarIcon} width={96} height={96} alt="icon for webinar" />
-                <p className="text-xl md:text-2xl text-left">Estás invitad@ al <span className="font-bold">webinar gratuito</span></p>
-                <h1 className="font-bold text-3xl md:text-5xl text-[#7369E2] text-center mt-10">Estrategias para aumentar productividad</h1>
-                <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
-
-                {/* Temario del evento */}
-                <div className="text-xl">
-                  <p className="">Aprenderás:</p>
-                  <ol className="">
-                    <li>Buen manejo del estrés</li>
-                    <li>Mejorar la comunicación</li>
-                  </ol>
-
-                </div>
-                <div className="flex flex-col lg:flex-row md:justify-around mt-8 items-center md:items-stretch">
-                  {/* Fecha y hora del evento */}
-                  <div className="flex items-center mb-4">
-                    <Clock className="size-7" />
-                    <time className="uppercase text-left text-2xl font-light px-5" dateTime="20:00">8:00 PM</time>
-                  </div>
-                  <div className="flex mb-4 items-center">
-                    <CalendarDays className="size-7" />
-                    <time dateTime="2024-09-28" className="uppercase text-left text-2xl font-light px-5">28 SEP 2024</time>
-                  </div>
-                  {/* Team leader */}
-                  <div className="">
-                    <p>Cupo limitado</p>
-                  </div>
-                  <Button className="bg-teal-600 hover:bg-teal-700 px-4 text-lg text-white font-extrabold mt-5">Regístrate ahora</Button>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <h1 className="text-2xl md:text-3xl">Descarga la guía del candidato</h1>
-              </CarouselItem>
-              <CarouselItem>
-                <h1 className="text-2xl md:text-3xl">Asiste al evento presencial</h1>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <section className="py-10 mb-10">
+          
+          <div className="flex flex-col justify-center items-center w-full min-h-[32rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] mx-auto">
+            <div className="w-full md:w-3/5 px-10 ">
+              <h5 className="text-3xl md:text-4xl text-center text-teal-100 font-bold py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</h5>
+              <p className="text-lg md:text-2xl text-center text-white py-3">Nuestro equipo de evaluadores posee un profundo conocimiento y experiencia</p>
+            </div>
+            <Link href="./proceso" className="text-xl font-bold transition-all duration-300 ease-in-out rounded-sm bg-yellow-300 hover:bg-yellow-400 px-8 py-3 mt-6">Comienza ahora</Link>
+            <p className="text-lg text-white py-3">¡Obten 20% de descuento!</p>
+          </div>
         </section>
       </main>
     </>
