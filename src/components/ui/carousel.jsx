@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react"
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -117,7 +117,7 @@ const CarouselContent = React.forwardRef(({ className, ...props }, ref) => {
   const { carouselRef, orientation } = useCarousel()
 
   return (
-    (<div ref={carouselRef} className="overflow-hidden">
+    (<div ref={carouselRef} className="overflow-hidden text-center">
       <div
         ref={ref}
         className={cn(
@@ -157,13 +157,13 @@ const CarouselPrevious = React.forwardRef(({ className, variant = "outline", siz
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("absolute  h-8 w-8 rounded-full", orientation === "horizontal"
-        ? "-left-12 top-1/2 -translate-y-1/2"
+      className={cn("absolute  h-9 w-9 rounded-full shadow-md hover:text-teal-600 bg-white/80", orientation === "horizontal"
+        ? "left-3 top-1/2 -translate-y-1/2"
         : "-top-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}>
-      <ArrowLeft className="h-4 w-4" />
+      <ChevronLeft className="h-5 w-5" />
       <span className="sr-only">Previous slide</span>
     </Button>)
   );
@@ -178,13 +178,13 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("absolute h-8 w-8 rounded-full", orientation === "horizontal"
-        ? "-right-12 top-1/2 -translate-y-1/2"
+      className={cn("absolute h-9 w-9 rounded-full shadow-md hover:text-teal-700 bg-white/80", orientation === "horizontal"
+        ? "right-6 top-1/2 -translate-y-1/2"
         : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}>
-      <ArrowRight className="h-4 w-4" />
+      <ChevronRight className="h-5 w-5" />
       <span className="sr-only">Next slide</span>
     </Button>)
   );
