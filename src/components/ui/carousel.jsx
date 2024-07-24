@@ -1,10 +1,11 @@
 "use client";
-import * as React from "react"
+import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
 
 const CarouselContext = React.createContext(null)
 
@@ -26,10 +27,16 @@ const Carousel = React.forwardRef((
     plugins,
     className,
     children,
+    autoplay,
     ...props
   },
   ref
 ) => {
+  if (autoplay) {
+    plugins = plugins ?? [];
+    plugins.push(Autoplay({ delay: autoplay}));
+  }
+
   const [carouselRef, api] = useEmblaCarousel({
     ...opts,
     axis: orientation === "horizontal" ? "x" : "y",

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 // Programs Images
 import teacherPic from "@/public/img/pexels-divinetechygirl-1181534.jpg";
+import RHSpecialist from "@/public/img/pexels-thirdman-5256816.jpg";
 
 // Programs
 const programs = [
@@ -15,6 +16,16 @@ const programs = [
     flexRowDirection: "lg:flex-row",
     bgColor:"bg-gray-500",
   },
+  {
+    ProgramName: "Programa capital humano",
+    ProgramDescription: "Certificaciones para profesionales en la gestión de capital humano",
+    ProgramHrefLink: "./",
+    ProgramPicText: "",
+    programPic: RHSpecialist,
+    flexColDirection: "flex-col-reverse",
+    flexRowDirection: "lg:flex-row-reverse",
+    bgColor:"bg-violet-400",
+  },
 ];
 
 
@@ -22,7 +33,7 @@ const programs = [
 export default function ProgramsCard() {
   return (
         programs.map((program => (
-        <div className={`flex ${program.flexColDirection} ${program.flexRowDirection} md:my-8 rounded w-full`}>
+        <div className={`flex ${program.flexColDirection} ${program.flexRowDirection} my-6 md:my-8 rounded w-full`}>
           <div className={`text-center text-white ${program.bgColor} py-6 px-8 w-full lg:w-1/2`}>
             <h3 className="uppercase py-2 md:py-4">{program.ProgramName}</h3>
             <p className="text-3xl lg:text-3xl font-semibold">{program.ProgramDescription}</p>
