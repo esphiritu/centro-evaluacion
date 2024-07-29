@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect,useContext, createContext } from "react";
 import Link from "next/link";
-import { ModeToggle } from "@/utilities/dark-light-functionality/ModeToggle";
+import { SlimModeToggle } from "@/utilities/dark-light-functionality/SlimModeToggle";
 import { Button } from "@/components/ui/button";
 import { MenuIcon, X } from "lucide-react";
 import { useMediaQuery } from "@/utilities/media-query/use-media-query";
@@ -15,9 +15,9 @@ export default function MobileMenuToggle({links}) {
   const value = {toggleMenu, isOpen, setIsOpen};
   return (
     <>
-      <ModeToggle className="npm">
+      <SlimModeToggle className="npm">
         <span className="sr-only">dark mode</span>
-      </ModeToggle>
+      </SlimModeToggle>
       <Button 
         onClick={toggleMenu} 
         className="flex md:hidden mx-2 z-40 hover:text-teal-800"
