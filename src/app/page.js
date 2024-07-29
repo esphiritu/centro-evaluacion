@@ -10,8 +10,8 @@ import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 export default function Home({ Component, pageProps }) {
   return (
     <>
-      <main className="w-full m-auto">
-        <section style={styles.container} className="px-10 h-screen border-b-[9px]">
+      <main className="w-full pt-19">
+        <section style={styles.container} className="h-screen border-b-[9px] px-10">
           <div className="container mx-auto h-full">
             <div className="
               flex 
@@ -110,20 +110,20 @@ export default function Home({ Component, pageProps }) {
             <p className="text-lg text-baseline ">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
           </div>
           <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-4 py-10 my-5">
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} className="m-auto text-teal-600" /><span className="block my-8">Objetividad y confiabilidad</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} className="m-auto text-teal-600" /><span className="block my-8">Asesoría de expertos</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} className="m-auto text-teal-600" /><span className="block my-8">Calidad asegurada</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} className="m-auto text-teal-600" /><span className="block my-8">Respaldo de ICE México</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Objetividad y confiabilidad</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Asesoría de expertos</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Calidad asegurada</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Respaldo de ICE México</span></li>
           </ul>
         </section>
         <section className="py-10 mb-10">
           
-          <div className="flex flex-col justify-center items-center w-full min-h-[32rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] mx-auto">
+          <div className="flex flex-col justify-center items-center w-full min-h-[32rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] border-t-[9px] mx-auto">
             <div className="w-full md:w-3/5 px-10 ">
-              <h5 className="text-3xl md:text-4xl text-center text-teal-100 font-bold py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</h5>
-              <p className="text-lg md:text-2xl text-center text-white py-3">Nuestro equipo de evaluadores posee un profundo conocimiento y experiencia</p>
+              <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>
+              <p className="text-lg md:text-2xl text-center text-white py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
-            <Link href="./proceso" className="text-xl font-bold transition-all duration-300 ease-in-out rounded-sm bg-yellow-300 hover:bg-yellow-400 px-8 py-3 mt-6">Comienza ahora</Link>
+            <Link href="./proceso" className="text-xl dark:text-gray-900 font-bold transition-all duration-300 ease-in-out rounded-sm bg-yellow-300 hover:bg-yellow-400 px-8 py-3 mt-6">Comienza ahora</Link>
             <p className="text-lg text-white py-3">¡Obten 20% de descuento!</p>
           </div>
         </section>
@@ -137,19 +137,19 @@ const benefits = [
   {
     title: "Encuentra mejores oportunidades",
     description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
-    icon: <Key size={84} className="m-auto text-teal-600 bg-gray-50 rounded-full p-5 shadow-lg" />,
+    icon: <Key size={84} strokeWidth={1.25} className="m-auto text-teal-600 bg-gray-50 rounded-full p-4 shadow-lg" />,
     id: "emo",
   },
   {
     title: "Accede a mejores salarios",
     description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
-    icon: <CircleDollarSign size={84} className="m-auto text-teal-600 bg-gray-50 rounded-full p-5 shadow-lg" />,
+    icon: <CircleDollarSign size={84} strokeWidth={1.25} className="m-auto text-teal-600 bg-gray-50 rounded-full p-4 shadow-lg" />,
     id: "ams",
   },
   {
     title: "Mejora tus condiciones laborales",
     description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-    icon: <HandshakeIcon size={84} className="m-auto text-teal-600 bg-gray-50 rounded-full p-5 shadow-lg" />,
+    icon: <HandshakeIcon size={84} strokeWidth={1.25} className="m-auto text-teal-600 bg-gray-50 rounded-full p-4 shadow-lg" />,
     id: "mcl",
   },
   // {

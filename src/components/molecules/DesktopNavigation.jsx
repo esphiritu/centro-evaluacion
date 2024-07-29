@@ -27,6 +27,8 @@ export default function DesktopNavigation({ links }) {
                   md:text-lg 
                   text-gray-700 
                   hover:text-teal-700
+                  dark:text-gray-400
+                  dark:hover:text-teal-700
                   font-semibold 
                   rounded-md 
                   white 

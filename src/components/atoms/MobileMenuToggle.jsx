@@ -30,7 +30,7 @@ export default function MobileMenuToggle({links}) {
                     w-[1.3rem] 
                     rotate-0 
                     scale-100 
-                    transition-all 
+                    transition-transform 
                     dark:rotate-90 
                     dark:scale-100"></X>
                   : <MenuIcon className="
@@ -38,7 +38,7 @@ export default function MobileMenuToggle({links}) {
                     w-[1.3rem] 
                     rotate-0 
                     scale-100 
-                    transition-all 
+                    transition-transform 
                     dark:rotate-0 
                     dark:scale-100"></MenuIcon>
                 } 
@@ -64,7 +64,7 @@ export function MobileMenu({navigation}) {
   }, [isDesktop, isOpen]);
 
   return (
-    <ul className={isDesktop ? "hidden" : "mobile-menu absolute z-20 left-0 top-0 w-full min-h-screen bg-slate-200 dark:bg-slate-600 p-10 disabled:scroll"}>
+    <ul className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-200 dark:bg-slate-600 p-10 disabled:scroll"}>
       {/* Render mobile navigation links */}
       {navigation.map((link) => (
         <li key={link.href}>

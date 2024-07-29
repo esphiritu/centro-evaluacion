@@ -8,13 +8,13 @@ import RHSpecialist from "@/public/img/pexels-thirdman-5256816.jpg";
 const programs = [
   {
     ProgramName: "Programa en educación",
-    ProgramDescription: "Ofrecemos certificaciones en el área de la enseñanza, desde opciones iniciales hasta a quienes ya tienen una amplia trayectoria",
+    ProgramDescription: "Certificaciones en el área de la enseñanza, para quien tienen una amplia trayectoria",
     ProgramHrefLink: "./",
     ProgramPicText: "Maestra frente al pizarrón en una clase",
     programPic: teacherPic,
     flexColDirection: "flex-col-reverse",
     flexRowDirection: "lg:flex-row",
-    bgColor:"bg-gray-500",
+    bgColor:"bg-gray-700",
   },
   {
     ProgramName: "Programa capital humano",
@@ -24,7 +24,7 @@ const programs = [
     programPic: RHSpecialist,
     flexColDirection: "flex-col-reverse",
     flexRowDirection: "lg:flex-row-reverse",
-    bgColor:"bg-violet-400",
+    bgColor:"bg-violet-600",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function ProgramsCard() {
   return (
         programs.map((program => (
         <div className={`flex ${program.flexColDirection} ${program.flexRowDirection} my-6 md:my-8 rounded w-full`}>
-          <div className={`text-center text-white ${program.bgColor} py-6 px-8 w-full lg:w-1/2`}>
+          <div className={`relative text-center text-white ${program.bgColor} py-6 px-8 w-full lg:w-1/2`}>
             <h3 className="uppercase py-2 md:py-4">{program.ProgramName}</h3>
             <p className="text-3xl lg:text-3xl font-semibold">{program.ProgramDescription}</p>
             <ul className="text-left p-3 mt-3">
@@ -44,7 +44,7 @@ export default function ProgramsCard() {
               <li>Certificado</li>
             </ul>
             <Link 
-              href={program.ProgramHrefLink} className="transition-all duration-300 ease-in-out bg-teal-500 hover:bg-teal-600 px-6 py-3 mx-4 rounded-sm hover:text-white text-base font-bold md:text-lg mt-2 md:mt-6">
+              href={program.ProgramHrefLink} className="static lg:absolute bottom-8 left-1/3 transition-all duration-300 ease-in-out bg-teal-500 hover:bg-teal-600 px-6 py-3 rounded-sm text-gray-800 text-base font-bold md:text-lg text-center">
               Ingresa al programa
             </Link>
           </div>

@@ -1,6 +1,6 @@
 export default function Soluciones() {
     return (
-    <main className=" container w-full">
+    <main className="w-full pt-19">
       <h1 className="text-4xl font-bold py-4">Productos y servicios empresariales</h1>
       <h2 className="text-2xl">Le brindamos servicios personalizados para satisfacer sus necesidades específicas</h2>
       <h3>Su socio en evaluaciones de calidad para garantizar el éxito de su negocio</h3>
