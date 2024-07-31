@@ -149,12 +149,12 @@ export default function Certificaciones(params) {
           <ProgramsCard />
         </section>
       
-        <section className="container w-full bg-[#ecfdfc] dark:bg-slate-900 rounded-md py-10 my-10 px-20">
-          <Image src={diagnostico} width={180} height={180} alt="icon for" className="max-w-auto" />
-          <h1 className=" text-3xl md:text-4xl font-bold py-5">Inicia una evaluación diagnóstica</h1>
-          <p className="text-lg py-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20">
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
+          <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una evaluación diagnóstica</h1>
+          <p className="text-xl pt-4 pb-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
           <Link href="./asesor" className="text-lg text-teal-600 hover:underline">
-            <span className="py-3 px-3 text-md">Agenda una evaluación</span>
+            <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
       
