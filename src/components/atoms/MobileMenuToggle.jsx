@@ -61,7 +61,7 @@ export function MobileMenu({navigation}) {
     if (isDesktop && isOpen) {
       toggleMenu();
     }
-  }, [isDesktop, isOpen]);
+  }, [isDesktop, isOpen, toggleMenu]);
 
   return (
     <ul className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-200 dark:bg-slate-600 p-10 disabled:scroll"}>

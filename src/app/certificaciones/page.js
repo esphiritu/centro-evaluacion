@@ -70,11 +70,10 @@ export default function Certificaciones(params) {
           align: "center",
           loop: true,
         }}
-          autoplay={2600}
+          autoplay={2900}
         >
-          <CarouselContent className="p-0 md:p-5">
+          <CarouselContent className="p-0 md:p-5 h-[38rem]">
             <CarouselItem className="bg-gray-100 dark:bg-slate-900 rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-              {/* <Image src={webinarIcon} width={96} height={96} alt="icon for webinar" /> */}
               <p className="text-xl md:text-2xl text-left">Estás invitad@ al <span className="font-bold">webinar gratuito</span></p>
               <h1 className="font-bold text-3xl md:text-5xl text-[#7369E2] text-center mt-10">Estrategias para aumentar productividad</h1>
               <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
@@ -115,7 +114,7 @@ export default function Certificaciones(params) {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-        <section className="container py-5">
+        <section className="container py-5 h-[38rem]">
           <h1 className="text-2xl md:text-4xl font-bold text-left py-10">Estándares de competencia laboral</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
             {estandares.map((estandar => {

@@ -52,43 +52,45 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
         </section>
-        <section className="container py-10">
-          <h2 className="scroll-m-20 text-4xl md:text-5xl font-extrabold tracking-tight pt-3 pb-6 mt-10 text-center">Beneficios de la certificación</h2>
-          <p className="text-2xl text-muted-foreground text-center pb-2 mb-6">Las certificaciones permiten demostrar su habilidad para realizar tareas y funciones específicas a un alto nivel de rendimiento</p>
-          <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline">
-            {benefits.map((benefit => {
-              return (
-                <div className="w-full lg:w-1/4 py-8 px-5 mx-2 md:mx-auto" key={benefit.id}>
-                  {benefit.icon}
-                  <h3 className="text-2xl font-bold text-center mt-8">{benefit.title}</h3>
-                  <p className="text-lg text-muted-foreground text-center">{benefit.description}</p>
-                </div>
-              )
-            }
-            ))
-            }
+        <section className="container h-[46rem]">
+          <div className="flex flex-col items-center justify-center h-full">
+            <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center">Beneficios de la certificación</h2>
+            <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline">
+              {benefits.map((benefit => {
+                return (
+                  <div className="w-full lg:w-1/3 py-8 px-5 mx-2 md:mx-auto" key={benefit.id}>
+                    {benefit.icon}
+                    <h3 className="text-2xl font-bold text-left mt-8">{benefit.title}</h3>
+                    <p className="text-lg text-muted-foreground text-left">{benefit.description}</p>
+                  </div>
+                )
+              }
+              ))
+              }
+            </div>
           </div>
         </section>
         <section className="container py-10 my-10">
-          <h1 className="text-4xl md:text-5xl text-center font-bold py-8 mb-8">Conoce la ruta para la certificación</h1>
+          <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mb-2">Conoce la ruta para la certificación</h1>
+          <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
           <div className="flex flex-col w-full md:w-2/3 mx-auto">
             <div className="w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-yellow-500 rounded-2xl max-w-[260px]">
+              <div className="bg-yellow-500 rounded-2xl max-w-[220px]">
                 <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </div>
               <h3 className="text-3xl px-10 text-center md:text-left py-3">1. Identifica el estándar de competencia</h3></div>
             <div className="w-full flex flex-col md:flex-row items-center mb-10">
-              <span className="bg-red-500 rounded-2xl max-w-[260px]">
+              <span className="bg-red-500 rounded-2xl max-w-[220px]">
                 <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </span>
               <h3 className="text-3xl px-10 text-center md:text-left py-3">2. Toma una evaluación diagnóstica</h3></div>
             <div className="w-full flex flex-col md:flex-row items-center mb-10">
-              <span className="bg-green-600 rounded-2xl max-w-[260px]">
+              <span className="bg-green-600 rounded-2xl max-w-[220px]">
                 <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </span>
               <h3 className="text-3xl px-10 text-center md:text-left py-3">3. Realiza tu evaluación en un Centro Evaluador</h3></div>
             <div className="w-full flex flex-col md:flex-row items-center mb-10">
-              <span className="bg-gray-600 rounded-2xl max-w-[260px]">
+              <span className="bg-gray-600 rounded-2xl max-w-[220px]">
                 <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </span>
               <h3 className="text-3xl px-10 text-center md:text-left py-3">4. Consulta tus resultados</h3></div>
@@ -99,12 +101,12 @@ export default function Home({ Component, pageProps }) {
           <h2 className="w-1/3 scroll-m-20 text-center text-3xl font-extrabold tracking-tight lg:text-4xl py-10 my-5">Casos de éxito</h2>
 
           <div className="w-2/3">
-            <p className="text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you’re holding a marker, and making ideas happen. I can't imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in today’s world when everything is remote. It makes for really organic communication.</p>
+            <p className="text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
             <p className="">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
           </div>
         </section>
-        <section className="container flex flex-col lg:flex-row py-10 my-10">
-          <div className="justify-center items-center w-full lg:w-1/2 pr-5">
+        <section className="container h-[46rem] flex flex-col lg:flex-row py-10 my-10">
+          <div className="justify-center items-center  content-center w-full lg:w-1/2 pr-5">
             <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-4">Reconocimiento nacional</p>
             <p className="text-lg text-baseline ">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
@@ -137,19 +139,19 @@ const benefits = [
   {
     title: "Encuentra mejores oportunidades",
     description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
-    icon: <Key size={84} strokeWidth={1.25} className="m-auto text-teal-600 bg-gray-50 rounded-full p-4 shadow-lg" />,
+    icon: <Key size={84} strokeWidth={1.25} className="text-teal-600 rounded-full p-4" />,
     id: "emo",
   },
   {
     title: "Accede a mejores salarios",
     description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
-    icon: <CircleDollarSign size={84} strokeWidth={1.25} className="m-auto text-teal-600 bg-gray-50 rounded-full p-4 shadow-lg" />,
+    icon: <CircleDollarSign size={84} strokeWidth={1.25} className="text-teal-600 rounded-full p-4" />,
     id: "ams",
   },
   {
     title: "Mejora tus condiciones laborales",
     description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-    icon: <HandshakeIcon size={84} strokeWidth={1.25} className="m-auto text-teal-600 bg-gray-50 rounded-full p-4 shadow-lg" />,
+    icon: <HandshakeIcon size={84} strokeWidth={1.25} className="text-teal-600 rounded-full p-4" />,
     id: "mcl",
   },
   // {
