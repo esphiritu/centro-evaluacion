@@ -2,12 +2,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { CircleDollarSign, HandshakeIcon, Key, LockKeyhole, ShieldCheck, Headset, Award, CalendarDays, Clock } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import resultados from "@/public/img/consulta-resultados.svg";
 import estandar from "@/public/img/estandar-de-competencia.svg";
 import evaluacion from "@/public/img/presenta-evaluacion.svg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
-
+import logoRedConocer from "@/public/img/logotipo-redConocer.png";
+import logoICEM from "@/public/img/Logo-ICEM.jpg";
 
 export default function Home({ Component, pageProps }) {
   return (
@@ -51,9 +59,11 @@ export default function Home({ Component, pageProps }) {
                   Comienza con un asesor
                 </Link>
               </div>
+
             </div>
           </div>
         </section>
+
         <section className="container h-auto md:h-[46rem]">
           <div className="flex flex-col items-center justify-center h-full">
             <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center">Beneficios de la certificación</h2>
@@ -72,6 +82,7 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
         </section>
+
         <section className="container py-10 my-10">
           <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mb-2">Conoce la ruta para la certificación</h1>
           <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
@@ -84,21 +95,25 @@ export default function Home({ Component, pageProps }) {
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Identifica el estándar de competencia
                 </h3>
-                <p className="text-xl">Cada estándar de competencia tiene un código único, con el formato EC-XXX. <Link href="./" className="text-lg text-teal-600 hover:underline">
-                  <span className="py-3 text-xl">Más información</span>
-                </Link></p>
-
+                <p className="text-xl">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
+                <Link href="./" className="text-lg text-teal-600 hover:underline">
+                  <span className="py-3 text-xl"> Más información</span>
+                </Link>
               </div>
             </div>
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
               <div className="bg-transparent group-hover:bg-red-500  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
                 <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </div>
-              <div>
-                <h3 className="text-3xl px-10 text-center md:text-left font-bold py-3">
+              <div className="px-10">
+                <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Toma una evaluación diagnóstica
                 </h3>
-                <p className="text-xl px-10">Cada estándar de competencia tiene un código único, con el formato EC-XXX</p>
+                <p className="text-xl">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.
+                </p>
+                <Link href="./" className="text-lg text-teal-600 hover:underline">
+                  <span className="py-3 text-xl"> Más información</span>
+                </Link>
               </div>
             </div>
 
@@ -106,11 +121,15 @@ export default function Home({ Component, pageProps }) {
               <div className="bg-transparent group-hover:bg-green-600  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
                 <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </div>
-              <div>
-                <h3 className="text-3xl px-10 text-center md:text-left font-bold py-3">
+              <div className="px-10">
+                <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Realiza tu evaluación en un Centro Evaluador
                 </h3>
-                <p className="text-xl px-10">Cada estándar de competencia tiene un código único, con el formato EC-XXX</p>
+                <p className="text-xl">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".
+                </p>
+                <Link href="./" className="text-lg text-teal-600 hover:underline">
+                  <span className="py-3 text-xl"> Más información</span>
+                </Link>
               </div>
             </div>
 
@@ -118,27 +137,55 @@ export default function Home({ Component, pageProps }) {
               <div className="bg-transparent group-hover:bg-gray-600  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
                 <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto px-10" />
               </div>
-              <div>
-                <h3 className="text-3xl px-10 text-center md:text-left font-bold py-3">
+              <div className="px-10">
+                <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Consulta tus resultados
                 </h3>
-                <p className="text-xl px-10">Cada estándar de competencia tiene un código único, con el formato EC-XXX</p>
+                <p className="text-xl">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.
+                </p>
+                <Link href="./" className="text-lg text-teal-600 hover:underline">
+                  <span className="py-3 text-xl"> Más información</span>
+                </Link>
               </div>
             </div>
 
           </div>
         </section>
-        <section className="container flex flex-col lg:flex-row rounded-md bg-[#ecfdfc] dark:bg-slate-900 py-10 my-10">
-          <div className="w-full lg:w-1/3 scroll-m-20 ">
-            <p className="text-center">TESTIMONIALES</p>
-            <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-4xl my-5">Casos de éxito</h2>
-            <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
-          </div>
 
-          <div className="w-full lg:w-2/3">
-            <p className="text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
-            <p className="">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
-          </div>
+        <section className="container w-full py-10 my-10">
+          <p>Aquí se presenta una galería de fotos como evidencia de los eventos que se han realizado</p>
+        </section>
+
+        <section className="container py-10 my-10">
+          <p className="text-center text-slate-700 text-lg uppercase">Testimoniales</p>
+          <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
+          <Carousel opts={{
+            align: "center",
+            loop: true,
+          }}
+            autoplay={2900}
+          >
+            <CarouselContent className="p-0 md:p-5 h-auto md:h-[24rem]">
+              <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
+                <div className="w-full scroll-m-20 ">
+                  <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
+                </div>
+
+                <div className="w-1/2 md:w-2/3 mx-auto">
+                  <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
+                  <p className="">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
+              </CarouselItem>
+              <CarouselItem>
+                <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </section>
         <section className="container h-[46rem] flex flex-col lg:flex-row py-10 my-10">
           <div className="justify-center items-center  content-center w-full lg:w-1/2 pr-5">
@@ -150,11 +197,18 @@ export default function Home({ Component, pageProps }) {
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Objetividad y confiabilidad</span></li>
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Asesoría de expertos</span></li>
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Calidad asegurada</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Respaldo de ICE México</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Respaldo de OC más importante</span></li>
           </ul>
         </section>
-        <section className="py-10 mb-10">
-
+        <div className="bg-stone-100 py-10 h-auto md:h-[30rem]">
+          <p className="text-lg text-slate-700 text-center py-5 uppercase">Alianzas para crear valor</p>
+          <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
+          <div className="flex flex-col md:flex-row items-center justify-center mt-10">
+            <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />
+            <Image src={logoICEM} alt="logotipo de ICE México" width={190} className="mx-5" />
+          </div>
+        </div>
+        <section className="mb-10">
           <div className="flex flex-col justify-center items-center w-full min-h-[32rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] border-t-[9px] mx-auto">
             <div className="w-full md:w-3/5 px-10 ">
               <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>

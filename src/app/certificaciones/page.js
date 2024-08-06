@@ -8,8 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay"
-import webinarIcon from "@/public/img/webinar-meetings.svg";
 import { CalendarDays, Clock } from "lucide-react";
 
 
@@ -30,9 +28,20 @@ import {
 } from "@/components/ui/accordion"
 import { MessagesSquare } from "lucide-react";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 // Custom components
 import ProgramsCard from "@/components/molecules/ProgramsCard";
+import estandarIcon from "@/public/img/estandar-de-competencia.svg";
 
 // Data
 const estandares = [
@@ -43,6 +52,13 @@ const estandares = [
     content: "Impartición de cursos de formación de capital humano de manera presencial grupal",
     snc: "Tres",
     borColor: "border-t-purple-400",
+    comite: "Asociación Mexicana de Capacitación de Personal y Empresarial, A.C",
+    sector: "Servicios educativos",
+    ocupaciones: "Capacitador, facilitador, instructor",
+    duracion: "1 hora en gabinete y 2 horas en campo, totalizando 3 horas",
+    proposito: "El estándar de competencia impartición de cursos de formación del capital humano de manera presencial y grupal contempla las funciones sustantivas de preparar, conducir y evaluar cursos de capacitación. Preparar la sesión mediante la planeación de la sesión y la comprobación de la existencia y el funcionamiento de los recursos requeridos para la sesión. Conducir la sesión realizando el encuadre, desarrollo y cierre, empleando técnicas instruccionales y grupales que faciliten el proceso de aprendizaje. Evaluar el aprendizaje antes, durante y al final del curso, considerando la satisfacción de los participantes/capacitandos",
+    requisitos: "Ninguno",
+    icon: estandarIcon,
   },
   {
     id: "EC0366",
@@ -51,6 +67,13 @@ const estandares = [
     content: "Desarrollo de cursos de formación en línea",
     snc: "Tres",
     borColor: "border-t-blue-400",
+    comite: "Comité de Gestión por Competencias de la Formación para el Trabajo",
+    sector: "Servicios educativos",
+    ocupaciones: "Instructor y capacitador",
+    duracion: "6 horas",
+    proposito: "Servir como referente para la evaluación y certificación de las personas que se desempeñan como desarrolladores de cursos para formación en línea.",
+    requisitos: "Ninguno",
+    icon: estandarIcon,
   },
   {
     id: "EC0301",
@@ -58,7 +81,14 @@ const estandares = [
     description: "Servicios educativos",
     content: "Diseño de cursos de formación del capital humano de manera presencial grupal, sus instrumentos de evaluación y manuales del curso",
     snc: "Tres",
-    borColor: "border-t-orange-400"
+    borColor: "border-t-orange-400",
+    comite: "Asociación Mexicana de Capacitación de Personal y Empresarial. AMECAP, A.C. ",
+    sector: "Servicios educativos",
+    ocupaciones: "Capacitador, facilitador, instructor",
+    duracion: "2 horas en gabinete y 1 hora en campo, totalizando 3 horas",
+    proposito: "Servir como referente para la evaluación y certificación de las personas que diseñan cursos de formación del capital humano de manera presencial grupal, diseñando cursos de capacitación presenciales, diseñando instrumentos para la evaluación de cursos de capacitación presenciales y desarrollando manuales del curso de capacitación presenciales",
+    requisitos: "Ninguno",
+    icon: estandarIcon,
   },
 ]
 
@@ -77,7 +107,7 @@ export default function Certificaciones(params) {
               <p className="text-xl md:text-2xl text-left">Estás invitad@ al <span className="font-bold">webinar gratuito</span></p>
               <h1 className="font-bold text-3xl md:text-5xl text-[#7369E2] text-center mt-10">Estrategias para aumentar productividad</h1>
               <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
-      
+
               {/* Temario del evento */}
               <div className="text-xl">
                 <p className="">Aprenderás:</p>
@@ -85,7 +115,7 @@ export default function Certificaciones(params) {
                   <li>Buen manejo del estrés</li>
                   <li>Mejorar la comunicación</li>
                 </ol>
-      
+
               </div>
               <div className="flex flex-col lg:flex-row md:justify-around mt-8 items-center md:items-stretch">
                 {/* Fecha y hora del evento */}
@@ -128,11 +158,32 @@ export default function Certificaciones(params) {
                     <p className="text-lg">{estandar.content}</p>
                   </CardContent>
                   <CardFooter>
-                    <div className="flex justify-between w-full">
+                    <div className="flex justify-between">
                       <p>Nivel en el SNC: {estandar.snc}</p>
-                      <div>
-                        <Link href="./" className="text-teal-600 hover:text-teal-700 hover:underline" title="Ver detalles del estándar de competencia">Ver detalles</Link>
-                      </div>
+                      <Drawer>
+                        <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline">Ver detalles</DrawerTrigger>
+                        <DrawerContent>
+                          <DrawerHeader className="flex">
+                            <Image src={estandar.icon} width={70} height={70} alt="icon for" />
+                            <div className="px-5 content-center">
+                              <DrawerTitle>{estandar.content}</DrawerTitle>
+                              <DrawerDescription>Detalles del estándar de compencia {estandar.title}</DrawerDescription>
+                            </div>
+                          </DrawerHeader>
+                          <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
+                            <p className="py-1"><b>Propósito: </b>{estandar.proposito}</p>
+                            <p className="py-1"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                            <p className="py-1"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
+                            <p className="py-1"><b>Comité desarrollador:</b> {estandar.comite}</p>
+                          </div>
+                          <DrawerFooter>
+
+                            <DrawerClose>
+                              <Button variant="outline">Cerrar</Button>
+                            </DrawerClose>
+                          </DrawerFooter>
+                        </DrawerContent>
+                      </Drawer>
                     </div>
                   </CardFooter>
                 </Card>
@@ -141,14 +192,15 @@ export default function Certificaciones(params) {
             ))
             }
           </div>
+
         </section>
-      
+
         <section className="container w-full py-10 my-10">
           <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3">Obtenga un certificado de competencia laboral en su área</h2>
           <p className="text-lg ">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
           <ProgramsCard />
         </section>
-      
+
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
           <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una evaluación diagnóstica</h1>
@@ -157,7 +209,7 @@ export default function Certificaciones(params) {
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
-      
+
         <section className="container mx-auto mb-15 py-10">
           <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
           <Accordion type="single" collapsible className="w-full md:w-1/2 m-auto ">
@@ -181,7 +233,7 @@ export default function Certificaciones(params) {
             </AccordionItem>
           </Accordion>
         </section>
-      
+
         <footer className="my-10 py-10">
           <h3 className="text-4xl font-bold py-4">Centro de evaluación</h3>
           <div className="flex flex-col lg:flex-row justify-between">
