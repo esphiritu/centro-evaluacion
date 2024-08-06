@@ -45,7 +45,7 @@ export default function ProgramsCard() {
               <li>Certificado</li>
             </ul>
             <Link 
-              href={program.ProgramHrefLink} className="static lg:absolute bottom-8 left-1/3 transition-all duration-300 ease-in-out bg-teal-500 hover:bg-teal-600 px-6 py-3 rounded-sm text-gray-800 text-base font-bold md:text-lg text-center">
+              href={program.ProgramHrefLink} className="static lg:absolute bottom-8 left-1/3 transition-all duration-300 ease-in-out bg-yellow-300 hover:bg-yellow-400 px-6 py-3 rounded-sm text-gray-800 text-base font-bold md:text-lg text-center">
               Ingresa al programa
             </Link>
           </div>

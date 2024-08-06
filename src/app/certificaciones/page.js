@@ -205,7 +205,7 @@ export default function Certificaciones(params) {
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
           <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una evaluación diagnóstica</h1>
           <p className="text-xl pt-4 pb-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg text-teal-600 hover:underline">
+          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-500 hover:bg-teal-600 px-6 py-4 rounded-sm">
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>

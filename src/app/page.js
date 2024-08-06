@@ -16,6 +16,11 @@ import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
+import group from "@/public/img/gallery-group.jpg";
+import karen from "@/public/img/gallery-karen.jpg";
+import session from "@/public/img/gallery-live-session.jpg";
+import participants from "@/public/img/gallery-participants.jpg";
+import staged from "@/public/img/gallery-staged.jpg";
 
 export default function Home({ Component, pageProps }) {
   return (
@@ -81,6 +86,64 @@ export default function Home({ Component, pageProps }) {
               }
             </div>
           </div>
+        </section>
+
+        <section className="container w-full py-10 my-10">
+        <div className=" w-full">
+            <h1 className="text-center text-4xl md:text-5xl font-bold py-6">Eventos de capacitación. <span className="text-teal-600">Mejores momentos</span></h1>
+            <p className="text-center text-2xl  font-light text-slate-600 py-4 mb-10">Participan escuelas, universidades y gobiernos</p>
+          </div>
+          <Carousel>
+            <CarouselContent className="relative w-full flex lg:grid grid-cols-4 gap-4 -ml-4">
+              <CarouselItem className="h-auto lg:col-span-2 lg:row-span-2">
+                <Image
+                  src={group}
+                  alt="Image showing a group of people"
+                  quality={75}
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                  className="static inset-0 w-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="relative">
+              <Image
+                  src={karen}
+                  alt="Image showing Karen Campos"
+                  quality={75}
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
+                  className="lg:absolute inset-0 w-full h-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="relative">
+              <Image
+                  src={session}
+                  alt="Image showing a group of people"
+                  quality={75}
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
+                  className="static lg:absolute inset-0 w-full h-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="relative">
+              <Image
+                  src={participants}
+                  alt="Image showing a group of people"
+                  quality={75}
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
+                  className="static lg:absolute inset-0 w-full h-full object-cover"
+                />
+              </CarouselItem>
+              <CarouselItem className="relative">
+              <Image
+                  src={staged}
+                  alt="Image showing a group of people"
+                  quality={75}
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
+                  className="static lg:absolute inset-0 w-full h-full object-cover"
+                />
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="lg:hidden" />
+            <CarouselNext className="lg:hidden" />
+          </Carousel>
         </section>
 
         <section className="container py-10 my-10">
@@ -150,10 +213,6 @@ export default function Home({ Component, pageProps }) {
             </div>
 
           </div>
-        </section>
-
-        <section className="container w-full py-10 my-10">
-          <p>Aquí se presenta una galería de fotos como evidencia de los eventos que se han realizado</p>
         </section>
 
         <section className="container py-10 my-10">
