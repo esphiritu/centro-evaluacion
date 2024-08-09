@@ -1,7 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CircleDollarSign, HandshakeIcon, Key, LockKeyhole, ShieldCheck, Headset, Award, CalendarDays, Clock } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { 
+  CircleDollarSign, 
+  HandshakeIcon, 
+  Key, 
+  LockKeyhole, 
+  ShieldCheck, 
+  Headset, 
+  Award, 
+} from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -33,7 +40,7 @@ export default function Home({ Component, pageProps }) {
               flex-col
               justify-end
               md:justify-center
-              md:items-center 
+              md:items-center
               gap-y-7 
               h-full">
               <h1 className="
@@ -89,8 +96,10 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <section className="container w-full py-10 my-10">
-        <div className=" w-full">
-            <h1 className="text-center text-4xl md:text-5xl font-bold py-6">Eventos de capacitación. <span className="text-teal-600">Mejores momentos</span></h1>
+          <div className=" w-full">
+            <h1 className="text-center text-4xl md:text-5xl font-bold py-6">
+              Eventos de capacitación. <span className="text-teal-600">Mejores momentos</span>
+            </h1>
             <p className="text-center text-2xl  font-light text-slate-600 py-4 mb-10">Participan escuelas, universidades y gobiernos</p>
           </div>
           <Carousel>
@@ -105,7 +114,7 @@ export default function Home({ Component, pageProps }) {
                 />
               </CarouselItem>
               <CarouselItem className="relative">
-              <Image
+                <Image
                   src={karen}
                   alt="Image showing Karen Campos"
                   quality={75}
@@ -114,7 +123,7 @@ export default function Home({ Component, pageProps }) {
                 />
               </CarouselItem>
               <CarouselItem className="relative">
-              <Image
+                <Image
                   src={session}
                   alt="Image showing a group of people"
                   quality={75}
@@ -123,7 +132,7 @@ export default function Home({ Component, pageProps }) {
                 />
               </CarouselItem>
               <CarouselItem className="relative">
-              <Image
+                <Image
                   src={participants}
                   alt="Image showing a group of people"
                   quality={75}
@@ -132,7 +141,7 @@ export default function Home({ Component, pageProps }) {
                 />
               </CarouselItem>
               <CarouselItem className="relative">
-              <Image
+                <Image
                   src={staged}
                   alt="Image showing a group of people"
                   quality={75}
@@ -151,8 +160,8 @@ export default function Home({ Component, pageProps }) {
           <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
           <div className="flex flex-col w-full md:w-2/3 mx-auto">
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-yellow-500  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
-                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto px-10" />
+              <div className="bg-transparent group-hover:bg-yellow-500  transition-colors ease-linear delay-100 rounded-full max-w-32">
+                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
@@ -165,8 +174,8 @@ export default function Home({ Component, pageProps }) {
               </div>
             </div>
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-red-500  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
-                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto px-10" />
+              <div className="bg-transparent group-hover:bg-red-500 transition-in-out ease-in-out delay-100 rounded-full max-w-32">
+                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
@@ -181,8 +190,8 @@ export default function Home({ Component, pageProps }) {
             </div>
 
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-green-600  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
-                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto px-10" />
+              <div className="bg-transparent group-hover:bg-green-600  transition-colors ease-in-out delay-100 rounded-full max-w-32">
+                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
@@ -197,8 +206,8 @@ export default function Home({ Component, pageProps }) {
             </div>
 
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-gray-600  transition-colors ease-linear delay-150 rounded-2xl max-w-[220px]">
-                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto px-10" />
+              <div className="bg-transparent group-hover:bg-gray-600  transition-colors ease-linear delay-100 rounded-full max-w-32">
+                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">

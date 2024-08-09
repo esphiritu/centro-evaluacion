@@ -29,7 +29,7 @@ export function SlimModeToggle() {
       <Button 
         variant="ghost" 
         size="icon" 
-        className="md:mr-10 hover:text-teal-700 hover:cursor-pointer" 
+        className="md:mr-10 hover:text-teal-700 hover:cursor-pointer rounded-full" 
         onClick={() => setTheme('light')}>
         <SunIcon />
       </Button>

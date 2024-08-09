@@ -13,13 +13,6 @@ export default function HybridHeader () {
       alt: "Some alternative text for  accesibility",
     },
     {
-      text: "Alineaciones y talleres",
-      href: "/explora",
-      title:
-        "Features in the medical sector",
-      alt: "For sighted users to preview content available behind a link.",
-    },
-    {
       text: "Soluciones empresariales",
       href: "/soluciones",
       title:
@@ -27,8 +20,15 @@ export default function HybridHeader () {
       alt: "Some alternative text for  accesibility",
     },
     {
-      text: "Socios",
-      href: "/socios",
+      text: "Cursos",
+      href: "/explora",
+      title:
+        "Features in the medical sector",
+      alt: "For sighted users to preview content available behind a link.",
+    },
+    {
+      text: "Eventos",
+      href: "/eventos",
       title:
         "Typically displayed as a progress bar.",
       alt: "Some alternative text for  accesibility",

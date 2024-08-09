@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect,useContext, createContext } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { SlimModeToggle } from "@/utilities/dark-light-functionality/SlimModeToggle";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,7 @@ export default function MobileMenuToggle({links}) {
       </SlimModeToggle>
       <Button 
         onClick={toggleMenu} 
-        className="flex md:hidden mx-2 z-40 hover:text-teal-800"
+        className="flex md:hidden mx-2 z-40 hover:text-teal-800 rounded-full"
         variant="ghost" 
         size="icon"
         >
@@ -64,7 +65,14 @@ export function MobileMenu({navigation}) {
   }, [isDesktop, isOpen, toggleMenu]);
 
   return (
-    <ul className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-200 dark:bg-slate-600 p-10 disabled:scroll"}>
+    <motion.ul 
+      className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-200 dark:bg-slate-600 p-10 disabled:scroll"}
+      initial={{ x: '200vw' }}
+      animate={{ x: 0 }}
+      transition={{type: 'tween'}}
+      whileInView={{ opacity: 1 }}
+      
+    >
       {/* Render mobile navigation links */}
       {navigation.map((link) => (
         <li key={link.href}>
@@ -97,6 +105,6 @@ export function MobileMenu({navigation}) {
         )
       )
     }
-    </ul>
+    </motion.ul>
   );
 }
