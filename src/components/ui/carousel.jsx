@@ -148,7 +148,7 @@ const CarouselItem = React.forwardRef(({ className, ...props }, ref) => {
       aria-roledescription="slide"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "pl-2 lg:pl-4" : "pt-2 lg:pt-4 ",
         className
       )}
       {...props} />)
@@ -165,7 +165,7 @@ const CarouselPrevious = React.forwardRef(({ className, variant = "outline", siz
       variant={variant}
       size={size}
       className={cn("absolute  h-9 w-9 rounded-full shadow-md hover:text-teal-600 bg-white/80 dark:bg-gray-700 hover:dark:bg-gray-800", orientation === "horizontal"
-        ? "left-3 top-1/2 -translate-y-1/2"
+        ? "left-0 lg:left-3 top-1/2 -translate-y-1/2"
         : "-top-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
@@ -186,7 +186,7 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
       variant={variant}
       size={size}
       className={cn("absolute h-9 w-9 rounded-full shadow-md hover:text-teal-700 bg-white/80 dark:bg-gray-700 hover:dark:bg-gray-800", orientation === "horizontal"
-        ? "right-6 top-1/2 -translate-y-1/2"
+        ? "right-2 lg:right-6 top-1/2 -translate-y-1/2"
         : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollNext}
       onClick={scrollNext}

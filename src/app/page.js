@@ -113,7 +113,7 @@ export default function Home({ Component, pageProps }) {
                   className="static inset-0 w-full object-cover"
                 />
               </CarouselItem>
-              <CarouselItem className="relative">
+              <CarouselItem className="relative pl-4">
                 <Image
                   src={karen}
                   alt="Image showing Karen Campos"
@@ -122,7 +122,7 @@ export default function Home({ Component, pageProps }) {
                   className="lg:absolute inset-0 w-full h-full object-cover"
                 />
               </CarouselItem>
-              <CarouselItem className="relative">
+              <CarouselItem className="relative pl-4">
                 <Image
                   src={session}
                   alt="Image showing a group of people"
@@ -131,7 +131,7 @@ export default function Home({ Component, pageProps }) {
                   className="static lg:absolute inset-0 w-full h-full object-cover"
                 />
               </CarouselItem>
-              <CarouselItem className="relative">
+              <CarouselItem className="relative pl-4">
                 <Image
                   src={participants}
                   alt="Image showing a group of people"
@@ -140,7 +140,7 @@ export default function Home({ Component, pageProps }) {
                   className="static lg:absolute inset-0 w-full h-full object-cover"
                 />
               </CarouselItem>
-              <CarouselItem className="relative">
+              <CarouselItem className="relative pl-4">
                 <Image
                   src={staged}
                   alt="Image showing a group of people"
@@ -160,28 +160,28 @@ export default function Home({ Component, pageProps }) {
           <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
           <div className="flex flex-col w-full md:w-2/3 mx-auto">
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-yellow-500  transition-colors ease-linear delay-100 rounded-full max-w-32">
+              <div className="bg-transparent max-w-32">
                 <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Identifica el estándar de competencia
                 </h3>
-                <p className="text-xl">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
+                <p className="text-xl mb-4">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
                 <Link href="./" className="text-lg text-teal-600 hover:underline">
                   <span className="py-3 text-xl"> Más información</span>
                 </Link>
               </div>
             </div>
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-red-500 transition-in-out ease-in-out delay-100 rounded-full max-w-32">
+              <div className="bg-transparent max-w-32">
                 <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Toma una evaluación diagnóstica
                 </h3>
-                <p className="text-xl">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.
+                <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.
                 </p>
                 <Link href="./" className="text-lg text-teal-600 hover:underline">
                   <span className="py-3 text-xl"> Más información</span>
@@ -190,14 +190,14 @@ export default function Home({ Component, pageProps }) {
             </div>
 
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-green-600  transition-colors ease-in-out delay-100 rounded-full max-w-32">
+              <div className="bg-transparent max-w-32">
                 <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Realiza tu evaluación en un Centro Evaluador
                 </h3>
-                <p className="text-xl">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".
+                <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".
                 </p>
                 <Link href="./" className="text-lg text-teal-600 hover:underline">
                   <span className="py-3 text-xl"> Más información</span>
@@ -206,14 +206,14 @@ export default function Home({ Component, pageProps }) {
             </div>
 
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent group-hover:bg-gray-600  transition-colors ease-linear delay-100 rounded-full max-w-32">
+              <div className="bg-transparent max-w-32">
                 <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
               </div>
               <div className="px-10">
                 <h3 className="text-3xl text-center md:text-left font-bold py-3">
                   Consulta tus resultados
                 </h3>
-                <p className="text-xl">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.
+                <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.
                 </p>
                 <Link href="./" className="text-lg text-teal-600 hover:underline">
                   <span className="py-3 text-xl"> Más información</span>

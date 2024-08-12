@@ -144,12 +144,12 @@ export default function Certificaciones(params) {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-        <section className="container py-5 h-[38rem]">
+        <section className="container py-5 h-auto md:h-[38rem]">
           <h1 className="text-2xl md:text-4xl font-bold text-left py-10">Estándares de competencia laboral</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
             {estandares.map((estandar => {
               return (
-                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor}`}>
+                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor} transition ease-linear hover:scale-[97%] delay-100`}>
                   <CardHeader>
                     <CardTitle>{estandar.title}</CardTitle>
                     <CardDescription>{estandar.description}</CardDescription>
@@ -158,32 +158,33 @@ export default function Certificaciones(params) {
                     <p className="text-lg">{estandar.content}</p>
                   </CardContent>
                   <CardFooter>
-                    <div className="flex justify-between">
+                    <div className="">
                       <p>Nivel en el SNC: {estandar.snc}</p>
-                      <Drawer>
-                        <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline">Ver detalles</DrawerTrigger>
-                        <DrawerContent>
-                          <DrawerHeader className="flex">
-                            <Image src={estandar.icon} width={70} height={70} alt="icon for" />
-                            <div className="px-5 content-center">
-                              <DrawerTitle>{estandar.content}</DrawerTitle>
-                              <DrawerDescription>Detalles del estándar de compencia {estandar.title}</DrawerDescription>
+                      <div>
+                        <Drawer>
+                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline">Ver detalles</DrawerTrigger>
+                          <DrawerContent>
+                            <DrawerHeader className="flex">
+                              <div className="content-center">
+                                <DrawerTitle className="mb-3">{estandar.title} - {estandar.content}</DrawerTitle>
+                                <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
+                              </div>
+                            </DrawerHeader>
+                            <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
+                              <p className="py-1"><b>Propósito: </b>{estandar.proposito}</p>
+                              <p className="py-1"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                              <p className="py-1"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
+                              <p className="py-1"><b>Comité desarrollador:</b> {estandar.comite}</p>
                             </div>
-                          </DrawerHeader>
-                          <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
-                            <p className="py-1"><b>Propósito: </b>{estandar.proposito}</p>
-                            <p className="py-1"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
-                            <p className="py-1"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
-                            <p className="py-1"><b>Comité desarrollador:</b> {estandar.comite}</p>
-                          </div>
-                          <DrawerFooter>
-
-                            <DrawerClose>
-                              <Button variant="outline">Cerrar</Button>
-                            </DrawerClose>
-                          </DrawerFooter>
-                        </DrawerContent>
-                      </Drawer>
+                            <DrawerFooter>
+  
+                              <DrawerClose>
+                                <Button variant="outline">Cerrar</Button>
+                              </DrawerClose>
+                            </DrawerFooter>
+                          </DrawerContent>
+                        </Drawer>
+                      </div>
                     </div>
                   </CardFooter>
                 </Card>
