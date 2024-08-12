@@ -7,7 +7,8 @@ import {
   LockKeyhole, 
   ShieldCheck, 
   Headset, 
-  Award, 
+  Award,
+  ArrowDown, 
 } from "lucide-react";
 import {
   Carousel,
@@ -33,13 +34,12 @@ export default function Home({ Component, pageProps }) {
   return (
     <>
       <main className="w-full pt-19">
-        <section style={styles.container} className="h-screen border-b-[9px] px-10">
-          <div className="container mx-auto h-full">
+        <section style={styles.container} className="relative h-screen border-b-[9px] px-10">
+          <div className="container mx-auto h-full pt-20 md:pt-1">
             <div className="
               flex 
               flex-col
-              justify-end
-              md:justify-center
+              justify-center
               md:items-center
               gap-y-7 
               h-full">
@@ -72,10 +72,13 @@ export default function Home({ Component, pageProps }) {
 
             </div>
           </div>
+          <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
+            <p className="animate-bounce bg-slate-900 rounded-full p-2"><Link href="#benefits" className="text-white"><ArrowDown className="h-8 w-8"/></Link></p>
+          </div>
         </section>
 
         <section className="container h-auto md:h-[46rem]">
-          <div className="flex flex-col items-center justify-center h-full">
+          <div className="flex flex-col items-center justify-center h-full" id="benefits">
             <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center">Beneficios de la certificación</h2>
             <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline">
               {benefits.map((benefit => {
