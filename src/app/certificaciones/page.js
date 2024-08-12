@@ -149,7 +149,7 @@ export default function Certificaciones(params) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
             {estandares.map((estandar => {
               return (
-                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor} transition ease-linear hover:scale-[97%] delay-100`}>
+                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor} transition ease-linear hover:scale-[96%] delay-50`}>
                   <CardHeader>
                     <CardTitle>{estandar.title}</CardTitle>
                     <CardDescription>{estandar.description}</CardDescription>

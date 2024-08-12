@@ -54,15 +54,13 @@ export default function Home({ Component, pageProps }) {
               tracking-tight 
               py-3 
               md:rounded-md 
-              rounded-sm 
-              transition-all 
-              duration-300 
-              ease-in-out 
-              px-3">
+              rounded-sm
+              px-3
+              animate-slideIn">
                 Impulsa tu vida profesional al éxito
               </h1>
-              <p className="text-xl md:text-3xl text-white">Respalda tus conocimientos y experiencia con certificaciones oficiales</p>
-              <div className="flex flex-col md:flex-row mt-1 md:mt-5">
+              <p className="text-xl md:text-3xl text-white animate-fadeIn">Respalda tus conocimientos y experiencia con certificaciones oficiales</p>
+              <div className="flex flex-col md:flex-row mt-1 md:mt-5 animate-fadeIn">
                 <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 px-6 py-3 mx-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
                   Comienza ahora
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline lucide lucide-chevrons-right ml-1 origin-left hover:translate-x-0.5 transition group-hover:translate-x-2"><path d="m6 17 5-5-5-5" /><path d="m13 17 5-5-5-5" /></svg>
