@@ -149,7 +149,7 @@ export default function Certificaciones(params) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
             {estandares.map((estandar => {
               return (
-                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor} transition ease-linear hover:scale-[96%] delay-50`}>
+                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor} transition ease-linear hover:scale-[98%] delay-50`}>
                   <CardHeader>
                     <CardTitle>{estandar.title}</CardTitle>
                     <CardDescription>{estandar.description}</CardDescription>
@@ -166,15 +166,15 @@ export default function Certificaciones(params) {
                           <DrawerContent>
                             <DrawerHeader className="flex">
                               <div className="content-center">
-                                <DrawerTitle className="mb-3">{estandar.title} - {estandar.content}</DrawerTitle>
+                                <DrawerTitle className="mb-2">{estandar.title} - {estandar.content}</DrawerTitle>
                                 <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
                               </div>
                             </DrawerHeader>
                             <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
-                              <p className="py-1"><b>Propósito: </b>{estandar.proposito}</p>
-                              <p className="py-1"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
-                              <p className="py-1"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
-                              <p className="py-1"><b>Comité desarrollador:</b> {estandar.comite}</p>
+                              <p className="py-1 mb-3"><b>Propósito: </b>{estandar.proposito}</p>
+                              <p className="py-1 mb-3"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                              <p className="py-1 mb-3"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
+                              <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
                             </div>
                             <DrawerFooter>
   
@@ -197,16 +197,16 @@ export default function Certificaciones(params) {
         </section>
 
         <section className="container w-full py-10 my-10">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3">Obtenga un certificado de competencia laboral en su área</h2>
-          <p className="text-lg ">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
+          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-5xl py-3 mb-5">Obtenga un certificado de competencia laboral en su área</h2>
+          <p className="text-xl">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
           <ProgramsCard />
         </section>
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
-          <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una evaluación diagnóstica</h1>
-          <p className="text-xl pt-4 pb-8">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-500 hover:bg-teal-600 px-6 py-4 rounded-sm">
+          <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-slate-700">evaluación diagnóstica</span></h1>
+          <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
+          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-500 hover:bg-teal-600 px-6 py-4 my-5 rounded-sm">
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>

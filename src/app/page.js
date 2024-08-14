@@ -59,8 +59,8 @@ export default function Home({ Component, pageProps }) {
               animate-slideIn">
                 Impulsa tu vida profesional al éxito
               </h1>
-              <p className="text-xl md:text-3xl text-white animate-fadeIn">Respalda tus conocimientos y experiencia con certificaciones oficiales</p>
-              <div className="flex flex-col md:flex-row mt-1 md:mt-5 animate-fadeIn">
+              <p className="text-xl md:text-3xl text-white animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
+              <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
                 <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 px-6 py-3 mx-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
                   Comienza ahora
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline lucide lucide-chevrons-right ml-1 origin-left hover:translate-x-0.5 transition group-hover:translate-x-2"><path d="m6 17 5-5-5-5" /><path d="m13 17 5-5-5-5" /></svg>
@@ -79,13 +79,13 @@ export default function Home({ Component, pageProps }) {
 
         <section className="container h-auto md:h-[46rem]">
           <div className="flex flex-col items-center justify-center h-full" id="benefits">
-            <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center">Beneficios de la certificación</h2>
-            <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline">
+            <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center"> Beneficios de la certificación</h2>
+            <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8">
               {benefits.map((benefit => {
                 return (
                   <div className="w-full lg:w-1/3 py-8 px-5 mx-2 md:mx-auto" key={benefit.id}>
                     {benefit.icon}
-                    <h3 className="text-2xl font-bold text-left mt-8">{benefit.title}</h3>
+                    <h3 className="text-2xl font-bold text-left mt-8 mb-4">{benefit.title}</h3>
                     <p className="text-lg text-muted-foreground text-left">{benefit.description}</p>
                   </div>
                 )
@@ -225,7 +225,7 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
 
-        <section className="container py-10 my-10">
+        <section className="container py-10 my-10 h-auto md:h-[46rem]">
           <p className="text-center text-slate-700 text-lg uppercase">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
@@ -234,7 +234,7 @@ export default function Home({ Component, pageProps }) {
           }}
             autoplay={2900}
           >
-            <CarouselContent className="p-0 md:p-5 h-auto md:h-[24rem]">
+            <CarouselContent className="p-0 md:p-5 h-auto md:h-[32rem]">
               <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
                 <div className="w-full scroll-m-20 ">
                   <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
@@ -242,7 +242,7 @@ export default function Home({ Component, pageProps }) {
 
                 <div className="w-1/2 md:w-2/3 mx-auto">
                   <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
-                  <p className="">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
+                  <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
                 </div>
               </CarouselItem>
               <CarouselItem>
@@ -257,16 +257,23 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
         </section>
         <section className="container h-[46rem] flex flex-col lg:flex-row py-10 my-10">
-          <div className="justify-center items-center  content-center w-full lg:w-1/2 pr-5">
+          <div className="justify-center items-center w-full lg:w-1/2 pr-5">
             <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-4">Reconocimiento nacional</p>
-            <p className="text-lg text-baseline ">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
+            <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
+            <Link href="./nosotros" className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm">
+            <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
+          </Link>
           </div>
-          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-4 py-10 my-5">
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Objetividad y confiabilidad</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Asesoría de expertos</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Calidad asegurada</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="m-auto text-teal-600" /><span className="block my-8">Respaldo de OC más importante</span></li>
+          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-2">
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+            <span className="block mt-8">Objetividad y confiabilidad</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+            <span className="block mt-8">Asesoría de expertos</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+            <span className="block mt-8">Calidad asegurada</span></li>
+            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+            <span className="block mt-8">Respaldo de OC más importante</span></li>
           </ul>
         </section>
         <div className="bg-stone-100 py-10 h-auto md:h-[30rem]">
@@ -297,19 +304,19 @@ const benefits = [
   {
     title: "Encuentra mejores oportunidades",
     description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
-    icon: <Key size={84} strokeWidth={1.25} className="text-teal-600 rounded-full p-4" />,
+    icon: <Key size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
     id: "emo",
   },
   {
     title: "Accede a mejores salarios",
     description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
-    icon: <CircleDollarSign size={84} strokeWidth={1.25} className="text-teal-600 rounded-full p-4" />,
+    icon: <CircleDollarSign size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
     id: "ams",
   },
   {
     title: "Mejora tus condiciones laborales",
     description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-    icon: <HandshakeIcon size={84} strokeWidth={1.25} className="text-teal-600 rounded-full p-4" />,
+    icon: <HandshakeIcon size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
     id: "mcl",
   },
   // {
