@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  CircleDollarSign, 
-  HandshakeIcon, 
-  Key, 
-  LockKeyhole, 
-  ShieldCheck, 
-  Headset, 
+import {
+  CircleDollarSign,
+  HandshakeIcon,
+  Key,
+  LockKeyhole,
+  ShieldCheck,
+  Headset,
   Award,
-  ArrowDown, 
+  ArrowDown,
 } from "lucide-react";
 import {
   Carousel,
@@ -73,7 +73,7 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
-            <p className="animate-bounce bg-slate-900 rounded-full p-2"><Link href="#benefits" className="text-white"><ArrowDown className="h-8 w-8"/></Link></p>
+            <p className="animate-bounce bg-slate-900 rounded-full p-2"><Link href="#benefits" className="text-white"><ArrowDown className="h-8 w-8" /></Link></p>
           </div>
         </section>
 
@@ -96,12 +96,12 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
 
-        <section className="container w-full py-10 my-10">
-          <div className=" w-full">
-            <h1 className="text-center text-4xl md:text-5xl font-bold py-6">
-              Eventos de capacitación. <span className="text-teal-600">Mejores momentos</span>
+        <section className="lg:container py-10 my-10">
+          <div className="w-full">
+            <h1 className="text-center text-4xl md:text-5xl font-bold mt-8 mb-4">
+              Eventos de capacitación. <span className="text-gray-500">Mejores momentos</span>
             </h1>
-            <p className="text-center text-2xl  font-light text-slate-600 py-4 mb-10">Participan escuelas, universidades y gobiernos</p>
+            <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-[5rem]">Participan escuelas, universidades y gobiernos</p>
           </div>
           <Carousel>
             <CarouselContent className="relative w-full flex lg:grid grid-cols-4 gap-4 -ml-4">
@@ -157,75 +157,87 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <section className="container py-10 my-10">
-          <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mb-2">Conoce la ruta para la certificación</h1>
-          <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
-          <div className="flex flex-col w-full md:w-2/3 mx-auto">
+          <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mt-8 mb-4">Conoce la ruta para la certificación</h1>
+          <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+
+          <div className="flex flex-col w-full mx-auto">
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32">
-                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
-              <div className="px-10">
-                <h3 className="text-3xl text-center md:text-left font-bold py-3">
-                  Identifica el estándar de competencia
-                </h3>
-                <p className="text-xl mb-4">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
-                <Link href="./" className="text-lg text-teal-600 hover:underline">
-                  <span className="py-3 text-xl"> Más información</span>
-                </Link>
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-10 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
+                    Identifica el estándar de competencia
+                  </h3>
+                  <p className="text-xl mb-4">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
               </div>
             </div>
+
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32">
-                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
-              <div className="px-10">
-                <h3 className="text-3xl text-center md:text-left font-bold py-3">
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
                   Toma una evaluación diagnóstica
-                </h3>
-                <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.
-                </p>
-                <Link href="./" className="text-lg text-teal-600 hover:underline">
-                  <span className="py-3 text-xl"> Más información</span>
-                </Link>
+                  </h3>
+                  <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32">
-                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
-              <div className="px-10">
-                <h3 className="text-3xl text-center md:text-left font-bold py-3">
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
                   Realiza tu evaluación en un Centro Evaluador
-                </h3>
-                <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".
-                </p>
-                <Link href="./" className="text-lg text-teal-600 hover:underline">
-                  <span className="py-3 text-xl"> Más información</span>
-                </Link>
+                  </h3>
+                  <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32">
-                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto animate-none transition group-hover:scale-105 delay-75" />
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
-              <div className="px-10">
-                <h3 className="text-3xl text-center md:text-left font-bold py-3">
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
                   Consulta tus resultados
-                </h3>
-                <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.
-                </p>
-                <Link href="./" className="text-lg text-teal-600 hover:underline">
-                  <span className="py-3 text-xl"> Más información</span>
-                </Link>
+                  </h3>
+                  <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
               </div>
             </div>
+
 
           </div>
         </section>
 
-        <section className="container py-10 my-10 h-auto md:h-[46rem]">
+        <section className="container py-10 mt-10 mb-[12rem] h-auto md:h-[46rem]">
           <p className="text-center text-slate-700 text-lg uppercase">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
@@ -240,7 +252,7 @@ export default function Home({ Component, pageProps }) {
                   <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
                 </div>
 
-                <div className="w-1/2 md:w-2/3 mx-auto">
+                <div className="w-4/5 md:w-2/3 mx-auto">
                   <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
                   <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
                 </div>
@@ -252,43 +264,43 @@ export default function Home({ Component, pageProps }) {
                 <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+              <CarouselPrevious />
+              <CarouselNext />
           </Carousel>
         </section>
-        <section className="container h-[46rem] flex flex-col lg:flex-row py-10 my-10">
+        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mb-[8rem]">
           <div className="justify-center items-center w-full lg:w-1/2 pr-5">
             <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-4">Reconocimiento nacional</p>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
             <Link href="./nosotros" className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm">
-            <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
-          </Link>
+              <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
+            </Link>
           </div>
-          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-2">
+          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-4 mb-10 py-10">
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-            <span className="block mt-8">Objetividad y confiabilidad</span></li>
+              <span className="block mt-8">Objetividad y confiabilidad</span></li>
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-            <span className="block mt-8">Asesoría de expertos</span></li>
+              <span className="block mt-8">Asesoría de expertos</span></li>
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-            <span className="block mt-8">Calidad asegurada</span></li>
+              <span className="block mt-8">Calidad asegurada</span></li>
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-            <span className="block mt-8">Respaldo de OC más importante</span></li>
+              <span className="block mt-8">Respaldo de OC más importante</span></li>
           </ul>
         </section>
-        <div className="bg-stone-100 py-10 h-auto md:h-[30rem]">
+        <div className="bg-stone-100 py-10 h-auto md:h-[36rem]">
           <p className="text-lg text-slate-700 text-center py-5 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
-          <div className="flex flex-col md:flex-row items-center justify-center mt-10">
+          <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
             <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />
             <Image src={logoICEM} alt="logotipo de ICE México" width={190} className="mx-5" />
           </div>
         </div>
         <section className="mb-10">
-          <div className="flex flex-col justify-center items-center w-full min-h-[32rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] border-t-[9px] mx-auto">
+          <div className="flex flex-col justify-center items-center w-full h-auto md:h-[36rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] border-t-[9px] mx-auto">
             <div className="w-full md:w-3/5 px-10 ">
               <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>
-              <p className="text-lg md:text-2xl text-center text-white py-3">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
+              <p className="text-lg md:text-2xl text-center text-white py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
             <Link href="./proceso" className="text-xl dark:text-gray-900 font-bold transition-all duration-300 ease-in-out rounded-sm bg-yellow-300 hover:bg-yellow-400 px-8 py-3 mt-6">Comienza ahora</Link>
             <p className="text-lg text-white py-3">¡Obten 20% de descuento!</p>

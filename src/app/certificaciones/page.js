@@ -1,14 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { CalendarDays, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 
 
 // Shandcn ui
@@ -96,60 +89,13 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full pt-19">
-        <Carousel opts={{
-          align: "center",
-          loop: true,
-        }}
-          autoplay={2900}
-        >
-          <CarouselContent className="p-0 md:p-5 h-[38rem]">
-            <CarouselItem className="bg-gray-100 dark:bg-slate-900 rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-              <p className="text-xl md:text-2xl text-left">Estás invitad@ al <span className="font-bold">webinar gratuito</span></p>
-              <h1 className="font-bold text-3xl md:text-5xl text-[#7369E2] text-center mt-10">Estrategias para aumentar productividad</h1>
-              <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
-
-              {/* Temario del evento */}
-              <div className="text-xl">
-                <p className="">Aprenderás:</p>
-                <ol className="">
-                  <li>Buen manejo del estrés</li>
-                  <li>Mejorar la comunicación</li>
-                </ol>
-
-              </div>
-              <div className="flex flex-col lg:flex-row md:justify-around mt-8 items-center md:items-stretch">
-                {/* Fecha y hora del evento */}
-                <div className="flex items-center mb-4">
-                  <Clock className="size-7" />
-                  <time className="uppercase text-left text-2xl font-light px-5" dateTime="20:00">8:00 PM</time>
-                </div>
-                <div className="flex mb-4 items-center">
-                  <CalendarDays className="size-7" />
-                  <time dateTime="2024-09-28" className="uppercase text-left text-2xl font-light px-5">28 SEP 2024</time>
-                </div>
-                {/* Team leader */}
-                <div className="">
-                  <p>Cupo limitado</p>
-                </div>
-                <Button className="bg-teal-600 hover:bg-teal-700 px-4 text-lg text-white font-extrabold mt-5">Regístrate ahora</Button>
-              </div>
-            </CarouselItem>
-            <CarouselItem>
-              <h1 className="text-2xl md:text-3xl">Descarga la guía del candidato</h1>
-            </CarouselItem>
-            <CarouselItem>
-              <h1 className="text-2xl md:text-3xl">Asiste al evento presencial</h1>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-        <section className="container py-5 h-auto md:h-[38rem]">
+        
+        <section className="container py-5 h-auto">
           <h1 className="text-2xl md:text-4xl font-bold text-left py-10">Estándares de competencia laboral</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
             {estandares.map((estandar => {
               return (
-                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor} transition ease-linear hover:scale-[98%] delay-50`}>
+                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor}`}>
                   <CardHeader>
                     <CardTitle>{estandar.title}</CardTitle>
                     <CardDescription>{estandar.description}</CardDescription>
@@ -162,7 +108,7 @@ export default function Certificaciones(params) {
                       <p>Nivel en el SNC: {estandar.snc}</p>
                       <div>
                         <Drawer>
-                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline">Ver detalles</DrawerTrigger>
+                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline mt-5">Ver detalles</DrawerTrigger>
                           <DrawerContent>
                             <DrawerHeader className="flex">
                               <div className="content-center">
@@ -197,12 +143,12 @@ export default function Certificaciones(params) {
         </section>
 
         <section className="container w-full py-10 my-10">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-5xl py-3 mb-5">Obtenga un certificado de competencia laboral en su área</h2>
+          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-5xl py-3 mb-5">Obtenga un certificado en su <span className="text-teal-600">área de expertise</span></h2>
           <p className="text-xl">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
           <ProgramsCard />
         </section>
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20">
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20 h-auto sm:h-[30rem] md:h-[25rem]">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
           <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-slate-700">evaluación diagnóstica</span></h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
