@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import resultados from "@/public/img/consulta-resultados.svg";
+import estandar from "@/public/img/estandar-de-competencia.svg";
+import evaluacion from "@/public/img/presenta-evaluacion.svg";
+import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
+
 
 
 
@@ -20,7 +25,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { MessagesSquare } from "lucide-react";
-import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import {
   Drawer,
   DrawerClose,
@@ -89,7 +93,6 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full pt-19">
-        
         <section className="container py-5 h-auto">
           <h1 className="text-2xl md:text-4xl font-bold text-left py-10">Estándares de competencia laboral</h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
@@ -142,22 +145,94 @@ export default function Certificaciones(params) {
 
         </section>
 
-        <section className="container w-full py-10 my-10">
+        <section className="container py-10 my-10 mt-[12rem]">
+          <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mt-8 mb-4">Conoce la ruta para la certificación</h1>
+          <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+
+          <div className="flex flex-col w-full mx-auto">
+            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto" />
+              </div>
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-10 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
+                    Identifica el estándar de competencia
+                  </h3>
+                  <p className="text-xl mb-4">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto" />
+              </div>
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
+                  Toma una evaluación diagnóstica
+                  </h3>
+                  <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto" />
+              </div>
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
+                  Realiza tu evaluación en un Centro Evaluador
+                  </h3>
+                  <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
+                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto" />
+              </div>
+              <div className="relative pl-8 md:pl-[6rem]">
+                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
+                <div className="pl-8">
+                  <h3 className="text-3xl md:text-left font-bold py-3">
+                  Consulta tus resultados
+                  </h3>
+                  <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.</p>
+                  <Link href="./" className="text-lg text-teal-600 hover:underline">
+                    <span className="py-3 text-xl"> Más información</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+
+        <section className="container w-full py-10 mt-[12rem]">
           <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-5xl py-3 mb-5">Obtenga un certificado en su <span className="text-teal-600">área de expertise</span></h2>
           <p className="text-xl">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
           <ProgramsCard />
         </section>
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20 h-auto sm:h-[30rem] md:h-[25rem]">
-          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
-          <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-slate-700">evaluación diagnóstica</span></h1>
-          <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-500 hover:bg-teal-600 px-6 py-4 my-5 rounded-sm">
-            <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
-          </Link>
-        </section>
-
-        <section className="container mx-auto mb-15 py-10">
+        <section className="container mx-auto mb-15 py-10 mt-[12rem]">
           <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
           <Accordion type="single" collapsible className="w-full md:w-1/2 m-auto ">
             <AccordionItem value="item-1">
@@ -180,6 +255,7 @@ export default function Certificaciones(params) {
             </AccordionItem>
           </Accordion>
         </section>
+
 
         <footer className="my-10 py-10">
           <h3 className="text-4xl font-bold py-4">Centro de evaluación</h3>

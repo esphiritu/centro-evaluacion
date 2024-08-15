@@ -17,10 +17,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import resultados from "@/public/img/consulta-resultados.svg";
-import estandar from "@/public/img/estandar-de-competencia.svg";
-import evaluacion from "@/public/img/presenta-evaluacion.svg";
-import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
@@ -29,6 +25,8 @@ import karen from "@/public/img/gallery-karen.jpg";
 import session from "@/public/img/gallery-live-session.jpg";
 import participants from "@/public/img/gallery-participants.jpg";
 import staged from "@/public/img/gallery-staged.jpg";
+import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
+
 
 export default function Home({ Component, pageProps }) {
   return (
@@ -99,7 +97,7 @@ export default function Home({ Component, pageProps }) {
         <section className="lg:container py-10 my-10">
           <div className="w-full">
             <h1 className="text-center text-4xl md:text-5xl font-bold mt-8 mb-4">
-              Eventos de capacitación. <span className="text-gray-500">Mejores momentos</span>
+              Convención anual. <span className="text-gray-500">Mejores momentos</span>
             </h1>
             <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-[5rem]">Participan escuelas, universidades y gobiernos</p>
           </div>
@@ -156,88 +154,20 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
         </section>
 
-        <section className="container py-10 my-10">
-          <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mt-8 mb-4">Conoce la ruta para la certificación</h1>
-          <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
-
-          <div className="flex flex-col w-full mx-auto">
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto" />
-              </div>
-              <div className="relative pl-8 md:pl-[6rem]">
-                <span className="absolute -left-10 top-10 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
-                <div className="pl-8">
-                  <h3 className="text-3xl md:text-left font-bold py-3">
-                    Identifica el estándar de competencia
-                  </h3>
-                  <p className="text-xl mb-4">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
-                  <Link href="./" className="text-lg text-teal-600 hover:underline">
-                    <span className="py-3 text-xl"> Más información</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto" />
-              </div>
-              <div className="relative pl-8 md:pl-[6rem]">
-                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
-                <div className="pl-8">
-                  <h3 className="text-3xl md:text-left font-bold py-3">
-                  Toma una evaluación diagnóstica
-                  </h3>
-                  <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.</p>
-                  <Link href="./" className="text-lg text-teal-600 hover:underline">
-                    <span className="py-3 text-xl"> Más información</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto" />
-              </div>
-              <div className="relative pl-8 md:pl-[6rem]">
-                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
-                <div className="pl-8">
-                  <h3 className="text-3xl md:text-left font-bold py-3">
-                  Realiza tu evaluación en un Centro Evaluador
-                  </h3>
-                  <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".</p>
-                  <Link href="./" className="text-lg text-teal-600 hover:underline">
-                    <span className="py-3 text-xl"> Más información</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
-              <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto" />
-              </div>
-              <div className="relative pl-8 md:pl-[6rem]">
-                <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
-                <div className="pl-8">
-                  <h3 className="text-3xl md:text-left font-bold py-3">
-                  Consulta tus resultados
-                  </h3>
-                  <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.</p>
-                  <Link href="./" className="text-lg text-teal-600 hover:underline">
-                    <span className="py-3 text-xl"> Más información</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
+        
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20 h-auto sm:h-[30rem] md:h-[25rem] mt-[12rem]">
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
+          <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-slate-700">evaluación diagnóstica</span></h1>
+          <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
+          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-500 hover:bg-teal-600 px-6 py-4 my-5 rounded-sm">
+            <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
+          </Link>
         </section>
 
-        <section className="container py-10 mt-10 mb-[12rem] h-auto md:h-[46rem]">
+          
+        
+
+        <section className="container py-10 mt-10 mb-[12rem] h-auto md:h-[42rem]">
           <p className="text-center text-slate-700 text-lg uppercase">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
