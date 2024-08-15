@@ -163,11 +163,7 @@ export default function Home({ Component, pageProps }) {
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
-
-          
-        
-
-        <section className="container py-10 mt-10 mb-[12rem] h-auto md:h-[42rem]">
+        <section className="container py-10 mt-[12rem] h-auto md:h-[42rem]">
           <p className="text-center text-slate-700 text-lg uppercase">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
@@ -198,7 +194,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselNext />
           </Carousel>
         </section>
-        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mb-[8rem]">
+        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
           <div className="justify-center items-center w-full lg:w-1/2 pr-5">
             <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-4">Reconocimiento nacional</p>
@@ -218,7 +214,7 @@ export default function Home({ Component, pageProps }) {
               <span className="block mt-8">Respaldo de OC más importante</span></li>
           </ul>
         </section>
-        <div className="bg-stone-100 py-10 h-auto md:h-[36rem]">
+        <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[8rem]">
           <p className="text-lg text-slate-700 text-center py-5 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
           <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">

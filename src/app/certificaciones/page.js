@@ -6,9 +6,6 @@ import estandar from "@/public/img/estandar-de-competencia.svg";
 import evaluacion from "@/public/img/presenta-evaluacion.svg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 
-
-
-
 // Shandcn ui
 import {
   Card,
@@ -35,6 +32,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { Separator } from "@/components/ui/separator";
 
 // Custom components
 import ProgramsCard from "@/components/molecules/ProgramsCard";
@@ -104,7 +102,7 @@ export default function Certificaciones(params) {
                     <CardDescription>{estandar.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-lg">{estandar.content}</p>
+                    <p className="text-xl">{estandar.content}</p>
                   </CardContent>
                   <CardFooter>
                     <div className="">
@@ -117,7 +115,9 @@ export default function Certificaciones(params) {
                               <div className="content-center">
                                 <DrawerTitle className="mb-2">{estandar.title} - {estandar.content}</DrawerTitle>
                                 <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
+                                <Separator className="mt-3 w-full" />
                               </div>
+                              
                             </DrawerHeader>
                             <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
                               <p className="py-1 mb-3"><b>Propósito: </b>{estandar.proposito}</p>
