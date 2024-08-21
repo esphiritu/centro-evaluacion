@@ -15,7 +15,7 @@ const programs = [
     programPic: RHSpecialist,
     flexColDirection: "flex-col-reverse",
     flexRowDirection: "lg:flex-row-reverse",
-    bgColor:"bg-violet-600",
+    bgColor:"transparent",
   },
   {
     ProgramName: "Programa en educación",
@@ -25,7 +25,7 @@ const programs = [
     programPic: teacherPic,
     flexColDirection: "flex-col-reverse",
     flexRowDirection: "lg:flex-row",
-    bgColor:"bg-gray-700",
+    bgColor:"transparent",
   },
 ];
 
@@ -34,8 +34,8 @@ const programs = [
 export default function ProgramsCard() {
   return (
         programs.map((program => (
-        <div className={`flex group ${program.flexColDirection} ${program.flexRowDirection} my-6 md:my-10 py-10 w-full`} key={program.index}>
-          <div className={`relative text-center text-white ${program.bgColor} py-6 px-8 w-full lg:w-1/2 h-[23rem] md:h-auto`}>
+        <div className={`flex group ${program.flexColDirection} ${program.flexRowDirection} my-[5rem] md:my-[6rem] py-10 w-full`} key={program.index}>
+          <div className={`relative text-center ${program.bgColor} py-6 px-[5rem] w-full lg:w-1/2 h-[23rem] md:h-auto`}>
             <h3 className="uppercase py-2 md:py-4">{program.ProgramName}</h3>
             <p className="text-3xl lg:text-3xl font-semibold">{program.ProgramDescription}</p>
             <ul className="text-left p-3 mt-3">
@@ -49,13 +49,13 @@ export default function ProgramsCard() {
               Ingresa al programa
             </Link>
           </div>
-          <div className="w-full lg:w-1/2 relative overflow-hidden">
+          <div className="w-full lg:w-1/2 relative overflow-hidden rounded-md">
             <Image 
               src={program.programPic}
               alt={program.ProgramPicText}
               quality={75}
               sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-              className="transform group-hover:scale-125 transition-all ease-in-out"
+              className="transform group-hover:scale-125 transition-all ease-in-out rounded-md"
               style={{
                 width: '100%',
                 height: 'auto',

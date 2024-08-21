@@ -109,7 +109,7 @@ export default function Home({ Component, pageProps }) {
                   alt="Image showing a group of people"
                   quality={75}
                   sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                  className="static inset-0 w-full object-cover"
+                  className="static inset-0 w-full object-cover rounded-md"
                 />
               </CarouselItem>
               <CarouselItem className="relative pl-4">
@@ -118,7 +118,7 @@ export default function Home({ Component, pageProps }) {
                   alt="Image showing Karen Campos"
                   quality={75}
                   sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="lg:absolute inset-0 w-full h-full object-cover"
+                  className="lg:absolute inset-0 w-full h-full object-cover rounded-md"
                 />
               </CarouselItem>
               <CarouselItem className="relative pl-4">
@@ -127,7 +127,7 @@ export default function Home({ Component, pageProps }) {
                   alt="Image showing a group of people"
                   quality={75}
                   sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static lg:absolute inset-0 w-full h-full object-cover"
+                  className="static lg:absolute inset-0 w-full h-full object-cover rounded-md"
                 />
               </CarouselItem>
               <CarouselItem className="relative pl-4">
@@ -136,7 +136,7 @@ export default function Home({ Component, pageProps }) {
                   alt="Image showing a group of people"
                   quality={75}
                   sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static lg:absolute inset-0 w-full h-full object-cover"
+                  className="static lg:absolute inset-0 w-full h-full object-cover rounded-md"
                 />
               </CarouselItem>
               <CarouselItem className="relative pl-4">
@@ -145,7 +145,7 @@ export default function Home({ Component, pageProps }) {
                   alt="Image showing a group of people"
                   quality={75}
                   sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static lg:absolute inset-0 w-full h-full object-cover"
+                  className="static lg:absolute inset-0 w-full h-full object-cover rounded-md"
                 />
               </CarouselItem>
             </CarouselContent>

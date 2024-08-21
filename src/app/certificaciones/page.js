@@ -33,6 +33,12 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
 
 // Custom components
 import ProgramsCard from "@/components/molecules/ProgramsCard";
@@ -92,11 +98,13 @@ export default function Certificaciones(params) {
     <>
       <main className="w-full pt-19">
         <section className="container py-5 h-auto">
-          <h1 className="text-2xl md:text-4xl font-bold text-left py-10">Estándares de competencia laboral</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5">
+          <h1 className="text-4xl md:text-5xl font-bold pt-10">Human Interface Guidelines</h1>
+          <p className="text-xl md:text-2xl py-5 mb-4">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
+          <h4 className="text-2xl md:text-4xl font-bold text-left pt-10">Estándares de competencia laboral</h4>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5 mb-10">
             {estandares.map((estandar => {
               return (
-                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 ${estandar.borColor}`}>
+                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 mb-6 ${estandar.borColor}`}>
                   <CardHeader>
                     <CardTitle>{estandar.title}</CardTitle>
                     <CardDescription>{estandar.description}</CardDescription>
@@ -106,10 +114,10 @@ export default function Certificaciones(params) {
                   </CardContent>
                   <CardFooter>
                     <div className="">
-                      <p>Nivel en el SNC: {estandar.snc}</p>
+                      <p>Nivel: {estandar.snc}</p>
                       <div>
                         <Drawer>
-                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline mt-5">Ver detalles</DrawerTrigger>
+                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline mt-5 transition-all duration-300 ease-in-out">Ver detalles</DrawerTrigger>
                           <DrawerContent>
                             <DrawerHeader className="flex">
                               <div className="content-center">
@@ -117,7 +125,7 @@ export default function Certificaciones(params) {
                                 <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
                                 <Separator className="mt-3 w-full" />
                               </div>
-                              
+
                             </DrawerHeader>
                             <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
                               <p className="py-1 mb-3"><b>Propósito: </b>{estandar.proposito}</p>
@@ -126,9 +134,9 @@ export default function Certificaciones(params) {
                               <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
                             </div>
                             <DrawerFooter>
-  
+
                               <DrawerClose>
-                                <Button variant="outline">Cerrar</Button>
+                                <p variant="outline" className="px-5 py-4">Cerrar</p>
                               </DrawerClose>
                             </DrawerFooter>
                           </DrawerContent>
@@ -142,15 +150,39 @@ export default function Certificaciones(params) {
             ))
             }
           </div>
-
+          <div className="">
+            <Collapsible>
+              <CollapsibleTrigger className="w-full px-6">
+                <p className="
+                  px-3 
+                  py-4 
+                  text-xl
+                  text-center
+                  lg:text-lg 
+                  text-gray-700 
+                  hover:text-teal-700
+                  dark:text-gray-400
+                  dark:hover:text-teal-700
+                  bg-transparent 
+                  transition-all 
+                  duration-300 
+                  ease-in-out
+                  ">Ver más certificaciones</p>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                Yes. Free to use for personal and commercial projects. No attribution
+                required.
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
         </section>
 
-        <section className="container py-10 my-10 mt-[12rem]">
-          <h1 className="text-4xl md:text-5xl text-center font-bold py-4 mt-8 mb-4">Conoce la ruta para la certificación</h1>
-          <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+        <section className="container py-10 my-10 mt-[8rem]">
+          <h1 className="text-4xl md:text-5xl font-bold py-4 mt-8 mb-4">Conoce la ruta para la certificación</h1>
+          <p className="text-2xl text-muted-foreground pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
 
-          <div className="flex flex-col w-full mx-auto">
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+          <div className="flex flex-col w-full lg:w-4/5 mx-auto">
+            <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
               <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
                 <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
@@ -168,7 +200,7 @@ export default function Certificaciones(params) {
               </div>
             </div>
 
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+            <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
               <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
                 <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
@@ -176,7 +208,7 @@ export default function Certificaciones(params) {
                 <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
                 <div className="pl-8">
                   <h3 className="text-3xl md:text-left font-bold py-3">
-                  Toma una evaluación diagnóstica
+                    Toma una evaluación diagnóstica
                   </h3>
                   <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.</p>
                   <Link href="./" className="text-lg text-teal-600 hover:underline">
@@ -186,7 +218,7 @@ export default function Certificaciones(params) {
               </div>
             </div>
 
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+            <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
               <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
                 <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
@@ -194,7 +226,7 @@ export default function Certificaciones(params) {
                 <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
                 <div className="pl-8">
                   <h3 className="text-3xl md:text-left font-bold py-3">
-                  Realiza tu evaluación en un Centro Evaluador
+                    Realiza tu evaluación en un Centro Evaluador
                   </h3>
                   <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".</p>
                   <Link href="./" className="text-lg text-teal-600 hover:underline">
@@ -204,7 +236,7 @@ export default function Certificaciones(params) {
               </div>
             </div>
 
-            <div className="group w-full flex flex-col md:flex-row items-center mb-10">
+            <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
               <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
                 <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto" />
               </div>
@@ -212,7 +244,7 @@ export default function Certificaciones(params) {
                 <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
                 <div className="pl-8">
                   <h3 className="text-3xl md:text-left font-bold py-3">
-                  Consulta tus resultados
+                    Consulta tus resultados
                   </h3>
                   <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.</p>
                   <Link href="./" className="text-lg text-teal-600 hover:underline">
