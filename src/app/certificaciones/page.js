@@ -6,7 +6,7 @@ import estandar from "@/public/img/estandar-de-competencia.svg";
 import evaluacion from "@/public/img/presenta-evaluacion.svg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 
-// Shandcn ui
+// Shandcn UI components
 import {
   Card,
   CardContent,
@@ -37,7 +37,17 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 
 
 // Custom components
@@ -100,7 +110,7 @@ export default function Certificaciones(params) {
         <section className="container py-5 h-auto">
           <h1 className="text-4xl md:text-5xl font-bold pt-10">Human Interface Guidelines</h1>
           <p className="text-xl md:text-2xl py-5 mb-4">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
-          <h4 className="text-2xl md:text-4xl font-bold text-left pt-10">Estándares de competencia laboral</h4>
+          <h4 className="text-2xl md:text-4xl font-bold text-left py-6">Estándares de competencia laboral</h4>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5 mb-10">
             {estandares.map((estandar => {
               return (
@@ -151,29 +161,22 @@ export default function Certificaciones(params) {
             }
           </div>
           <div className="">
-            <Collapsible>
-              <CollapsibleTrigger className="w-full px-6">
-                <p className="
-                  px-3 
-                  py-4 
-                  text-xl
-                  text-center
-                  lg:text-lg 
-                  text-gray-700 
-                  hover:text-teal-700
-                  dark:text-gray-400
-                  dark:hover:text-teal-700
-                  bg-transparent 
-                  transition-all 
-                  duration-300 
-                  ease-in-out
-                  ">Ver más certificaciones</p>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                Yes. Free to use for personal and commercial projects. No attribution
-                required.
-              </CollapsibleContent>
-            </Collapsible>
+
+            <Table className="mt-10">
+              <TableCaption>A list of your recent invoices.</TableCaption>
+              <TableHeader className="text-lg font-bold">
+                <TableRow>
+                  <TableHead className="w-2/5">Estándar de competencia</TableHead>
+                  <TableHead className="w-3/5">Nombre</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="text-lg">
+                <TableRow>
+                  <TableCell className="font-medium">EC0249</TableCell>
+                  <TableCell>Proporcionar servicios de consultoría general</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
         </section>
 
@@ -253,9 +256,29 @@ export default function Certificaciones(params) {
                 </div>
               </div>
             </div>
-
-
           </div>
+          <Collapsible>
+            <CollapsibleTrigger className="w-full px-6">
+              <p className="
+                  px-3 
+                  py-4 
+                  text-xl
+                  text-center
+                  lg:text-lg 
+                  text-gray-700 
+                  hover:text-teal-700
+                  dark:text-gray-400
+                  dark:hover:text-teal-700
+                  bg-transparent 
+                  transition-all 
+                  duration-300 
+                  ease-in-out
+                  mb-8">Ver más certificaciones</p>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              Hie there Some content here!
+            </CollapsibleContent>
+          </Collapsible>
         </section>
 
         <section className="container w-full py-10 mt-[12rem]">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+// Shadcn UI components
 import {
   CircleDollarSign,
   HandshakeIcon,
@@ -17,6 +18,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+// Images
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
@@ -96,7 +99,7 @@ export default function Home({ Component, pageProps }) {
 
         <section className="lg:container py-10 my-10">
           <div className="w-full">
-            <h1 className="text-center text-4xl md:text-5xl font-bold mt-8 mb-4">
+            <h1 className="text-center text-3xl md:text-4xl font-bold mt-8 mb-4">
               Convención anual. <span className="text-gray-500">Mejores momentos</span>
             </h1>
             <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-[5rem]">Participan escuelas, universidades y gobiernos</p>
@@ -156,15 +159,15 @@ export default function Home({ Component, pageProps }) {
 
         
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20 h-auto sm:h-[30rem] md:h-[25rem] mt-[12rem]">
-          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto" />
-          <h1 className=" text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-slate-700">evaluación diagnóstica</span></h1>
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
+          <h1 className="text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-zinc-600">evaluación diagnóstica</span></h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-500 hover:bg-teal-600 px-6 py-4 my-5 rounded-sm">
+          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 py-5 my-5 rounded-sm">
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
         <section className="container py-10 mt-[12rem] h-auto md:h-[42rem]">
-          <p className="text-center text-slate-700 text-lg uppercase">Testimoniales</p>
+          <p className="text-center text-slate-700 text-lg uppercase py-6">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
             align: "center",
@@ -196,8 +199,8 @@ export default function Home({ Component, pageProps }) {
         </section>
         <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
           <div className="justify-center items-center w-full lg:w-1/2 pr-5">
-            <h1 className="text-4xl md:text-5xl font-bold py-6 mb-6">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
-            <p className="text-2xl  font-light text-slate-600 py-4">Reconocimiento nacional</p>
+            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem]">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
+            <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
             <Link href="./nosotros" className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm">
               <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
@@ -215,7 +218,7 @@ export default function Home({ Component, pageProps }) {
           </ul>
         </section>
         <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[8rem]">
-          <p className="text-lg text-slate-700 text-center py-5 uppercase">Alianzas para crear valor</p>
+          <p className="text-lg text-slate-700 text-center py-6 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
           <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
             <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />
