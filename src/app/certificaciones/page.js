@@ -111,15 +111,15 @@ export default function Certificaciones(params) {
         <section className="container py-10">
           <header className="flex flex-col lg:flex-row h-auto lg:h-[34rem] justify-center items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold pt-10 md:leading-[3.5rem] mb-5">Sea parte de los mejores en cada sector</h1>
-              <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
+              <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-5 pr-5">Sea parte de los mejores en cada sector</h1>
+              <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4 pr-5">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
             </div>
             <div>
-              <Image src={heroSection} alt="image with some people"/>
+              <Image src={heroSection} alt="image with some people" />
             </div>
           </header>
-          <h2 className="text-3xl md:text-4xl font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
-          <p className="text-2xl text-muted-foreground pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+          <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
+          <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
 
           <div className="flex flex-col w-full lg:w-4/5 mx-auto">
             <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
@@ -219,7 +219,7 @@ export default function Certificaciones(params) {
         </section>
 
         <section className="container py-5 h-auto">
-          <h4 className="text-2xl md:text-4xl font-bold text-left py-6">Estándares de competencia laboral</h4>
+          <h4 className="text-3xl md:text-4xl font-bold text-left py-6">¿Qué se evalúa?</h4>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5 mb-10">
             {estandares.map((estandar => {
               return (
@@ -270,13 +270,14 @@ export default function Certificaciones(params) {
             }
           </div>
           <div className="">
-
+            <h4 className="text-3xl md:text-4xl font-bold text-left py-6">Certificaciones disponibles con <span className="text-teal-600">Proyecta Empresarial</span></h4>
             <Table className="mt-10">
               <TableCaption>A list of your recent invoices.</TableCaption>
               <TableHeader className="text-lg font-bold">
                 <TableRow>
-                  <TableHead className="w-2/5">Estándar de competencia</TableHead>
+                  <TableHead className="w-1/5">Estándar de competencia</TableHead>
                   <TableHead className="w-3/5">Nombre</TableHead>
+                  <TableHead className="w-1/5 text-right"> </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody className="text-lg">
@@ -286,6 +287,33 @@ export default function Certificaciones(params) {
                       <TableRow key={estandar.id}>
                         <TableCell>{estandar.title}</TableCell>
                         <TableCell>{estandar.content}</TableCell>
+                        <TableCell className="text-right">
+                          <Drawer>
+                            <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline mt-5 transition-all duration-300 ease-in-out">Ver detalles</DrawerTrigger>
+                            <DrawerContent>
+                              <DrawerHeader className="flex">
+                                <div className="content-center">
+                                  <DrawerTitle className="mb-2">{estandar.title} - {estandar.content}</DrawerTitle>
+                                  <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
+                                  <Separator className="mt-3 w-full" />
+                                </div>
+
+                              </DrawerHeader>
+                              <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
+                                <p className="py-1 mb-3"><b>Propósito: </b>{estandar.proposito}</p>
+                                <p className="py-1 mb-3"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                                <p className="py-1 mb-3"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
+                                <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
+                              </div>
+                              <DrawerFooter>
+
+                                <DrawerClose>
+                                  <p variant="outline" className="px-5 py-4">Cerrar</p>
+                                </DrawerClose>
+                              </DrawerFooter>
+                            </DrawerContent>
+                          </Drawer>
+                        </TableCell>
                       </TableRow>
                     )
                   })
@@ -302,8 +330,8 @@ export default function Certificaciones(params) {
         </section>
 
         <section className="container mx-auto mb-15 py-10 mt-[12rem]">
-          <h2 className="text-center text-4xl font-bold py-6">Preguntas frecuentes</h2>
-          <Accordion type="single" collapsible className="w-full md:w-1/2 m-auto ">
+          <h2 className="text-center text-4xl font-bold py-6 mb-[3rem]">Preguntas frecuentes</h2>
+          <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
               <AccordionContent>

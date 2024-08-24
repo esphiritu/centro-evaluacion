@@ -158,7 +158,7 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md py-10 my-10 px-20 h-auto sm:h-[30rem] md:h-[25rem] mt-[12rem]">
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem]">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
           <h1 className="text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-zinc-600">evaluación diagnóstica</span></h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
@@ -199,10 +199,10 @@ export default function Home({ Component, pageProps }) {
         </section>
         <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
           <div className="justify-center items-center w-full lg:w-1/2 pr-5">
-            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0 lg:px-5">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
+            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
-            <Link href="./nosotros" className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm">
+            <Link href="./nosotros" className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm ml-1">
               <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
             </Link>
           </div>
