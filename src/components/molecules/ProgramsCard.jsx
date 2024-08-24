@@ -49,7 +49,7 @@ export default function ProgramsCard() {
             </ul>
             <Link
               href={program.ProgramHrefLink} className="static right-2/5 transition-all duration-300 ease-in-out bg-teal-600 hover:bg-teal-700 px-6 py-3 text-white rounded-sm text-base font-bold md:text-lg text-center">
-              Ingresa al programa
+              Conoce el programa
             </Link>
           </div>
           <div className="w-full lg:w-1/2 overflow-hidden">

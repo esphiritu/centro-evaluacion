@@ -5,6 +5,7 @@ import resultados from "@/public/img/consulta-resultados.svg";
 import estandar from "@/public/img/estandar-de-competencia.svg";
 import evaluacion from "@/public/img/presenta-evaluacion.svg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
+import heroSection from "@/public/img/hero-section.png";
 
 // Shandcn UI components
 import {
@@ -107,81 +108,17 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full pt-19">
-        <section className="container py-5 h-auto">
-          <h1 className="text-4xl md:text-5xl font-bold pt-10">Human Interface Guidelines</h1>
-          <p className="text-xl md:text-2xl py-5 mb-4">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
-          <h4 className="text-2xl md:text-4xl font-bold text-left py-6">Estándares de competencia laboral</h4>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5 mb-10">
-            {estandares.map((estandar => {
-              return (
-                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 mb-6 ${estandar.borColor}`}>
-                  <CardHeader>
-                    <CardTitle>{estandar.title}</CardTitle>
-                    <CardDescription>{estandar.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-xl">{estandar.content}</p>
-                  </CardContent>
-                  <CardFooter>
-                    <div className="">
-                      <p>Nivel: {estandar.snc}</p>
-                      <div>
-                        <Drawer>
-                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline mt-5 transition-all duration-300 ease-in-out">Ver detalles</DrawerTrigger>
-                          <DrawerContent>
-                            <DrawerHeader className="flex">
-                              <div className="content-center">
-                                <DrawerTitle className="mb-2">{estandar.title} - {estandar.content}</DrawerTitle>
-                                <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
-                                <Separator className="mt-3 w-full" />
-                              </div>
-
-                            </DrawerHeader>
-                            <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
-                              <p className="py-1 mb-3"><b>Propósito: </b>{estandar.proposito}</p>
-                              <p className="py-1 mb-3"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
-                              <p className="py-1 mb-3"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
-                              <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
-                            </div>
-                            <DrawerFooter>
-
-                              <DrawerClose>
-                                <p variant="outline" className="px-5 py-4">Cerrar</p>
-                              </DrawerClose>
-                            </DrawerFooter>
-                          </DrawerContent>
-                        </Drawer>
-                      </div>
-                    </div>
-                  </CardFooter>
-                </Card>
-              )
-            }
-            ))
-            }
-          </div>
-          <div className="">
-
-            <Table className="mt-10">
-              <TableCaption>A list of your recent invoices.</TableCaption>
-              <TableHeader className="text-lg font-bold">
-                <TableRow>
-                  <TableHead className="w-2/5">Estándar de competencia</TableHead>
-                  <TableHead className="w-3/5">Nombre</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody className="text-lg">
-                <TableRow>
-                  <TableCell className="font-medium">EC0249</TableCell>
-                  <TableCell>Proporcionar servicios de consultoría general</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-        </section>
-
-        <section className="container py-10 my-10 mt-[8rem]">
-          <h1 className="text-4xl md:text-5xl font-bold py-4 mt-8 mb-4">Conoce la ruta para la certificación</h1>
+        <section className="container py-10">
+          <header className="flex flex-col lg:flex-row h-auto lg:h-[34rem] justify-center items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold pt-10 md:leading-[3.5rem] mb-5">Sea parte de los mejores en cada sector</h1>
+              <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
+            </div>
+            <div>
+              <Image src={heroSection} alt="image with some people"/>
+            </div>
+          </header>
+          <h2 className="text-3xl md:text-4xl font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
           <p className="text-2xl text-muted-foreground pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
 
           <div className="flex flex-col w-full lg:w-4/5 mx-auto">
@@ -279,6 +216,83 @@ export default function Certificaciones(params) {
               Hie there Some content here!
             </CollapsibleContent>
           </Collapsible>
+        </section>
+
+        <section className="container py-5 h-auto">
+          <h4 className="text-2xl md:text-4xl font-bold text-left py-6">Estándares de competencia laboral</h4>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 auto-cols-max mt-5 mb-10">
+            {estandares.map((estandar => {
+              return (
+                <Card key={estandar.id} className={`lg:mx-2 xl:mx-5 mb-6 ${estandar.borColor}`}>
+                  <CardHeader>
+                    <CardTitle>{estandar.title}</CardTitle>
+                    <CardDescription>{estandar.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-xl">{estandar.content}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <div className="">
+                      <p>Nivel: {estandar.snc}</p>
+                      <div>
+                        <Drawer>
+                          <DrawerTrigger className="text-teal-600 hover:text-teal-700 hover:underline mt-5 transition-all duration-300 ease-in-out">Ver detalles</DrawerTrigger>
+                          <DrawerContent>
+                            <DrawerHeader className="flex">
+                              <div className="content-center">
+                                <DrawerTitle className="mb-2">{estandar.title} - {estandar.content}</DrawerTitle>
+                                <DrawerDescription>Detalles del estándar de compencia</DrawerDescription>
+                                <Separator className="mt-3 w-full" />
+                              </div>
+
+                            </DrawerHeader>
+                            <div className="w-full lg:w-1/2 mx-auto px-5 py-10">
+                              <p className="py-1 mb-3"><b>Propósito: </b>{estandar.proposito}</p>
+                              <p className="py-1 mb-3"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                              <p className="py-1 mb-3"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
+                              <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
+                            </div>
+                            <DrawerFooter>
+
+                              <DrawerClose>
+                                <p variant="outline" className="px-5 py-4">Cerrar</p>
+                              </DrawerClose>
+                            </DrawerFooter>
+                          </DrawerContent>
+                        </Drawer>
+                      </div>
+                    </div>
+                  </CardFooter>
+                </Card>
+              )
+            }
+            ))
+            }
+          </div>
+          <div className="">
+
+            <Table className="mt-10">
+              <TableCaption>A list of your recent invoices.</TableCaption>
+              <TableHeader className="text-lg font-bold">
+                <TableRow>
+                  <TableHead className="w-2/5">Estándar de competencia</TableHead>
+                  <TableHead className="w-3/5">Nombre</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody className="text-lg">
+                {estandares.map(
+                  (estandar => {
+                    return (
+                      <TableRow key={estandar.id}>
+                        <TableCell>{estandar.title}</TableCell>
+                        <TableCell>{estandar.content}</TableCell>
+                      </TableRow>
+                    )
+                  })
+                )}
+              </TableBody>
+            </Table>
+          </div>
         </section>
 
         <section className="container w-full py-10 mt-[12rem]">
