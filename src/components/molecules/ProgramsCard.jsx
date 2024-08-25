@@ -37,7 +37,7 @@ export default function ProgramsCard() {
   return (
     programs.map((program => (
       <div>
-        <div className={`flex ${program.flexColDirection} ${program.flexRowDirection} my-[4rem] md:my-[6rem] pt-5 md:py-8 w-full`} key={program.index}>
+        <div className={`flex ${program.flexColDirection} ${program.flexRowDirection} my-[2rem] md:my-[3rem] pt-1 md:pt-6 md:pb-10 w-full`} key={program.index}>
           <div className={`relative text-left ${program.bgColor} py-6 px-2 md:px-[5rem] w-full lg:w-1/2 h-[23rem] md:h-auto`}>
             <h3 className="uppercase text-muted-foreground py-2 md:py-3">{program.ProgramName}</h3>
             <p className="text-2xl lg:text-3xl font-semibold">{program.ProgramDescription}</p>
