@@ -49,8 +49,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-
-
 // Custom components
 import ProgramsCard from "@/components/molecules/ProgramsCard";
 import estandarIcon from "@/public/img/estandar-de-competencia.svg";
@@ -146,7 +144,7 @@ export default function Certificaciones(params) {
         <header className="flex flex-col-reverse lg:flex-row h-auto lg:h-[38rem] justify-center items-center rounded-lg bg-transparent dark:bg-slate-900 py-10 px-8 lg:px-[10rem]">
           <div className="flex flex-col justify-normal items-center lg:items-start">
             <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-5 pr-5">Sea parte de los mejores en cada sector</h1>
-            <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4 pr-5">The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.</p>
+            <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
             <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-8  pr-3 py-3 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
               Comienza ahora
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>

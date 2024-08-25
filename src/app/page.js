@@ -74,7 +74,9 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
-            <p className="animate-bounce bg-slate-900 rounded-full p-2"><Link href="#benefits" className="text-white"><ArrowDown className="h-8 w-8" /></Link></p>
+            <p className="animate-bounce bg-white/80 hover:bg-slate-300 rounded-full border-2 border-slate-300 p-2 text-slate-800 hover:text-teal-600">
+              <Link href="#benefits"><ArrowDown className="h-8 w-8" /></Link>
+            </p>
           </div>
         </section>
 

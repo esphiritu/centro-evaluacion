@@ -49,7 +49,7 @@ export default function HybridHeader () {
         <DesktopNavigation links={navigation} />
       </span>
       <div className="flex justify-between">  
-        {/* Mobile menu toggle wrapped with client component */}
+        {/* Render: (1) Dark mode toggle and (2) Mobile menu toggle, as a client component */}
         <MobileMenuToggle links={navigation} />
       </div>
     </header>
