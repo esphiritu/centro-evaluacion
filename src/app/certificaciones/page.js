@@ -22,7 +22,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { MessagesSquare } from "lucide-react";
+import { MessagesSquare, Lightbulb, BookOpenCheck, Hammer, Medal } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -109,7 +109,7 @@ const criterios = [
     description: "Saber y entender",
     content: "Posesión de conceptos, teorías y principios que sustentan el desempeño de la función",
     borColor: "border-t-purple-400",
-    icon: estandarIcon,
+    icon: <Lightbulb strokeWidth={1.25} size={40} />,
   },
   {
     id: "00B",
@@ -117,7 +117,7 @@ const criterios = [
     description: "Ser capaz físicamente de desempeñar",
     content: "Realización de acciones que permiten observar su competencia",
     borColor: "border-t-blue-400",
-    icon: estandarIcon,
+    icon: <Hammer strokeWidth={1.25} size={40} />,
   },
   {
     id: "00C",
@@ -125,7 +125,7 @@ const criterios = [
     description: "Tener disposición y actitud",
     content: "Predisposición o tendencia a actuar con determinado comportamiento ante una situación o persona con las que se relaciona durante el desempeño",
     borColor: "border-t-orange-400",
-    icon: estandarIcon,
+    icon: <Medal strokeWidth={1.25} size={40} />,
   },
   {
     id: "00D",
@@ -133,7 +133,7 @@ const criterios = [
     description: "Objetos tangibles, resultado de la actividad",
     content: "Pueden ser manuales, informes, métricas de resultados",
     borColor: "border-t-stone-400",
-    icon: estandarIcon,
+    icon: <BookOpenCheck strokeWidth={1.25} size={40} />,
   },
 ]
 
@@ -156,12 +156,13 @@ export default function Certificaciones(params) {
         </header>
 
         <section className="static lg:container py-5 h-auto">
-          <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left py-6 mb-6">¿Qué se evalúa?</h4>
+          <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 auto-cols-max mt-5 mb-[7rem] px-6 lg:px-2">
             {criterios.map((criterio => {
               return (
                 <Card key={criterio.id} className={`lg:mx-2 xl:mx-3 mb-6 ${criterio.borColor}`}>
                   <CardHeader>
+                    <span className="mb-4 text-gray-600">{criterio.icon}</span>
                     <CardTitle>{criterio.title}</CardTitle>
                     <CardDescription>{criterio.description}</CardDescription>
                   </CardHeader>
@@ -179,9 +180,9 @@ export default function Certificaciones(params) {
           </div>
 
           <div className="container py-10">
+            <Image src={resultados} width={100} height={100} alt="icon for" className="max-w-auto mb-3 mx-auto" />
             <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
             <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
-
             <div className="flex flex-col w-full lg:w-4/5 mx-auto">
               <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
                 {/* <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
@@ -195,7 +196,9 @@ export default function Certificaciones(params) {
                     </h3>
                     <p className="text-xl mb-4">Cada estándar de competencia tiene un código único, con el formato EC-XXX.</p>
                     <Link href="./" className="text-lg text-teal-600 hover:underline">
-                      <span className="py-3 text-xl"> Más información</span>
+                      <span className="py-3 text-xl"> Más información
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -213,7 +216,9 @@ export default function Certificaciones(params) {
                     </h3>
                     <p className="text-xl mb-4">Podrás conocer si cuentas con los conocimientos, habildades y actitudes que exige el Estándar de Competencia.</p>
                     <Link href="./" className="text-lg text-teal-600 hover:underline">
-                      <span className="py-3 text-xl"> Más información</span>
+                      <span className="py-3 text-xl"> Más información
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -231,7 +236,9 @@ export default function Certificaciones(params) {
                     </h3>
                     <p className="text-xl mb-4">Si los criterios de evaluación son resueltos, el resultado de evaluación será "COMPETENTE". En caso contrario se emitirá como "TODAVÍA NO COMPETENTE".</p>
                     <Link href="./" className="text-lg text-teal-600 hover:underline">
-                      <span className="py-3 text-xl"> Más información</span>
+                      <span className="py-3 text-xl"> Más información
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -249,37 +256,18 @@ export default function Certificaciones(params) {
                     </h3>
                     <p className="text-xl mb-4">El CONOCER emitirá un Certificado de Competencia para el candidato y aparecerá en el RENAP como persona certificada.</p>
                     <Link href="./" className="text-lg text-teal-600 hover:underline">
-                      <span className="py-3 text-xl"> Más información</span>
+                      <span className="py-3 text-xl"> Más información
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
+                      </span>
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
-            <Collapsible>
-              <CollapsibleTrigger className="w-full px-6">
-                <p className="
-                  px-3 
-                  py-4 
-                  text-xl
-                  text-center
-                  lg:text-lg 
-                  text-gray-700 
-                  hover:text-teal-700
-                  dark:text-gray-400
-                  dark:hover:text-teal-700
-                  bg-transparent 
-                  transition-all 
-                  duration-300 
-                  ease-in-out
-                  mb-8">Ver más certificaciones</p>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                Hie there Some content here!
-              </CollapsibleContent>
-            </Collapsible>
+
           </div>
-          <div className="">
-            <h4 className="text-3xl md:text-4xl font-bold text-center py-6 mb-[4rem]">Certificaciones disponibles con <span className="text-teal-600">Proyecta Empresarial</span></h4>
+          <div className="bg-stone-100 dark:bg-slate-800 rounded-2xl py-10 shadow-md">
+            <h4 className="text-3xl md:text-4xl font-bold text-center py-6 mb-[2rem]">Certificaciones disponibles con <span className="text-teal-600">Proyecta Empresarial</span></h4>
             <Table className="mt-10 md:w-4/5 w-full mx-auto">
               <TableCaption>A list of your recent invoices.</TableCaption>
               <TableHeader className="text-lg font-bold">
@@ -299,7 +287,7 @@ export default function Certificaciones(params) {
                         <TableCell className="text-right">
                           <Drawer>
                             <DrawerTrigger className="group/details invisible group-hover/item:visible text-teal-600 group-hover/item:text-teal-700 group-hover/details:bg-slate-500 py-4">Detalles
-                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover/details:translate-x-1 group-hover/details:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover/details:translate-x-1 group-hover/details:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
                             </DrawerTrigger>
                             <DrawerContent>
                               <DrawerHeader className="flex">
@@ -317,8 +305,8 @@ export default function Certificaciones(params) {
                                 <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
                               </div>
                               <DrawerFooter>
-                                <DrawerClose className="mx-auto hover:bg-slate-100 hover:text-teal-600 rounded-full p-2">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10" /><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                <DrawerClose className="mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full p-2">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-x"><circle cx="12" cy="12" r="10" /><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
                                 </DrawerClose>
                               </DrawerFooter>
                             </DrawerContent>
@@ -334,12 +322,34 @@ export default function Certificaciones(params) {
         </section>
 
         <section className="container w-full py-10 mt-[12rem]">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-5xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
+          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
           <p className="text-xl">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
           <ProgramsCard />
+          <Collapsible>
+            <CollapsibleTrigger className="w-full px-6">
+              <p className="
+                  px-3 
+                  py-4 
+                  text-xl
+                  text-center
+                  lg:text-lg 
+                  text-gray-700 
+                  hover:text-teal-700
+                  dark:text-gray-400
+                  dark:hover:text-teal-700
+                  bg-transparent 
+                  transition-all 
+                  duration-300 
+                  ease-in-out
+                  mb-8">Ver más certificaciones</p>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              Hie there Some content here!
+            </CollapsibleContent>
+          </Collapsible>
         </section>
 
-        <section className="container mx-auto mb-15 py-10 mt-[12rem]">
+        <section className="container mx-auto mb-15 py-10 mt-[6rem] mb-[10rem]">
           <h2 className="text-center text-4xl font-bold py-6 mb-[3rem]">Preguntas frecuentes</h2>
           <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
             <AccordionItem value="item-1">

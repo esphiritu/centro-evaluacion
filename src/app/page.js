@@ -19,6 +19,45 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+// Content for the benefits section
+const benefits = [
+  {
+    title: "Encuentra mejores oportunidades",
+    description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
+    icon: <Key size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
+    id: "emo",
+  },
+  {
+    title: "Accede a mejores salarios",
+    description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
+    icon: <CircleDollarSign size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
+    id: "ams",
+  },
+  {
+    title: "Mejora tus condiciones laborales",
+    description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
+    icon: <HandshakeIcon size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
+    id: "mcl",
+  },
+  // {
+  //   title: "Obtén un certificado de competencia",
+  //   description: "Reconocimiento de la Secretaría de Educación Pública",
+  //   icon: "pending",
+  //   id: "ouc",
+  // },
+]
+
+// Styles for the Image used as background
+const styles = {
+  container: {
+    backgroundImage: 'url(https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+  },
+};
+
+
 // Images
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
@@ -92,19 +131,24 @@ export default function Home({ Component, pageProps }) {
                     <p className="text-lg text-muted-foreground text-left">{benefit.description}</p>
                   </div>
                 )
-              }
-              ))
-              }
+              }))}
             </div>
           </div>
         </section>
 
         <section className="lg:container py-10 my-10">
-          <div className="w-full">
+          <div className="w-full mb-[5rem]">
             <h1 className="text-center text-3xl md:text-4xl font-bold mt-8 mb-4">
               Convención anual. <span className="text-gray-500">Mejores momentos</span>
             </h1>
-            <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-[5rem]">Participan escuelas, universidades y gobiernos</p>
+            <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-4">Participan escuelas, universidades y gobiernos</p>
+            <p className="group text-center text-xl">
+              <Link href="./" className="text-teal-600 hover:text-teal-700">
+                <span className="py-3"> Próximos eventos 
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
+                </span>
+              </Link>
+            </p>
           </div>
           <Carousel>
             <CarouselContent className="relative w-full flex lg:grid grid-cols-4 gap-4 -ml-1">
@@ -161,7 +205,7 @@ export default function Home({ Component, pageProps }) {
 
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem]">
-          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4 mx-auto" />
           <h1 className="text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-zinc-600">evaluación diagnóstica</span></h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
           <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm">
@@ -245,40 +289,3 @@ export default function Home({ Component, pageProps }) {
   );
 }
 
-// Content for the benefits section
-const benefits = [
-  {
-    title: "Encuentra mejores oportunidades",
-    description: "Las certificaciones aumenta la competitividad del trabajador dentro del mercado laboral",
-    icon: <Key size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
-    id: "emo",
-  },
-  {
-    title: "Accede a mejores salarios",
-    description: "En promedio, las personas certificadas ante el CONOCER ganan el doble que los trabajadores no certificados ",
-    icon: <CircleDollarSign size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
-    id: "ams",
-  },
-  {
-    title: "Mejora tus condiciones laborales",
-    description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-    icon: <HandshakeIcon size={80} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
-    id: "mcl",
-  },
-  // {
-  //   title: "Obtén un certificado de competencia",
-  //   description: "Reconocimiento de la Secretaría de Educación Pública",
-  //   icon: "pending",
-  //   id: "ouc",
-  // },
-]
-
-// Styles for the Image used as background
-const styles = {
-  container: {
-    backgroundImage: 'url(https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-  },
-};
