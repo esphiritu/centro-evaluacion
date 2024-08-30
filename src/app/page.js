@@ -18,6 +18,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // Content for the benefits section
 const benefits = [
@@ -73,7 +81,7 @@ import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 export default function Home({ Component, pageProps }) {
   return (
     <>
-      <main className="w-full pt-19">
+      <main className="w-full pt-19 scroll-smooth">
         <section style={styles.container} className="relative h-screen border-b-[9px] px-10">
           <div className="container mx-auto h-full pt-20 md:pt-1">
             <div className="
@@ -113,14 +121,14 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
-            <p className="animate-bounce bg-white/80 hover:bg-slate-300 rounded-full border-2 border-slate-300 p-2 text-slate-800 hover:text-teal-600">
+            <p className="animate-bounce bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
               <Link href="#benefits"><ArrowDown className="h-8 w-8" /></Link>
             </p>
           </div>
         </section>
 
         <section className="container h-auto md:h-[46rem]">
-          <div className="flex flex-col items-center justify-center h-full" id="benefits">
+          <div className="flex flex-col items-center justify-center h-full scroll-smooth" id="benefits">
             <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center"> Beneficios de la certificación</h2>
             <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8">
               {benefits.map((benefit => {
@@ -139,27 +147,71 @@ export default function Home({ Component, pageProps }) {
         <section className="lg:container py-10 my-10">
           <div className="w-full mb-[5rem]">
             <h1 className="text-center text-3xl md:text-4xl font-bold mt-8 mb-4">
-              Convención anual. <span className="text-gray-500">Mejores momentos</span>
+              Convención anual.
+              <span className="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-gray-400 relative inline-block ml-2">
+                <span className="relative text-white text-center px-1">Mejores momentos</span>
+              </span>
             </h1>
             <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-4">Participan escuelas, universidades y gobiernos</p>
             <p className="group text-center text-xl">
               <Link href="./" className="text-teal-600 hover:text-teal-700">
-                <span className="py-3"> Próximos eventos 
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
+                <span className="py-3"> Próximos eventos
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
                 </span>
               </Link>
             </p>
           </div>
           <Carousel>
             <CarouselContent className="relative w-full flex lg:grid grid-cols-4 gap-4 -ml-1">
-              <CarouselItem className="h-auto lg:col-span-2 lg:row-span-2">
-                <Image
-                  src={group}
-                  alt="Image showing a group of people"
-                  quality={75}
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                  className="static inset-0 w-full object-cover rounded-md"
-                />
+              <CarouselItem className="w-auto h-auto lg:w-[650px] lg:h-[635px] lg:col-span-2 lg:row-span-2">
+                <div className="group w-full h-full mx-auto">
+                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
+                    <div className="
+                          absolute
+                          backface-hidden
+                          transform
+                          transition 
+                          group-hover:rotate-y-180
+                          duration-300
+                          rounded-lg 
+                          shadow 
+                          w-full 
+                          h-full
+                          z-20">
+                      <Image
+                        src={group}
+                        alt="Image showing a group of people"
+                        quality={75}
+                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                        className="static inset-0 w-full object-cover rounded-md"
+                      />
+                    </div>
+                    <div className="
+                        absolute
+                        backface-visible
+                        transform
+                        transition
+                        -rotate-y-180 
+                        group-hover:rotate-y-0
+                        duration-300
+                        w-full 
+                        h-full
+                        rounded-lg
+                        bg-teal-600">
+                      <div className="
+                        text-5xl
+                        backface-visible
+                        font-bold
+                        w-full 
+                        h-full
+                        flex
+                        justify-content
+                        items-center">
+                        <h1 className="text-center w-full">Reconocimientos</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CarouselItem>
               <CarouselItem className="relative pl-4">
                 <Image
@@ -204,16 +256,69 @@ export default function Home({ Component, pageProps }) {
         </section>
 
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-md pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem]">
-          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4 mx-auto" />
-          <h1 className="text-3xl md:text-4xl font-bold pt-5">Inicia una <span className="text-zinc-600">evaluación diagnóstica</span></h1>
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem] shadow-sm">
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
+          <h1 className="relative text-3xl md:text-4xl font-bold pt-5">
+            Inicia una evaluación diagnóstica
+            <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
+          </h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
           <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm">
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
+
+        <div className="group w-[400px] h-[400px] mx-auto">
+          <div className="relative perspective-1000 transform-style-3d w-full h-full">
+            <div className="
+              absolute
+              backface-hidden
+              transform
+              transition 
+              group-hover:rotate-y-180
+              duration-300
+              rounded-lg 
+              shadow 
+              w-full 
+              h-full
+              z-20">
+              <Image
+                src={group}
+                alt="Image showing a group of people"
+                quality={75}
+                sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                className="static inset-0 w-full object-cover rounded-md"
+              />
+            </div>
+            <div className="
+              absolute
+              backface-visible
+              transform
+              transition
+              -rotate-y-180 
+              group-hover:rotate-y-0
+              duration-300
+              w-full 
+              h-full
+              rounded-lg
+              bg-teal-600">
+              <div className="
+                text-5xl
+                backface-visible
+                font-bold
+                w-full 
+                h-full
+                flex
+                justify-content
+                items-center">
+                <h1 className="text-center w-full">Hello!</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <section className="container py-10 mt-[12rem] h-auto md:h-[42rem]">
-          <p className="text-center text-slate-700 text-lg uppercase py-6">Testimoniales</p>
+          <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
             align: "center",
@@ -245,12 +350,23 @@ export default function Home({ Component, pageProps }) {
         </section>
         <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
           <div className="justify-center items-center w-full lg:w-1/2 pr-5">
-            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="text-teal-600">Proyecta Empresarial</span>?</h1>
+            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
-            <Link href="./nosotros" className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm ml-1">
-              <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
-            </Link>
+
+            <Dialog>
+              <DialogTrigger className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm ml-1"> <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete your account
+                    and remove your data from our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </div>
           <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-4 mb-10 py-10">
             <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
@@ -264,7 +380,7 @@ export default function Home({ Component, pageProps }) {
           </ul>
         </section>
         <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[8rem]">
-          <p className="text-lg text-slate-700 text-center py-6 uppercase">Alianzas para crear valor</p>
+          <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
           <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
             <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />

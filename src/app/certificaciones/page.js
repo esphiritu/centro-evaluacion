@@ -146,7 +146,7 @@ export default function Certificaciones(params) {
             <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-5 pr-5">Sea parte de los mejores en cada sector</h1>
             <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
             <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-8  pr-3 py-3 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
-              Comienza ahora
+              <span className="">Comienza ahora</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
             </Link>
           </div>
@@ -156,31 +156,9 @@ export default function Certificaciones(params) {
         </header>
 
         <section className="static lg:container py-5 h-auto">
-          <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 auto-cols-max mt-5 mb-[7rem] px-6 lg:px-2">
-            {criterios.map((criterio => {
-              return (
-                <Card key={criterio.id} className={`lg:mx-2 xl:mx-3 mb-6 ${criterio.borColor}`}>
-                  <CardHeader>
-                    <span className="mb-4 text-gray-600">{criterio.icon}</span>
-                    <CardTitle>{criterio.title}</CardTitle>
-                    <CardDescription>{criterio.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-xl">{criterio.content}</p>
-                  </CardContent>
-                  <CardFooter>
-                    <div className="">
-
-                    </div>
-                  </CardFooter>
-                </Card>
-              )
-            }))}
-          </div>
-
           <div className="container py-10">
-            <Image src={resultados} width={100} height={100} alt="icon for" className="max-w-auto mb-3 mx-auto" />
+            <Image src={resultados} width={100} height={100} alt="icon for" className="max-w-auto mb-6 mx-auto" />
+            <span className="w-[8rem] h-1 bg-teal-600 after:content-[''] after:block block mx-auto text-center"></span>
             <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
             <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
             <div className="flex flex-col w-full lg:w-4/5 mx-auto">
@@ -189,7 +167,7 @@ export default function Certificaciones(params) {
                 <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto" />
               </div> */}
                 <div className="relative pl-8 md:pl-[6rem]">
-                  <span className="absolute -left-10 top-10 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
+                  <span className="absolute -left-10 top-10 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
                   <div className="pl-8">
                     <h3 className="text-3xl md:text-left font-bold py-3">
                       Identifica el estándar de competencia
@@ -209,7 +187,7 @@ export default function Certificaciones(params) {
                 <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto" />
               </div> */}
                 <div className="relative pl-8 md:pl-[6rem]">
-                  <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
+                  <span className="absolute -left-10 top-9 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
                   <div className="pl-8">
                     <h3 className="text-3xl md:text-left font-bold py-3">
                       Toma una evaluación diagnóstica
@@ -229,7 +207,7 @@ export default function Certificaciones(params) {
                 <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto" />
               </div> */}
                 <div className="relative pl-8 md:pl-[6rem]">
-                  <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
+                  <span className="absolute -left-10 top-9 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
                   <div className="pl-8">
                     <h3 className="text-3xl md:text-left font-bold py-3">
                       Realiza tu evaluación en un Centro Evaluador
@@ -249,7 +227,7 @@ export default function Certificaciones(params) {
                 <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto" />
               </div> */}
                 <div className="relative pl-8 md:pl-[6rem]">
-                  <span className="absolute -left-10 top-9 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
+                  <span className="absolute -left-10 top-9 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
                   <div className="pl-8">
                     <h3 className="text-3xl md:text-left font-bold py-3">
                       Consulta tus resultados
@@ -265,9 +243,32 @@ export default function Certificaciones(params) {
               </div>
             </div>
 
+            <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 auto-cols-max mt-5 mb-[7rem] px-6 lg:px-2">
+              {criterios.map((criterio => {
+                return (
+                  <Card key={criterio.id} className={`lg:mx-2 xl:mx-3 mb-6 ${criterio.borColor}`}>
+                    <CardHeader>
+                      <span className="mb-4 text-gray-600">{criterio.icon}</span>
+                      <CardTitle>{criterio.title}</CardTitle>
+                      <CardDescription>{criterio.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-xl">{criterio.content}</p>
+                    </CardContent>
+                    <CardFooter>
+                      <div className="">
+
+                      </div>
+                    </CardFooter>
+                  </Card>
+                )
+              }))}
+            </div>
+
           </div>
-          <div className="bg-stone-100 dark:bg-slate-800 rounded-2xl py-10 shadow-md">
-            <h4 className="text-3xl md:text-4xl font-bold text-center py-6 mb-[2rem]">Certificaciones disponibles con <span className="text-teal-600">Proyecta Empresarial</span></h4>
+          <div className="bg-gray-50 dark:bg-slate-800 rounded-2xl py-10 shadow-md">
+            <h4 className="text-3xl md:text-4xl font-bold text-center py-6 mb-[2rem]">Certificaciones disponibles con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span></h4>
             <Table className="mt-10 md:w-4/5 w-full mx-auto">
               <TableCaption>A list of your recent invoices.</TableCaption>
               <TableHeader className="text-lg font-bold">
@@ -305,8 +306,8 @@ export default function Certificaciones(params) {
                                 <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
                               </div>
                               <DrawerFooter>
-                                <DrawerClose className="mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full p-2">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-x"><circle cx="12" cy="12" r="10" /><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                <DrawerClose className="mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
                                 </DrawerClose>
                               </DrawerFooter>
                             </DrawerContent>
