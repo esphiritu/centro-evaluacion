@@ -70,12 +70,13 @@ const styles = {
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
-import group from "@/public/img/gallery-group.jpg";
+import coaching from "@/public/img/gallery-coaching.jpg";
 import karen from "@/public/img/gallery-karen.jpg";
 import session from "@/public/img/gallery-live-session.jpg";
 import participants from "@/public/img/gallery-participants.jpg";
 import staged from "@/public/img/gallery-staged.jpg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
+import presentation from "@/public/img/gallery-presentation.jpg";
 
 
 export default function Home({ Component, pageProps }) {
@@ -162,8 +163,8 @@ export default function Home({ Component, pageProps }) {
             </p>
           </div>
           <Carousel>
-            <CarouselContent className="relative w-full flex lg:grid grid-cols-4 gap-4 -ml-1">
-              <CarouselItem className="w-auto h-auto lg:w-[650px] lg:h-[635px] lg:col-span-2 lg:row-span-2">
+            <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-2 -ml-1">
+              <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[715px] lg:col-span-2 lg:row-span-2">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="
@@ -171,7 +172,7 @@ export default function Home({ Component, pageProps }) {
                           backface-hidden
                           transform
                           transition 
-                          group-hover:rotate-y-180
+                          lg:group-hover:rotate-y-180
                           duration-300
                           rounded-lg 
                           shadow 
@@ -179,11 +180,11 @@ export default function Home({ Component, pageProps }) {
                           h-full
                           z-20">
                       <Image
-                        src={group}
+                        src={presentation}
                         alt="Image showing a group of people"
                         quality={75}
                         sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                        className="static inset-0 w-full object-cover rounded-md"
+                        className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
                     <div className="
@@ -192,14 +193,13 @@ export default function Home({ Component, pageProps }) {
                         transform
                         transition
                         -rotate-y-180 
-                        group-hover:rotate-y-0
+                        lg:group-hover:rotate-y-0
                         duration-300
                         w-full 
                         h-full
                         rounded-lg
                         bg-teal-600">
                       <div className="
-                        text-5xl
                         backface-visible
                         font-bold
                         w-full 
@@ -207,54 +207,274 @@ export default function Home({ Component, pageProps }) {
                         flex
                         justify-content
                         items-center">
-                        <h1 className="text-center w-full">Reconocimientos</h1>
+                        <h1 className="text-white text-5xl text-center w-full">Capacitaciones</h1>
                       </div>
                     </div>
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="relative pl-4">
-                <Image
-                  src={karen}
-                  alt="Image showing Karen Campos"
-                  quality={75}
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="lg:absolute inset-0 w-full h-full object-cover rounded-md"
-                />
+              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+                <div className="group w-full h-full mx-auto">
+                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
+                    <div className="
+                          absolute
+                          backface-hidden
+                          transform
+                          transition 
+                          lg:group-hover:rotate-y-180
+                          duration-300
+                          rounded-lg 
+                          shadow 
+                          w-full 
+                          h-full
+                          z-20">
+                      <Image
+                        src={coaching}
+                        alt="Image showing a group of people"
+                        quality={75}
+                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                        className="static inset-0 w-full h-full object-cover rounded-md"
+                      />
+                    </div>
+                    <div className="
+                        absolute
+                        backface-visible
+                        transform
+                        transition
+                        -rotate-y-180 
+                        lg:group-hover:rotate-y-0
+                        duration-300
+                        w-full 
+                        h-full
+                        rounded-lg
+                        bg-teal-600">
+                      <div className="
+                        backface-visible
+                        font-bold
+                        w-full 
+                        h-full
+                        flex
+                        justify-content
+                        items-center">
+                        <h1 className="text-white lg:text-4xl text-center w-full">Coaching</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CarouselItem>
-              <CarouselItem className="relative pl-4">
-                <Image
-                  src={session}
-                  alt="Image showing a group of people"
-                  quality={75}
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static lg:absolute inset-0 w-full h-full object-cover rounded-md"
-                />
+              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+                <div className="group w-full h-full mx-auto">
+                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
+                    <div className="
+                          absolute
+                          backface-hidden
+                          transform
+                          transition 
+                          lg:group-hover:rotate-y-180
+                          duration-300
+                          rounded-lg 
+                          shadow 
+                          w-full 
+                          h-full
+                          z-20">
+                      <Image
+                        src={session}
+                        alt="Image showing a group of people"
+                        quality={75}
+                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                        className="static inset-0 w-full h-full object-cover rounded-md"
+                      />
+                    </div>
+                    <div className="
+                        absolute
+                        backface-visible
+                        transform
+                        transition
+                        -rotate-y-180 
+                        lg:group-hover:rotate-y-0
+                        duration-300
+                        w-full 
+                        h-full
+                        rounded-lg
+                        bg-teal-600">
+                      <div className="
+                        backface-visible
+                        font-bold
+                        w-full 
+                        h-full
+                        flex
+                        justify-content
+                        items-center">
+                        <h1 className="text-white text-4xl text-center w-full">Conferencias</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CarouselItem>
-              <CarouselItem className="relative pl-4">
-                <Image
-                  src={participants}
-                  alt="Image showing a group of people"
-                  quality={75}
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static lg:absolute inset-0 w-full h-full object-cover rounded-md"
-                />
+              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+                <div className="group w-full h-full mx-auto">
+                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
+                    <div className="
+                          absolute
+                          backface-hidden
+                          transform
+                          transition 
+                          lg:group-hover:rotate-y-180
+                          duration-300
+                          rounded-lg 
+                          shadow 
+                          w-full 
+                          h-full
+                          z-20">
+                      <Image
+                        src={participants}
+                        alt="Image showing a group of people"
+                        quality={75}
+                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                        className="static inset-0 w-full h-full object-cover rounded-md"
+                      />
+                    </div>
+                    <div className="
+                        absolute
+                        backface-visible
+                        transform
+                        transition
+                        -rotate-y-180 
+                        lg:group-hover:rotate-y-0
+                        duration-300
+                        w-full 
+                        h-full
+                        rounded-lg
+                        bg-teal-600">
+                      <div className="
+                        backface-visible
+                        font-bold
+                        w-full 
+                        h-full
+                        flex
+                        justify-content
+                        items-center">
+                        <h1 className="text-white text-4xl text-center w-full">Talleres</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </CarouselItem>
-              <CarouselItem className="relative pl-4">
+              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+                <div className="group w-full h-full mx-auto">
+                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
+                    <div className="
+                          absolute
+                          backface-hidden
+                          transform
+                          transition 
+                          lg:group-hover:rotate-y-180
+                          duration-300
+                          rounded-lg 
+                          shadow 
+                          w-full 
+                          h-full
+                          z-20">
+                      <Image
+                        src={staged}
+                        alt="Image showing a group of people"
+                        quality={75}
+                        className="static inset-0 w-full h-full object-cover rounded-md"
+                      />
+                    </div>
+                    <div className="
+                        absolute
+                        backface-visible
+                        transform
+                        transition
+                        -rotate-y-180 
+                        lg:group-hover:rotate-y-0
+                        duration-300
+                        w-full 
+                        h-full
+                        rounded-lg
+                        bg-teal-600">
+                      <div className="
+                        backface-visible
+                        font-bold
+                        w-full 
+                        h-full
+                        flex
+                        justify-content
+                        items-center">
+                        <h1 className="text-white text-4xl text-center w-full">Consultoría</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="lg:invisible" />
+            <CarouselNext className="lg:invisible" />
+          </Carousel>
+
+        </section>
+
+
+
+        {/* <div className="group w-full h-full mx-auto">
+                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
+                    <div className="
+                          absolute
+                          backface-hidden
+                          transform
+                          transition 
+                          lg:group-hover:rotate-y-180
+                          duration-300
+                          rounded-lg 
+                          shadow 
+                          w-full 
+                          h-full
+                          z-20">
+                      <Image
+                        src={staged}
+                        alt="Image showing a group of people"
+                        quality={75}
+                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                        className="static inset-0 w-full h-full object-cover rounded-md"
+                      />
+                    </div>
+                    <div className="
+                        absolute
+                        backface-visible
+                        transform
+                        transition
+                        -rotate-y-180 
+                        lg:group-hover:rotate-y-0
+                        duration-300
+                        w-full 
+                        h-full
+                        rounded-lg
+                        bg-teal-600">
+                      <div className="
+                        backface-visible
+                        font-bold
+                        w-full 
+                        h-full
+                        flex
+                        justify-content
+                        items-center">
+                        <h1 className="text-white text-5xl text-center w-full">Talleres</h1>
+                      </div>
+                    </div>
+                  </div>
+        </div> */}
+
+        {/* <CarouselItem className="w-full h-full lg:w-[320px] lg:h-[320px]">
                 <Image
                   src={staged}
                   alt="Image showing a group of people"
                   quality={75}
                   sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static lg:absolute inset-0 w-full h-full object-cover rounded-md"
+                  className="static inset-0 w-full h-full object-cover rounded-md"
                 />
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="lg:hidden" />
-            <CarouselNext className="lg:hidden" />
-          </Carousel>
-        </section>
-
+                
+              </CarouselItem> */}
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem] shadow-sm">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
@@ -283,11 +503,11 @@ export default function Home({ Component, pageProps }) {
               h-full
               z-20">
               <Image
-                src={group}
+                src={presentation}
                 alt="Image showing a group of people"
                 quality={75}
                 sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                className="static inset-0 w-full object-cover rounded-md"
+                className="static inset-0 w-full h-full object-cover rounded-md"
               />
             </div>
             <div className="
@@ -303,7 +523,6 @@ export default function Home({ Component, pageProps }) {
               rounded-lg
               bg-teal-600">
               <div className="
-                text-5xl
                 backface-visible
                 font-bold
                 w-full 
@@ -311,7 +530,7 @@ export default function Home({ Component, pageProps }) {
                 flex
                 justify-content
                 items-center">
-                <h1 className="text-center w-full">Hello!</h1>
+                <h1 className="text-white text-5xl text-center w-full">Hello!</h1>
               </div>
             </div>
           </div>
