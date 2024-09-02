@@ -415,67 +415,6 @@ export default function Home({ Component, pageProps }) {
 
         </section>
 
-
-
-        {/* <div className="group w-full h-full mx-auto">
-                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="
-                          absolute
-                          backface-hidden
-                          transform
-                          transition 
-                          lg:group-hover:rotate-y-180
-                          duration-300
-                          rounded-lg 
-                          shadow 
-                          w-full 
-                          h-full
-                          z-20">
-                      <Image
-                        src={staged}
-                        alt="Image showing a group of people"
-                        quality={75}
-                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                        className="static inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="
-                        absolute
-                        backface-visible
-                        transform
-                        transition
-                        -rotate-y-180 
-                        lg:group-hover:rotate-y-0
-                        duration-300
-                        w-full 
-                        h-full
-                        rounded-lg
-                        bg-teal-600">
-                      <div className="
-                        backface-visible
-                        font-bold
-                        w-full 
-                        h-full
-                        flex
-                        justify-content
-                        items-center">
-                        <h1 className="text-white text-5xl text-center w-full">Talleres</h1>
-                      </div>
-                    </div>
-                  </div>
-        </div> */}
-
-        {/* <CarouselItem className="w-full h-full lg:w-[320px] lg:h-[320px]">
-                <Image
-                  src={staged}
-                  alt="Image showing a group of people"
-                  quality={75}
-                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-                  className="static inset-0 w-full h-full object-cover rounded-md"
-                />
-                
-              </CarouselItem> */}
-
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem] shadow-sm">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
           <h1 className="relative text-3xl md:text-4xl font-bold pt-5">
@@ -487,54 +426,6 @@ export default function Home({ Component, pageProps }) {
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
-
-        <div className="group w-[400px] h-[400px] mx-auto">
-          <div className="relative perspective-1000 transform-style-3d w-full h-full">
-            <div className="
-              absolute
-              backface-hidden
-              transform
-              transition 
-              group-hover:rotate-y-180
-              duration-300
-              rounded-lg 
-              shadow 
-              w-full 
-              h-full
-              z-20">
-              <Image
-                src={presentation}
-                alt="Image showing a group of people"
-                quality={75}
-                sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                className="static inset-0 w-full h-full object-cover rounded-md"
-              />
-            </div>
-            <div className="
-              absolute
-              backface-visible
-              transform
-              transition
-              -rotate-y-180 
-              group-hover:rotate-y-0
-              duration-300
-              w-full 
-              h-full
-              rounded-lg
-              bg-teal-600">
-              <div className="
-                backface-visible
-                font-bold
-                w-full 
-                h-full
-                flex
-                justify-content
-                items-center">
-                <h1 className="text-white text-5xl text-center w-full">Hello!</h1>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <section className="container py-10 mt-[12rem] h-auto md:h-[42rem]">
           <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>

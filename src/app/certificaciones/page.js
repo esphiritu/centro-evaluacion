@@ -109,7 +109,7 @@ const criterios = [
     description: "Saber y entender",
     content: "Posesión de conceptos, teorías y principios que sustentan el desempeño de la función",
     borColor: "border-t-purple-400",
-    icon: <Lightbulb strokeWidth={1.25} size={40} />,
+    icon: <Lightbulb strokeWidth={1.25} size={40} className="mx-auto" />,
   },
   {
     id: "00B",
@@ -117,7 +117,7 @@ const criterios = [
     description: "Ser capaz físicamente de desempeñar",
     content: "Realización de acciones que permiten observar su competencia",
     borColor: "border-t-blue-400",
-    icon: <Hammer strokeWidth={1.25} size={40} />,
+    icon: <Hammer strokeWidth={1.25} size={40} className="mx-auto" />,
   },
   {
     id: "00C",
@@ -125,15 +125,15 @@ const criterios = [
     description: "Tener disposición y actitud",
     content: "Predisposición o tendencia a actuar con determinado comportamiento ante una situación o persona con las que se relaciona durante el desempeño",
     borColor: "border-t-orange-400",
-    icon: <Medal strokeWidth={1.25} size={40} />,
+    icon: <Medal strokeWidth={1.25} size={40} className="mx-auto" />,
   },
   {
     id: "00D",
     title: "Productos",
-    description: "Objetos tangibles, resultado de la actividad",
+    description: "Objetos resultado de la actividad",
     content: "Pueden ser manuales, informes, métricas de resultados",
     borColor: "border-t-stone-400",
-    icon: <BookOpenCheck strokeWidth={1.25} size={40} />,
+    icon: <BookOpenCheck strokeWidth={1.25} size={40} className="mx-auto" />,
   },
 ]
 
@@ -141,7 +141,7 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full pt-19">
-        <header className="flex flex-col-reverse lg:flex-row h-auto lg:h-[38rem] justify-center items-center rounded-lg bg-transparent dark:bg-slate-900 py-10 px-8 lg:px-[10rem]">
+        <header className="flex flex-col-reverse lg:flex-row h-auto lg:h-[40rem] justify-center items-center rounded-lg bg-transparent dark:bg-slate-900 py-10 px-8 lg:px-[10rem] mb-6">
           <div className="flex flex-col justify-normal items-center lg:items-start">
             <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-5 pr-5">Sea parte de los mejores en cada sector</h1>
             <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
@@ -156,16 +156,37 @@ export default function Certificaciones(params) {
         </header>
 
         <section className="static lg:container py-5 h-auto">
+          {/* Cards Criterios de evaluación */}
+          <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-1 auto-cols-max mt-5 mb-[7rem] px-6 lg:px-0">
+              {criterios.map((criterio => {
+                return (
+                  <Card key={criterio.id} className={`lg:mx-1 xl:mx-2 mb-6 ${criterio.borColor}`}>
+                    <CardHeader>
+                      <CardDescription className="mb-3">{criterio.description}</CardDescription>
+                      <span className="text-gray-600 p-4">{criterio.icon}</span>
+                      <CardTitle className="text-center">{criterio.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-xl">{criterio.content}</p>
+                    </CardContent>
+                    <CardFooter>
+                      <div className="">
+
+                      </div>
+                    </CardFooter>
+                  </Card>
+                )
+              }))}
+            </div>
+
+          {/* Pasos para certificarse */}
           <div className="container py-10">
-            <Image src={resultados} width={100} height={100} alt="icon for" className="max-w-auto mb-6 mx-auto" />
-            <span className="w-[8rem] h-1 bg-teal-600 after:content-[''] after:block block mx-auto text-center"></span>
             <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
             <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
             <div className="flex flex-col w-full lg:w-4/5 mx-auto">
               <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
-                {/* <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={estandar} width={180} height={180} alt="icon for" className="w-auto" />
-              </div> */}
+
                 <div className="relative pl-8 md:pl-[6rem]">
                   <span className="absolute -left-10 top-10 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
                   <div className="pl-8">
@@ -242,33 +263,16 @@ export default function Certificaciones(params) {
                 </div>
               </div>
             </div>
-
-            <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 auto-cols-max mt-5 mb-[7rem] px-6 lg:px-2">
-              {criterios.map((criterio => {
-                return (
-                  <Card key={criterio.id} className={`lg:mx-2 xl:mx-3 mb-6 ${criterio.borColor}`}>
-                    <CardHeader>
-                      <span className="mb-4 text-gray-600">{criterio.icon}</span>
-                      <CardTitle>{criterio.title}</CardTitle>
-                      <CardDescription>{criterio.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-xl">{criterio.content}</p>
-                    </CardContent>
-                    <CardFooter>
-                      <div className="">
-
-                      </div>
-                    </CardFooter>
-                  </Card>
-                )
-              }))}
-            </div>
-
+            
+            {/* Estándares disponibles */}
           </div>
           <div className="bg-gray-50 dark:bg-slate-800 rounded-2xl py-10 shadow-md">
-            <h4 className="text-3xl md:text-4xl font-bold text-center py-6 mb-[2rem]">Certificaciones disponibles con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span></h4>
+            <div className="flex justify-start items-center">
+              <div className="bg-transparent max-w-28 mr-1 ml-[5rem] mb-[3rem]">
+                <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
+              </div>
+              <h4 className="text-3xl md:text-4xl font-bold text-left py-6 px-[5rem] mb-[2rem]">Certificaciones disponibles con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span></h4>
+            </div>
             <Table className="mt-10 md:w-4/5 w-full mx-auto">
               <TableCaption>A list of your recent invoices.</TableCaption>
               <TableHeader className="text-lg font-bold">
@@ -355,19 +359,19 @@ export default function Certificaciones(params) {
           <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
             <AccordionItem value="item-1">
               <AccordionTrigger className="font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="py-8">
                 En promedio, 30 días a partir de la evaluación
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger className="font-bold">¿Puedo hacer la evaluación en línea?</AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="py-8">
                 En algunos casos, dependiendo del estándar de competencia al que estés aplicando. Algunos estándares de competencia lo permiten, mientras que otros no.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger className="font-bold">¿Cuál es el costo de la evaluación diagnóstica?</AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="py-8">
                 Ninguno. La evalución diagnóstica la ofrecemos gratis.
               </AccordionContent>
             </AccordionItem>
