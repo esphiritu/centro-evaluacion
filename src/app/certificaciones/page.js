@@ -141,11 +141,11 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full pt-19">
-        <header className="flex flex-col-reverse lg:flex-row h-auto lg:h-[40rem] justify-center items-center rounded-lg bg-transparent dark:bg-slate-900 py-10 px-8 lg:px-[10rem] mb-6">
+        <header className="flex flex-col-reverse lg:flex-row h-auto lg:h-[40rem] justify-center items-center rounded-lg bg-stone-50 dark:bg-slate-900 py-10 px-8 lg:px-[10rem] mb-6">
           <div className="flex flex-col justify-normal items-center lg:items-start">
-            <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-5 pr-5">Sea parte de los mejores en cada sector</h1>
-            <p className="text-xl md:text-2xl text-center lg:text-left py-5 mb-4 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
-            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-8  pr-3 py-3 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
+            <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-3 pr-5">Sea parte de los mejores en cada sector</h1>
+            <p className="text-xl md:text-2xl text-center lg:text-left py-3 mb-2 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
+            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-4 py-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
               <span className="">Comienza ahora</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
             </Link>
@@ -181,11 +181,11 @@ export default function Certificaciones(params) {
             </div>
 
           {/* Pasos para certificarse */}
-          <div className="container py-10">
-            <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-3">Conoce los pasos para la certificación</h2>
-            <p className="text-2xl text-muted-foreground text-center pb-8 mb-[5rem]">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
-            <div className="flex flex-col w-full lg:w-4/5 mx-auto">
-              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
+          <div className="container  py-10 mb-[5rem]">
+            <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-2">Conoce los pasos para la certificación</h2>
+            <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+            <div className="flex flex-col w-full py-3 lg:w-4/5 mx-auto">
+              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[2rem] bg-gray-50 dark:bg-slate-800 shadow-md rounded-2xl py-10">
 
                 <div className="relative pl-8 md:pl-[6rem]">
                   <span className="absolute -left-10 top-10 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">1</span>
@@ -203,10 +203,7 @@ export default function Certificaciones(params) {
                 </div>
               </div>
 
-              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
-                {/* <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={diagnostico} width={180} height={180} alt="icon for" className="w-auto" />
-              </div> */}
+              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[2rem] bg-gray-50 dark:bg-slate-800 shadow-md rounded-2xl py-10">
                 <div className="relative pl-8 md:pl-[6rem]">
                   <span className="absolute -left-10 top-9 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">2</span>
                   <div className="pl-8">
@@ -223,10 +220,7 @@ export default function Certificaciones(params) {
                 </div>
               </div>
 
-              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
-                {/* <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={evaluacion} width={180} height={180} alt="icon for" className="w-auto" />
-              </div> */}
+              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[2rem] bg-gray-50 dark:bg-slate-800 shadow-md rounded-2xl py-10"> 
                 <div className="relative pl-8 md:pl-[6rem]">
                   <span className="absolute -left-10 top-9 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">3</span>
                   <div className="pl-8">
@@ -243,10 +237,7 @@ export default function Certificaciones(params) {
                 </div>
               </div>
 
-              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[6rem]">
-                {/* <div className="bg-transparent max-w-32 mr-1 ml-2 md:mr-[5rem]">
-                <Image src={resultados} width={180} height={180} alt="icon for" className="w-auto" />
-              </div> */}
+              <div className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[2rem] bg-gray-50 dark:bg-slate-800 shadow-md rounded-2xl py-10">
                 <div className="relative pl-8 md:pl-[6rem]">
                   <span className="absolute -left-10 top-9 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-5">4</span>
                   <div className="pl-8">
@@ -263,15 +254,15 @@ export default function Certificaciones(params) {
                 </div>
               </div>
             </div>
-            
-            {/* Estándares disponibles */}
           </div>
-          <div className="bg-gray-50 dark:bg-slate-800 rounded-2xl py-10 shadow-md">
-            <div className="flex justify-start items-center">
-              <div className="bg-transparent max-w-28 mr-1 ml-[5rem] mb-[3rem]">
+
+          {/* Estándares disponibles */}
+          <div className="py-10">
+            <div className="mb-8">
+              <div className="bg-transparent max-w-28 mx-auto">
                 <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
               </div>
-              <h4 className="text-3xl md:text-4xl font-bold text-left py-6 px-[5rem] mb-[2rem]">Certificaciones disponibles con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span></h4>
+              <h4 className="text-3xl md:text-4xl font-bold text-center py-6">Certificaciones disponibles con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span></h4>
             </div>
             <Table className="mt-10 md:w-4/5 w-full mx-auto">
               <TableCaption>A list of your recent invoices.</TableCaption>

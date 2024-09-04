@@ -48,8 +48,8 @@ export default function ProgramsCard() {
               <li>Certificado</li>
             </ul>
             <Link
-              href={program.ProgramHrefLink} className="static right-2/5 transition-all duration-300 ease-in-out bg-teal-600 hover:bg-teal-700 px-6 py-3 text-white rounded-sm text-base font-bold md:text-lg text-center">
-              Conoce el programa
+              href={program.ProgramHrefLink} className="static right-2/5 transition-all duration-300 ease-in-out md:text-lg text-center text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm">
+              <span className="py-3 px-3 text-xl">Conoce el programa</span>
             </Link>
           </div>
           <div className="w-full lg:w-1/2 overflow-hidden">
@@ -58,7 +58,7 @@ export default function ProgramsCard() {
               alt={program.ProgramPicText}
               quality={75}
               sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-              className="rounded-md"
+              className="rounded-xl"
               style={{
                 width: '100%',
                 height: 'auto',

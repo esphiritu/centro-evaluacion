@@ -10,6 +10,7 @@ import {
   Headset,
   Award,
   ArrowDown,
+  Quote,
 } from "lucide-react";
 import {
   Carousel,
@@ -110,7 +111,7 @@ export default function Home({ Component, pageProps }) {
               </h1>
               <p className="text-xl md:text-3xl text-white animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
-                <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-8  pr-3 py-3 mx-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
+                <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-4 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
                   Comienza ahora
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
                 </Link>
@@ -131,7 +132,7 @@ export default function Home({ Component, pageProps }) {
         <section className="container h-auto md:h-[46rem]">
           <div className="flex flex-col items-center justify-center h-full scroll-smooth" id="benefits">
             <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center"> Beneficios de la certificación</h2>
-            <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8">
+            <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               {benefits.map((benefit => {
                 return (
                   <div className="w-full lg:w-1/3 py-8 px-5 mx-2 md:mx-auto" key={benefit.id}>
@@ -142,6 +143,9 @@ export default function Home({ Component, pageProps }) {
                 )
               }))}
             </div>
+            <Link href="./certificaciones" className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white px-3 py-3 rounded-sm ml-1 inline-block mt-8">
+              <span className="py-2 px-3 text-xl">Ver certificaciones</span>
+            </Link>
           </div>
         </section>
 
@@ -247,7 +251,7 @@ export default function Home({ Component, pageProps }) {
                         w-full 
                         h-full
                         rounded-lg
-                        bg-teal-600">
+                        bg-purple-400">
                       <div className="
                         backface-visible
                         font-bold
@@ -296,7 +300,7 @@ export default function Home({ Component, pageProps }) {
                         w-full 
                         h-full
                         rounded-lg
-                        bg-teal-600">
+                        bg-blue-500">
                       <div className="
                         backface-visible
                         font-bold
@@ -345,7 +349,7 @@ export default function Home({ Component, pageProps }) {
                         w-full 
                         h-full
                         rounded-lg
-                        bg-teal-600">
+                        bg-orange-400">
                       <div className="
                         backface-visible
                         font-bold
@@ -393,7 +397,7 @@ export default function Home({ Component, pageProps }) {
                         w-full 
                         h-full
                         rounded-lg
-                        bg-teal-600">
+                        bg-stone-400">
                       <div className="
                         backface-visible
                         font-bold
@@ -427,24 +431,58 @@ export default function Home({ Component, pageProps }) {
           </Link>
         </section>
 
-        <section className="container py-10 mt-[12rem] h-auto md:h-[42rem]">
+        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
+          
+          <div className="justify-center items-center w-full lg:w-1/2 pr-10 ">
+            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span>?</h1>
+            <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
+            <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
+
+            <Dialog>
+              <DialogTrigger className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white px-3 py-4 rounded-sm ml-1"> <span className="py-2 px-3 text-xl">Acerca de nosotros</span>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete your account
+                    and remove your data from our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          </div>
+          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-5 mb-10 mr-10 py-10">
+            <li className="text-xl text-center font-bold flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+              <span className="block mt-8">Objetividad y confiabilidad</span></li>
+            <li className="text-xl text-center font-bold flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+              <span className="block mt-8">Asesoría de expertos</span></li>
+            <li className="text-xl text-center font-bold flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+              <span className="block mt-8">Calidad asegurada</span></li>
+            <li className="text-xl text-center font-bold flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
+              <span className="block mt-8">Respaldo de OC más importante</span></li>
+          </ul>
+        </section>
+
+        <section className="container py-10 mt-2 h-auto md:h-[42rem]">
           <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
           <Carousel opts={{
             align: "center",
             loop: true,
           }}
-            autoplay={2900}
+            autoplay={4900}
           >
             <CarouselContent className="p-0 md:p-5 h-auto md:h-[32rem]">
               <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-                <div className="w-full scroll-m-20 ">
+                <div className="w-full scroll-m-20">
                   <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
                 </div>
 
-                <div className="w-4/5 md:w-2/3 mx-auto">
+                <div className="relative w-4/5 md:w-2/3 mx-auto">
                   <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
                   <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
+                  <Quote strokeWidth={1.25} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
                 </div>
               </CarouselItem>
               <CarouselItem>
@@ -458,37 +496,7 @@ export default function Home({ Component, pageProps }) {
             <CarouselNext />
           </Carousel>
         </section>
-        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
-          <div className="justify-center items-center w-full lg:w-1/2 pr-5">
-            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span>?</h1>
-            <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
-            <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
-
-            <Dialog>
-              <DialogTrigger className="text-lg font-bold outline text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-4 rounded-sm ml-1"> <span className="py-3 px-3 text-xl">Acerca de nosotros</span>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
-                  <DialogDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          </div>
-          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-4 mb-10 py-10">
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><LockKeyhole size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-              <span className="block mt-8">Objetividad y confiabilidad</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Headset size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-              <span className="block mt-8">Asesoría de expertos</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><ShieldCheck size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-              <span className="block mt-8">Calidad asegurada</span></li>
-            <li className="text-2xl text-center font-baseline flex flex-col align-middle"><Award size={42} strokeWidth={1.50} className="mx-auto text-teal-600" />
-              <span className="block mt-8">Respaldo de OC más importante</span></li>
-          </ul>
-        </section>
+        
         <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[8rem]">
           <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
@@ -503,7 +511,7 @@ export default function Home({ Component, pageProps }) {
               <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>
               <p className="text-lg md:text-2xl text-center text-white py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
-            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-8  pr-3 py-3 mx-4 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
+            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-4 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
               Comienza ahora
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
             </Link>
