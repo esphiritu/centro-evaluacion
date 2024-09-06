@@ -123,7 +123,7 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
-            <p className="animate-bounce bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
+            <p className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
               <Link href="#benefits"><ArrowDown className="h-8 w-8" /></Link>
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function Home({ Component, pageProps }) {
                 )
               }))}
             </div>
-            <Link href="./certificaciones" className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white px-3 py-3 rounded-sm ml-1 inline-block mt-8">
+            <Link href="./certificaciones" className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white transition-colors ease-in-out duration-300 px-3 py-3 rounded-sm ml-1 inline-block mt-8">
               <span className="py-2 px-3 text-xl">Ver certificaciones</span>
             </Link>
           </div>
@@ -426,7 +426,7 @@ export default function Home({ Component, pageProps }) {
             <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
           </h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm">
+          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm transition-colors ease-in-out duration-300">
             <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
           </Link>
         </section>
@@ -439,7 +439,7 @@ export default function Home({ Component, pageProps }) {
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
 
             <Dialog>
-              <DialogTrigger className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white px-3 py-4 rounded-sm ml-1"> <span className="py-2 px-3 text-xl">Acerca de nosotros</span>
+              <DialogTrigger className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white transition-colors ease-in-out duration-300 px-3 py-4 rounded-sm ml-1"> <span className="py-2 px-3 text-xl">Acerca de nosotros</span>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
