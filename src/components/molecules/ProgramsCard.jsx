@@ -40,7 +40,7 @@ export default function ProgramsCard() {
         <div className={`flex ${program.flexColDirection} ${program.flexRowDirection} my-[2rem] md:my-[3rem] pt-1 md:pt-6 md:pb-10 w-full`} key={program.index}>
           <div className={`relative text-left ${program.bgColor} py-6 px-2 md:px-[5rem] w-full lg:w-1/2 h-[23rem] md:h-auto`}>
             <h3 className="uppercase text-muted-foreground py-2 md:py-3">{program.ProgramName}</h3>
-            <p className="text-2xl lg:text-3xl font-semibold">{program.ProgramDescription}</p>
+            <p className="text-xl lg:text-2xl font-semibold">{program.ProgramDescription}</p>
             <ul className="text-left p-3 mt-3 mb-8">
               <li>Evaluación diagnóstica</li>
               <li>Alineación al estándar de competencia</li>

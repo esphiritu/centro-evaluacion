@@ -1,3 +1,4 @@
+
 export default function Soluciones() {
     return (
     <main className="w-full pt-19">

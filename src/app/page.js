@@ -28,6 +28,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+// Custom components
+import Footer from "@/components/organisms/Footer";
+
 // Content for the benefits section
 const benefits = [
   {
@@ -72,7 +75,6 @@ import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
 import coaching from "@/public/img/gallery-coaching.jpg";
-import karen from "@/public/img/gallery-karen.jpg";
 import session from "@/public/img/gallery-live-session.jpg";
 import participants from "@/public/img/gallery-participants.jpg";
 import staged from "@/public/img/gallery-staged.jpg";
@@ -100,7 +102,7 @@ export default function Home({ Component, pageProps }) {
               md:text-5xl 
               lg:text-6xl 
               font-extrabold 
-              bg-black/50 
+              bg-teal-600/70 
               tracking-tight 
               py-3 
               md:rounded-md 
@@ -111,7 +113,7 @@ export default function Home({ Component, pageProps }) {
               </h1>
               <p className="text-xl md:text-3xl text-white animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
-                <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-4 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
+                <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-3 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
                   Comienza ahora
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
                 </Link>
@@ -123,9 +125,9 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
-            <p className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
+            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
               <Link href="#benefits"><ArrowDown className="h-8 w-8" /></Link>
-            </p>
+            </div>
           </div>
         </section>
 
@@ -416,30 +418,19 @@ export default function Home({ Component, pageProps }) {
             <CarouselPrevious className="lg:invisible" />
             <CarouselNext className="lg:invisible" />
           </Carousel>
-
         </section>
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[12rem] shadow-sm">
-          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
-          <h1 className="relative text-3xl md:text-4xl font-bold pt-5">
-            Inicia una evaluación diagnóstica
-            <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
-          </h1>
-          <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm transition-colors ease-in-out duration-300">
-            <span className="py-3 px-3 text-xl">Agenda una evaluación</span>
-          </Link>
-        </section>
+        
 
         <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
           
           <div className="justify-center items-center w-full lg:w-1/2 pr-10 ">
-            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="text-teal-600 whitespace-nowrap">Proyecta Empresarial</span>?</h1>
+            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="bg-teal-400 whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span>?</h1>
             <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
 
             <Dialog>
-              <DialogTrigger className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white transition-colors ease-in-out duration-300 px-3 py-4 rounded-sm ml-1"> <span className="py-2 px-3 text-xl">Acerca de nosotros</span>
+              <DialogTrigger className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white transition-colors ease-in-out duration-300 px-3 py-3 rounded-sm ml-1"> <span className="py-2 px-3 text-xl">Acerca de nosotros</span>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
@@ -464,6 +455,18 @@ export default function Home({ Component, pageProps }) {
           </ul>
         </section>
 
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[4rem] shadow-sm">
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
+          <h1 className="relative text-3xl md:text-4xl font-bold pt-5">
+            Inicia una evaluación diagnóstica
+            <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
+          </h1>
+          <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
+          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-3 py-4 my-5 rounded-sm transition-colors ease-in-out duration-300">
+            <span className="px-3 text-xl">Agenda una evaluación</span>
+          </Link>
+        </section>
+        
         <section className="container py-10 mt-2 h-auto md:h-[42rem]">
           <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
@@ -505,13 +508,14 @@ export default function Home({ Component, pageProps }) {
             <Image src={logoICEM} alt="logotipo de ICE México" width={190} className="mx-5" />
           </div>
         </div>
+
         <section className="mb-10">
           <div className="flex flex-col justify-center items-center w-full h-auto md:h-[36rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] border-t-[9px] mx-auto">
             <div className="w-full md:w-3/5 px-10 ">
               <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>
               <p className="text-lg md:text-2xl text-center text-white py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
-            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-4 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
+            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-3 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
               Comienza ahora
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
             </Link>
@@ -519,6 +523,7 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

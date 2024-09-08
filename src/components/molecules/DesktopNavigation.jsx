@@ -2,6 +2,7 @@ import Link from "next/link";
 
 
 export default function DesktopNavigation({ links }) {
+
   return (
     <nav className="hidden md:block desktop-nav">
       <ul 
@@ -20,13 +21,13 @@ export default function DesktopNavigation({ links }) {
             {links.map((link) => (
               <li key={link.href} className="px-1">
                 <Link 
-                  className="
+                  className={`
                   px-3 
                   py-2 
                   text-2xl 
                   md:text-lg 
                   text-gray-700 
-                  hover:text-teal-700
+                  hover:text-teal-700                 
                   dark:text-gray-400
                   dark:hover:text-teal-700
                   font-semibold 
@@ -35,7 +36,7 @@ export default function DesktopNavigation({ links }) {
                   bg-transparent 
                   transition-all 
                   duration-300 
-                  ease-in-out"
+                  ease-in-out`}
                   href={link.href} 
                   alt={link.alt}>
                     {link.text}
