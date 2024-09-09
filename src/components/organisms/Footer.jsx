@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <footer className="my-10 py-10 px-8">
-        <h3 className="text-3xl font-bold py-4">Centro de evaluación</h3>
+        <h3 className="text-3xl text-center font-bold py-4 mb-3">Centro de evaluación</h3>
         <div className="flex flex-col lg:flex-row md:justify-around justify-center">
           <div className="py-5">
             <h4 className="text-2xl font-bold pt-5">Proyecta empresarial</h4>

@@ -30,6 +30,7 @@ import {
 
 // Custom components
 import Footer from "@/components/organisms/Footer";
+import Testimonios from "@/components/molecules/Testimonios";
 
 // Content for the benefits section
 const benefits = [
@@ -71,7 +72,6 @@ const styles = {
 
 
 // Images
-import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg"
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
 import coaching from "@/public/img/gallery-coaching.jpg";
@@ -470,37 +470,10 @@ export default function Home({ Component, pageProps }) {
         <section className="container py-10 mt-2 h-auto md:h-[42rem]">
           <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
           <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
-          <Carousel opts={{
-            align: "center",
-            loop: true,
-          }}
-            autoplay={4900}
-          >
-            <CarouselContent className="p-0 md:p-5 h-auto md:h-[32rem]">
-              <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-                <div className="w-full scroll-m-20">
-                  <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
-                </div>
-
-                <div className="relative w-4/5 md:w-2/3 mx-auto">
-                  <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
-                  <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
-                  <Quote strokeWidth={1.25} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
-              </CarouselItem>
-              <CarouselItem>
-                <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <Testimonios />
         </section>
         
-        <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[8rem]">
+        <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[12rem]">
           <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
           <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
