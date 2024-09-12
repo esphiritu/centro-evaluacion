@@ -77,8 +77,8 @@ export default function Testimonios() {
         {indicators.map((_, indx) => (
             <div
               className={`
-              transition-all w-3 h-3 bg-black rounded-full
-              ${current === indx + 1 ? "p-2" : "bg-opacity-50"}
+              transition-all w-3 h-3 bg-black dark:bg-white rounded-full
+              ${current === indx + 1 ? "p-2" : "bg-opacity-50 dark:bg-opacity-30"}
             `}
             />
           ))}

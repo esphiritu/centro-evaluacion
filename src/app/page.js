@@ -10,7 +10,6 @@ import {
   Headset,
   Award,
   ArrowDown,
-  Quote,
 } from "lucide-react";
 import {
   Carousel,
@@ -159,7 +158,7 @@ export default function Home({ Component, pageProps }) {
                 <span className="relative text-white text-center px-1">Mejores momentos</span>
               </span>
             </h1>
-            <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-4">Participan escuelas, universidades y gobiernos</p>
+            <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-4">Participan escuelas, universidades y gobiernos en diferentes actividades</p>
             <p className="group text-center text-xl">
               <Link href="./" className="text-teal-600 hover:text-teal-700">
                 <span className="py-3"> Próximos eventos

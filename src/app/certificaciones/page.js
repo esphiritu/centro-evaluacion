@@ -22,7 +22,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Lightbulb, BookOpenCheck, Hammer, Medal, Info } from "lucide-react";
+import { Lightbulb, BookOpenCheck, Hammer, Medal, Info, MessagesSquare } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -356,9 +356,17 @@ export default function Certificaciones(params) {
               Hie there Some content here!
             </CollapsibleContent>
           </Collapsible>
-        </section>
+        </section>t's funny that no  movies could still top LOTR trilogy...the story, the lore, the characters, the mus
 
-        <section className="container mx-auto mb-15 py-10 mt-[6rem] mb-[10rem]">
+        <section className="container mx-auto mb-15 py-10 mt-[5rem] mb-[10rem]">
+          <div className="bg-gray-200 rounded-xl h-auto md:h-[13rem] mb-[7rem] px-10 py-8">
+            <MessagesSquare size={60} strokeWidth={1.50} className="mb-4 bg-slate-400"/>
+            <h3 className="text-3xl font-bold mb-2">
+            ¿Ya estás certificado y te interesa ser evaluador?
+            </h3>
+            <p className="text-xl">Ponte contacto con un asesor y aumenta tus beneficios realizando evaluaciones</p>
+          </div>
+
           <h2 className="text-center text-3xl font-bold py-6 mb-[3rem]">Preguntas frecuentes</h2>
           <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
             <AccordionItem value="item-1">
