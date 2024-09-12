@@ -6,6 +6,7 @@ import RHSpecialist from "@/public/img/pexels-thirdman-5256816.jpg";
 import { Key } from "lucide-react";
 // shadcn UI components
 import { Separator } from "@/components/ui/separator";
+import SecondaryButton from "../atoms/SecondaryButton";
 
 // Programs
 const programs = [
@@ -47,10 +48,7 @@ export default function ProgramsCard() {
               <li>Evaluación</li>
               <li>Certificado</li>
             </ul>
-            <Link
-              href={program.ProgramHrefLink} className="static right-2/5 transition-all duration-300 ease-in-out md:text-lg text-center text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-6 p-5 my-5 rounded-sm">
-              <span className="py-3 px-3 text-xl">Conoce el programa</span>
-            </Link>
+            <SecondaryButton href={program.ProgramHrefLink} linkText="Conoce el programa" />
           </div>
           <div className="w-full lg:w-1/2 overflow-hidden">
             <Image

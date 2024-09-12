@@ -30,6 +30,9 @@ import {
 // Custom components
 import Footer from "@/components/organisms/Footer";
 import Testimonios from "@/components/molecules/Testimonios";
+import MainButton from "@/components/atoms/MainButton";
+import OutlineButton from "@/components/atoms/OutlineButton";
+import SecondaryButton from "@/components/atoms/SecondaryButton";
 
 // Content for the benefits section
 const benefits = [
@@ -112,10 +115,7 @@ export default function Home({ Component, pageProps }) {
               </h1>
               <p className="text-xl md:text-3xl text-white animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
-                <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-3 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
-                  Comienza ahora
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
-                </Link>
+                <MainButton href="./proceso" linkText="Comienza ahora" />
                 <Link className="transition-all duration-300 ease-in-out px-4 py-3 mx-4 mb-6 md:mb-1 hover:underline text-center font-bold md:text-lg rounded-sm text-white shadow-sm mt-6" href="./asesor">
                   Comienza con un asesor
                 </Link>
@@ -144,9 +144,7 @@ export default function Home({ Component, pageProps }) {
                 )
               }))}
             </div>
-            <Link href="./certificaciones" className="text-lg outline text-teal-600 hover:bg-teal-600 hover:text-white transition-colors ease-in-out duration-300 px-3 py-3 rounded-sm ml-1 inline-block mt-8">
-              <span className="py-2 px-3 text-xl">Ver certificaciones</span>
-            </Link>
+            <OutlineButton href="./certificaciones" linkText="Ver certificaciones"/>
           </div>
         </section>
 
@@ -461,9 +459,7 @@ export default function Home({ Component, pageProps }) {
             <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
           </h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
-          <Link href="./asesor" className="text-lg font-bold text-white bg-teal-600 hover:bg-teal-700 px-3 py-4 my-5 rounded-sm transition-colors ease-in-out duration-300">
-            <span className="px-3 text-xl">Agenda una evaluación</span>
-          </Link>
+          <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
         </section>
         
         <section className="container py-10 mt-2 h-auto md:h-[42rem]">
@@ -487,10 +483,7 @@ export default function Home({ Component, pageProps }) {
               <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>
               <p className="text-lg md:text-2xl text-center text-white py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
-            <Link className="group transition-all duration-300 ease-in-out text-center bg-yellow-300 hover:bg-yellow-400 pl-9 pr-3 py-3 mx-6 rounded-sm text-gray-900 font-bold md:text-xl shadow-md mt-1 md:mt-6" href="./proceso">
-              Comienza ahora
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline text-transparent hover:translate-x-0.3 transition-all group-hover:translate-x-2 group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
-            </Link>
+            <MainButton href="./proceso" linkText="Comienza ahora" />
             <p className="text-lg text-white py-3">¡Obten 20% de descuento!</p>
           </div>
         </section>
