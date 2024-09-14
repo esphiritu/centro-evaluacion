@@ -6,6 +6,7 @@ import estandar from "@/public/img/estandar-de-competencia.svg";
 import evaluacion from "@/public/img/presenta-evaluacion.svg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import heroSection from "@/public/img/hero-section.png";
+import procesoImage from "@/public/img/pexels-pixabay-209151.jpg";
 
 // Shandcn UI components
 import {
@@ -22,7 +23,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Lightbulb, BookOpenCheck, Hammer, Medal, Info, MessagesSquare } from "lucide-react";
+import { Lightbulb, BookOpenCheck, Hammer, Medal, User, MessagesSquare, Sprout } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -195,7 +196,7 @@ export default function Certificaciones(params) {
               <h4 className="text-2xl md:text-3xl font-bold text-center py-6">Certificaciones disponibles con <span className="bg-teal-400 dark:text-black whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span></h4>
             </div>
             <Table className="mt-10 md:w-4/5 w-full mx-auto">
-              <TableCaption>A list of your recent invoices.</TableCaption>
+              <TableCaption>Lista de estandares de competencia</TableCaption>
               <TableHeader className="text-lg font-bold">
                 <TableRow className="">
                   <TableHead className="w-1/6 md:1/6 lg:w-1/5">Nombre</TableHead>
@@ -212,24 +213,23 @@ export default function Certificaciones(params) {
                         <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
                           <HoverCard>
                             <HoverCardTrigger>{estandar.content}</HoverCardTrigger>
-                            <HoverCardContent className="flex justify-between items-center">
-                              <Info strokeWidth={1.5} className="h-8 w-8 mr-3" />
-                              <div className="text-sm">
-                                <p className="pb-1"><span className="font-bold">Ocupaciones:</span> {estandar.ocupaciones}</p>
-                                <p><span className="font-bold">Nivel:</span> {estandar.snc}</p>
+                            <HoverCardContent className="flex">
+                              <User strokeWidth={2} className="h-7 w-7" />
+                              <div className="text-md pl-4">
+                                <p className="pb-2"><span className="font-bold">Para:</span> {estandar.ocupaciones}</p>
                               </div>
                             </HoverCardContent>
                           </HoverCard>
                         </TableCell>
                         <TableCell className="text-right px-0 lg:px-2">
-                          <Drawer>
+                          <Drawer className="relative">
                             <DrawerTrigger className="group/details invisible group-hover/item:visible text-teal-600 group-hover/item:text-teal-700 hover/item:bg-slate-200 pl-2 pr-0 lg:pl-4 lg:pr-2 lg:py-1 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Detalles
                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover/details:translate-x-1 group-hover/details:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
                             </DrawerTrigger>
                             <DrawerContent>
                               <ScrollArea>
                                 <DrawerHeader className="flex w-full">
-                                  <div className="content-center w-full">
+                                  <div className="content-center w-full mt-10 md:mt-4">
                                     <DrawerTitle className="text-2xl mb-2 bg-gray-200 dark:bg-gray-500 rounded-sm py-4 px-4">{estandar.content}</DrawerTitle>
                                     <DrawerDescription className="text-lg">Detalles del estándar de compencia</DrawerDescription>
                                     <Separator className="mt-3 w-full" />
@@ -242,19 +242,54 @@ export default function Certificaciones(params) {
                                   <p className="py-1 mb-3"><b>Requisitos académicos: </b> {estandar.requisitos}</p>
                                   <p className="py-1 mb-3"><b>Comité desarrollador:</b> {estandar.comite}</p>
                                   <div className="py-3">
-                                    <Link className="group transition-all duration-300 ease-in-out text-center bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-sm text-white font-bold md:text-xl mt-1 md:mt-6" href="./proceso">
+                                    <Link className="
+                                      group 
+                                      transition-all 
+                                      duration-300 
+                                      ease-in-out 
+                                      text-center 
+                                      bg-teal-600 
+                                      hover:bg-teal-700 
+                                      px-6 
+                                      py-3 
+                                      rounded-md 
+                                      text-white 
+                                      font-bold 
+                                      md:text-xl 
+                                      mt-1 
+                                      md:mt-6" href="./proceso">
                                       <span className="">Obtener</span>
                                     </Link>
-                                    <Button className="py-5 px-4 text-xl bg-gray-800 dark:text-white text-center dark:hover:bg-gray-600 ml-6">
+                                    <Button className="py-6 px-4 text-xl bg-gray-300 text-gray-800 hover:text-white text-center dark:hover:bg-gray-600 ml-6 mt-1">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
-                                      <span className="px-2 py-5"> Descargar</span>
+                                      <span className="px-4 py-6"> Descargar</span>
                                     </Button>
                                   </div>
                                 </div>
                                 <DrawerFooter>
                                   <Separator className="mt-3 w-full" />
-                                  <DrawerClose className="mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                  <DrawerClose className="
+                                    absolute top-0 left-3
+                                    mx-auto 
+                                    hover:bg-slate-100 
+                                    hover:text-teal-600 
+                                    dark:hover:bg-slate-800 
+                                    rounded-full 
+                                    transition-colors 
+                                    ease-in-out 
+                                    duration-300
+                                    z-20">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="48"
+                                      height="48"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="1.75"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
                                   </DrawerClose>
                                 </DrawerFooter>
                               </ScrollArea>
@@ -269,9 +304,61 @@ export default function Certificaciones(params) {
             </Table>
           </div>
 
+          {/* Pasos para certificarse */}
+          <div className="container  py-10 mb-[2rem]">
+            <div className="bg-transparent max-w-28 mx-auto">
+              <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
+            </div>
+            <h2 className="text-2xl md:text-3xl text-center font-bold py-4 mt-8 mb-2">Conoce los pasos para la certificación</h2>
+            <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+            <div className="flex flex-col lg:flex-row w-full py-3 mx-auto">
+              <div className="w-full lg:w-1/2">
+                <Image
+                  src={procesoImage}
+                  alt="Proceso para la certificación"
+                  quality={75}
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
+                  className="rounded-xl"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    objectFit: 'scale-down',
+                  }} />
+              </div>
+              <div className="w-full md:w-1/2 pl-8 md:pl-[2rem] mb-[6rem]">
+                {pasos.map((paso => {
+                  return (
+                    <div key={paso.id} className="flex flex-col md:flex-row items-center md:items-start mb-[2rem] py-3">
+                      <div className="relative pl-8 md:pl-[6rem]">
+                        <span className="absolute -left-5 lg:left-9 top-3 bg-gray-700 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
+                          {paso.stepNumber}
+                        </span>
+                        <div className="group pl-8">
+                          <h3 className="text-xl md:text-left font-bold py-3">
+                            {paso.title}
+                          </h3>
+                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-200">
+                            <p className="text-xl mb-2 overflow-hidden">{paso.description}
+                              <Link href="./" className="text-lg text-teal-600 hover:underline">
+                                <span className="py-3 text-xl">Ver más
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
+                                </span>
+                              </Link>
+                            </p>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  )
+                }))}
+              </div>
+            </div>
+          </div>
+
           {/* Cards Criterios de evaluación */}
-          <h4 className="text-3xl md:text-4xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-1 auto-cols-max mt-5 mb-[7rem] px-6 lg:px-0">
+          <h4 className="text-2xl md:text-3xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-1 auto-cols-max mt-5 mb-[8rem] px-6 lg:px-0">
             {criterios.map((criterio => {
               return (
                 <Card key={criterio.id} className={`lg:mx-1 xl:mx-2 mb-3 ${criterio.borColor}`}>
@@ -292,45 +379,19 @@ export default function Certificaciones(params) {
             }))}
           </div>
 
-          {/* Pasos para certificarse */}
-          <div className="container  py-10 mb-[2rem]">
-            <div className="bg-transparent max-w-28 mx-auto">
-              <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
-            </div>
-            <h2 className="text-3xl md:text-4xl text-center font-bold py-4 mt-8 mb-2">Conoce los pasos para la certificación</h2>
-            <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
-            <div className="flex flex-col w-full py-3 lg:w-4/5 mx-auto">
-
-              {pasos.map((paso => {
-                return (
-                  <div key={paso.id} className="group w-full flex flex-col md:flex-row items-center md:items-start mb-[1rem] py-3">
-                    <div className="relative pl-8 md:pl-[6rem]">
-                      <span className="absolute -left-5 md:-left-1 lg:left-3 top-10 dark:bg-gray-700 bg-gray-900 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
-                        {paso.stepNumber}
-                      </span>
-                      <div className="pl-8">
-                        <h3 className="text-xl md:text-left font-bold py-3">
-                          {paso.title}
-                        </h3>
-                        <p className="text-xl mb-2">{paso.description}</p>
-                        <Link href="./" className="text-lg text-teal-600 hover:underline">
-                          <span className="py-3 text-xl"> Más información
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
-                          </span>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )
-              }))}
-
-            </div>
+          {/* Reclutamiento */}
+          <div className="bg-gray-100 dark:bg-gray-700 w-5/6 md:w-full h-auto md:h-[16rem] mb-[5rem] mt-[5rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto">
+            <Sprout size={70} strokeWidth={1.50} className="bg-teal-300 dark:bg-slate-200 text-slate-800 p-3 rounded-full" />
+            <h3 className="text-3xl font-bold mb-2 mt-6">
+              ¿Ya estás certificado y te interesa ser evaluador?
+            </h3>
+            <p className="text-xl">Ponte contacto con un asesor y aumenta tus beneficios realizando evaluaciones</p>
           </div>
         </section>
-
+        {/* Sección de promociones */}
         <section className="container w-full py-10 mt-[4rem]">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-normal lg:text-4xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
-          <p className="text-xl">Realiza una alineación al estándar de competencia que te interesa para asegurarte que estás preparada o preparado</p>
+          <h2 className="scroll-m-20 text-3xl text-center font-bold tracking-normal lg:text-4xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
+          <p className="text-xl text-center mb-[4rem]">Realiza una alineación al estándar de competencia que te interesa para asegurarte que estás preparada o preparado</p>
           <ProgramsCard />
           <Collapsible>
             <CollapsibleTrigger className="w-full px-6">
@@ -354,17 +415,9 @@ export default function Certificaciones(params) {
               Hie there Some content here!
             </CollapsibleContent>
           </Collapsible>
-        </section>t's funny that no  movies could still top LOTR trilogy...the story, the lore, the characters, the mus
+        </section>
 
         <section className="container mx-auto mb-15 py-10 mt-[5rem] mb-[10rem]">
-          <div className="bg-gray-200 rounded-xl h-auto md:h-[13rem] mb-[7rem] px-10 py-8">
-            <MessagesSquare size={60} strokeWidth={1.50} className="mb-4 bg-slate-400"/>
-            <h3 className="text-3xl font-bold mb-2">
-            ¿Ya estás certificado y te interesa ser evaluador?
-            </h3>
-            <p className="text-xl">Ponte contacto con un asesor y aumenta tus beneficios realizando evaluaciones</p>
-          </div>
-
           <h2 className="text-center text-3xl font-bold py-6 mb-[3rem]">Preguntas frecuentes</h2>
           <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
             <AccordionItem value="item-1">

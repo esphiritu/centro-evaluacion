@@ -99,12 +99,12 @@ export default function Home({ Component, pageProps }) {
               h-full">
               <h1 className="
               scroll-m-20 
-              text-white 
+              text-teal-600 
               text-3xl 
               md:text-5xl 
               lg:text-6xl 
               font-extrabold 
-              bg-teal-600/70 
+               
               tracking-tight 
               py-3 
               md:rounded-md 

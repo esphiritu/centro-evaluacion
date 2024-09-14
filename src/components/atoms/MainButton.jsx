@@ -19,7 +19,7 @@ export default function MainButton({ href, linkText }) {
       font-bold 
       md:text-xl 
       shadow-md 
-      mx-6 mt-1 md:mt-6">
+      mt-1 md:mt-6">
       {linkText}
       <svg
         xmlns="http://www.w3.org/2000/svg"
