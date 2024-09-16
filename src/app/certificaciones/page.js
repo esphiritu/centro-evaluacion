@@ -304,6 +304,9 @@ export default function Certificaciones(params) {
             </Table>
           </div>
 
+          
+        {/* Sección de promociones */}
+        <section className="container w-full py-10 mt-[4rem]">
           {/* Pasos para certificarse */}
           <div className="container  py-10 mb-[2rem]">
             <div className="bg-transparent max-w-28 mx-auto">
@@ -338,7 +341,7 @@ export default function Certificaciones(params) {
                             {paso.title}
                           </h3>
                           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-200">
-                            <p className="text-xl mb-2 overflow-hidden">{paso.description}
+                            <p className="text-xl mb-2 overflow-hidden">{paso.description} <br />
                               <Link href="./" className="text-lg text-teal-600 hover:underline">
                                 <span className="py-3 text-xl">Ver más
                                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
@@ -378,18 +381,7 @@ export default function Certificaciones(params) {
               )
             }))}
           </div>
-
-          {/* Reclutamiento */}
-          <div className="bg-gray-100 dark:bg-gray-700 w-5/6 md:w-full h-auto md:h-[16rem] mb-[5rem] mt-[5rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto">
-            <Sprout size={70} strokeWidth={1.50} className="bg-teal-300 dark:bg-slate-200 text-slate-800 p-3 rounded-full" />
-            <h3 className="text-3xl font-bold mb-2 mt-6">
-              ¿Ya estás certificado y te interesa ser evaluador?
-            </h3>
-            <p className="text-xl">Ponte contacto con un asesor y aumenta tus beneficios realizando evaluaciones</p>
-          </div>
         </section>
-        {/* Sección de promociones */}
-        <section className="container w-full py-10 mt-[4rem]">
           <h2 className="scroll-m-20 text-3xl text-center font-bold tracking-normal lg:text-4xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
           <p className="text-xl text-center mb-[4rem]">Realiza una alineación al estándar de competencia que te interesa para asegurarte que estás preparada o preparado</p>
           <ProgramsCard />
@@ -417,7 +409,7 @@ export default function Certificaciones(params) {
           </Collapsible>
         </section>
 
-        <section className="container mx-auto mb-15 py-10 mt-[5rem] mb-[10rem]">
+        <section className="container mx-auto mb-15 py-10 mt-[5rem] mb-[6rem]">
           <h2 className="text-center text-3xl font-bold py-6 mb-[3rem]">Preguntas frecuentes</h2>
           <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
             <AccordionItem value="item-1">
@@ -445,6 +437,14 @@ export default function Certificaciones(params) {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+          {/* Reclutamiento */}
+          <div className="bg-gray-100 dark:bg-gray-700 w-full h-auto md:h-[16rem] mb-[1rem] mt-[12rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto">
+            <Sprout size={70} strokeWidth={1.50} className="bg-teal-300 dark:bg-slate-200 text-slate-800 p-3 rounded-full" />
+            <h3 className="text-3xl font-bold mb-2 mt-6">
+              ¿Ya estás certificado y te interesa ser evaluador?
+            </h3>
+            <p className="text-xl">Ponte contacto con un asesor y aumenta tus beneficios realizando evaluaciones</p>
+          </div>
         </section>
       </main>
       <Footer />
