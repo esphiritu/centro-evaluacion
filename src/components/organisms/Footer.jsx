@@ -3,8 +3,8 @@ import Link from "next/link";
 function Footer() {
   return (
     <>
-      <footer className="my-2 py-10 px-8">
-        <div className="flex flex-col lg:flex-row md:justify-around justify-center">
+      <footer className="container my-2 py-10 px-0">
+        <div className="flex flex-col lg:flex-row md:justify-between justify-center">
           <div className="py-5">
             <h4 className="text-2xl font-bold pt-5">Proyecta empresarial</h4>
             <h5 className="text-xl font-bold py-4">Centro de evaluación</h5>

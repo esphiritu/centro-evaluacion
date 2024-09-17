@@ -36,11 +36,6 @@ import {
 } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import {
   Table,
   TableBody,
   TableCaption,
@@ -178,23 +173,23 @@ const pasos = [
 export default function Certificaciones(params) {
   return (
     <>
-      <header className="flex flex-col-reverse lg:flex-row h-auto lg:h-[40rem] justify-center items-center rounded-lg bg-stone-50 dark:bg-slate-900 py-10 px-8 lg:px-[10rem] mb-6">
-        <div className="flex flex-col justify-normal items-center lg:items-start">
-          <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-3 pr-5">Sea parte de los mejores en cada sector</h1>
-          <p className="text-xl md:text-2xl text-center lg:text-left py-3 mb-2 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
-          <MainButton href="./proceso" linkText="Comienza ahora" />
-        </div>
-        <div>
-          <Image src={heroSection} alt="image with some people" />
+      <header className="w-full bg-stone-50 dark:bg-slate-900 py-10 mb-6">
+        <div className="container flex flex-col-reverse lg:flex-row h-auto lg:h-[40rem] justify-center items-center">
+          <div className="flex flex-col justify-normal items-center lg:items-start">
+            <h1 className="text-4xl md:text-5xl text-center lg:text-left font-bold md:leading-[3.5rem] pt-10 mb-3 pr-5">Sea parte de los mejores en cada sector</h1>
+            <p className="text-xl md:text-2xl text-center lg:text-left py-3 mb-2 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
+            <MainButton href="./proceso" linkText="Comienza ahora" />
+          </div>
+          <div>
+            <Image src={heroSection} alt="image with some people" />
+          </div>
         </div>
       </header>
       <main className="w-full pt-19">
-        <section className="static lg:container py-5 h-auto">
+        <section className="static w-full py-5 h-auto bg-slate-800 px-6">
           {/* Estándares disponibles */}
-          <div className="py-10 mb-[6rem]">
-            <div className="mb-8">
-              <h4 className="text-2xl md:text-3xl font-bold text-center py-6">Certificaciones disponibles con <span className="bg-teal-400 dark:text-black whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span></h4>
-            </div>
+          <h4 className="text-3xl md:text-4xl font-bold text-white text-center pb-6 pt-[7rem] mb-8">Certificaciones disponibles con <span className="bg-teal-400 text-black whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span></h4>
+          <div className="lg:container py-10 mb-[8rem] bg-white rounded-3xl">
             <Table className="mt-10 md:w-4/5 w-full mx-auto">
               <TableCaption>Lista de estandares de competencia</TableCaption>
               <TableHeader className="text-lg font-bold">
@@ -303,12 +298,12 @@ export default function Certificaciones(params) {
               </TableBody>
             </Table>
           </div>
+        </section>
 
-          
-        {/* Sección de promociones */}
+
         <section className="container w-full py-10 mt-[4rem]">
           {/* Pasos para certificarse */}
-          <div className="container  py-10 mb-[2rem]">
+          <div className="py-10 mb-[2rem]">
             <div className="bg-transparent max-w-28 mx-auto">
               <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
             </div>
@@ -328,7 +323,7 @@ export default function Certificaciones(params) {
                     objectFit: 'scale-down',
                   }} />
               </div>
-              <div className="w-full md:w-1/2 pl-8 md:pl-[2rem] mb-[6rem]">
+              <div className="w-full md:w-1/2 pl-8 pt-5 md:pl-[2rem] mb-[6rem]">
                 {pasos.map((paso => {
                   return (
                     <div key={paso.id} className="flex flex-col md:flex-row items-center md:items-start mb-[2rem] py-3">
@@ -361,10 +356,10 @@ export default function Certificaciones(params) {
 
           {/* Cards Criterios de evaluación */}
           <h4 className="text-2xl md:text-3xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-1 auto-cols-max mt-5 mb-[8rem] px-6 lg:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 auto-cols-max mt-5 mb-[8rem] px-6 lg:px-0">
             {criterios.map((criterio => {
               return (
-                <Card key={criterio.id} className={`lg:mx-1 xl:mx-2 mb-3 ${criterio.borColor}`}>
+                <Card key={criterio.id} className={`lg:mx-0 xl:mx-0 mb-3 ${criterio.borColor}`}>
                   <CardHeader>
                     <CardDescription className="mb-1">{criterio.description}</CardDescription>
                     <span className="text-gray-600 p-4">{criterio.icon}</span>
@@ -381,32 +376,10 @@ export default function Certificaciones(params) {
               )
             }))}
           </div>
-        </section>
+
           <h2 className="scroll-m-20 text-3xl text-center font-bold tracking-normal lg:text-4xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
           <p className="text-xl text-center mb-[4rem]">Realiza una alineación al estándar de competencia que te interesa para asegurarte que estás preparada o preparado</p>
           <ProgramsCard />
-          <Collapsible>
-            <CollapsibleTrigger className="w-full px-6">
-              <p className="
-                  px-3 
-                  py-4 
-                  text-xl
-                  text-center
-                  lg:text-lg 
-                  text-gray-700 
-                  hover:text-teal-700
-                  dark:text-gray-400
-                  dark:hover:text-teal-700
-                  bg-transparent 
-                  transition-all 
-                  duration-300 
-                  ease-in-out
-                  mb-8">Ver más certificaciones</p>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              Hie there Some content here!
-            </CollapsibleContent>
-          </Collapsible>
         </section>
 
         <section className="container mx-auto mb-15 py-10 mt-[5rem] mb-[6rem]">
