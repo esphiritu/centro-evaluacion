@@ -12,6 +12,8 @@ import {
 import { Quote } from "lucide-react";
 
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg";
+import testimonialOne from "@/public/img/pexels-italo-melo-881954-2379005.jpg";
+import testimonialTwo from "@/public/img/pexels-divinetechygirl-1181742.jpg";
 
 export default function Testimonios() {
   // Stores a reference to the Carousel API
@@ -65,11 +67,25 @@ export default function Testimonios() {
             <Quote strokeWidth={1.25} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
           </div>
         </CarouselItem>
-        <CarouselItem>
-          <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
+        <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
+        <div className="w-full scroll-m-20">
+            <Image src={testimonialOne} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
+          </div>
+          <div className="relative w-4/5 md:w-2/3 mx-auto">
+            <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
+            <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
+            <Quote strokeWidth={1.25} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
+          </div>
         </CarouselItem>
-        <CarouselItem>
-          <h1 className="text-2xl md:text-3xl">Otro caso de éxito</h1>
+        <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
+        <div className="w-full scroll-m-20">
+            <Image src={testimonialTwo} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
+          </div>
+          <div className="relative w-4/5 md:w-2/3 mx-auto">
+            <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
+            <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
+            <Quote strokeWidth={1.25} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
+          </div>
         </CarouselItem>
       </CarouselContent>
       <div className="absolute -bottom-4 md:-bottom-6 right-0 left-0">

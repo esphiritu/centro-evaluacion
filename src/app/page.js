@@ -99,12 +99,11 @@ export default function Home({ Component, pageProps }) {
               h-full">
               <h1 className="
               scroll-m-20 
-              text-teal-600 
-              text-3xl 
+              text-white 
+              text-3xl
               md:text-5xl 
               lg:text-6xl 
               font-extrabold 
-               
               tracking-tight 
               py-3 
               md:rounded-md 
@@ -113,7 +112,7 @@ export default function Home({ Component, pageProps }) {
               animate-slideIn">
                 Impulsa tu vida profesional al éxito
               </h1>
-              <p className="text-xl md:text-3xl text-white animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
+              <p className="text-xl md:text-3xl text-white font-extrabold animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
                 <MainButton href="./proceso" linkText="Comienza ahora" />
                 <Link className="transition-all duration-300 ease-in-out px-4 py-3 mx-4 mb-6 md:mb-1 hover:underline text-center font-bold md:text-lg rounded-sm text-white shadow-sm mt-6" href="./asesor">
@@ -167,7 +166,7 @@ export default function Home({ Component, pageProps }) {
           </div>
           <Carousel>
             <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-2 -ml-1">
-              <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[715px] lg:col-span-2 lg:row-span-2">
+              <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[670px] lg:col-span-2 lg:row-span-2">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="
@@ -216,7 +215,7 @@ export default function Home({ Component, pageProps }) {
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+              <CarouselItem className="w-full h-320 md:h-[300px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="
@@ -265,7 +264,7 @@ export default function Home({ Component, pageProps }) {
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+              <CarouselItem className="w-full h-320 md:h-[300px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="
@@ -314,7 +313,7 @@ export default function Home({ Component, pageProps }) {
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+              <CarouselItem className="w-full h-320 md:h-[300px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="
@@ -363,7 +362,7 @@ export default function Home({ Component, pageProps }) {
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="w-full h-320 md:h-[350px] lg:h-[350px] lg:col-span-1 lg:row-span-1">
+              <CarouselItem className="w-full h-320 md:h-[300px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="
@@ -396,7 +395,7 @@ export default function Home({ Component, pageProps }) {
                         w-full 
                         h-full
                         rounded-lg
-                        bg-stone-400">
+                        bg-gray-400">
                       <div className="
                         backface-visible
                         font-bold
@@ -453,7 +452,7 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[4rem] shadow-sm">
-          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-4" />
+          <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-1" />
           <h1 className="relative text-3xl md:text-4xl font-bold pt-5">
             Inicia una evaluación diagnóstica
             <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
@@ -468,7 +467,7 @@ export default function Home({ Component, pageProps }) {
           <Testimonios />
         </section>
         
-        <div className="bg-stone-100 py-10 h-auto md:h-[36rem] mt-[12rem]">
+        <div className="bg-gray-50 py-10 h-auto md:h-[36rem] mt-[12rem]">
           <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
           <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
           <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
@@ -478,13 +477,31 @@ export default function Home({ Component, pageProps }) {
         </div>
 
         <section className="mb-10">
-          <div className="flex flex-col justify-center items-center w-full h-auto md:h-[36rem] bg-gradient-to-r from-teal-500 to-teal-700 border-b-[9px] border-t-[9px] mx-auto">
+          <div className="
+            flex 
+            flex-col 
+            justify-center 
+            items-center 
+            w-full 
+            h-auto 
+            md:h-[36rem] 
+            animated-background 
+            bg-gradient-to-r 
+            from-indigo-300 
+            from-10% 
+            via-sky-100 
+            via-30% 
+            to-emerald-200 
+            to-99% 
+            border-b-[9px] 
+            border-t-[9px] 
+            mx-auto">
             <div className="w-full md:w-3/5 px-10 ">
-              <h5 className="text-3xl md:text-5xl text-center text-teal-100 font-bold py-3">Su experiencia en otro nivel</h5>
-              <p className="text-lg md:text-2xl text-center text-white py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
+              <h5 className="text-3xl md:text-5xl text-center dark:text-gray-800 font-bold py-3">Su experiencia en otro nivel</h5>
+              <p className="text-lg md:text-2xl text-center dark:text-gray-800 py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
             <MainButton href="./proceso" linkText="Comienza ahora" />
-            <p className="text-lg text-white py-3">¡Obten 20% de descuento!</p>
+            <p className="text-lg dark:text-gray-800 py-3">¡Obten 20% de descuento!</p>
           </div>
         </section>
       </main>

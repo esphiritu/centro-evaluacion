@@ -38,34 +38,44 @@ export default function ProgramsCard() {
   return (
     programs.map((program => (
       <div>
-        <h3 className="
-          uppercase 
-          text-center
-          text-muted-foreground 
-          py-2 
-          mb-[2rem]
-          mt-[5rem]">{program.ProgramName}</h3>
         <div className={`
           flex 
           ${program.flexColDirection} 
-          ${program.flexRowDirection} 
+          ${program.flexRowDirection}
+          justify-between 
           mb-[2rem] 
-          md:mb-[3rem] 
+          md:mb-[7rem] 
           pt-1 
           md:pt-2 
           md:pb-10 
           w-full`} key={program.index}>
-            <div className={`
+          <div className={`
               relative 
               text-left 
               ${program.bgColor} 
-              py-6 px-2 
+              py-6 lg:py-0 px-2 
               md:px-[5rem] 
               w-full 
               lg:w-1/2 
               h-[23rem] 
               md:h-auto`}>
-            <div className="relative mb-6">
+            <h3 className="
+              uppercase 
+              text-left
+              text-muted-foreground 
+              pb-4">
+              {program.ProgramName}</h3>
+            <p className="
+              text-xl 
+              lg:text-2xl 
+              font-semibold">{program.ProgramDescription}</p>
+            <ul className="text-left py-3 mt-3 mb-5">
+              <li>Evaluación diagnóstica</li>
+              <li>Alineación al estándar de competencia</li>
+              <li>Evaluación</li>
+              <li>Certificado</li>
+            </ul>
+            <div className="relative mb-8 ml-6">
               <span className="
                 absolute 
                 -left-5
@@ -91,16 +101,6 @@ export default function ProgramsCard() {
               </span>
               <p className="leading-tight">Quedan pocos lugares</p>
             </div>
-            <p className="
-              text-xl 
-              lg:text-2xl 
-              font-semibold">{program.ProgramDescription}</p>
-            <ul className="text-left py-3 mt-3 mb-8">
-              <li>Evaluación diagnóstica</li>
-              <li>Alineación al estándar de competencia</li>
-              <li>Evaluación</li>
-              <li>Certificado</li>
-            </ul>
             <SecondaryButton href={program.ProgramHrefLink} linkText="Conoce el programa" />
           </div>
           <div className="w-full lg:w-2/5 overflow-hidden">
@@ -118,7 +118,6 @@ export default function ProgramsCard() {
             />
           </div>
         </div>
-        <Separator className="w-full md:w-4/5 mb-10 mx-auto" />
       </div>
     )
     )

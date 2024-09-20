@@ -12,10 +12,10 @@ export default function MainButton({ href, linkText }) {
       ease-in-out 
       text-center 
       bg-yellow-300
-      hover:bg-yellow-400 
+      hover:bg-yellow-500 
       py-3 pl-9 pr-3 
       rounded-sm 
-      text-gray-900 
+      text-gray-800 
       font-bold 
       md:text-xl 
       shadow-md 
@@ -41,7 +41,7 @@ export default function MainButton({ href, linkText }) {
           hover:translate-x-0.3 
           transition-all 
           group-hover:translate-x-2 
-          group-hover:text-gray-900"><path d="m6 17 5-5-5-5" /></svg>
+          group-hover:text-gray-800"><path d="m6 17 5-5-5-5" /></svg>
     </Link>
   )
 }
