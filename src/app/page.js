@@ -131,7 +131,7 @@ export default function Home({ Component, pageProps }) {
 
         <section className="container h-auto md:h-[46rem]">
           <div className="flex flex-col items-center justify-center h-full scroll-smooth" id="benefits">
-            <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center"> Beneficios de la certificación</h2>
+            <h2 className="scroll-m-40 text-4xl md:text-5xl font-extrabold tracking-tight py-10 mt-10 text-center">Beneficios de la certificación laboral</h2>
             <div className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               {benefits.map((benefit => {
                 return (
@@ -143,15 +143,15 @@ export default function Home({ Component, pageProps }) {
                 )
               }))}
             </div>
-            <OutlineButton href="./certificaciones" linkText="Ver certificaciones"/>
+            <OutlineButton href="./certificaciones" linkText="Ver certificaciones" />
           </div>
         </section>
 
-        <section className="lg:container py-10 my-10">
+        <section className="lg:container py-10 mb-10 mt-[5rem]">
           <div className="w-full mb-[5rem]">
-            <h1 className="text-center text-3xl md:text-4xl font-bold mt-8 mb-4">
+            <h1 className="text-center text-3xl md:text-4xl font-bold mt-8 mb-2">
               Convención anual.
-              <span className="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-gray-400 relative inline-block ml-2">
+              <span className="before:block before:absolute before:-inset-1 before:-skew-y-1 before:bg-gray-500 before:rounded-md relative inline-block ml-2">
                 <span className="relative text-white text-center px-1">Mejores momentos</span>
               </span>
             </h1>
@@ -416,13 +416,13 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
         </section>
 
-        
+
 
         <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
-          
+
           <div className="justify-center items-center w-full lg:w-1/2 pr-10 ">
-            <h1 className="text-3xl md:text-4xl font-bold py-6 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="bg-teal-400 whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span>?</h1>
-            <p className="text-2xl  font-light text-slate-600 py-2">Reconocimiento nacional</p>
+            <p className="text-lg font-light text-slate-600 py-1 uppercase">Reconocimiento nacional</p>
+            <h1 className="text-3xl md:text-4xl font-bold py-4 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="bg-teal-300 whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span>?</h1>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
 
             <Dialog>
@@ -451,32 +451,32 @@ export default function Home({ Component, pageProps }) {
           </ul>
         </section>
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[26rem] mt-[4rem] shadow-sm">
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[24rem] mt-[4rem] mb-[4rem] shadow-sm">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-1" />
-          <h1 className="relative text-3xl md:text-4xl font-bold pt-5">
+          <h1 className="relative text-3xl md:text-4xl font-bold pt-5 pb-4">
             Inicia una evaluación diagnóstica
             <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
           </h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
           <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
         </section>
-        
-        <section className="container py-10 mt-2 h-auto md:h-[42rem]">
-          <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
-          <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
-          <Testimonios />
-        </section>
-        
-        <div className="bg-gray-50 py-10 h-auto md:h-[36rem] mt-[12rem]">
-          <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
-          <h5 className="text-5xl font-bold dark:text-slate-800 text-center">Nuestros socios</h5>
-          <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
-            <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />
-            <Image src={logoICEM} alt="logotipo de ICE México" width={190} className="mx-5" />
-          </div>
-        </div>
 
-        <section className="mb-10">
+        <section className="py-10 mt-2 h-auto bg-gradient-to-t from-slate-100 from-60% to-white dark:from-gray-900 dark:to-slate-950">
+          <div className="container">
+            <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
+            <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
+            <Testimonios />
+          </div>
+          <div className="py-10 h-auto md:h-[36rem] mt-[10rem]">
+            <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
+            <h5 className="text-5xl font-bold dark:text-slate-100 text-center">Nuestros socios</h5>
+            <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
+              <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />
+              <Image src={logoICEM} alt="logotipo de ICE México" width={190} className="mx-5" />
+            </div>
+          </div>
+        </section>
+        <section className="">
           <div className="
             flex 
             flex-col 
@@ -488,11 +488,11 @@ export default function Home({ Component, pageProps }) {
             animated-background 
             bg-gradient-to-r 
             from-indigo-300 
-            from-10% 
+            from-1% 
             via-sky-100 
             via-30% 
             to-emerald-200 
-            to-99% 
+            to-59% 
             border-b-[9px] 
             border-t-[9px] 
             mx-auto">

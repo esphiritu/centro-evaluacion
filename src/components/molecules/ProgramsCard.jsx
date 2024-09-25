@@ -59,23 +59,7 @@ export default function ProgramsCard() {
               lg:w-1/2 
               h-[23rem] 
               md:h-auto`}>
-            <h3 className="
-              uppercase 
-              text-left
-              text-muted-foreground 
-              pb-4">
-              {program.ProgramName}</h3>
-            <p className="
-              text-xl 
-              lg:text-2xl 
-              font-semibold">{program.ProgramDescription}</p>
-            <ul className="text-left py-3 mt-3 mb-5">
-              <li>Evaluación diagnóstica</li>
-              <li>Alineación al estándar de competencia</li>
-              <li>Evaluación</li>
-              <li>Certificado</li>
-            </ul>
-            <div className="relative mb-8 ml-6">
+              <div className="relative mb-8 ml-6 mt-10">
               <span className="
                 absolute 
                 -left-5
@@ -99,9 +83,21 @@ export default function ProgramsCard() {
                 duration-800 
                 ease-in">
               </span>
-              <p className="leading-tight">Quedan pocos lugares</p>
+              <p className="leading-tight text-slate-600 pl-1">Quedan pocos lugares</p>
             </div>
+            <p className="
+              text-xl 
+              lg:text-2xl 
+              font-semibold
+              mb-10 lg:mb-[6rem]">{program.ProgramDescription}</p>
+            <h3 className="
+              text-left
+              text-lg
+              pb-5
+              mb-2">
+              {program.ProgramName}</h3>
             <SecondaryButton href={program.ProgramHrefLink} linkText="Conoce el programa" />
+            
           </div>
           <div className="w-full lg:w-2/5 overflow-hidden">
             <Image

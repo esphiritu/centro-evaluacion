@@ -14,7 +14,7 @@ function OutlineButton({ href, linkText }) {
         transition-colors 
         ease-in-out 
         duration-300 
-        px-3 py-3 
+        px-4 py-3 
         rounded-sm 
         ml-1 mt-8
         inline-block">

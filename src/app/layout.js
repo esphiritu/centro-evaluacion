@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" dir="ltr" suppressHydrationWarning={true} className="scroll-smooth">
-      <body className={`${yan.className} pt-20`} suppressHydrationWarning={true}>
+      <body className={`${yan.className} pt-20 text-gray-800 dark:text-gray-50`} suppressHydrationWarning={true}>
         <ThemeProvider 
           attribute="class"
           defaultTheme="system"

@@ -194,7 +194,12 @@ export default function Certificaciones(params) {
       <main className="w-full pt-19">
         <section className="static w-full py-5 h-auto bg-slate-800 px-6">
           {/* Estándares disponibles */}
-          <h4 className="text-3xl md:text-4xl font-bold text-white text-center pb-6 pt-[7rem] mb-8">Certificaciones disponibles con <span className="bg-teal-400 text-black whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span></h4>
+          <h4 className="text-3xl md:text-4xl font-bold text-white text-center pb-6 pt-[7rem] mb-8">Certificaciones disponibles con 
+            {/* <span className="bg-teal-400 text-black whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span> */}
+            <span className="before:block before:absolute before:-inset-1 before:-skew-y-1 before:bg-teal-300 before:rounded-md relative inline-block ml-2">
+                <span className="relative text-black text-center whitespace-nowrap px-3">Proyecta Empresarial</span>
+              </span>
+          </h4>
           <div className="lg:container py-10 mb-[8rem] bg-white dark:bg-slate-900 rounded-3xl">
             <Tabs defaultValue="educativo" className="">
               <TabsList>
@@ -344,7 +349,7 @@ export default function Certificaciones(params) {
               <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
             </div>
             <h2 className="text-2xl md:text-3xl text-center font-bold py-4 mt-8 mb-2">Conoce los pasos para la certificación</h2>
-            <p className="text-2xl text-muted-foreground text-center pb-8 mb-8">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+            <p className="text-2xl text-center pb-8 mb-8 w-full lg:w-2/3 mx-auto">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto">
               <div className="w-full lg:w-1/2">
                 <Image
@@ -371,7 +376,7 @@ export default function Certificaciones(params) {
                           <h3 className="text-xl md:text-left font-bold py-3">
                             {paso.title}
                           </h3>
-                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-200">
+                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-600">
                             <p className="text-xl mb-2 overflow-hidden">{paso.description} <br />
                               <Link href="./" className="text-lg text-teal-600 hover:underline">
                                 <span className="py-3 text-xl">Ver más
@@ -391,8 +396,9 @@ export default function Certificaciones(params) {
           </div>
 
           {/* Cards Criterios de evaluación */}
-          <h4 className="text-2xl md:text-3xl font-bold text-center lg:text-left pl-4 py-6 mb-6">¿Qué se evalúa?</h4>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 auto-cols-max mt-5 mb-[8rem] px-6 lg:px-0">
+          <h4 className="text-2xl md:text-3xl font-bold text-center pl-4 py-6">Antes de empezar. Prepárate previo a tu evaluación</h4>
+          <p className="text-2xl text-center pb-8 mb-8 w-full lg:w-2/3 mx-auto">Realiza una alineación al estándar de competencia que te interesa para asegurarte que estás preparada o preparado. En la alineación descubrirás:</p>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 auto-cols-max mt-5 mb-[12rem] px-6 lg:px-0">
             {criterios.map((criterio => {
               return (
                 <Card key={criterio.id} className={`lg:mx-0 xl:mx-0 mb-3 ${criterio.borColor}`}>
@@ -413,8 +419,8 @@ export default function Certificaciones(params) {
             }))}
           </div>
 
-          <h2 className="scroll-m-20 text-3xl text-center font-bold tracking-normal lg:text-4xl py-3 mb-5">Prepárate previo a tu evaluación</h2>
-          <p className="text-xl text-center mb-[4rem]">Realiza una alineación al estándar de competencia que te interesa para asegurarte que estás preparada o preparado</p>
+          <h2 className="scroll-m-20 text-3xl text-center font-bold tracking-normal lg:text-4xl py-6">Explora los programas que tenemos para tí</h2>
+          <p className="text-2xl text-center pb-8 mb-8 w-full lg:w-2/3 mx-auto">Obten los beneficios que te ayudarán a certificarte en múltiples estándares de competencia</p>
           <ProgramsCard />
         </section>
 

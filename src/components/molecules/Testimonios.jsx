@@ -92,6 +92,7 @@ export default function Testimonios() {
         <div className="flex items-center justify-center gap-2">
         {indicators.map((_, indx) => (
             <div
+              key={indx}
               className={`
               transition-all w-3 h-3 bg-black dark:bg-white rounded-full
               ${current === indx + 1 ? "p-2" : "bg-opacity-50 dark:bg-opacity-30"}
