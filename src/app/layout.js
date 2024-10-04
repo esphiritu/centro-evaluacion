@@ -5,7 +5,7 @@ import HybridHeader from "@/components/organisms/HybridHeader";
 // Google Fonts
 import { Yantramanav } from "next/font/google";
 const yan = Yantramanav({ 
-  weight: '400',
+  weight: ['400', '300'],
   subsets: ["latin"],
   });
 

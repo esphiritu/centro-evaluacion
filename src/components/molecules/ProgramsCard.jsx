@@ -11,7 +11,7 @@ import SecondaryButton from "../atoms/SecondaryButton";
 // Programs
 const programs = [
   {
-    ProgramName: "Programa capital humano",
+    ProgramName: "Programa en capital humano",
     ProgramDescription: "Certificaciones para profesionales en la gestión de capital humano",
     ProgramHrefLink: "./",
     ProgramPicText: "",
@@ -42,7 +42,7 @@ export default function ProgramsCard() {
           flex 
           ${program.flexColDirection} 
           ${program.flexRowDirection}
-          justify-between 
+          justify-center 
           mb-[2rem] 
           md:mb-[7rem] 
           pt-1 
@@ -59,7 +59,7 @@ export default function ProgramsCard() {
               lg:w-1/2 
               h-[23rem] 
               md:h-auto`}>
-              <div className="relative mb-8 ml-6 mt-10">
+            <div className="relative mb-5 ml-6 mt-10">
               <span className="
                 absolute 
                 -left-5
@@ -86,18 +86,18 @@ export default function ProgramsCard() {
               <p className="leading-tight text-slate-600 pl-1">Quedan pocos lugares</p>
             </div>
             <p className="
-              text-xl 
-              lg:text-2xl 
-              font-semibold
-              mb-10 lg:mb-[6rem]">{program.ProgramDescription}</p>
+              text-2xl 
+              lg:text-3xl 
+              font-light
+              mb-10 lg:mb-[2rem]">{program.ProgramDescription}</p>
             <h3 className="
               text-left
-              text-lg
+              text-xl
               pb-5
-              mb-2">
+              mb-2 lg:mb-[4rem]">
               {program.ProgramName}</h3>
             <SecondaryButton href={program.ProgramHrefLink} linkText="Conoce el programa" />
-            
+
           </div>
           <div className="w-full lg:w-2/5 overflow-hidden">
             <Image

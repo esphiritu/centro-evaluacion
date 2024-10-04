@@ -27,7 +27,8 @@ function Footer() {
               <Button
                 className="
                   py-6 
-                  px-4 
+                  pl-3
+                  pr-5 
                   text-xl 
                   bg-gray-300 
                   text-gray-800 
@@ -35,8 +36,8 @@ function Footer() {
                   text-center 
                   dark:hover:bg-gray-600 
                   mt-5">
-                <SendHorizontal />
                 <span className="px-4 py-6"> Enviar comentarios</span>
+                <SendHorizontal />
               </Button>
             </div>
             <div className="text-xl py-5">

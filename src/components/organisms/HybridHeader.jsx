@@ -48,13 +48,13 @@ export default function HybridHeader () {
       flex 
       justify-between
       md:justify-around 
-      bg-white/80 
+      bg-gray-100 
       dark:bg-slate-900 
-      content-center 
+      content-center
+      shadow-md 
       w-full 
       py-4 
-      z-50 
-      shadow-md">
+      z-50">
       <span className="flex justify-start">
         <Link href={"/"} className="mr-5 text-pretty text-2xl underline">Proyecta Empresarial</Link>
         {/* Render desktop navigation using server-side data */}

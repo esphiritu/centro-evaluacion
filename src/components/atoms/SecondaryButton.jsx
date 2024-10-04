@@ -10,8 +10,8 @@ export default function SecondaryButton({ href, linkText }) {
       text-lg 
       font-bold 
       text-white 
-      bg-teal-600 
-      hover:bg-teal-500 
+      bg-teal-500 
+      hover:bg-teal-600 
       px-3 py-4 my-5 
       rounded-sm 
       transition-colors 

@@ -59,7 +59,7 @@ export default function Testimonios() {
       <CarouselContent className="p-0 md:p-5 h-auto md:h-[32rem]">
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
           <div className="w-full scroll-m-20">
-            <Image src={testimonial} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
+            <Image src={testimonial} width={160} height="auto" className="mx-auto rounded-full" alt="Picture of ..."></Image>
           </div>
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
@@ -69,7 +69,7 @@ export default function Testimonios() {
         </CarouselItem>
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
         <div className="w-full scroll-m-20">
-            <Image src={testimonialOne} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
+            <Image src={testimonialOne} width={160} height="auto" className="mx-auto rounded-full" alt="Picture of ..."></Image>
           </div>
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
@@ -79,7 +79,7 @@ export default function Testimonios() {
         </CarouselItem>
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
         <div className="w-full scroll-m-20">
-            <Image src={testimonialTwo} width={160} className="mx-auto rounded-full" alt="Picture of ..."></Image>
+            <Image src={testimonialTwo} width={160} height="auto" className="mx-auto rounded-full" alt="Picture of ..."></Image>
           </div>
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>

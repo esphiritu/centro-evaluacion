@@ -155,11 +155,11 @@ export default function Home({ Component, pageProps }) {
                 <span className="relative text-white text-center px-1">Mejores momentos</span>
               </span>
             </h1>
-            <p className="text-center text-2xl  font-light text-slate-700 py-4 mb-4">Participan escuelas, universidades y gobiernos en diferentes actividades</p>
+            <p className="text-center text-2xl font-light text-slate-700 py-4 mb-4">Participan escuelas, universidades y gobiernos en diferentes actividades</p>
             <p className="group text-center text-xl">
-              <Link href="./" className="text-teal-600 hover:text-teal-700">
+              <Link href="./" className="text-lg text-teal-600 hover:text-teal-700 hover:bg-gray-100 rounded-full transition-all duration-200 py-3 pl-5 pr-3">
                 <span className="py-3"> Próximos eventos
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition-all group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
                 </span>
               </Link>
             </p>
@@ -416,12 +416,9 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
         </section>
 
-
-
         <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-10 mt-[8rem]">
-
           <div className="justify-center items-center w-full lg:w-1/2 pr-10 ">
-            <p className="text-lg font-light text-slate-600 py-1 uppercase">Reconocimiento nacional</p>
+            <p className="text-lg text-slate-600 py-1 uppercase">Reconocimiento nacional</p>
             <h1 className="text-3xl md:text-4xl font-bold py-4 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="bg-teal-300 whitespace-nowrap px-3 rounded-md">Proyecta Empresarial</span>?</h1>
             <p className="text-lg text-baseline py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
 
@@ -455,7 +452,7 @@ export default function Home({ Component, pageProps }) {
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-1" />
           <h1 className="relative text-3xl md:text-4xl font-bold pt-5 pb-4">
             Inicia una evaluación diagnóstica
-            <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-sm leading-1 pt-1">Gratis</span>
+            <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-full leading-1 pt-1">Gratis</span>
           </h1>
           <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
           <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
@@ -476,7 +473,8 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
         </section>
-        <section className="">
+        {/* Call to action section */}
+        <section>
           <div className="
             flex 
             flex-col 
@@ -498,7 +496,7 @@ export default function Home({ Component, pageProps }) {
             mx-auto">
             <div className="w-full md:w-3/5 px-10 ">
               <h5 className="text-3xl md:text-5xl text-center dark:text-gray-800 font-bold py-3">Su experiencia en otro nivel</h5>
-              <p className="text-lg md:text-2xl text-center dark:text-gray-800 py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
+              <p className="text-lg md:text-2xl text-center font-light dark:text-gray-800 py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
             <MainButton href="./proceso" linkText="Comienza ahora" />
             <p className="text-lg dark:text-gray-800 py-3">¡Obten 20% de descuento!</p>
