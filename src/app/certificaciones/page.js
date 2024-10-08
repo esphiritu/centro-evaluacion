@@ -185,225 +185,231 @@ export default function Certificaciones(params) {
           <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start bg-slate-800 rounded-lg text-white px-[4rem] py-2 lg:py-8  mt-10">
             <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales</h1>
             <p className="text-lg md:text-xl text-center lg:text-left font-light py-3 mb-5 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
-            <p className="absolute inset-x-0 -bottom-9 text-muted-foreground dark:text-white text-lg px-6">Certificados con validez oficial de la Secretaría de Educación</p>
+            <p className="absolute inset-x-0 -bottom-16 lg:-bottom-9 text-muted-foreground dark:text-white text-md lg:text-lg px-6">Certificados con validez oficial de SEP-CONOCER</p>
           </div>
           <div className="relative w-full lg:w-3/5 px-0 lg:px-10 mx-auto">
             <Image src={heroSection} width="100%" height="teal" alt="image with some people" />
-            <div className="
-              absolute
-              top-[50%]
-              left-[50%]
-              translate-x-[-50%]
-              translate-y-[-50%]
-              -z-50
-              h-[80px]
-              w-full
-              lg:w-3/4
-              mx-auto
-              blur-3xl
-              rounded-full
-              ">
-              Hi!
-            </div>
           </div>
         </div>
 
       </header>
       <main className="w-full">
-        <section className="static w-full py-2 h-auto px-0">
+        <section className="py-2 h-auto">
           {/* Estándares disponibles */}
-          <h4 className="text-2xl md:text-3xl font-bold text-center pb-6 pt-[5rem]">
-            Certificaciones disponibles con Proyecta Empresarial
-          </h4>
-          <p className="text-center text-muted-foreground mb-2">Filtra por sector</p>
-          <div className="lg:container py-6 mb-[2rem] bg-white dark:bg-slate-900 rounded-3xl">
-            <Tabs defaultValue="educativo" className="w-full md:w-5/6 mx-0 md:mx-auto">
-              <TabsList className="">
-                <TabsTrigger value="educativo" className="rounded-full">
-                  <GraduationCap strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                  <span className="hidden lg:inline">Sector educativo</span>
-                </TabsTrigger>
-                <TabsTrigger value="empresarial" className="rounded-full">
-                  <Store strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                  <span className="hidden lg:inline">Sector empresarial</span>
-                </TabsTrigger>
-                <TabsTrigger value="gobierno" className="rounded-full">
-                  <Building2 strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                  <span className="hidden lg:inline">Sector gobierno</span>
-                </TabsTrigger>
-                <TabsTrigger value="social" className="rounded-full">
-                  <HeartHandshake strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                  <span className="hidden lg:inline">Sector social</span>
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="educativo" className="lg:px-[3rem] px-0">
-                <Table className="mt-10">
-                  <TableCaption>
-                    <p>No es requerido ningún requisito académico para la certificación de competencias laborales.
-                    </p>
-                  </TableCaption>
-                  <TableHeader className="text-xl font-bold">
-                    <TableRow className="">
-                      <TableHead className="w-2/12 md:1/6 lg:w-1/5">Código EC</TableHead>
-                      <TableHead className="w-7/12 md:4/6 lg:w-3/5">Estándar de competencia</TableHead>
-                      <TableHead className="w-3/12 md:1/6 lg:w-1/5"> </TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody className="text-xl">
-                    {estandares.map(
-                      (estandar => {
-                        return (
-                          <TableRow key={estandar.id} className="group/item">
-                            <TableCell>{estandar.title}</TableCell>
-                            <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
-                              <HoverCard>
-                                <HoverCardTrigger>{estandar.content}</HoverCardTrigger>
-                                <HoverCardContent className="flex">
-                                  
-                                  <ShieldCheck strokeWidth={2} className="h-6 w-6"/>
-                                  <div className="text-md pl-4">
-                                    <p className=""><span className="font-bold">Nivel SNC: </span>{estandar.snc}</p>
-                                  </div>
-                                </HoverCardContent>
-                              </HoverCard>
-                            </TableCell>
-                            <TableCell className="text-right px-0 lg:px-2">
-                              <Drawer className="relative">
-                                <DrawerTrigger className="
-                                  group/details
-                                  invisible 
-                                  group-hover/item:visible 
-                                  text-teal-600 
-                                  group-hover/details:text-teal-700
-                                  hover:text-white 
-                                  hover/item:bg-teal-500 
-                                  pl-2 
-                                  pr-0 
-                                  lg:pl-4 
-                                  lg:pr-2 
-                                  py-1
-                                  mr-2 
-                                  rounded-full 
-                                  z-10 
-                                  transition-colors 
-                                  ease-in-out 
-                                  duration-300">Detalles
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="
-                                      lucide 
-                                      lucide-chevron-right 
-                                      ml-1 
-                                      origin-left 
-                                      inline 
-                                      transition 
-                                      group-hover/details:translate-x-1 
-                                      group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
-                                </DrawerTrigger>
-                                <DrawerContent>
-                                  <ScrollArea>
-                                    <DrawerHeader className="flex w-full">
-                                      <div className="content-center w-full mt-10 md:mt-4">
-                                        <DrawerTitle className="text-2xl mb-2 bg-gray-200 dark:bg-gray-600 rounded-sm py-4 px-4">{estandar.content}</DrawerTitle>
-                                        <DrawerDescription className="text-lg">Detalles del estándar de compencia</DrawerDescription>
-                                        <Separator className="mt-3 w-full" />
-                                      </div>
-                                    </DrawerHeader>
-                                    <div className="w-full text-xl lg:w-1/2 mx-auto px-5 py-2">
-                                      <div className="text-2xl mb-5">{estandar.title}</div>
-                                      <p className="mb-6"><b>Propósito: </b>{estandar.proposito}</p>
-                                      <div className="flex place-items-bottom py-1">
-                                        <User className="text-gray-500 mr-2 min-w-6 min-h-6" />
-                                        <p className="mb-3 px-4"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
-                                      </div>
-                                      <div className="flex place-items-bottom py-1">
-                                        <BookMarked className="text-gray-500 mr-2 min-w-6 min-h-6" />
-                                        <p className="mb-3 px-4"><b>Comité desarrollador:</b> {estandar.comite}</p>
-                                      </div>
-                                      <div className="py-3">
-                                        <div className="flex place-items-bottom py-1">
-                                          <File className="text-gray-500 mr-2 min-w-6 min-h-6" /><p className="px-4"><b>Formato de Estándar de Competencia.</b> La descripción completa está disponible en un documento PDF</p>
+          <div className="w-full lg:container">
+            <h4 className="text-2xl md:text-3xl font-bold text-center lg:text-left pb-6 pt-[5rem]">
+              Certificaciones disponibles con Proyecta Empresarial
+            </h4>
+            <p className="text-center lg:text-left text-muted-foreground mb-2">Filtra por sector</p>
+            <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
+              <Tabs defaultValue="educativo" className="w-full md:w-9/12">
+                <TabsList className="">
+                  <TabsTrigger value="educativo" className="rounded-full">
+                    <GraduationCap strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
+                    <span className="hidden lg:inline">Sector educativo</span>
+                  </TabsTrigger>
+                  <TabsTrigger value="empresarial" className="rounded-full">
+                    <Store strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
+                    <span className="hidden lg:inline">Sector empresarial</span>
+                  </TabsTrigger>
+                  <TabsTrigger value="gobierno" className="rounded-full">
+                    <Building2 strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
+                    <span className="hidden lg:inline">Sector gobierno</span>
+                  </TabsTrigger>
+                  <TabsTrigger value="social" className="rounded-full">
+                    <HeartHandshake strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
+                    <span className="hidden lg:inline">Sector social</span>
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
+                  <Table className="mt-2">
+                    <TableCaption>
+                      <p>No es requerido ningún requisito académico para la certificación de competencias laborales.
+                      </p>
+                    </TableCaption>
+                    <TableHeader className="text-xl font-bold">
+                      <TableRow className="">
+                        <TableHead className="w-2/12 md:1/6 lg:w-1/5">Código EC</TableHead>
+                        <TableHead className="w-7/12 md:4/6 lg:w-3/5">Estándar de competencia</TableHead>
+                        <TableHead className="w-3/12 md:1/6 lg:w-1/5"> </TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody className="text-xl">
+                      {estandares.map(
+                        (estandar => {
+                          return (
+                            <TableRow key={estandar.id} className="group/item">
+                              <TableCell>{estandar.title}</TableCell>
+                              <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
+                                <HoverCard>
+                                  <HoverCardTrigger>{estandar.content}</HoverCardTrigger>
+                                  <HoverCardContent className="flex">
+
+                                    <ShieldCheck strokeWidth={2} className="h-6 w-6" />
+                                    <div className="text-md pl-4">
+                                      <p className=""><span className="font-bold">Nivel SNC: </span>{estandar.snc}</p>
+                                    </div>
+                                  </HoverCardContent>
+                                </HoverCard>
+                              </TableCell>
+                              <TableCell className="text-right px-0 lg:px-2">
+                                <Drawer className="relative">
+                                  <DrawerTrigger className="
+                                    group/details
+                                    invisible 
+                                    group-hover/item:visible 
+                                    text-teal-600 
+                                    group-hover/details:text-teal-700
+                                    hover:text-white 
+                                    hover/item:bg-teal-500 
+                                    pl-2 
+                                    pr-0 
+                                    lg:pl-4 
+                                    lg:pr-2 
+                                    py-1
+                                    mr-2 
+                                    rounded-full 
+                                    z-10 
+                                    transition-colors 
+                                    ease-in-out 
+                                    duration-300">Detalles
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      className="
+                                        lucide 
+                                        lucide-chevron-right 
+                                        ml-1 
+                                        origin-left 
+                                        inline 
+                                        transition 
+                                        group-hover/details:translate-x-1 
+                                        group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
+                                  </DrawerTrigger>
+                                  <DrawerContent>
+                                    <ScrollArea>
+                                      <DrawerHeader className="flex w-full">
+                                        <div className="content-center w-full mt-10 md:mt-4">
+                                          <DrawerTitle className="text-2xl mb-2 bg-gray-200 dark:bg-gray-600 rounded-sm py-4 px-4">{estandar.content}</DrawerTitle>
+                                          <DrawerDescription className="text-lg">Detalles del estándar de compencia</DrawerDescription>
+                                          <Separator className="mt-3 w-full" />
                                         </div>
-                                        <Button
-                                          variant="outline"
-                                          className="
-                                            py-6 
-                                            pl-3
-                                            pr-5 
-                                            text-xl 
-                                            text-gray-800 
-                                            hover:text-white
-                                            hover:bg-gray-800
-                                            text-center 
-                                            dark:hover:bg-gray-600 
-                                            mt-5
-                                            ml-10">
-                                          <span className="pl-3 pr-3 py-6">Descargar</span>
+                                      </DrawerHeader>
+                                      <div className="w-full text-xl lg:w-1/2 mx-auto px-5 py-2">
+                                        <div className="text-2xl mb-5">{estandar.title}</div>
+                                        <p className="mb-6"><b>Propósito: </b>{estandar.proposito}</p>
+                                        <div className="flex place-items-bottom py-1">
+                                          <User className="text-gray-500 mr-2 min-w-6 min-h-6" />
+                                          <p className="mb-3 px-4"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                                        </div>
+                                        <div className="flex place-items-bottom py-1">
+                                          <BookMarked className="text-gray-500 mr-2 min-w-6 min-h-6" />
+                                          <p className="mb-3 px-4"><b>Comité desarrollador:</b> {estandar.comite}</p>
+                                        </div>
+                                        <div className="py-3">
+                                          <div className="flex place-items-bottom py-1">
+                                            <File className="text-gray-500 mr-2 min-w-6 min-h-6" /><p className="px-4"><b>Formato de Estándar de Competencia.</b> La descripción completa está disponible en un documento PDF</p>
+                                          </div>
+                                          <Button
+                                            variant="outline"
+                                            className="
+                                              py-6 
+                                              pl-3
+                                              pr-5 
+                                              text-xl 
+                                              text-gray-800 
+                                              hover:text-white
+                                              hover:bg-gray-800
+                                              text-center 
+                                              dark:hover:bg-gray-600 
+                                              mt-5
+                                              ml-10">
+                                            <span className="pl-3 pr-3 py-6">Descargar</span>
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              width="20"
+                                              height="20"
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                              stroke="currentColor"
+                                              strokeWidth="2.25"
+                                              strokeLinecap="round"
+                                              strokeLinejoin="round"
+                                              className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+                                          </Button>
+                                        </div>
+                                      </div>
+                                      <Separator className="mt-1 w-full" />
+                                      <DrawerFooter className="container flex flex-row justify-end items-center">
+                                        <DrawerClose className="
+                                        absolute top-0 left-3
+                                        mx-auto 
+                                        hover:bg-slate-100 
+                                        hover:text-teal-600 
+                                        dark:hover:bg-slate-800 
+                                        rounded-full 
+                                        transition-colors 
+                                        ease-in-out 
+                                        duration-300
+                                        z-20">
                                           <svg
                                             xmlns="http://www.w3.org/2000/svg"
-                                            width="20"
-                                            height="20"
+                                            width="48"
+                                            height="48"
                                             viewBox="0 0 24 24"
                                             fill="none"
                                             stroke="currentColor"
-                                            strokeWidth="2.25"
+                                            strokeWidth="1.75"
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
-                                            className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
-                                        </Button>
-                                      </div>
-                                    </div>
-                                    <Separator className="mt-1 w-full" />
-                                    <DrawerFooter className="container flex flex-row justify-end items-center">
-                                      <DrawerClose className="
-                                      absolute top-0 left-3
-                                      mx-auto 
-                                      hover:bg-slate-100 
-                                      hover:text-teal-600 
-                                      dark:hover:bg-slate-800 
-                                      rounded-full 
-                                      transition-colors 
-                                      ease-in-out 
-                                      duration-300
-                                      z-20">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="48"
-                                          height="48"
-                                          viewBox="0 0 24 24"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          strokeWidth="1.75"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
-                                      </DrawerClose>
-                                      <p className="text-2xl font-bold mr-5">{estandar.price}</p>
-                                      <SecondaryButton href="./" linkText="Obtener" />
-                                    </DrawerFooter>
-                                  </ScrollArea>
-                                </DrawerContent>
-                              </Drawer>
-                            </TableCell>
-                          </TableRow>
-                        )
-                      })
-                    )}
-                  </TableBody>
-                </Table>
-              </TabsContent>
-              <TabsContent value="empresarial">Certificaciones disponibles para el sector productivo</TabsContent>
-              <TabsContent value="gobierno">Certificaciones para el sector del servicio público</TabsContent>
-              <TabsContent value="social">Certificaciones para las organizaciones sociales</TabsContent>
-            </Tabs>
+                                            className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                        </DrawerClose>
+                                        <p className="text-2xl font-bold mr-5">{estandar.price}</p>
+                                        <SecondaryButton href="./" linkText="Obtener" />
+                                      </DrawerFooter>
+                                    </ScrollArea>
+                                  </DrawerContent>
+                                </Drawer>
+                              </TableCell>
+                            </TableRow>
+                          )
+                        })
+                      )}
+                    </TableBody>
+                  </Table>
+                </TabsContent>
+                <TabsContent value="empresarial">Certificaciones disponibles para el sector productivo</TabsContent>
+                <TabsContent value="gobierno">Certificaciones para el sector del servicio público</TabsContent>
+                <TabsContent value="social">Certificaciones para las organizaciones sociales</TabsContent>
+              </Tabs>
+              <div className="max-w-fit lg:w-3/12 px-8 lg:px-10 py-6 border rounded-xl mt-10 lg:mt-[8rem] dark:bg-slate-900 max-h-fit mx-4 lg:mx-0">
+                <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
+                <p className="text-lg mb-5 leading-6">Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias</p>
+                <Button
+                  className="
+                  text-xl
+                text-white 
+                  hover:text-white
+                  bg-teal-500
+                  hover:bg-teal-600 
+                  px-5 
+                  py-1
+                  mr-2 
+                  rounded-md 
+                  z-10 
+                  transition-colors 
+                  ease-in-out 
+                  duration-300">Descargar
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
         <section className="container w-full py-10 mt-[2rem]">
@@ -464,7 +470,7 @@ export default function Certificaciones(params) {
             </div>
             {criterios.map((criterio => {
               return (
-                <Card key={criterio.id} className={`w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-6 ${criterio.borColor}`}>
+                <Card key={criterio.id} className={`w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 ${criterio.borColor}`}>
                   <CardHeader>
                     <CardDescription className="mb-1">{criterio.description}</CardDescription>
                     <span className="text-gray-500 px-4 py-6">{criterio.icon}</span>
@@ -480,7 +486,10 @@ export default function Certificaciones(params) {
                 </Card>
               )
             }))}
-            <div className="group flex flex-col border rounded-md pb-6 lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 py-10 px-6 hover:shadow-xl transition-shadow duration-300">
+            <div className="group flex flex-col border rounded-md pb-6 lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 py-10 px-6 hover:shadow-xl transition-shadow duration-300 max-h-full">
+              <div className="bg-teal-400 w-full h-10">
+
+              </div>
               <p className="flex-grow text-xl">
                 Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
               </p>

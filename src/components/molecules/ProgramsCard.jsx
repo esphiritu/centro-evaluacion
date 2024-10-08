@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 // Programs Images
 import teacherPic from "@/public/img/pexels-divinetechygirl-1181534.jpg";
-import RHSpecialist from "@/public/img/pexels-thirdman-5256816.jpg";
+import RHSpecialist from "@/public/img/pexels-thirdman-5256816.png";
 import { Key } from "lucide-react";
 // shadcn UI components
 import { Separator } from "@/components/ui/separator";
