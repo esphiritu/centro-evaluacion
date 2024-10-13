@@ -203,22 +203,18 @@ export default function Certificaciones(params) {
             <p className="text-center lg:text-left text-muted-foreground mb-2">Filtra por sector</p>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
               <Tabs defaultValue="educativo" className="w-full md:w-9/12">
-                <TabsList className="">
+                <TabsList className="overflow-x-scroll no-scrollbar overflow-y-hidden">
                   <TabsTrigger value="educativo" className="rounded-full">
-                    <GraduationCap strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                    <span className="hidden lg:inline">Sector educativo</span>
+                    <span className="inline">Sector educativo</span>
                   </TabsTrigger>
                   <TabsTrigger value="empresarial" className="rounded-full">
-                    <Store strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                    <span className="hidden lg:inline">Sector empresarial</span>
+                    <span className="inline">Sector empresarial</span>
                   </TabsTrigger>
                   <TabsTrigger value="gobierno" className="rounded-full">
-                    <Building2 strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                    <span className="hidden lg:inline">Sector gobierno</span>
+                    <span className="inline">Sector gobierno</span>
                   </TabsTrigger>
                   <TabsTrigger value="social" className="rounded-full">
-                    <HeartHandshake strokeWidth={1.25} className="lg:hidden mr-1 lg:mr-3 w-7 h-7 lg:w-6 lg:h-6" />
-                    <span className="hidden lg:inline">Sector social</span>
+                    <span className="inline">Sector social</span>
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
@@ -389,13 +385,13 @@ export default function Certificaciones(params) {
                 <TabsContent value="gobierno">Certificaciones para el sector del servicio público</TabsContent>
                 <TabsContent value="social">Certificaciones para las organizaciones sociales</TabsContent>
               </Tabs>
-              <div className="max-w-fit lg:w-3/12 px-8 lg:px-10 py-6 border rounded-xl mt-10 lg:mt-[8rem] dark:bg-slate-900 max-h-fit mx-4 lg:mx-0">
+              <div className="max-w-fit h-fit lg:w-3/12 border rounded-xl mt-10 lg:mt-[8rem] dark:bg-slate-900 mx-4 lg:mx-0 px-8 lg:px-10 py-6">
                 <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
                 <p className="text-lg mb-5 leading-6">Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias</p>
                 <Button
                   className="
                   text-xl
-                text-white 
+                  text-white 
                   hover:text-white
                   bg-teal-500
                   hover:bg-teal-600 
