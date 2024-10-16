@@ -237,57 +237,9 @@ export default function Certificaciones(params) {
                             <TableRow key={estandar.id} className="group/item">
                               <TableCell>{estandar.title}</TableCell>
                               <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
-                                <HoverCard>
-                                  <HoverCardTrigger>{estandar.content}</HoverCardTrigger>
-                                  <HoverCardContent className="flex">
-
-                                    <ShieldCheck strokeWidth={2} className="h-6 w-6" />
-                                    <div className="text-md pl-4">
-                                      <p className=""><span className="font-bold">Nivel SNC: </span>{estandar.snc}</p>
-                                    </div>
-                                  </HoverCardContent>
-                                </HoverCard>
-                              </TableCell>
-                              <TableCell className="text-right px-0 lg:px-2">
-                                <Drawer className="relative">
-                                  <DrawerTrigger className="
-                                    group/details
-                                    invisible 
-                                    group-hover/item:visible 
-                                    text-teal-600 
-                                    group-hover/details:text-teal-700
-                                    hover:text-white 
-                                    hover/item:bg-teal-500 
-                                    pl-2 
-                                    pr-0 
-                                    lg:pl-4 
-                                    lg:pr-2 
-                                    py-1
-                                    mr-2 
-                                    rounded-full 
-                                    z-10 
-                                    transition-colors 
-                                    ease-in-out 
-                                    duration-300">Detalles
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      strokeWidth="2"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      className="
-                                        lucide 
-                                        lucide-chevron-right 
-                                        ml-1 
-                                        origin-left 
-                                        inline 
-                                        transition 
-                                        group-hover/details:translate-x-1 
-                                        group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
+                              <Drawer className="relative">
+                                  <DrawerTrigger className="text-left">
+                                    {estandar.content}
                                   </DrawerTrigger>
                                   <DrawerContent>
                                     <ScrollArea>
@@ -373,6 +325,58 @@ export default function Certificaciones(params) {
                                     </ScrollArea>
                                   </DrawerContent>
                                 </Drawer>
+                                {/* <HoverCard>
+                                  <HoverCardTrigger>{estandar.content}</HoverCardTrigger>
+                                  <HoverCardContent className="flex">
+
+                                    <ShieldCheck strokeWidth={2} className="h-6 w-6" />
+                                    <div className="text-md pl-4">
+                                      <p className=""><span className="font-bold">Nivel SNC: </span>{estandar.snc}</p>
+                                    </div>
+                                  </HoverCardContent>
+                                </HoverCard> */}
+                              </TableCell>
+                              <TableCell className="text-right px-0 lg:px-2">
+                                <Link href="./" className="
+                                    group/details
+                                    invisible 
+                                    group-hover/item:visible 
+                                    text-teal-600 
+                                    group-hover/details:text-teal-700
+                                    hover:text-white 
+                                    hover/item:bg-teal-500 
+                                    pl-2 
+                                    pr-0 
+                                    lg:pl-4 
+                                    lg:pr-2 
+                                    py-2
+                                    mr-2 
+                                    rounded-full 
+                                    z-10 
+                                    transition-colors 
+                                    ease-in-out 
+                                    duration-300">Obtener
+                                      <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="20"
+                                      height="20"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      className="
+                                        lucide 
+                                        lucide-chevron-right 
+                                        ml-1 
+                                        origin-left 
+                                        inline 
+                                        transition 
+                                        group-hover/details:translate-x-1 
+                                        group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
+                                    </Link>
+                                
                               </TableCell>
                             </TableRow>
                           )
@@ -392,7 +396,6 @@ export default function Certificaciones(params) {
                   className="
                   text-xl
                   text-white 
-                  hover:text-white
                   bg-teal-500
                   hover:bg-teal-600 
                   px-5 
@@ -441,8 +444,8 @@ export default function Certificaciones(params) {
                           </h3>
                           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300">
                             <p className="text-xl mb-2 overflow-hidden">{paso.description} <br />
-                              <Link href="./" className="text-lg text-teal-600 hover:underline">
-                                <span className="py-3 text-xl">Ver más
+                              <Link href="./" className="text-lg text-teal-600 hover:underline inline-block mt-5 ">
+                                <span className="text-xl">Ver más
                                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
                                 </span>
                               </Link>
@@ -462,18 +465,22 @@ export default function Certificaciones(params) {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 auto-cols-max mt-5 mb-[12rem] px-6 lg:px-0">
             <div className="pb-7 mb-7">
-              <h4 className="flex justify-center items-center h-full w-full text-2xl md:text-3xl font-bold text-left pl-4 py-6 mb-[3rem] px-3">Prepárate previo a tu evaluación para reforzar cuatro elementos clave</h4>
+              <h4 className="flex justify-center items-center h-full w-full text-2xl md:text-3xl font-bold text-left px-4 py-6 mb-[3rem]">
+                <span className="leading-[2.9rem]">Prepárate previo a tu evaluación para reforzar cuatro elementos clave</span>
+              </h4>
             </div>
             {criterios.map((criterio => {
               return (
-                <Card key={criterio.id} className={`w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 ${criterio.borColor}`}>
+                <Card key={criterio.id} className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
                   <CardHeader>
                     <CardDescription className="mb-1">{criterio.description}</CardDescription>
-                    <span className="text-gray-500 px-4 py-6">{criterio.icon}</span>
-                    <CardTitle className="text-center">{criterio.title}</CardTitle>
+                    <div className="absolute bottom-24 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
+                      <span className="text-gray-500 px-4 py-6">{criterio.icon}</span>
+                      <CardTitle className="text-center">{criterio.title}</CardTitle>
+                    </div>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-lg">{criterio.content}</p>
+                  <CardContent className="absolute -bottom-2 right-0 w-full h-0 overflow-hidden transform ease-in-out duration-300 group-hover:h-3/6">
+                    <p className="text-lg absolute top-1/2 text-left w-11/12 pr-3">{criterio.content}</p>
                   </CardContent>
                   <CardFooter>
                     <div className="">
@@ -483,14 +490,22 @@ export default function Certificaciones(params) {
               )
             }))}
             <div className="group flex flex-col border rounded-md pb-6 lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 py-10 px-6 hover:shadow-xl transition-shadow duration-300 max-h-full">
-              <div className="bg-teal-400 w-full h-10">
-
-              </div>
-              <p className="flex-grow text-xl">
+              <p className="flex-grow text-xl text-center">
                 Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
               </p>
-              <p>
-                <Link className="text-xl text-teal-600 group-hover:text-teal-700" href="./">
+              <p className="text-center mb-3">
+                <Link className="
+                  text-xl
+                  text-white 
+                  bg-teal-500
+                  hover:bg-teal-600 
+                  px-5 
+                  py-2
+                  rounded-md 
+                  z-10 
+                  transition-colors 
+                  ease-in-out 
+                  duration-300" href="./">
                   Más información
                 </Link>
               </p>
