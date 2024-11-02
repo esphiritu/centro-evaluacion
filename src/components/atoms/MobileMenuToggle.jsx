@@ -26,7 +26,7 @@ export default function MobileMenuToggle({links}) {
       {/* MobileMenu toggle button */}
       <Button 
         onClick={toggleMenu} 
-        className="flex md:hidden mx-2 z-40 hover:text-teal-800 rounded-full"
+        className="flex md:hidden mx-2 z-40 hover:text-teal-600 rounded-full"
         variant="ghost" 
         size="icon"
         >
@@ -107,7 +107,7 @@ export function MobileMenu({navigation}) {
             duration-50 
             hover:bg-accent 
             hover:text-accent-foreground 
-            hover:text-teal-700 
+            hover:text-teal-600 
             focus:bg-accent 
             focus:text-accent-foreground 
             focus:outline-none 

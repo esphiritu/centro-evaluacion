@@ -7,7 +7,8 @@ function OutlineButton({ href, linkText }) {
       href={href} 
       className="
         text-lg 
-        outline 
+        outline
+        dark:outline-none
         text-teal-600 
         hover:bg-teal-600 
         hover:text-white 
@@ -15,7 +16,7 @@ function OutlineButton({ href, linkText }) {
         ease-in-out 
         duration-300 
         px-4 py-3 
-        rounded-sm 
+        rounded-full 
         ml-1 mt-8
         inline-block">
       <span className="py-2 px-3 text-xl">{linkText}</span>

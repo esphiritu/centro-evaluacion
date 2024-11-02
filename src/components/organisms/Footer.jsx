@@ -21,7 +21,9 @@ function Footer() {
               </ul>
             </div>
             <div className="text-xl py-5">
-              <Mail strokeWidth={1.5} className="h-14 w-14 text-white bg-gray-800 rounded-full p-3" />
+              <div className="bg-gray-800 rounded-full p-3 w-fit h-fit">
+                <Mail size={24} strokeWidth={2} className="text-white" />
+              </div>
               <p className="font-bold py-5">Buzón de quejas</p>
               <p className="mb-4">¿Qué podemos hacer para mejorar Proyecta Empresarial?</p>
               <Button
@@ -41,7 +43,9 @@ function Footer() {
               </Button>
             </div>
             <div className="text-xl py-5">
-              <MessageSquareText strokeWidth={1.50} className="h-14 w-14 text-white bg-gray-800 rounded-full p-3" />
+              <div className="bg-gray-800 rounded-full p-3 w-fit h-fit">
+                <MessageSquareText size={24} strokeWidth={2} className="text-white" />
+              </div>
               <p className="font-bold py-5">Contáctanos ahora</p>
               <p className="pb-4">¿Tienes alguna pregunta?<br />
                 Comunícate con nosotros <br />
