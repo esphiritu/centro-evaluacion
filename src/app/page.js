@@ -37,7 +37,7 @@ import Testimonios from "@/components/molecules/Testimonios";
 import MainButton from "@/components/atoms/MainButton";
 import OutlineButton from "@/components/atoms/OutlineButton";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
-import IterationIcon from "@/components/molecules/IterationIcon";
+import AnimatedText from "@/components/molecules/AnimatedText";
 import {
   HoverCard,
   HoverCardContent,
@@ -66,12 +66,6 @@ const benefits = [
     icon: <TrendingUp size={32} strokeWidth={2} className="text-white" />,
     id: "ams",
   },
-  // {
-  //   title: "Mejora tus condiciones laborales",
-  //   description: "Los trabajadores certificados tienen jornadas laborales ligeramente más cortas que el resto de la fuerza laboral",
-  //   icon: <HandshakeIcon size={32} strokeWidth={1.25} className="text-white bg-teal-500 rounded-full p-4" />,
-  //   id: "mcl",
-  // },
   {
     title: "Obtén un certificado de competencia",
     description: "Reconocimiento de la Secretaría de Educación Pública",
@@ -189,9 +183,8 @@ export default function Home({ Component, pageProps }) {
               text-center
               text-3xl
               md:text-5xl
-              font-light 
+              font-bold
               tracking-normal
-              font-serif
               lg:!leading-[3.6rem]
               py-3
               px-3
@@ -245,10 +238,10 @@ export default function Home({ Component, pageProps }) {
         <section className="container w-full py-10 mt-[2rem]">
           {/* Pasos para certificarse */}
           <div className="py-5 mb-[3rem] bg-gray-50 dark:bg-gray-900 rounded-xl px-5 lg:px-[4rem]">
-            <h2 className="text-2xl md:text-3xl text-center lg:text-left font-bold pt-[2.5rem] mt-2 lg:mt-8 mb-6 pl-0 lg:pl-10">Antes de empezar. Conoce los pasos para la certificación</h2>
-            <p className="text-xl text-center lg:text-left pb-8 w-full lg:w-2/3 pl-0 lg:pl-10">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p>
+            <h2 className="text-2xl md:text-3xl text-center lg:text-left font-bold pt-[2.5rem] mt-2 lg:mt-10 mb-9 pl-0 lg:pl-10">Antes de empezar. Conoce los pasos para la certificación</h2>
+            {/* <p className="text-xl text-center lg:text-left pb-8 w-full lg:w-2/3 pl-0 lg:pl-10">Las certificaciones permiten demostrar su habilidad para realizar funciones específicas a un alto nivel</p> */}
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
-              <div className="w-full lg:w-1/2 h-full">
+              <div className="relative w-full lg:w-1/2 h-full">
                 <Image
                   src={procesoImage}
                   alt="Proceso para la certificación"
@@ -260,6 +253,7 @@ export default function Home({ Component, pageProps }) {
                     height: 'auto',
                     objectFit: 'scale-down',
                   }} />
+                <AnimatedText />
               </div>
               <div className="w-full lg:w-1/2 pl-8 pt-10 lg:pt-2 md:pl-[2rem] mb-[2rem]">
                 {pasos.map((paso => {
@@ -291,7 +285,7 @@ export default function Home({ Component, pageProps }) {
               </div>
             </div>
           </div>
-          <IterationIcon/>
+          
         </section>
 
         <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
@@ -616,8 +610,8 @@ export default function Home({ Component, pageProps }) {
               <CarouselContent className="w-full flex lg:grid lg:grid-cols-3 gap-8 auto-cols-max mt-3 px-6 lg:px-0">
                 {criterios.map((criterio => {
                   return (
-                    <CarouselItem className="pb-7 mb-7 lg:pb-2 lg:mb-2">
-                      <Card key={criterio.id} className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
+                    <CarouselItem className="pb-7 mb-7 lg:pb-2 lg:mb-2" key={criterio.id}>
+                      <Card className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
                         <CardHeader>
                           <CardDescription className="mb-1 text-gray-800">{criterio.description}</CardDescription>
                           <div className="absolute bottom-24 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
