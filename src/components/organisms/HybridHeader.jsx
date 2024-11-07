@@ -59,7 +59,7 @@ export default function HybridHeader () {
         {/* Render desktop navigation using server-side data */}
         <DesktopNavigation links={navigation} />
       </span>
-      <div className="flex justify-between">  
+      <div className="flex justify-between items-center">  
         {/* Render: (1) Dark mode toggle and (2) Mobile menu toggle, as a client component */}
         <MobileMenuToggle links={navigation} />
       </div>

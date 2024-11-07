@@ -24,7 +24,8 @@ export default function DesktopNavigation({ links }) {
                   className={`
                   px-3 
                   py-2 
-                  text-2xl 
+                  text-2xl
+                  tracking-wide 
                   md:text-lg 
                   text-gray-700 
                   hover:text-teal-600                 
@@ -35,7 +36,7 @@ export default function DesktopNavigation({ links }) {
                   white 
                   bg-transparent 
                   transition-all 
-                  duration-300 
+                  duration-500 
                   ease-in-out`}
                   href={link.href} 
                   alt={link.alt}>

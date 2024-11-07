@@ -166,7 +166,7 @@ export default function Home({ Component, pageProps }) {
         <section 
           style={styles.heroImage} 
           className="relative h-screen border-b-[9px] bg-fixed">
-          <div className="mx-auto h-full pt-20 md:pt-1 bg-slate-900/50">
+          <div className="mx-auto h-full pt-20 md:pt-1 bg-slate-900/30">
             <div className="
               container
               flex 
@@ -188,10 +188,11 @@ export default function Home({ Component, pageProps }) {
               lg:!leading-[3.6rem]
               py-3
               px-3
-              animate-slideIn">
-                La <span className="text-teal-100">certificación de competencias laborales</span> impulsarán tu carrera profesional al éxito
+              animate-slideIn
+              drop-shadow-lg">
+                La <span className="">certificación de competencias laborales</span> impulsarán tu carrera profesional al éxito
               </h1>
-              <p className="text-xl md:text-3xl text-white text-center font-light animate-fadeIn text-background">Respalda tus conocimientos y experiencia con certificaciones</p>
+              <p className="text-xl md:text-3xl text-white text-center font-light animate-fadeIn text-background drop-shadow-md">Respalda tus conocimientos y experiencia con certificaciones</p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
                 <MainButton href="./proceso" linkText="Comienza ahora" />
                 <Link className="transition-all duration-300 ease-in-out px-4 py-3 mx-4 mb-6 md:mb-1 hover:underline text-center font-bold md:text-lg rounded-sm text-white shadow-sm mt-6" href="./asesor">
@@ -226,12 +227,13 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
 
-        <div className="py-10 h-auto md:h-[16rem] mt-[4rem] mb-[6rem]">
+        <div className="container py-10 h-auto md:h-[16rem] mt-[4rem] mb-[6rem]">
           {/* <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
-            <h5 className="text-5xl font-bold dark:text-slate-100 text-center">Nuestros socios</h5> */}
-          <div className="flex flex-col md:flex-row items-center justify-center mt-10 py-10">
-            <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={190} className="mx-5" />
-            <Image src={logoICEM} alt="logotipo de ICE México" width={190} className="mx-5" />
+           */}
+          <div className="flex flex-col md:flex-row items-center justify-between mt-10 py-10">
+            <h5 className="align-bottom text-3xl font-light dark:text-slate-100 text-left w-1/3 mr-8">Sistema Nacional de Competencias</h5>
+            <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={170} className="mx-5" />
+            <Image src={logoICEM} alt="logotipo de ICE México" width={170} className="mx-5" />
           </div>
         </div>
 
@@ -374,7 +376,7 @@ export default function Home({ Component, pageProps }) {
                         w-full 
                         h-full
                         rounded-lg
-                        bg-teal-600">
+                        bg-teal-500">
                       <div className="
                         backface-visible
                         font-bold
@@ -606,89 +608,87 @@ export default function Home({ Component, pageProps }) {
             <h4 className="text-2xl md:text-3xl font-bold text-left py-6 mb-4 lg:mb-[1.5rem]">
               <span className="leading-[1rem]">Prepárate previo a tu evaluación para reforzar cuatro elementos clave</span>
             </h4>
-            <Carousel className="">
-              <CarouselContent className="w-full flex lg:grid lg:grid-cols-3 gap-8 auto-cols-max mt-3 px-6 lg:px-0">
-                {criterios.map((criterio => {
-                  return (
-                    <CarouselItem className="pb-7 mb-7 lg:pb-2 lg:mb-2" key={criterio.id}>
-                      <Card className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
-                        <CardHeader>
-                          <CardDescription className="mb-1 text-gray-800">{criterio.description}</CardDescription>
-                          <div className="absolute bottom-24 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
-                            <span className="text-slate-900 dark:text-slate-200 px-4 py-6">{criterio.icon}</span>
-                            <CardTitle className="text-center">{criterio.title}</CardTitle>
-                          </div>
-                        </CardHeader>
-                        <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden transform ease-in-out duration-300 group-hover:h-2/6 text-white bg-slate-800">
-                          <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">{criterio.content}</p>
-                        </CardContent>
-                        <CardFooter>
-                          <div className="">
-                          </div>
-                        </CardFooter>
-                      </Card>
-                    </CarouselItem>
-                  )
-                }))}
-                <CarouselItem className="
-                group 
-                flex 
-                flex-col 
-                border 
-                rounded-md 
-                pb-6 
-                lg:w-11/12 
-                lg:mx-0 
-                xl:mx-0 
-                mb-7 
-                py-10 
-                px-6 
-                hover:shadow-xl 
-                transition-shadow 
-                duration-300">
-                  <p className="flex-grow text-xl text-center">
-                    Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
-                  </p>
-                  <p className="text-center mb-3">
-                    <Link className="
-                    text-xl
-                    text-white 
-                    bg-teal-500
-                    hover:bg-teal-600 
-                    px-5 
-                    py-2
-                    rounded-md 
-                    z-10 
-                    transition-colors 
-                    ease-in-out 
-                    duration-300" href="./">
-                      Más información
-                    </Link>
-                  </p>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious className="lg:invisible" />
-              <CarouselNext className="lg:invisible" />
-            </Carousel>
+            <div className="bg-transparent lg:bg-white lg:rounded-lg px-0 lg:px-8 border lg:border lg:shadow-sm lg:border-b-[0.9rem] lg:border-b-purple-300">
+              <Carousel>
+                <CarouselContent className="w-full flex lg:grid lg:grid-cols-3 gap-8 auto-cols-max mt-3 px-6 lg:px-0">
+                  {criterios.map((criterio => {
+                    return (
+                      <CarouselItem className="pb-7 mb-7 lg:pb-2 lg:mb-2" key={criterio.id}>
+                        <Card className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
+                          <CardHeader>
+                            <div className="absolute bottom-24 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
+                              <span className="text-slate-900 dark:text-slate-200 px-4 py-6">{criterio.icon}</span>
+                              <CardTitle className="text-center mb-3">{criterio.title}</CardTitle>
+                              <CardDescription className="mb-1 text-gray-800">{criterio.description}</CardDescription>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden transform ease-in-out duration-300 group-hover:h-2/6 text-white bg-slate-800">
+                            <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">{criterio.content}</p>
+                          </CardContent>
+                          <CardFooter>
+                            <div className="">
+                            </div>
+                          </CardFooter>
+                        </Card>
+                      </CarouselItem>
+                    )
+                  }))}
+                  <CarouselItem className="
+                  group
+                  lg:col-span-2 
+                  flex 
+                  flex-col
+                  items-center 
+                  border
+                  lg:border-none 
+                  rounded-md 
+                  pb-6 
+                  lg:w-11/12 
+                  lg:mx-0 
+                  xl:mx-0 
+                  mb-7 
+                  py-10 
+                  px-6 
+                  duration-300">
+                    <p className="text-xl text-center mb-6 py-5">
+                      Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
+                    </p>
+                    <p className="text-center mb-3">
+                      <Link className="
+                      text-xl
+                      text-white 
+                      bg-teal-500
+                      hover:bg-teal-600 
+                      px-5 
+                      py-2
+                      rounded-md 
+                      z-10 
+                      transition-colors 
+                      ease-in-out 
+                      duration-300" href="./">
+                        Más información
+                      </Link>
+                    </p>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="lg:invisible" />
+                <CarouselNext className="lg:invisible" />
+              </Carousel>
+            </div>
           </div>
           {/* Seccion de testimonios */}
           <div className="container">
-            <p className="text-center text-muted-foreground text-lg uppercase py-6">Testimoniales</p>
+            <p className="text-center text-muted-foreground text-lg uppercase tracking-wide py-6">Testimonios</p>
             <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">Casos de éxito</h2>
             <Testimonios />
           </div>
         </section>
 
         {/* Call to action section */}
-        <section>
-          <div className="
-            flex 
-            flex-col 
-            justify-center 
-            items-center 
+        <section className="
             w-full 
             h-auto 
-            md:h-[36rem] 
+            md:h-[35rem] 
             animated-background 
             bg-gradient-to-r 
             from-indigo-300 
@@ -700,13 +700,29 @@ export default function Home({ Component, pageProps }) {
             border-b-[9px] 
             border-t-[9px] 
             mx-auto
-            py-[5rem]">
-            <div className="w-full md:w-3/5 px-10 ">
-              <h5 className="text-3xl md:text-5xl text-center dark:text-gray-800 font-bold py-3">Su experiencia en otro nivel</h5>
-              <p className="text-xl md:text-2xl text-center font-light dark:text-gray-800 py-3 mb-[5rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
+            py-[6rem]
+            px-4
+            lg:px-8">
+          <div className="
+            flex 
+            flex-col 
+            justify-center
+            container
+            items-center 
+            bg-white/40
+            dark:bg-slate-900/40 
+            rounded-lg 
+            border-spacing-2 
+            border-2 
+            border-white
+            dark:border-gray-400
+            py-2">
+            <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8">
+              <h5 className="text-3xl md:text-5xl text-center dark:text-white font-bold py-3">Su experiencia en otro nivel</h5>
+              <p className="text-xl md:text-2xl text-center font-light dark:text-white py-3 mb-[1rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
             <MainButton href="./proceso" linkText="Comienza ahora" />
-            <p className="text-lg dark:text-gray-800 py-3">¡Obten 20% de descuento!</p>
+            <p className="text-lg dark:text-white pb-6 mt-4">¡Obten 20% de descuento!</p>
           </div>
         </section>
       </main>

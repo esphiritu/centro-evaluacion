@@ -29,7 +29,7 @@ export function SlimModeToggle() {
       <Button 
         variant="ghost" 
         size="icon" 
-        className="md:mr-10 hover:text-teal-700 hover:cursor-pointer rounded-full" 
+        className="md:mr-10 text-slate-400 hover:text-teal-500 hover:cursor-pointer rounded-full" 
         onClick={() => setTheme('light')}>
         <SunIcon />
       </Button>
@@ -41,7 +41,7 @@ export function SlimModeToggle() {
       <Button 
         variant="ghost" 
         size="icon" 
-        className="md:mr-10 hover:text-teal-700 hover:cursor-pointer rounded-full" 
+        className="md:mr-10 text-slate-500 hover:text-teal-500 hover:cursor-pointer hover:bg-slate-200 rounded-full" 
         onClick={() => setTheme('dark')}>
         <MoonIcon />
       </Button>

@@ -11,8 +11,8 @@ export default function MainButton({ href, linkText }) {
       duration-300
       ease-in-out 
       text-center 
-      bg-yellow-300
-      hover:bg-yellow-500
+      bg-teal-300
+      hover:bg-teal-500
       leading-[0]
       pt-4 pb-3.5
       pl-9 pr-3 

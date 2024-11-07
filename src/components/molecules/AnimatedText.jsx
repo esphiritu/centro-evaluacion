@@ -29,7 +29,7 @@ const textVariants = {
 
 const iconVariants = {
   initial: { 
-    scale: 0.9, 
+    scale: 0.8, 
     opacity: 0.5 
   },
   animate: { 
@@ -40,7 +40,7 @@ const iconVariants = {
     },
   },
   exit: { 
-    scale: 0.9,
+    scale: 0.8,
     opacity: 0.5,
     transition: {
       type: 'tween',
