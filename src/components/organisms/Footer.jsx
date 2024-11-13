@@ -36,7 +36,7 @@ function Footer() {
                   text-gray-800 
                   hover:text-white 
                   text-center 
-                  dark:hover:bg-gray-600 
+                  dark:hover:bg-gray-500 
                   mt-5">
                 <span className="px-4 py-6"> Enviar comentarios</span>
                 <SendHorizontal />

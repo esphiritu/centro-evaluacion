@@ -118,7 +118,7 @@ export default function Certificaciones(params) {
     <>
       <header className="w-full py-2 mb-1">
         <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[32rem] justify-center items-center">
-          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start bg-slate-800 rounded-lg text-white px-[4rem] py-2 lg:py-8  mt-10">
+          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start bg-slate-700 rounded-lg text-white px-[4rem] py-2 lg:py-8  mt-10">
             <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales</h1>
             <p className="text-lg md:text-xl text-center lg:text-left font-light py-3 mb-5 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área</p>
             <p className="absolute inset-x-0 -bottom-16 lg:-bottom-9 text-muted-foreground dark:text-white text-md lg:text-lg px-6">Certificados con validez oficial de SEP-CONOCER</p>
@@ -185,20 +185,20 @@ export default function Certificaciones(params) {
                                           <Separator className="mt-3 w-full" />
                                         </div>
                                       </DrawerHeader>
-                                      <div className="w-full text-xl lg:w-1/2 mx-auto px-5 py-2">
+                                      <div className="w-full text-xl text-gray-700 lg:w-1/2 mx-auto px-5 py-2">
                                         <div className="text-2xl mb-5">{estandar.title}</div>
-                                        <p className="mb-6"><b>Propósito: </b>{estandar.proposito}</p>
+                                        <p className="mb-6"><b className="text-slate-800">Propósito: </b>{estandar.proposito}</p>
                                         <div className="flex place-items-bottom py-1">
-                                          <User className="text-gray-500 mr-2 min-w-6 min-h-6" />
-                                          <p className="mb-3 px-4"><b>Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
+                                          <User className="text-teal-500 mr-2 min-w-6 min-h-6" />
+                                          <p className="mb-3 px-4"><b className="text-slate-800">Ocupaciones asociadas: </b> {estandar.ocupaciones}</p>
                                         </div>
                                         <div className="flex place-items-bottom py-1">
-                                          <BookMarked className="text-gray-500 mr-2 min-w-6 min-h-6" />
-                                          <p className="mb-3 px-4"><b>Comité desarrollador:</b> {estandar.comite}</p>
+                                          <BookMarked className="text-teal-500 mr-2 min-w-6 min-h-6" />
+                                          <p className="mb-3 px-4"><b className="text-slate-800">Comité desarrollador:</b> {estandar.comite}</p>
                                         </div>
                                         <div className="py-3">
                                           <div className="flex place-items-bottom py-1">
-                                            <File className="text-gray-500 mr-2 min-w-6 min-h-6" /><p className="px-4"><b>Formato de Estándar de Competencia.</b> La descripción completa está disponible en un documento PDF</p>
+                                            <File className="text-teal-500 mr-2 min-w-6 min-h-6" /><p className="text-slate-800 px-4"><b>Formato de Estándar de Competencia.</b> La descripción completa está disponible en un documento PDF</p>
                                           </div>
                                           <Button
                                             variant="outline"
@@ -354,36 +354,38 @@ export default function Certificaciones(params) {
             <Image src={resultados} width={140} height={140} alt="icon for" className="w-auto" />
           </div>
           <div className="container w-full pb-10 mt-6">
-            <h2 className="scroll-m-20 text-3xl text-center font-bold tracking-normal lg:text-4xl pb-6">Explora los programas que tenemos para tí</h2>
-            <p className="text-2xl text-center pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">Obten los beneficios que te ayudarán a certificarte en múltiples estándares de competencia</p>
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-6">Explora los programas que tenemos para tí</h2>
+            <p className="text-2xl text-center text-gray-500 font-light pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">Obten los beneficios que te ayudarán a certificarte en múltiples estándares de competencia</p>
             <ProgramsCard />
           </div>
         </section>
         <section className="mx-auto mb-15 py-10 mt-[3rem] mb-[2rem]">
           <div className="py-[7rem] px-5 lg:px-0 mb-[5rem]">
-            <h2 className="text-center text-3xl font-bold py-6 mb-[3rem]">Preguntas frecuentes</h2>
+            
             <Accordion type="single" collapsible className="w-full md:w-4/5 m-auto ">
+            <h2 className="text-3xl font-bold pt-6 pb-3">Preguntas frecuentes</h2>
+            <p className="text-muted-foreground text-xl mb-[3rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left dark:text-white font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
-                <AccordionContent className="py-8">
+                <AccordionContent className="text-muted-foreground py-8">
                   En promedio, 30 días a partir de la evaluación
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left dark:text-white font-bold">¿Qué es una alineación?</AccordionTrigger>
-                <AccordionContent className="py-8">
+                <AccordionContent className="text-muted-foreground py-8">
                   La alineación es
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left dark:text-white font-bold">¿Puedo hacer la evaluación en línea?</AccordionTrigger>
-                <AccordionContent className="py-8">
+                <AccordionContent className="text-muted-foreground py-8">
                   En algunos casos, dependiendo del estándar de competencia al que estés aplicando. Algunos estándares de competencia lo permiten, mientras que otros no.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-left dark:text-white font-bold">¿Cuál es el costo de la evaluación diagnóstica?</AccordionTrigger>
-                <AccordionContent className="py-8">
+                <AccordionContent className="text-muted-foreground py-8">
                   Ninguno. La evalución diagnóstica la ofrecemos gratis.
                 </AccordionContent>
               </AccordionItem>

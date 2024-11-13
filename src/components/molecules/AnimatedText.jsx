@@ -23,7 +23,7 @@ const textVariants = {
   exit: {
     opacity: 0,
     y: -10,
-    transition: { duration: 2 }
+    transition: { duration: 1 }
   }
 };
 
@@ -64,7 +64,7 @@ export default function AnimatedText() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 3000);
+    }, 1800);
 
     return () => clearInterval(intervalId);
   }, []);

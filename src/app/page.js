@@ -35,6 +35,7 @@ import {
 import Footer from "@/components/organisms/Footer";
 import Testimonios from "@/components/molecules/Testimonios";
 import MainButton from "@/components/atoms/MainButton";
+import MainLink from "@/components/atoms/MainLink";
 import OutlineButton from "@/components/atoms/OutlineButton";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import AnimatedText from "@/components/molecules/AnimatedText";
@@ -163,8 +164,8 @@ export default function Home({ Component, pageProps }) {
   return (
     <>
       <main className="w-full pt-19 scroll-smooth">
-        <section 
-          style={styles.heroImage} 
+        <section
+          style={styles.heroImage}
           className="relative h-screen border-b-[9px] bg-fixed">
           <div className="mx-auto h-full pt-20 md:pt-1 bg-slate-900/30">
             <div className="
@@ -231,7 +232,7 @@ export default function Home({ Component, pageProps }) {
           {/* <p className="text-lg text-muted-foreground text-center py-6 uppercase">Alianzas para crear valor</p>
            */}
           <div className="flex flex-col md:flex-row items-center justify-between mt-10 py-10">
-            <h5 className="align-bottom text-3xl font-light dark:text-slate-100 text-left w-1/3 mr-8">Sistema Nacional de Competencias</h5>
+            <h5 className="align-bottom text-3xl font-light dark:text-slate-100 text-left tracking-tight w-1/3 mr-8"><span className="text-2xl font-normal">Formamos parte del </span>Sistema Nacional de Competencias</h5>
             <Image src={logoRedConocer} alt="logotipo de Red CONOCER" width={170} className="mx-5" />
             <Image src={logoICEM} alt="logotipo de ICE México" width={170} className="mx-5" />
           </div>
@@ -270,7 +271,7 @@ export default function Home({ Component, pageProps }) {
                             {paso.title}
                           </h3>
                           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300">
-                            <p className="text-xl mb-2 overflow-hidden">{paso.description} <br />
+                            <p className="text-muted-foreground text-xl mb-2 overflow-hidden">{paso.description} <br />
                               <Link href="./" className="text-lg text-teal-500 hover:text-teal-700 inline-block mt-5 ">
                                 <span className="text-xl font-semibold">Ver más
                                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
@@ -287,14 +288,14 @@ export default function Home({ Component, pageProps }) {
               </div>
             </div>
           </div>
-          
+
         </section>
 
         <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
           <div className="justify-center items-center w-full lg:w-1/2 pr-10 mb-[3rem]">
-            <p className="text-lg text-center lg:text-left text-slate-600 py-1 uppercase tracking-wide">Reconocimiento nacional</p>
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold py-4 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="bg-teal-300 whitespace-nowrap px-3 rounded-md dark:text-slate-900">Proyecta Empresarial</span>?</h1>
-            <p className="text-lg text-center lg:text-left py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
+            <p className="text-lg text-center lg:text-left text-slate-800 py-1 uppercase tracking-wider">Reconocimiento nacional</p>
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-1 md:leading-[3rem] px-0">¿Por qué evaluarme con <span className="bg-teal-300 whitespace-nowrap px-3 rounded-md dark:text-slate-900">Proyecta Empresarial</span>?</h1>
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10">Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.</p>
 
             <Dialog>
               <DialogTrigger>
@@ -325,13 +326,13 @@ export default function Home({ Component, pageProps }) {
 
         <section className="container py-10 mb-[10rem] mt-[2rem]">
           <div className="w-full mb-[5rem]">
-            <h1 className="text-center text-3xl md:text-4xl font-bold mt-8 mb-2">
+            <h1 className="text-center text-3xl md:text-4xl font-bold mt-8">
               Convención anual.
               <span className="before:block before:absolute before:-inset-1 before:-skew-y-1 before:bg-gray-500 before:rounded-md relative inline-block ml-2">
                 <span className="relative text-white text-center px-1">Mejores momentos</span>
               </span>
             </h1>
-            <p className="text-center text-2xl font-light text-slate-700 dark:text-slate-200 py-4 mb-4">Participan escuelas, universidades y gobiernos en diferentes actividades</p>
+            <p className="text-center text-2xl font-light text-muted-foreground dark:text-slate-200 py-3 mb-4">Participan escuelas, universidades y gobiernos en diferentes actividades</p>
             <p className="text-center text-xl">
               <Link href="./" className="group text-xl text-teal-600 hover:text-teal-700 hover:bg-gray-100 rounded-full transition-all duration-200 py-3 pl-5 pr-3">
                 <span className="py-3"> Próximos eventos
@@ -594,35 +595,39 @@ export default function Home({ Component, pageProps }) {
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[25rem] mt-[4rem] mb-[4rem] shadow-sm">
           <Image src={diagnostico} width={100} height={100} alt="icon for" className="max-w-auto mb-1" />
-          <h1 className="relative text-3xl md:text-4xl font-bold pt-5 pb-4">
+          <h1 className="relative text-3xl md:text-4xl font-bold pt-5 pb-1">
             Inicia una evaluación diagnóstica
             <span className="absolute text-center text-sm bg-yellow-300 dark:text-slate-900 px-2 align-middle inline-block ml-3 rounded-full leading-1 pt-1">Gratis</span>
           </h1>
-          <p className="text-xl pt-4 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
+          <p className="text-xl text-muted-foreground pt-1 pb-8 mb-5">Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.</p>
           <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
         </section>
 
         <section className="pb-[10rem] mt-10 h-auto bg-gradient-to-t from-slate-100 from-60% to-white dark:from-gray-900 dark:to-slate-950">
           {/* Criterios de evaluación */}
           <div className="container mt-[12rem] mb-[8rem] py-10">
-            <h4 className="text-2xl md:text-3xl font-bold text-left py-6 mb-4 lg:mb-[1.5rem]">
+            <h4 className="text-center text-2xl md:text-3xl font-bold pb-2">
               <span className="leading-[1rem]">Prepárate previo a tu evaluación para reforzar cuatro elementos clave</span>
             </h4>
-            <div className="bg-transparent lg:bg-white lg:rounded-lg px-0 lg:px-8 border lg:border lg:shadow-sm lg:border-b-[0.9rem] lg:border-b-purple-300">
-              <Carousel>
-                <CarouselContent className="w-full flex lg:grid lg:grid-cols-3 gap-8 auto-cols-max mt-3 px-6 lg:px-0">
+            <p className="text-xl text-center text-muted-foreground mb-1 pb-8">
+              Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
+            </p>
+
+            <div className="bg-transparent px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem]">
+              <Carousel className="mb-6">
+                <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
                   {criterios.map((criterio => {
                     return (
-                      <CarouselItem className="pb-7 mb-7 lg:pb-2 lg:mb-2" key={criterio.id}>
+                      <CarouselItem className="pb-7 mb-7 lg:pb-2 lg:mb-1" key={criterio.id}>
                         <Card className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
                           <CardHeader>
-                            <div className="absolute bottom-24 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
-                              <span className="text-slate-900 dark:text-slate-200 px-4 py-6">{criterio.icon}</span>
+                            <div className="absolute bottom-16 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
+                              <span className="text-[#55ccc9] dark:text-slate-200 px-4 py-6">{criterio.icon}</span>
                               <CardTitle className="text-center mb-3">{criterio.title}</CardTitle>
                               <CardDescription className="mb-1 text-gray-800">{criterio.description}</CardDescription>
                             </div>
                           </CardHeader>
-                          <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden transform ease-in-out duration-300 group-hover:h-2/6 text-white bg-slate-800">
+                          <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden transform ease-in-out duration-300 group-hover:h-2/5 text-white bg-gray-400 group-hover:bg-slate-800 border-0 lg:border-b-0 border-b-dotted rounded-sm">
                             <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">{criterio.content}</p>
                           </CardContent>
                           <CardFooter>
@@ -633,47 +638,11 @@ export default function Home({ Component, pageProps }) {
                       </CarouselItem>
                     )
                   }))}
-                  <CarouselItem className="
-                  group
-                  lg:col-span-2 
-                  flex 
-                  flex-col
-                  items-center 
-                  border
-                  lg:border-none 
-                  rounded-md 
-                  pb-6 
-                  lg:w-11/12 
-                  lg:mx-0 
-                  xl:mx-0 
-                  mb-7 
-                  py-10 
-                  px-6 
-                  duration-300">
-                    <p className="text-xl text-center mb-6 py-5">
-                      Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
-                    </p>
-                    <p className="text-center mb-3">
-                      <Link className="
-                      text-xl
-                      text-white 
-                      bg-teal-500
-                      hover:bg-teal-600 
-                      px-5 
-                      py-2
-                      rounded-md 
-                      z-10 
-                      transition-colors 
-                      ease-in-out 
-                      duration-300" href="./">
-                        Más información
-                      </Link>
-                    </p>
-                  </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious className="lg:invisible" />
                 <CarouselNext className="lg:invisible" />
               </Carousel>
+              <MainLink href="./" linkText="Más información" />
             </div>
           </div>
           {/* Seccion de testimonios */}
@@ -718,8 +687,8 @@ export default function Home({ Component, pageProps }) {
             dark:border-gray-400
             py-2">
             <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8">
-              <h5 className="text-3xl md:text-5xl text-center dark:text-white font-bold py-3">Su experiencia en otro nivel</h5>
-              <p className="text-xl md:text-2xl text-center font-light dark:text-white py-3 mb-[1rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
+              <h5 className="text-3xl md:text-5xl text-center dark:text-white font-bold pt-3">Su experiencia en otro nivel</h5>
+              <p className="text-xl md:text-2xl text-center font-light dark:text-white mb-[1rem]">Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas</p>
             </div>
             <MainButton href="./proceso" linkText="Comienza ahora" />
             <p className="text-lg dark:text-white pb-6 mt-4">¡Obten 20% de descuento!</p>

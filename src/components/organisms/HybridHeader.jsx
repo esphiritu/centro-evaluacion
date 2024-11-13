@@ -21,7 +21,7 @@ export default function HybridHeader () {
     },
     {
       text: "Cursos",
-      href: "/explora",
+      href: "/cursos",
       title:
         "Features in the medical sector",
       alt: "For sighted users to preview content available behind a link.",
