@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 
-export default function MainButton({ href, linkText }) {
+export default function CtaButton({ href, linkText }) {
   return (
     <Link 
       href={href}
@@ -11,13 +11,13 @@ export default function MainButton({ href, linkText }) {
       duration-300
       ease-in-out 
       text-center 
-      bg-teal-300
+      bg-slate-800
       hover:bg-teal-500
       leading-[0]
       pt-4 pb-3.5
       pl-9 pr-3 
       rounded-sm 
-      text-gray-800 
+      text-white 
       font-bold 
       md:text-xl 
       shadow-md 
@@ -43,7 +43,7 @@ export default function MainButton({ href, linkText }) {
           hover:translate-x-0.3 
           transition-all 
           group-hover:translate-x-2 
-          group-hover:text-gray-800"><path d="m6 17 5-5-5-5" /></svg>
+          group-hover:text-white"><path d="m6 17 5-5-5-5" /></svg>
     </Link>
   )
 }
