@@ -515,7 +515,7 @@ export default function Certificaciones(params) {
               w-full 
               lg:w-2/3 
               mx-auto">
-                Obten los beneficios que te ayudarán a certificarte en múltiples estándares de competencia
+                Encuentra el curso que buscar en el catalogo
             </p>
             <ProgramsCard />
           </div>
@@ -538,8 +538,9 @@ export default function Certificaciones(params) {
               <AccordionItem value="item-1">
                 <AccordionTrigger className="
                 text-pretty 
-                text-left 
-                dark:text-white 
+                text-left
+                text-slate-600
+                dark:text-slate-300 
                 font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
                 <AccordionContent className="
                 text-pretty 
@@ -549,7 +550,7 @@ export default function Certificaciones(params) {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-pretty text-left dark:text-white font-bold">¿Qué es una alineación?</AccordionTrigger>
+                <AccordionTrigger className="text-pretty text-left text-slate-600 dark:text-white font-bold">¿Qué es una alineación?</AccordionTrigger>
                 <AccordionContent className="
                   text-pretty 
                   text-muted-foreground 
@@ -560,8 +561,9 @@ export default function Certificaciones(params) {
               <AccordionItem value="item-3">
                 <AccordionTrigger className="
                   text-pretty 
-                  text-left 
-                  dark:text-white 
+                  text-left
+                  text-slate-600 
+                  dark:text-slate-300 
                   font-bold">
                     ¿Puedo hacer la evaluación en línea?
                 </AccordionTrigger>
@@ -575,8 +577,9 @@ export default function Certificaciones(params) {
               <AccordionItem value="item-4">
                 <AccordionTrigger className="
                   text-pretty 
-                  text-left 
-                  dark:text-white 
+                  text-left
+                  text-slate-600 
+                  dark:text-slate-300 
                   font-bold">
                     ¿Cuál es el costo de la evaluación diagnóstica?
                 </AccordionTrigger>

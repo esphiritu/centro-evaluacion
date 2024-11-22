@@ -57,6 +57,7 @@ export default function CoursesCard() {
               px-6 md:px-[3rem] 
               py-6 lg:py-0  
               bg-white
+              dark:bg-gray-800
               ${program.bgColor} 
               ${program.flexRowDirection === "lg:flex-row-reverse" ? "lg:rounded-r-xl lg:rounded-l-none" : "lg:rounded-l-xl lg:rounded-r-none"}
               ${program.flexColDirection === "flex-col-reverse" ? "rounded-b-xl" : "rounded-t-xl"}
@@ -81,13 +82,14 @@ export default function CoursesCard() {
                   top-[0.6rem] 
                   w-2 
                   h-2 
-                  bg-red-600 
+                  bg-red-600
+                  dark:bg-red-500 
                   rounded-full
                   animate-ping 
                   duration-800 
                   ease-in">
                 </span>
-                <p className="leading-snug text-slate-600 px-3 py-1">Quedan pocos lugares</p>
+                <p className="leading-snug text-slate-600 dark:text-slate-400 px-3 py-1">Quedan pocos lugares</p>
               </div>
               <div className="mt-6">
                 <p className="tracking-wider text-2xl font-bold py-1">{program.Price}</p>

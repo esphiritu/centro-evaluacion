@@ -64,7 +64,7 @@ export default function AnimatedText() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 1800);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);

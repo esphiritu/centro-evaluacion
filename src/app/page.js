@@ -331,7 +331,7 @@ export default function Home({ Component, pageProps }) {
           {/* Pasos para certificarse */}
           <div className="
             py-5 mb-[3rem] 
-            bg-gray-50 
+            bg-slate-50 
             dark:bg-gray-900
             0 rounded-xl 
             px-5 
@@ -344,7 +344,7 @@ export default function Home({ Component, pageProps }) {
             font-bold 
             pt-[2.5rem] 
             mt-2 lg:mt-10 mb-9 pl-0 lg:pl-10">
-              Antes de empezar. Conoce los pasos para la certificación
+              <span className="text-teal-500">Antes de empezar.</span> Conoce los pasos para la certificación
             </h2>
             <div className="
               flex 
@@ -455,7 +455,7 @@ export default function Home({ Component, pageProps }) {
               text-lg 
               text-center 
               lg:text-left 
-              text-slate-800 
+              text-muted-foreground 
               py-1 
               uppercase 
               tracking-wider">Reconocimiento nacional</p>
@@ -1005,7 +1005,7 @@ export default function Home({ Component, pageProps }) {
                               <CardTitle className="text-center mb-3">
                                 {criterio.title}
                               </CardTitle>
-                              <CardDescription className="mb-1 text-gray-800">
+                              <CardDescription className="mb-1 text-muted-foreground">
                                   {criterio.description}
                               </CardDescription>
                             </div>

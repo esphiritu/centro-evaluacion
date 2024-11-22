@@ -1,10 +1,15 @@
+// Next.js components
 import Image from "next/image";
-import CoursesCard from "@/components/molecules/CoursesCard";
+// Shadcn UI components
+
+// Custom components
+import FeaturedCoursesCard from "@/components/molecules/FeaturedCoursesCard";
+import MostPopularCourses from "@/components/molecules/MostPopularCourses";
 
 export default function Cursos() {
     return (
     <main className="w-full pt-19">
-      <section className="bg-slate-700 py-10 h-auto lg:h-[19rem]">
+      <section className="bg-slate-700 py-10 h-auto lg:h-[24rem]">
       <p className="
         text-lg 
         text-center 
@@ -16,9 +21,20 @@ export default function Cursos() {
           text-4xl 
           text-center 
           text-white 
-          font-bold">
+          font-bold
+          pb-6">
             Catálogo de cursos con reconocimiento oficial
         </h1>
+        <p className="
+              text-xl 
+              text-center 
+              text-white 
+              font-bold 
+              pb-8 
+              mb-[3rem] 
+              w-full 
+              lg:w-2/3 
+              mx-auto">Cursos de auto gestión completos</p>
       </section>
       <section className="
         flex-grow-0 
@@ -35,20 +51,62 @@ export default function Cursos() {
               text-center 
               font-bold 
               tracking-normal 
-              pb-6">Explora los cursos más populares
+              pb-4">Cursos destacados en la comunidad
             </h2>
             <p className="
               text-xl 
               text-center 
               text-gray-500 
-              font-light 
               pb-8 
-              mb-[5rem] 
+              mb-[2.5rem] 
               w-full 
               lg:w-2/3 
               mx-auto">Obten los beneficios que te ayudarán a certificarte en múltiples estándares de competencia</p>
-            <CoursesCard />
+            <FeaturedCoursesCard />
+            <div className="py-10">
+              <p className="
+                text-center 
+                text-muted-foreground 
+                text-lg uppercase 
+                tracking-wide 
+                py-6">
+                Categorías
+              </p>
+              <h2 className="
+                scroll-m-20 
+                text-2xl 
+                lg:text-3xl 
+                text-center 
+                font-bold 
+                tracking-normal 
+                pb-4">Explora los cursos por categoría
+              </h2>
+              <p className="
+                text-xl 
+                text-center 
+                text-gray-500 
+                pb-8 
+                mb-[5rem] 
+                w-full 
+                lg:w-2/3 
+                mx-auto">Encuentra los mejores cursos de tu sector e industria para maximizar tus habilidades y experiencia</p>
+            </div>
           </div>
+        </section>
+        <section className="container py-[6rem] mt-[2rem] mb-[10rem]">
+        <h2 className="
+          scroll-m-20 
+          text-2xl 
+          lg:text-3xl 
+          text-left 
+          font-bold 
+          tracking-normal 
+          pb-4 mb-3 lg:mb-9">Cursos más populares
+        </h2>
+        <MostPopularCourses />
+        </section>
+        <section className="bg-slate-700 py-10 h-auto lg:h-[24rem]">
+
         </section>
     </main>
     );
