@@ -88,7 +88,7 @@ export default function Testimonios() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <div className="absolute -bottom-4 md:-bottom-8 right-0 left-0">
+      <div className="absolute -bottom-4 md:-bottom-8 right-[50%] bg-slate-200 dark:bg-slate-600 max-w-min px-3 py-2 rounded-full h-[2rem]">
         <div className="flex items-center justify-center gap-2">
         {indicators.map((_, indx) => (
             <div

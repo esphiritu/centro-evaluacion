@@ -62,26 +62,14 @@ const PopularCourses = [
 export default function MostPopularCourses() {
   return (
     <Carousel>
-      <CarouselContent className="
-              w-full 
-              flex 
-              lg:grid 
-              lg:grid-cols-2 
-              lg:grid-rows-3 
-              gap-2 -ml-1">
-        <CarouselItem className="
-                w-full 
-                h-[300px] 
-                md:h-[390px] 
-                lg:h-[530px] 
-                lg:col-span-1 
-                lg:row-span-3">
-          <div className="group flex flex-col bg-pink-100 w-full h-full mx-auto rounded-md">
-            <div className="w-full h-4/6 bg-slate-300">
+      <CarouselContent className="w-full flex lg:grid lg:grid-cols-2 lg:grid-rows-3 gap-2 -ml-1">
+        <CarouselItem className="w-full h-[360px] md:h-[390px] lg:h-[530px] lg:col-span-1 lg:row-span-3">
+          <div className="flex flex-col w-full h-full mx-auto border rounded-md">
+            <div className="w-full h-4/6 lg:h-full bg-slate-300">
 
             </div>
-            <div className="text-left px-10 py-10">
-              <h3 className="text-2xl font-bold">Creación de papalotes y globos de cantón</h3>
+            <div className="text-left px-10 py-3 lg:py-10">
+              <h3 className="text-xl lg:text-2xl font-bold">Creación de papalotes y globos de cantón</h3>
               <p className="text-lg text-muted-foreground mb-5">Algún texto que describe brevemente el curso en cuestión.</p>
               <SecondaryLink href="./" linkText="Ver curso" />
             </div>
@@ -90,20 +78,14 @@ export default function MostPopularCourses() {
         {PopularCourses.map((course => {
           return (
             <CarouselItem
-              className="
-                w-full
-                h-[300px] 
-                md:h-[130px] 
-                lg:h-[166px] 
-                lg:col-span-1 
-                lg:row-span-1"
-              key={course.CourseId}>
-              <div className="group flex flex-col lg:flex-row bg-pink-100 w-full h-full mx-auto rounded-md">
-                <div className="w-full lg:w-2/6 h-4/6 lg:h-full  bg-slate-300">
+              key={course.CourseId}
+              className="w-full h-[360px] md:h-[130px] lg:h-[166px] lg:col-span-1 lg:row-span-1">
+              <div className="flex flex-col lg:flex-row w-full h-full mx-auto">
+                <div className="w-full lg:w-2/6 h-4/6 lg:h-full bg-slate-300">
 
                 </div>
-                <div className="lg:w-4/6 text-left px-4 py-6">
-                  <h3 className="text-2xl font-bold">{course.CourseName}</h3>
+                <div className="lg:w-4/6 text-left px-4 py-6 border rounded-md">
+                  <h3 className="text-xl font-bold">{course.CourseName}</h3>
                   <p className="text-lg text-muted-foreground mb-2">{course.CourseDescription}</p>
                   <SecondaryLink href="./" linkText="Ver curso" />
                 </div>

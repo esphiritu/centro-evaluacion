@@ -11,7 +11,10 @@ function MainLink({ href, linkText }) {
           text-xl 
           text-teal-600 
           hover:text-teal-700
-          hover:bg-gray-200 rounded-full 
+          hover:bg-gray-200
+          dark:hover:text-teal-500
+          dark:hover:bg-gray-800 
+          rounded-full 
           transition-all duration-200
           py-3 pl-5 pr-3">
         <span className="py-3"> {linkText}

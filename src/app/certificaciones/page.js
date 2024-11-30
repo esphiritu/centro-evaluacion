@@ -6,7 +6,6 @@ import Image from "next/image";
 import resultados from "@/public/img/consulta-resultados.svg";
 import heroSection from "@/public/img/hero-section.png";
 
-
 // Shandcn UI components
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck } from "lucide-react";
+import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -47,13 +46,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-
 // Custom components
 import ProgramsCard from "@/components/molecules/ProgramsCard";
 import estandarIcon from "@/public/img/estandar-de-competencia.svg";
 import Footer from "@/components/organisms/Footer";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
-
 
 // Data for components
 const estandares = [
@@ -62,7 +59,7 @@ const estandares = [
     title: "EC0217.01",
     description: "Servicios educativos",
     content: "Impartición de cursos de formación de capital humano de manera presencial grupal",
-    snc: "3 de 5",
+    snc: "3/5",
     borColor: "border-t-purple-400",
     comite: "Asociación Mexicana de Capacitación de Personal y Empresarial, A.C",
     sector: "Servicios educativos",
@@ -78,7 +75,7 @@ const estandares = [
     title: "EC0366",
     description: "Servicios educativos",
     content: "Desarrollo de cursos de formación en línea",
-    snc: "3 de 5",
+    snc: "3/5",
     borColor: "border-t-blue-400",
     comite: "Comité de Gestión por Competencias de la Formación para el Trabajo",
     sector: "Servicios educativos",
@@ -94,7 +91,7 @@ const estandares = [
     title: "EC0301",
     description: "Servicios educativos",
     content: "Diseño de cursos de formación del capital humano de manera presencial grupal, sus instrumentos de evaluación y manuales del curso",
-    snc: "3 de 5",
+    snc: "3/5",
     borColor: "border-t-orange-400",
     comite: "Asociación Mexicana de Capacitación de Personal y Empresarial. AMECAP, A.C. ",
     sector: "Servicios educativos",
@@ -107,79 +104,29 @@ const estandares = [
   },
 ]
 
-
-
 export default function Certificaciones(params) {
   return (
     <>
       <header className="w-full py-2 mb-1">
-        <div className="
-          container 
-          z-20 
-          flex 
-          flex-col-reverse 
-          lg:flex-row 
-          h-auto 
-          lg:h-[32rem] 
-          justify-center
-          items-center">
-          <div className="
-            relative 
-            w-full 
-            lg:w-2/5 
-            flex 
-            flex-col 
-            justify-normal 
-            items-center 
-            lg:items-start 
-            bg-slate-700 
-            rounded-lg 
-            text-white 
-            px-[4rem] 
-            py-2 lg:py-8 mt-10">
-            <h1 className="
-              text-3xl 
-              md:text-4xl 
-              text-center 
-              lg:text-left 
-              font-bold 
-              md:leading-[2.5rem] 
-              pt-10 mb-3 pr-5">Certificación de competencias laborales
+        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[32rem] justify-center items-center">
+          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start bg-slate-700 rounded-lg text-white px-[4rem] py-2 lg:py-8 mt-10">
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales
             </h1>
-            <p className="
-              text-lg 
-              md:text-xl 
-              text-center 
-              lg:text-left 
-              font-light 
-              py-3 mb-5 pr-5">Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
+            <p className="text-lg md:text-xl text-center lg:text-left font-light py-3 mb-5 pr-5">
+              Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
             </p>
-            <p className="
-              absolute 
-              inset-x-0 
-              -bottom-16 
-              lg:-bottom-9 
-              text-muted-foreground 
-              dark:text-white 
-              text-md 
-              lg:text-lg 
-              px-6">Certificados con validez oficial de SEP-CONOCER</p>
+            <p className="absolute inset-x-0 -bottom-16 lg:-bottom-9 text-muted-foreground dark:text-white text-md lg:text-lg px-6">
+              Certificados con validez oficial de SEP-CONOCER
+            </p>
           </div>
-          <div className="
-            relative 
-            w-full 
-            lg:w-3/5 
-            px-0 
-            lg:px-10 
-            mx-auto">
-            <Image 
-              src={heroSection} 
-              width="100%" 
-              height="teal" 
+          <div className="relative w-full lg:w-3/5 px-0 lg:px-10 mx-auto">
+            <Image
+              src={heroSection}
+              width="100%"
+              height="teal"
               alt="image with some people" />
           </div>
         </div>
-
       </header>
       <main className="w-full">
         <section className="py-2 h-auto">
@@ -212,23 +159,23 @@ export default function Certificaciones(params) {
                     </TableCaption>
                     <TableHeader className="text-xl font-bold">
                       <TableRow className="">
-                        <TableHead 
-                        className="w-2/12 md:1/6 lg:w-1/5">
+                        <TableHead
+                          className="w-2/12 md:1/6 lg:w-1/5">
                           Código EC</TableHead>
-                        <TableHead 
-                        className="w-7/12 md:4/6 lg:w-3/5">
+                        <TableHead
+                          className="w-7/12 md:4/6 lg:w-3/5">
                           Estándar de competencia</TableHead>
-                        <TableHead 
-                        className="w-3/12 md:1/6 lg:w-1/5">
-                           </TableHead>
+                        <TableHead
+                          className="w-3/12 md:1/6 lg:w-1/5">
+                        </TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody className="text-xl">
                       {estandares.map(
                         (estandar => {
                           return (
-                            <TableRow 
-                              key={estandar.id} 
+                            <TableRow
+                              key={estandar.id}
                               className="group/item">
                               <TableCell>{estandar.title}</TableCell>
                               <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
@@ -238,91 +185,59 @@ export default function Certificaciones(params) {
                                   </DrawerTrigger>
                                   <DrawerContent>
                                     <ScrollArea>
-                                      <DrawerHeader 
-                                        className="flex w-full">
-                                        <div className="
-                                          content-center 
-                                          w-full 
-                                          mt-10 
-                                          md:mt-4">
-                                          <DrawerTitle className="
-                                            text-2xl 
-                                            mb-2 
-                                            bg-gray-200 
-                                            dark:bg-gray-600 
-                                            rounded-sm 
-                                            py-4 px-4">{estandar.content}</DrawerTitle>
-                                          <DrawerDescription 
+                                      <DrawerHeader className="flex w-full">
+                                        <div className="content-center w-full mt-10 md:mt-4">
+                                          <DrawerTitle className="text-2xl mb-2 bg-gray-200 dark:bg-gray-600 rounded-sm py-4 px-4">
+                                            {estandar.content}
+                                          </DrawerTitle>
+                                          <DrawerDescription
                                             className="text-lg">
-                                              Detalles del estándar de compencia
+                                            Detalles del estándar de compencia
                                           </DrawerDescription>
                                           <Separator className="mt-3 w-full" />
                                         </div>
                                       </DrawerHeader>
-                                      <div className="
-                                        w-full 
-                                        text-xl 
-                                        text-gray-700 
-                                        lg:w-1/2 
-                                        mx-auto 
-                                        px-5 
-                                        py-2">
-                                        <div className="text-2xl mb-5">
-                                          {estandar.title}
-                                        </div>
+                                      
+                                      <div className="w-full text-xl text-gray-700 dark:text-gray-400 lg:w-1/2 mx-auto px-5 py-2">
+                                        <h2 className="text-2xl mb-5">{estandar.title}</h2>
                                         <p className="mb-6">
-                                          <b className="text-slate-800">
-                                            Propósito: </b> {estandar.proposito}
+                                          <span className="text-slate-800 dark:text-gray-200 font-bold">
+                                            Propósito: 
+                                          </span>
+                                          {estandar.proposito}
                                         </p>
-                                        <div className="flex place-items-bottom py-1">
-                                          <User className="
-                                            text-teal-500 
-                                            mr-2 
-                                            min-w-6 
-                                            min-h-6" />
-                                          <p className="mb-3 px-4">
-                                            <b className="text-slate-800">
-                                              Ocupaciones asociadas: </b> 
+                                        <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-3">
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <User className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200">Ocupaciones asociadas: </span>
                                               {estandar.ocupaciones}
-                                          </p>
-                                        </div>
-                                        <div className="flex place-items-bottom py-1">
-                                          <BookMarked className="
-                                            text-teal-500 
-                                            mr-2 
-                                            min-w-6 
-                                            min-h-6" />
-                                          <p className="mb-3 px-4">
-                                            <b className="text-slate-800">
-                                            Comité desarrollador:</b> 
-                                            {estandar.comite}</p>
-                                        </div>
-                                        <div className="py-3">
-                                          <div className="flex place-items-bottom py-1">
-                                            <File className="
-                                              text-teal-500 
-                                              mr-2 
-                                              min-w-6 
-                                              min-h-6" />
-                                            <p className="text-slate-800 px-4">
-                                              <b>Formato de Estándar de Competencia.
-                                                </b> La descripción completa está disponible en un documento PDF
                                             </p>
-                                          </div>
-                                          <Button
+                                          </li>
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200">Comité desarrollador: </span>
+                                              {estandar.comite}
+                                            </p>
+                                          </li>
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200">Nivel en el Sistema Nacional de Competencia: </span>
+                                              {estandar.snc}
+                                            </p>
+                                          </li>
+                                        </ul>
+                                        <Button
                                             variant="outline"
-                                            className="
-                                              py-6 
-                                              pl-3
-                                              pr-5 
-                                              text-xl 
-                                              text-gray-800 
-                                              hover:text-white
-                                              hover:bg-gray-800
-                                              text-center 
-                                              dark:hover:bg-gray-600 
-                                              mt-5
-                                              ml-10">
+                                            className="py-6 pl-3 pr-5 text-xl text-gray-800 dark:text-gray-200 hover:text-white hover:bg-gray-800 text-center  dark:hover:bg-gray-600 mt-5 mb-3">
                                             <span className="pl-3 pr-3 py-6">Descargar</span>
                                             <svg
                                               xmlns="http://www.w3.org/2000/svg"
@@ -336,21 +251,17 @@ export default function Certificaciones(params) {
                                               strokeLinejoin="round"
                                               className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
                                           </Button>
-                                        </div>
+                                          <span className="text-sm text-muted-foreground pl-6 pr-3 py-6">Descarga el formato completo del estándar de competencia</span>
                                       </div>
                                       <Separator className="mt-1 w-full" />
-                                      <DrawerFooter className="container flex flex-row justify-end items-center">
-                                        <DrawerClose className="
-                                        absolute top-0 left-3
-                                        mx-auto 
-                                        hover:bg-slate-100 
-                                        hover:text-teal-600 
-                                        dark:hover:bg-slate-800 
-                                        rounded-full 
-                                        transition-colors 
-                                        ease-in-out 
-                                        duration-300
-                                        z-20">
+                                      <DrawerFooter className="w-full lg:w-1/2 mx-auto">
+                                        <div className="flex flex-row place-content-end py-6">
+                                          <p className="text-2xl font-bold mr-5">
+                                            {estandar.price}
+                                          </p>
+                                          <SecondaryButton href="./" linkText="Obtener" />
+                                        </div>
+                                        <DrawerClose className="absolute top-0 left-3 mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300 z-20">
                                           <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="48"
@@ -363,45 +274,14 @@ export default function Certificaciones(params) {
                                             strokeLinejoin="round"
                                             className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
                                         </DrawerClose>
-                                        <p className="text-2xl font-bold mr-5">
-                                          {estandar.price}
-                                        </p>
-                                        <SecondaryButton href="./" linkText="Obtener" />
+
                                       </DrawerFooter>
                                     </ScrollArea>
                                   </DrawerContent>
                                 </Drawer>
-                                {/* <HoverCard>
-                                  <HoverCardTrigger>{estandar.content}</HoverCardTrigger>
-                                  <HoverCardContent className="flex">
-
-                                    <ShieldCheck strokeWidth={2} className="h-6 w-6" />
-                                    <div className="text-md pl-4">
-                                      <p className=""><span className="font-bold">Nivel SNC: </span>{estandar.snc}</p>
-                                    </div>
-                                  </HoverCardContent>
-                                </HoverCard> */}
                               </TableCell>
                               <TableCell className="text-right px-0 lg:px-2">
-                                <Link href="./" className="
-                                    group/details
-                                    invisible 
-                                    group-hover/item:visible 
-                                    text-teal-600 
-                                    group-hover/details:text-teal-700
-                                    hover:text-white 
-                                    hover/item:bg-teal-500 
-                                    pl-2 
-                                    pr-0 
-                                    lg:pl-4 
-                                    lg:pr-2 
-                                    py-2
-                                    mr-2 
-                                    rounded-full 
-                                    z-10 
-                                    transition-colors 
-                                    ease-in-out 
-                                    duration-300">Obtener
+                                <Link href="./" className="group/details invisible group-hover/item:visible text-teal-600 group-hover/details:text-teal-700 hover:text-white hover/item:bg-teal-500 pl-2 pr-0 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Obtener
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -412,17 +292,8 @@ export default function Certificaciones(params) {
                                     strokeWidth="2"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    className="
-                                        lucide 
-                                        lucide-chevron-right 
-                                        ml-1 
-                                        origin-left 
-                                        inline 
-                                        transition 
-                                        group-hover/details:translate-x-1 
-                                        group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
+                                    className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover/details:translate-x-1 group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
                                 </Link>
-
                               </TableCell>
                             </TableRow>
                           )
@@ -441,88 +312,40 @@ export default function Certificaciones(params) {
                   Certificaciones para las organizaciones sociales
                 </TabsContent>
               </Tabs>
-              <div className="
-                max-w-fit 
-                h-fit 
-                lg:w-3/12 
-                border 
-                rounded-xl 
-                mt-[8rem] 
-                lg:mt-[8rem] 
-                dark:bg-slate-900 
-                mx-4 
-                lg:mx-0 
-                px-8 
-                lg:px-10 
-                py-6">
+              <div className="max-w-fit h-fit lg:w-3/12 border rounded-xl mt-[8rem] lg:mt-[8rem] dark:bg-slate-900 mx-4 lg:mx-0 px-8 lg:px-10 py-6">
                 <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
                 <p className="text-lg mb-5 leading-6">
                   Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
                 </p>
-                <Button
-                  className="
-                  text-xl
-                  text-white 
-                  bg-teal-500
-                  hover:bg-teal-600 
-                  px-5 
-                  py-1
-                  mr-2 
-                  rounded-md 
-                  z-10 
-                  transition-colors 
-                  ease-in-out 
-                  duration-300">Descargar
+                <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
+                  Descargar
                 </Button>
               </div>
             </div>
           </div>
         </section>
-
-
-
-        <section className="
-          flex-grow-0 
-          bg-gray-50
-          dark:bg-gray-900 
-          mt-[6rem]">
+        <section className="flex-grow-0 bg-gray-50 dark:bg-gray-900 mt-[6rem]">
           <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
-            <Image 
-              src={resultados} 
-              width={140} 
-              height={140} 
-              alt="icon for" 
+            <Image
+              src={resultados}
+              width={140}
+              height={140}
+              alt="icon for"
               className="w-auto" />
           </div>
           <div className="container w-full pb-10 mt-6">
-            <h2 className="
-              scroll-m-20 
-              text-2xl 
-              lg:text-3xl 
-              text-center 
-              font-bold 
-              tracking-normal 
-              pb-4">
-                Explora los programas que tenemos para tí
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
+              Explora los programas que tenemos para tí
             </h2>
-            <p className="
-              text-2xl 
-              text-center 
-              text-gray-500 
-              font-light 
-              pb-8 
-              mb-[5rem] 
-              w-full 
-              lg:w-2/3 
-              mx-auto">
-                Encuentra el curso que buscar en el catalogo
+            <p className="text-2xl text-center text-gray-500 font-light pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">
+              Encuentra el curso que buscar en el catalogo
             </p>
             <ProgramsCard />
           </div>
         </section>
         <section className="mx-auto mb-15 py-10 mt-[3rem] mb-[2rem]">
           <div className="py-[7rem] px-5 lg:px-0 mb-[5rem]">
-            <Accordion 
+            {/* <Accordion 
               type="single" 
               collapsible 
               className="w-full md:w-4/5 m-auto ">
@@ -590,105 +413,60 @@ export default function Certificaciones(params) {
                   Ninguno. La evalución diagnóstica la ofrecemos gratis.
                 </AccordionContent>
               </AccordionItem>
-            </Accordion>
+            </Accordion> */}
           </div>
-          <div className="
-            bg-slate-700 
-            py-[4rem] 
-            h-auto 
-            lg:h-[19rem] 
-            mb-[5rem]">
-            <p className="
-              text-4xl 
-              text-center 
-              text-white 
-              font-bold 
-              mb-4">
-              ¿Necesitas ayuda personalizada?
-            </p>
-            <h1 className="text-xl text-center text-slate-300 mb-8">
-              Estamos listos para asesorarte. Un experto te ayudará a resolver todas las dudas.
-            </h1>
-            <Button
-                  className="
-                  text-xl
-                  text-center
-                  text-white 
-                  bg-teal-500
-                  hover:bg-teal-600 
-                  px-5 
-                  py-1
-                  rounded-md 
-                  z-10 
-                  transition-colors 
-                  ease-in-out 
-                  duration-300
-                  block
-                  max-w-min
-                  mx-auto">Contactar
-                </Button>
+          <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-[4rem] h-auto lg:h-[24rem] mb-[5rem]">
+            <div>
+              <p className="text-4xl text-center text-white font-bold mb-3">
+                ¿Necesitas ayuda personalizada?
+              </p>
+              <h1 className="text-xl text-center text-slate-300 mb-10">
+                Estamos listos para asesorarte. Un experto te ayudará a resolver todas las dudas.
+              </h1>
+              <Button
+                className="
+                    text-xl
+                    text-center
+                    text-white 
+                    bg-teal-500
+                    hover:bg-teal-600 
+                    px-5 
+                    py-1
+                    rounded-md 
+                    z-10 
+                    transition-colors 
+                    ease-in-out 
+                    duration-300
+                    block
+                    max-w-min
+                    mx-auto">Contactar
+              </Button>
+            </div>
           </div>
         </section>
         {/* Reclutamiento */}
-        <div className="
-            container 
-            flex 
-            flex-col 
-            lg:flex-row 
-            justify-center 
-            w-11/12
-            lg:w-full 
-            h-auto 
-            md:h-[26rem]
-            lg:h-[19rem]  
-            mb-[7rem] 
-            mt-[1rem] 
-            px-10 
-            md:px-[4rem] 
-            py-8 
-            rounded-xl 
-            mx-auto 
-            border">
+        <div className="container flex flex-col lg:flex-row justify-center w-11/12lg:w-full h-auto md:h-[26rem] lg:h-[19rem] mb-[7rem] mt-[1rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto border">
           <div className="px-6 pb-8 lg:self-start">
-            <Sprout 
-              size={70} 
-              strokeWidth={1.50} 
-              className="
-                bg-teal-500 
-                dark:bg-slate-200 
-                text-white 
-                dark:text-gray-800 
-                p-3 
-                rounded-full" />
+            <Sprout
+              size={70}
+              strokeWidth={1.50}
+              className="bg-teal-500 dark:bg-slate-200 text-white dark:text-gray-800 p-3 rounded-full" />
             <h3 className="text-3xl font-bold mb-2 mt-8">
               ¿Ya estás certificado y te interesa ser evaluador?
             </h3>
           </div>
-          <div className="group px-6 pt-10 lg:self-end">
-            <p className="
-              text-xl 
-              text-center 
-              lg:text-left 
-              py-3 mb-5">
+          <div className="px-6 pt-10 lg:self-end">
+            <p className="text-xl text-center lg:text-left py-3 mb-5">
               Ponte contacto con un asesor y aumenta tus ingresos realizando evaluaciones
             </p>
-            <Link href="./" className="
-              flex 
-              justify-center 
-              lg:justify-start 
-              mx-auto">
-              <span className="
-                text-xl 
-                text-teal-600 
-                group-hover:text-teal-700 
-                group-hover:bg-gray-100
-                rounded-full 
-                py-3 pl-5 pr-3"> Contactar ahora
+            <Link href="./" className="group max-w-fit flex justify-center lg:justify-start">
+              <span className="text-xl text-teal-600 group-hover:text-teal-700 dark:group-hover:text-teal-500 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 rounded-full py-3 pl-5 pr-3">
+                Contactar ahora
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="22" 
+                  width="22"
                   height="22"
-                  viewBox="0 0 24 24" 
+                  viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                   className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
