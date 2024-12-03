@@ -11,7 +11,7 @@ import {
 const textVariants = {
   initial: {
     opacity: 0,
-    y: 20,
+    y: 10,
   },
   animate: {
     opacity: 1,
@@ -22,14 +22,14 @@ const textVariants = {
   },
   exit: {
     opacity: 0,
-    y: -10,
+    y: -5,
     transition: { duration: 1 }
   }
 };
 
 const iconVariants = {
   initial: { 
-    scale: 0.8, 
+    scale: 0.6, 
     opacity: 0.5 
   },
   animate: { 
@@ -40,7 +40,7 @@ const iconVariants = {
     },
   },
   exit: { 
-    scale: 0.8,
+    scale: 0.6,
     opacity: 0.5,
     transition: {
       type: 'tween',
@@ -51,10 +51,10 @@ const iconVariants = {
 };
 
 const texts = [
-  { icon: <SearchCheck />, text: 'Identifica', id: "step-1", indx: "search" },
-  { icon: <FlaskConical />, text: 'Toma una prueba', id: "step-2", indx: "flash" },
-  { icon: <PencilLine />, text: 'Realiza tu evaluación', id: "step-3", indx: "pencil" },
-  { icon: <Award />, text: 'Consulta resultados', id: "step-4", indx: "award" },
+  { icon: <SearchCheck absoluteStrokeWidth={true} />, text: 'Identifica', id: "step-1", indx: "search" },
+  { icon: <FlaskConical absoluteStrokeWidth={true} />, text: 'Toma una prueba', id: "step-2", indx: "flash" },
+  { icon: <PencilLine absoluteStrokeWidth={true} />, text: 'Realiza tu evaluación', id: "step-3", indx: "pencil" },
+  { icon: <Award absoluteStrokeWidth={true} />, text: 'Consulta resultados', id: "step-4", indx: "award" },
 ];
 
 
@@ -81,7 +81,7 @@ export default function AnimatedText() {
           {texts[currentIndex].icon}
       </motion.div>
       <motion.p
-        className="px-4"
+        className="text-slate-500 dark:text-slate-300 px-4"
         variants={textVariants}
         initial="initial"
         animate="animate"

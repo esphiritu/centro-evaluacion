@@ -11,13 +11,13 @@ export default function CtaButton({ href, linkText }) {
       duration-300
       ease-in-out 
       text-center 
-      bg-slate-800
-      hover:bg-teal-500
+      bg-amber-300
+      hover:bg-amber-400
       leading-[0]
       pt-4 pb-3.5
       pl-9 pr-3 
       rounded-sm 
-      text-white 
+      text-slate-800 
       font-bold 
       md:text-xl 
       shadow-md 
@@ -43,7 +43,7 @@ export default function CtaButton({ href, linkText }) {
           hover:translate-x-0.3 
           transition-all 
           group-hover:translate-x-2 
-          group-hover:text-white"><path d="m6 17 5-5-5-5" /></svg>
+          group-hover:text-slate-800"><path d="m6 17 5-5-5-5" /></svg>
     </Link>
   )
 }

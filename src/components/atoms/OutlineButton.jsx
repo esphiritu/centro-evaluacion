@@ -7,11 +7,13 @@ function OutlineButton({ href, linkText }) {
       href={href} 
       className="
         text-lg 
-        outline
+        outline-none
         dark:outline-none
-        text-teal-600 
+        text-teal-600
+        dark:text-teal-400 
         hover:bg-teal-600 
         hover:text-white 
+        hover:dark:text-white
         transition-colors 
         ease-in-out 
         duration-300 

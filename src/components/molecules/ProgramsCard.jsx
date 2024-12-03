@@ -52,12 +52,12 @@ export default function CoursesCard() {
                 <p className="leading-snug text-slate-600 dark:text-slate-400 px-3 py-1">Quedan pocos lugares</p>
               </div>
               <div className="mt-6">
-                <p className="tracking-wider text-2xl font-bold py-1">
+                <p className="tracking-wider text-2xl text-teal-500 font-bold py-1">
                   {program.Price}
                 </p>
               </div>
             </div>
-            <p className="text-xl font-bold mt-8 mb-10 lg:mb-[1rem]">
+            <p className="text-xl font-bold mt-3 mb-10 lg:mb-[1rem]">
               {program.ProgramDescription}
             </p>
             <p className="text-left text-gray-500 text-xl pb-5 mb-2 lg:mb-[4rem]">

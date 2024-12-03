@@ -109,7 +109,7 @@ export default function Certificaciones(params) {
     <>
       <header className="w-full py-2 mb-1">
         <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[32rem] justify-center items-center">
-          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start bg-slate-700 rounded-lg text-white px-[4rem] py-2 lg:py-8 mt-10">
+          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-10">
             <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales
             </h1>
             <p className="text-lg md:text-xl text-center lg:text-left font-light py-3 mb-5 pr-5">
@@ -187,7 +187,7 @@ export default function Certificaciones(params) {
                                     <ScrollArea>
                                       <DrawerHeader className="flex w-full">
                                         <div className="content-center w-full mt-10 md:mt-4">
-                                          <DrawerTitle className="text-2xl mb-2 bg-gray-200 dark:bg-gray-600 rounded-sm py-4 px-4">
+                                          <DrawerTitle className="text-2xl mb-2 bg-slate-700 text-white rounded-sm py-4 px-4">
                                             {estandar.content}
                                           </DrawerTitle>
                                           <DrawerDescription
@@ -202,8 +202,7 @@ export default function Certificaciones(params) {
                                         <h2 className="text-2xl mb-5">{estandar.title}</h2>
                                         <p className="mb-6">
                                           <span className="text-slate-800 dark:text-gray-200 font-bold">
-                                            Propósito: 
-                                          </span>
+                                            Propósito: </span> 
                                           {estandar.proposito}
                                         </p>
                                         <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-3">
@@ -212,7 +211,7 @@ export default function Certificaciones(params) {
                                               <User className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
-                                              <span className="text-slate-800 dark:text-gray-200">Ocupaciones asociadas: </span>
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Ocupaciones asociadas: </span>
                                               {estandar.ocupaciones}
                                             </p>
                                           </li>
@@ -221,7 +220,7 @@ export default function Certificaciones(params) {
                                               <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
-                                              <span className="text-slate-800 dark:text-gray-200">Comité desarrollador: </span>
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Comité desarrollador: </span>
                                               {estandar.comite}
                                             </p>
                                           </li>
@@ -230,7 +229,7 @@ export default function Certificaciones(params) {
                                               <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
-                                              <span className="text-slate-800 dark:text-gray-200">Nivel en el Sistema Nacional de Competencia: </span>
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel en el Sistema Nacional de Competencia: </span>
                                               {estandar.snc}
                                             </p>
                                           </li>
@@ -256,8 +255,8 @@ export default function Certificaciones(params) {
                                       <Separator className="mt-1 w-full" />
                                       <DrawerFooter className="w-full lg:w-1/2 mx-auto">
                                         <div className="flex flex-row place-content-end py-6">
-                                          <p className="text-2xl font-bold mr-5">
-                                            {estandar.price}
+                                          <p className="text-2xl text-red-500 font-bold mr-8 md:mr-10">
+                                            <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price} 
                                           </p>
                                           <SecondaryButton href="./" linkText="Obtener" />
                                         </div>
@@ -281,7 +280,7 @@ export default function Certificaciones(params) {
                                 </Drawer>
                               </TableCell>
                               <TableCell className="text-right px-0 lg:px-2">
-                                <Link href="./" className="group/details invisible group-hover/item:visible text-teal-600 group-hover/details:text-teal-700 hover:text-white hover/item:bg-teal-500 pl-2 pr-0 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Obtener
+                                <Link href="./" className="group/details invisible group-hover/item:visible text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-2 pr-0 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Obtener
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -337,8 +336,8 @@ export default function Certificaciones(params) {
             <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
               Explora los programas que tenemos para tí
             </h2>
-            <p className="text-2xl text-center text-gray-500 font-light pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">
-              Encuentra el curso que buscar en el catalogo
+            <p className="text-2xl text-center text-gray-500 font-light pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto text-pretty">
+              Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
             </p>
             <ProgramsCard />
           </div>
@@ -460,7 +459,7 @@ export default function Certificaciones(params) {
               Ponte contacto con un asesor y aumenta tus ingresos realizando evaluaciones
             </p>
             <Link href="./" className="group max-w-fit flex justify-center lg:justify-start">
-              <span className="text-xl text-teal-600 group-hover:text-teal-700 dark:group-hover:text-teal-500 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 rounded-full py-3 pl-5 pr-3">
+              <span className="text-xl text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-400 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 rounded-full py-3 pl-5 pr-3">
                 Contactar ahora
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -469,7 +468,7 @@ export default function Certificaciones(params) {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
+                  className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700 dark:group-hover:text-teal-400"><path d="m6 17 5-5-5-5" /></svg>
               </span>
             </Link>
           </div>

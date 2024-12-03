@@ -15,6 +15,7 @@ import {
   BookOpenCheck,
   Hammer,
   Medal,
+  CircleChevronRight,
 } from "lucide-react";
 import {
   Carousel,
@@ -111,7 +112,7 @@ const criterios = [
     description: "Saber y entender",
     content: "Posesión de conceptos, teorías y principios que sustentan el desempeño de la función",
     borColor: "border-t-indigo-500/50",
-    icon: <Lightbulb strokeWidth={1.25} size={40} className="mx-auto" />,
+    icon: <Lightbulb strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
   },
   {
     id: "00B",
@@ -119,7 +120,7 @@ const criterios = [
     description: "Ser capaz físicamente de desempeñar",
     content: "Realización de acciones que permiten observar su competencia",
     borColor: "border-t-blue-400/50",
-    icon: <Hammer strokeWidth={1.25} size={40} className="mx-auto" />,
+    icon: <Hammer strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
   },
   {
     id: "00C",
@@ -127,7 +128,7 @@ const criterios = [
     description: "Tener disposición y actitud",
     content: "Predisposición a actuar con determinado comportamiento durante el desempeño",
     borColor: "border-t-orange-400/50",
-    icon: <Medal strokeWidth={1.25} size={40} className="mx-auto" />,
+    icon: <Medal strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
   },
   {
     id: "00D",
@@ -135,19 +136,19 @@ const criterios = [
     description: "Tangibles resultado de la actividad",
     content: "Pueden ser manuales, informes, métricas de resultados",
     borColor: "border-t-gray-400",
-    icon: <BookOpenCheck strokeWidth={1.25} size={40} className="mx-auto" />,
+    icon: <BookOpenCheck strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
   },
 ];
 
 // Styles for the Image used as background
-const styles = {
-  heroImage: {
-    backgroundImage: 'url(https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-  },
-};
+// const styles = {
+//   heroImage: {
+//     backgroundImage: 'url(https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+//     backgroundPosition: 'center',
+//     backgroundSize: 'cover',
+//     backgroundRepeat: 'no-repeat',
+//   },
+// };
 
 
 // Images
@@ -167,27 +168,27 @@ export default function Home({ Component, pageProps }) {
   return (
     <>
       <main className="w-full pt-19 scroll-smooth">
-        <section
-          style={styles.heroImage}
-          className="relative h-screen border-b-[9px] bg-fixed">
-          <div className="mx-auto h-full pt-20 md:pt-1 bg-slate-900/30">
-            <div className="container flex flex-col justify-center md:items-center gap-y-7 h-full">
-              <h1 className="w-full lg:w-3/4 scroll-m-20 text-white text-center text-3xl md:text-5xl font-bold tracking-normal lg:!leading-[3.6rem] py-3 px-3 animate-slideIn drop-shadow-lg">
+        <section className="relative h-[42rem]">
+          <div className="flex justify-between items-center container h-full pt-20 md:pt-1 bg-gradient-to-r from-teal-500 from-40% to-transparent to-17% rounded-2xl mt-10 px-[4rem]">
+            <div className="w-full md:w-3/5">
+              <h1 className="text-white text-3xl md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn">
                 La <span className="">certificación de competencias laborales</span> impulsarán tu carrera profesional al éxito
               </h1>
-              <p className=" text-xl md:text-3xl text-white text-center font-light animate-fadeIn text-background drop-shadow-md">
-                  Respalda tus conocimientos y experiencia con certificaciones
+              <p className="text-xl md:text-2xl text-white font-light animate-fadeIn text-background drop-shadow-md">
+                Respalda tus conocimientos y experiencia con certificaciones
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
                 <CtaButton href="./proceso" linkText="Comienza ahora" />
-                <Link className="transition-all duration-300 ease-in-out hover:underline text-center font-bold md:text-lg rounded-sm text-white px-4 py-3 mx-4 mb-6 md:mb-1 mt-6" href="./asesor">
-                  Comienza con un asesor
+                <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center font-bold md:text-lg rounded-sm text-white px-4 py-3 mx-4 md:mb-1 mt-6" href="./asesor">
+                  Comienza con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline"/>
                 </Link>
               </div>
-
+            </div>
+            <div className="">
+              Fotografía
             </div>
           </div>
-          <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[5vw] right-2/4">
+          <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[2vw] right-2/4">
             <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
               <Link href="#benefits">
                 <ArrowDown className="h-8 w-8" />
@@ -197,26 +198,26 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <section className="container h-auto lg:h-[32rem] mt-[6rem]">
-          <div 
-            className="flex flex-col items-center justify-center h-full scroll-smooth" 
+          <div
+            className="flex flex-col items-center justify-center h-full scroll-smooth"
             id="benefits">
             <h2 className="scroll-m-40 text-3xl md:text-4xl text-center font-extrabold tracking-tight py-10 mt-10">Beneficios de la certificación laboral</h2>
-            <div 
+            <div
               className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               {benefits.map((benefit => {
                 return (
-                  <div 
-                    className="w-full lg:w-1/3 py-8 px-5 mx-2 md:mx-auto" 
+                  <div
+                    className="w-full lg:w-1/3 py-8 px-5 mx-2 md:mx-auto"
                     key={benefit.id}>
-                      <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
-                          {benefit.icon}
-                      </div>
-                      <h3 className="text-2xl font-bold text-left mt-8 mb-4">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-lg text-muted-foreground text-left">
-                        {benefit.description}
-                      </p>
+                    <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                      {benefit.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-lg text-muted-foreground text-left">
+                      {benefit.description}
+                    </p>
                   </div>
                 )
               }))}
@@ -227,19 +228,19 @@ export default function Home({ Component, pageProps }) {
 
         <div className="container py-10 h-auto md:h-[16rem] mt-[4rem] mb-[6rem]">
           <div className="flex flex-col md:flex-row items-center justify-between mt-10 py-10">
-            <h5 className="align-bottom text-3xl font-light dark:text-slate-100 text-left tracking-tight w-1/3 mr-8">
-                <span className="text-2xl font-normal">
-                  Formamos parte del </span>Sistema Nacional de Competencias
+            <h5 className="align-bottom text-3xl font-light dark:text-slate-100 text-left tracking-tight w-full md:w-1/3 mr-8">
+              <span className="text-2xl font-normal">
+                Formamos parte del </span>Sistema Nacional de Competencias
             </h5>
-            <Image 
-              src={logoRedConocer} 
-              alt="logotipo de Red CONOCER" 
-              width={170} 
+            <Image
+              src={logoRedConocer}
+              alt="logotipo de Red CONOCER"
+              width={170}
               className="mx-5" />
-            <Image 
-              src={logoICEM} 
-              alt="logotipo de ICE México" 
-              width={170} 
+            <Image
+              src={logoICEM}
+              alt="logotipo de ICE México"
+              width={170}
               className="mx-5" />
           </div>
         </div>
@@ -247,7 +248,7 @@ export default function Home({ Component, pageProps }) {
         <section className="container w-full py-10 mt-[2rem]">
           {/* Pasos para certificarse */}
           <div className="py-5 mb-[3rem] bg-slate-50 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
-            <h2 className="text-2xl md:text-3xl text-center lg:text-left font-bold pt-[2.5rem] mt-2 lg:mt-10 mb-9 pl-0 lg:pl-10">
+            <h2 className="text-2xl md:text-3xl text-center lg:text-left font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-9 pl-0 lg:pl-10">
               <span className="">Antes de empezar.</span> Conoce los pasos para la certificación
             </h2>
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
@@ -268,8 +269,8 @@ export default function Home({ Component, pageProps }) {
               <div className="w-full lg:w-1/2 pl-8 pt-10 lg:pt-2 md:pl-[2rem] mb-[2rem]">
                 {pasos.map((paso => {
                   return (
-                    <div 
-                      key={paso.id} 
+                    <div
+                      key={paso.id}
                       className="flex flex-col md:flex-row items-center md:items-start mb-[1.5rem] py-2">
                       <div className="relative pl-8 md:pl-[6rem]">
                         <span className="absolute -left-5 lg:left-9 top-3 bg-gray-700 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
@@ -282,9 +283,9 @@ export default function Home({ Component, pageProps }) {
                           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300">
                             <p className="text-muted-foreground text-xl mb-2 overflow-hidden">
                               {paso.description} <br />
-                              <Link 
-                                href="./" 
-                                className="text-lg text-teal-500 hover:text-teal-700 inline-block mt-5">
+                              <Link
+                                href="./"
+                                className="text-lg text-teal-500 hover:text-teal-700 dark:hover:text-teal-400 inline-block mt-5">
                                 <span className="text-xl font-semibold">Ver más
                                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
                                 </span>
@@ -304,13 +305,13 @@ export default function Home({ Component, pageProps }) {
         <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
           <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
             <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-wider">
-                Reconocimiento nacional
+              Reconocimiento nacional
             </p>
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-1 md:leading-[3rem] px-0">
-              ¿Por qué evaluarme con <span className="bg-teal-300 whitespace-nowrap px-3 rounded-md dark:text-slate-900">Proyecta Empresarial</span>?
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-thin pt-2 mb-1 md:leading-[3rem] px-0">
+              ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
             </h1>
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10">
-                Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
+              Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
             </p>
             <Dialog>
               <DialogTrigger>
@@ -329,40 +330,44 @@ export default function Home({ Component, pageProps }) {
           </div>
           <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-5 mb-10 mr-10 py-10">
             <li className="text-xl text-center font-bold flex flex-col align-middle">
-              <LockKeyhole 
-                size={42} 
-                strokeWidth={1.50} 
+              <LockKeyhole
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
                 className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Objetividad y confiabilidad
-                </span>
+              <span className="block mt-8">
+                Objetividad y confiabilidad
+              </span>
             </li>
             <li className="text-xl text-center font-bold flex flex-col align-middle">
-              <Headset 
-                size={42} 
-                strokeWidth={1.50} 
+              <Headset
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
                 className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Asesoría de expertos
-                </span>
+              <span className="block mt-8">
+                Asesoría de expertos
+              </span>
             </li>
             <li className="text-xl text-center font-bold flex flex-col align-middle">
-              <ShieldCheck 
-                size={42} 
-                strokeWidth={1.50} 
+              <ShieldCheck
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
                 className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Calidad asegurada
-                </span>
+              <span className="block mt-8">
+                Calidad asegurada
+              </span>
             </li>
             <li className="text-xl text-center font-bold flex flex-col align-middle">
-              <Award 
-                size={42} 
-                strokeWidth={1.50} 
+              <Award
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
                 className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Respaldo de OC más importante
-                </span>
+              <span className="block mt-8">
+                Respaldo de OC más importante
+              </span>
             </li>
           </ul>
         </section>
@@ -397,14 +402,15 @@ export default function Home({ Component, pageProps }) {
               Participan escuelas, universidades y gobiernos en diferentes actividades
             </p>
             <p className="text-center text-xl">
-              <Link 
-                href="./" 
+              <Link
+                href="./"
                 className="
                   group 
                   text-xl 
-                  text-teal-600 
+                  text-teal-600
+                  dark:text-teal-500 
                   hover:text-teal-700
-                  dark:hover:text-teal-500  
+                  dark:hover:text-teal-400  
                   hover:bg-gray-100
                   dark:hover:bg-gray-800 
                   rounded-full 
@@ -412,7 +418,7 @@ export default function Home({ Component, pageProps }) {
                   duration-200 
                   py-3 pl-5 pr-3">
                 <span className="py-3"> Próximos eventos
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition-all group-hover:translate-x-1 group-hover:text-teal-700"><path d="m6 17 5-5-5-5" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition-all group-hover:translate-x-1 group-hover:text-teal-700 dark:group-hover:text-teal-400"><path d="m6 17 5-5-5-5" /></svg>
                 </span>
               </Link>
             </p>
@@ -424,7 +430,7 @@ export default function Home({ Component, pageProps }) {
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
                       <Image
-                        src={presentation}
+                        src={coaching}
                         alt="Image showing a group of people"
                         quality={75}
                         sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
@@ -433,7 +439,7 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible transform transition -rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-teal-500">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-5xl text-center w-full">Capacitaciones</h1>
+                        <h1 className="text-white text-5xl text-center w-full"><Link href="./" className="transition-all duration-300 ease-in-out hover:bg-white/15 rounded-xl px-8 py-3 mx-4 md:mb-1 mt-6">Capacitaciones</Link></h1>
                       </div>
                     </div>
                   </div>
@@ -444,14 +450,14 @@ export default function Home({ Component, pageProps }) {
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
                     <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
                       <Image
-                        src={coaching}
+                        src={presentation}
                         alt="Image showing a group of people"
                         quality={75}
                         sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-purple-400">
+                    <div className="absolute backface-visible transform transition -rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-orange-400">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-white lg:text-4xl text-center w-full">
                           Coaching
@@ -493,7 +499,7 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-orange-400">
+                    <div className="absolute backface-visible transform transition -rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-purple-400">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-white text-4xl text-center w-full">Talleres</h1>
                       </div>
@@ -512,7 +518,7 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-gray-400">
+                    <div className="absolute backface-visible transform transition -rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-cyan-600">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-white text-4xl text-center w-full">
                           Consultoría
@@ -529,15 +535,15 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[25rem] mt-[4rem] mb-[4rem] shadow-sm">
-          <Image 
-            src={diagnostico} 
-            width={100} 
-            height={100} 
-            alt="icon for" 
+          <Image
+            src={diagnostico}
+            width={100}
+            height={100}
+            alt="icon for"
             className="max-w-auto mb-1" />
           <h1 className="relative text-3xl md:text-4xl font-bold pt-5 pb-1">
             Inicia una evaluación diagnóstica
-            <span className="absolute text-center text-sm bg-red-400 text-white px-2 align-middle inline-block ml-1 rounded-full leading-1 pt-1">
+            <span className="absolute text-center text-sm bg-red-400 text-white px-2 inline-block ml-1 rounded-full leading-relaxed">
               Gratis
             </span>
           </h1>
@@ -552,11 +558,11 @@ export default function Home({ Component, pageProps }) {
           <div className="container mt-[12rem] mb-[8rem] py-10">
             <h4 className="text-center text-2xl md:text-3xl font-bold pb-2">
               <span className="leading-[1rem]">
-                  Prepárate previo a tu evaluación para reforzar cuatro elementos clave
+                Prepárate previo a tu evaluación para reforzar cuatro elementos clave
               </span>
             </h4>
-            <p className="text-xl text-center text-muted-foreground mb-1 pb-8">
-              Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás preparada o preparado.
+            <p className="w-full lg:w-1/2 text-xl text-center text-muted-foreground mb-1 pb-8 mx-auto">
+              Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás listo o lista para la evaluación.
             </p>
 
             <div className="bg-transparent px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem]">
@@ -564,10 +570,10 @@ export default function Home({ Component, pageProps }) {
                 <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
                   {criterios.map((criterio => {
                     return (
-                      <CarouselItem 
-                        className="pb-7 mb-7 lg:pb-2 lg:mb-1" 
+                      <CarouselItem
+                        className="group pb-7 mb-7 lg:pb-2 lg:mb-1"
                         key={criterio.id}>
-                        <Card className={`group relative w-full lg:w-11/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden ${criterio.borColor}`}>
+                        <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden">
                           <CardHeader>
                             <div className="absolute bottom-16 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
                               <span className="text-[#55ccc9] px-4 py-6">
@@ -577,20 +583,38 @@ export default function Home({ Component, pageProps }) {
                                 {criterio.title}
                               </CardTitle>
                               <CardDescription className="mb-1 text-muted-foreground">
-                                  {criterio.description}
+                                {criterio.description}
                               </CardDescription>
                             </div>
                           </CardHeader>
-                          <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden transform ease-in-out duration-300 group-hover:h-2/5 text-white bg-gray-400 group-hover:bg-slate-800 border-0 lg:border-b-0 border-b-dotted rounded-sm">
-                            <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">
+                          <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden group-hover:overflow-visible transform ease-in-out duration-300 group-hover:h-2/5 text-white bg-gray-400 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-sm">
+                            <p className="text-lg absolute top-0 text-left w-full pr-3 pt-3">
                               {criterio.content}
                             </p>
                           </CardContent>
-                          <CardFooter>
+                          {/* <CardFooter>
                             <div className="">
+                              Hola!
                             </div>
-                          </CardFooter>
+                          </CardFooter> */}
                         </Card>
+                        <p className="invisible group-hover:visible transition-all ease-in-out duration-200">
+                          <Link href="./"
+                            className="
+                              w-full
+                              inline-block
+                              font-bold 
+                              text-white 
+                              bg-teal-500 
+                              hover:bg-teal-600 
+                              px-4 py-3 
+                              rounded-sm 
+                              transition-colors 
+                              ease-in-out 
+                              duration-300">
+                            <span className="px-3 text-xl">Ver más</span>
+                          </Link>
+                        </p>
                       </CarouselItem>
                     )
                   }))}
@@ -618,10 +642,10 @@ export default function Home({ Component, pageProps }) {
           <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-2">
             <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8">
               <h5 className="text-3xl md:text-5xl text-center dark:text-white font-bold pt-3 mb-4">
-                  Su experiencia en otro nivel
+                Su experiencia en otro nivel
               </h5>
               <p className="text-xl md:text-2xl text-center font-light dark:text-white mb-[1.5rem]">
-                  Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas
+                Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas
               </p>
             </div>
             <CtaButton href="./proceso" linkText="Comienza ahora" />

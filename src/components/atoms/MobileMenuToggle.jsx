@@ -26,22 +26,22 @@ export default function MobileMenuToggle({links}) {
       {/* MobileMenu toggle button */}
       <Button 
         onClick={toggleMenu} 
-        className="flex md:hidden mx-2 z-40 text-slate-500 hover:text-teal-600 hover:bg-slate-200 rounded-full"
+        className="flex md:hidden mx-2 z-40 text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full"
         variant="ghost" 
         size="icon"
         >
           {isOpen ? 
-                  <X className="
-                    h-[1.3rem] 
-                    w-[1.3rem] 
+                  <X absoluteStrokeWidth={true} className="
+                    h-[1.5rem] 
+                    w-[1.5rem] 
                     rotate-0 
                     scale-100 
                     transition-transform 
                     dark:rotate-90 
                     dark:scale-100"></X>
-                  : <MenuIcon className="
-                    h-[1.3rem] 
-                    w-[1.3rem] 
+                  : <MenuIcon absoluteStrokeWidth={true} className="
+                    h-[1.5rem] 
+                    w-[1.5rem] 
                     rotate-0 
                     scale-100 
                     transition-transform 
@@ -81,7 +81,7 @@ export function MobileMenu({navigation}) {
     // Framer motion component to add an animation when the mobile menu is opened and closed
     <motion.ul
       key="Mobile"
-      className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-200 dark:bg-slate-600 p-10 disabled:scroll"}
+      className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-100 dark:bg-slate-800 p-10 disabled:scroll"}
       initial={{ x: '200vw' }}
       animate={{ x: 0 }}
       transition={{type: 'tween'}}
@@ -105,9 +105,11 @@ export function MobileMenu({navigation}) {
             rounded-md 
             transition-colors 
             duration-50 
-            hover:bg-accent 
+            hover:bg-slate-200
+            dark:hover:bg-slate-700 
             hover:text-accent-foreground 
-            hover:text-teal-600 
+            hover:text-teal-600
+            dark:hover:text-teal-400
             focus:bg-accent 
             focus:text-accent-foreground 
             focus:outline-none 

@@ -29,9 +29,9 @@ export function SlimModeToggle() {
       <Button 
         variant="ghost" 
         size="icon" 
-        className="md:mr-10 text-slate-600 hover:text-teal-600 hover:cursor-pointer rounded-full" 
+        className="md:mr-10 text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 dark:hover:bg-slate-700 hover:cursor-pointer rounded-full" 
         onClick={() => setTheme('light')}>
-        <SunIcon />
+        <SunIcon absoluteStrokeWidth={true} />
       </Button>
     );
   }
@@ -41,9 +41,9 @@ export function SlimModeToggle() {
       <Button 
         variant="ghost" 
         size="icon" 
-        className="md:mr-10 text-slate-600 hover:text-teal-600 hover:cursor-pointer hover:bg-slate-200 rounded-full" 
+        className="md:mr-10 text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 hover:cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full" 
         onClick={() => setTheme('dark')}>
-        <MoonIcon />
+        <MoonIcon absoluteStrokeWidth={true} />
       </Button>
     );
   }

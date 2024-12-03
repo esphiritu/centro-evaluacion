@@ -48,7 +48,7 @@ export default function HybridHeader () {
       flex 
       justify-between
       md:justify-around 
-      bg-slate-100 
+      bg-slate-50 
       dark:bg-slate-900 
       content-center
       w-full 
