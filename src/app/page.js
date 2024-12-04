@@ -72,7 +72,7 @@ const benefits = [
   },
   {
     title: "Obtén un certificado de competencia",
-    description: "Reconocimiento de la Secretaría de Educación Pública",
+    description: "Certificados con validez oficial de Secretería de Educación Pública-CONOCER",
     icon: <FileBadge size={32} strokeWidth={2} className="text-white" />,
     id: "ouc",
   },

@@ -22,7 +22,7 @@ function Footer() {
             </div>
             <div className="text-xl py-5">
               <div className="bg-gray-800 rounded-full p-3 w-fit h-fit">
-                <Mail size={24} strokeWidth={2} className="text-white" />
+                <Mail size={24} strokeWidth={1.5}  absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold py-5">Buzón de quejas</p>
               <p className="mb-4">¿Qué podemos hacer para mejorar Proyecta Empresarial?</p>
@@ -44,7 +44,7 @@ function Footer() {
             </div>
             <div className="text-xl py-5">
               <div className="bg-gray-800 rounded-full p-3 w-fit h-fit">
-                <MessageSquareText size={24} strokeWidth={2} className="text-white" />
+                <MessageSquareText size={24} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold py-5">Contáctanos ahora</p>
               <p className="pb-4">¿Tienes alguna pregunta?<br />

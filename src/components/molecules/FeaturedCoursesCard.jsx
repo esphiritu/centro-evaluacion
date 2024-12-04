@@ -73,7 +73,7 @@ export default function FeaturedCoursesCard() {
                 <ul className="w-full flex justify-between text-lg mb-8 border rounded-sm px-3 lg:px-8 py-3">
                   <li className="py-1">
                     <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-700 w-fit rounded-full px-2 py-2 mb-1">
-                      <FolderInput className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                      <FolderInput absoluteStrokeWidth={true} strokeWidth={1.25} className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                     </div>
                     <span>6 módulos</span>
                   </li>

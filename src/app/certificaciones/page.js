@@ -5,6 +5,7 @@ import Image from "next/image";
 // images
 import resultados from "@/public/img/consulta-resultados.svg";
 import heroSection from "@/public/img/hero-section.png";
+import ISOimage from "@/public/img/depositphotos_356301122-stock-illustration-iso-9001-icon-standard-quality.jpg";
 
 // Shandcn UI components
 
@@ -108,15 +109,12 @@ export default function Certificaciones(params) {
   return (
     <>
       <header className="w-full py-2 mb-1">
-        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[32rem] justify-center items-center">
+        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[28rem] justify-center items-center">
           <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-10">
             <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales
             </h1>
             <p className="text-lg md:text-xl text-center lg:text-left font-light py-3 mb-5 pr-5">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
-            </p>
-            <p className="absolute inset-x-0 -bottom-16 lg:-bottom-9 text-muted-foreground dark:text-white text-md lg:text-lg px-6">
-              Certificados con validez oficial de SEP-CONOCER
             </p>
           </div>
           <div className="relative w-full lg:w-3/5 px-0 lg:px-10 mx-auto">
@@ -127,12 +125,26 @@ export default function Certificaciones(params) {
               alt="image with some people" />
           </div>
         </div>
+        <div className="container">
+          <Separator  className=""/>
+              <div className="flex justify-start items-center py-6">
+                <Image src={ISOimage} alt="ISO certification logo" width={60} height={60} className="" />
+                <Separator orientation="vertical" className="" decorative />
+                <div>
+                  <h5 className="text-slate-900 text-xl font-bold px-6">Secure from the start, and throughout</h5>
+                  <p className="text-muted-foreground dark:text-white text-sm px-6">
+                    Certificados con validez oficial de SEP-CONOCER
+                  </p>
+                </div>
+              </div>
+        </div>
       </header>
+      
       <main className="w-full">
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
           <div className="w-full lg:container">
-            <h4 className="text-2xl md:text-3xl font-bold text-center pb-6 pt-[5rem] mb-[1.8rem]">
+            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[5rem] mb-[1.8rem]">
               Certificaciones disponibles con Proyecta Empresarial
             </h4>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">

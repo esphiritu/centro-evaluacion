@@ -1,10 +1,44 @@
 // Next.js components
 // import Image from "next/image";
 // Shadcn UI components
+import {
+  Headset,
+  Tablet,
+  LibraryBig,
+  Mouse,
+} from "lucide-react";
 
 // Custom components
 import FeaturedCoursesCard from "@/components/molecules/FeaturedCoursesCard";
 import MostPopularCourses from "@/components/molecules/MostPopularCourses";
+
+// Components Data
+const soportes = [
+  {
+    id: "soporte1",
+    title: "Soporte 24/7",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <Headset size={20} className="text-slate-800 dark:text-slate-100" absoluteStrokeWidth={true} strokeWidth={1.25} />,
+  },
+  {
+    id: "soporte2",
+    title: "Contenido digital",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <Tablet size={20} className="text-slate-800 dark:text-slate-100" absoluteStrokeWidth={true} strokeWidth={1.25} />,
+  },
+  {
+    id: "soporte3",
+    title: "Amplio catálogo",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <LibraryBig size={20} className="text-slate-800 dark:text-slate-100" absoluteStrokeWidth={true} strokeWidth={1.25} />,
+  },
+  {
+    id: "soporte4",
+    title: "Fácil acceso",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <Mouse size={20} className="text-slate-800 dark:text-slate-100" absoluteStrokeWidth={true} strokeWidth={1.25} />,
+  }
+];
 
 export default function Cursos(params) {
   return (
@@ -20,11 +54,28 @@ export default function Cursos(params) {
           Cursos de auto gestión completos
         </p>
       </section>
+      
       <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
+        <div className="container flex justify-between py-6">
+          {soportes.map(soporte => {
+            return (
+              <div className="flex justify-start items-center py-6" key={soporte.id}>
+                <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-700 w-fit rounded-lg px-5 py-5 mb-1">
+                  {soporte.icon}
+                </div>
+                <div>
+                  <h5 className="text-slate-900 dark:text-white text-xl font-bold px-6">{soporte.title}</h5>
+                  <p className="text-muted-foreground dark:text-white text-sm px-6">
+                    {soporte.description}
+                  </p>
+                </div>
+              </div>
+            )
+          }
+          )}
 
         </div>
-        <div className="container w-full pb-10 mt-6">
+        <div className="container w-full pb-10 mt-10">
           <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
             Cursos destacados en la comunidad
           </h2>
@@ -54,7 +105,7 @@ export default function Cursos(params) {
       <section className="bg-slate-700 py-10 h-auto lg:h-[24rem]">
 
       </section>
-       
+
     </main>
   );
 }
