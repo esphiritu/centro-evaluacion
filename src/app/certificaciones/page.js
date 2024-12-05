@@ -127,7 +127,7 @@ export default function Certificaciones(params) {
         </div>
         <div className="container">
           <Separator  className=""/>
-              <div className="flex justify-start items-center py-6">
+              <div className="flex justify-end items-center py-6">
                 <Image src={ISOimage} alt="ISO certification logo" width={60} height={60} className="" />
                 <Separator orientation="vertical" className="" decorative />
                 <div>

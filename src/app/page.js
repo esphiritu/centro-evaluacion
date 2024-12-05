@@ -169,12 +169,12 @@ export default function Home({ Component, pageProps }) {
     <>
       <main className="w-full pt-19 scroll-smooth">
         <section className="relative h-[42rem]">
-          <div className="flex justify-between items-center container h-full pt-20 md:pt-1 bg-gradient-to-r from-teal-500 from-40% to-transparent to-17% rounded-2xl mt-10 px-[4rem]">
+          <div className="flex justify-between items-center container h-full pt-1 md:pt-20 bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent to-17% rounded-2xl mt-10 px-[4rem]">
             <div className="w-full md:w-3/5">
               <h1 className="text-white text-3xl md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn">
                 La <span className="">certificación de competencias laborales</span> impulsarán tu carrera profesional al éxito
               </h1>
-              <p className="text-xl md:text-2xl text-white font-light animate-fadeIn text-background drop-shadow-md">
+              <p className="text-xl md:text-2xl text-white font-light animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
                 Respalda tus conocimientos y experiencia con certificaciones
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
@@ -184,11 +184,11 @@ export default function Home({ Component, pageProps }) {
                 </Link>
               </div>
             </div>
-            <div className="">
+            <div className="hidden md:block">
               Fotografía
             </div>
           </div>
-          <div className="animate-fadeIn absolute bottom-[20vw] md:bottom-[10vw] lg:bottom-[2vw] right-2/4">
+          <div className="animate-fadeIn absolute bottom-[5vw] md:bottom-[10vw] lg:bottom-[2vw] right-2/4">
             <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
               <Link href="#benefits">
                 <ArrowDown className="h-8 w-8" />
@@ -375,7 +375,7 @@ export default function Home({ Component, pageProps }) {
         <section className="container py-10 mb-[10rem] mt-[2rem]">
           <div className="w-full mb-[5rem]">
             <h1 className="text-center text-3xl md:text-4xl font-bold mt-8">
-              Convención anual.
+              Convención anual 2024.
               <span className="
                 before:block 
                 before:absolute 
@@ -534,7 +534,7 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
         </section>
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-20 h-auto sm:h-auto md:h-[25rem] mt-[4rem] mb-[4rem] shadow-sm">
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-10 lg:px-20 h-auto sm:h-auto md:h-[25rem] mt-[4rem] mb-[4rem] shadow-sm">
           <Image
             src={diagnostico}
             width={100}
