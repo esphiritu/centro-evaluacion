@@ -307,7 +307,7 @@ export default function Home({ Component, pageProps }) {
             <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-wider">
               Reconocimiento nacional
             </p>
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-thin pt-2 mb-1 md:leading-[3rem] px-0">
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-thin pt-2 mb-4 md:leading-[3rem] px-0">
               ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
             </h1>
             <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
@@ -428,7 +428,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[670px] lg:col-span-2 lg:row-span-2">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
                       <Image
                         src={coaching}
                         alt="Image showing a group of people"
@@ -437,9 +437,13 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-teal-500">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-500">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-5xl text-center w-full"><Link href="./" className="transition-all duration-300 ease-in-out hover:bg-white/15 rounded-xl px-8 py-3 mx-4 md:mb-1 mt-6">Capacitaciones</Link></h1>
+                        <h1 className="text-white text-2xl lg:text-4xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                            Capacitaciones
+                          </Link>
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -448,7 +452,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
                       <Image
                         src={presentation}
                         alt="Image showing a group of people"
@@ -457,10 +461,12 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-orange-400">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-orange-400">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white lg:text-4xl text-center w-full">
-                          Coaching
+                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                            Coaching
+                          </Link>
                         </h1>
                       </div>
                     </div>
@@ -470,7 +476,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full  h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
                       <Image
                         src={session}
                         alt="Image showing a group of people"
@@ -479,9 +485,13 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-blue-500">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-blue-500">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-4xl text-center w-full">Conferencias</h1>
+                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                            Conferencias
+                          </Link>
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -490,7 +500,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
                       <Image
                         src={participants}
                         alt="Image showing a group of people"
@@ -499,9 +509,13 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-purple-400">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-purple-400">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-4xl text-center w-full">Talleres</h1>
+                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                            Talleres
+                          </Link>
+                        </h1>
                       </div>
                     </div>
                   </div>
@@ -510,7 +524,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full  h-320  md:h-[390px]  lg:h-[328px]  lg:col-span-1  lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
                       <Image
                         src={staged}
                         alt="Image showing a group of people"
@@ -518,10 +532,12 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible transform transition -rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-cyan-600">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-cyan-600">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-4xl text-center w-full">
-                          Consultoría
+                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                            Consultoría
+                          </Link>
                         </h1>
                       </div>
                     </div>
