@@ -126,20 +126,20 @@ export default function Certificaciones(params) {
           </div>
         </div>
         <div className="container">
-          <Separator  className=""/>
-              <div className="flex justify-end items-center py-6">
-                <Image src={ISOimage} alt="ISO certification logo" width={60} height={60} className="" />
-                <Separator orientation="vertical" className="" decorative />
-                <div>
-                  <h5 className="text-slate-900 text-xl font-bold px-6">Secure from the start, and throughout</h5>
-                  <p className="text-muted-foreground dark:text-white text-sm px-6">
-                    Certificados con validez oficial de SEP-CONOCER
-                  </p>
-                </div>
-              </div>
+          <Separator className="" />
+          <div className="flex justify-end items-center py-6">
+            <Image src={ISOimage} alt="ISO certification logo" width={60} height={60} className="" />
+            <Separator orientation="vertical" className="" decorative />
+            <div>
+              <h5 className="text-slate-900 dark:text-slate-200 text-xl font-bold px-6">Secure from the start, and throughout</h5>
+              <p className="text-muted-foreground dark:text-white text-sm px-6">
+                Certificados con validez oficial de SEP-CONOCER
+              </p>
+            </div>
+          </div>
         </div>
       </header>
-      
+
       <main className="w-full">
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
@@ -166,7 +166,7 @@ export default function Certificaciones(params) {
                 <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
                   <Table className="mt-2">
                     <TableCaption>
-                      <p className="w-3/4">No es necesario algún requisito académico para la certificación de competencias laborales.
+                      <p className="w-full">No es necesario algún requisito académico para la certificación de competencias laborales.
                       </p>
                     </TableCaption>
                     <TableHeader className="text-xl font-bold">
@@ -209,12 +209,12 @@ export default function Certificaciones(params) {
                                           <Separator className="mt-3 w-full" />
                                         </div>
                                       </DrawerHeader>
-                                      
+
                                       <div className="w-full text-xl text-gray-700 dark:text-gray-400 lg:w-1/2 mx-auto px-5 py-2">
                                         <h2 className="text-2xl mb-5">{estandar.title}</h2>
                                         <p className="mb-6">
                                           <span className="text-slate-800 dark:text-gray-200 font-bold">
-                                            Propósito: </span> 
+                                            Propósito: </span>
                                           {estandar.proposito}
                                         </p>
                                         <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-3">
@@ -246,29 +246,29 @@ export default function Certificaciones(params) {
                                             </p>
                                           </li>
                                         </ul>
+                                        <p className="text-sm text-muted-foreground py-4 mt-5">Descarga el formato completo del estándar de competencia</p>
                                         <Button
-                                            variant="outline"
-                                            className="py-6 pl-3 pr-5 text-xl text-gray-800 dark:text-gray-200 hover:text-white hover:bg-gray-800 text-center  dark:hover:bg-gray-600 mt-5 mb-3">
-                                            <span className="pl-3 pr-3 py-6">Descargar</span>
-                                            <svg
-                                              xmlns="http://www.w3.org/2000/svg"
-                                              width="20"
-                                              height="20"
-                                              viewBox="0 0 24 24"
-                                              fill="none"
-                                              stroke="currentColor"
-                                              strokeWidth="2.25"
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
-                                          </Button>
-                                          <span className="text-sm text-muted-foreground pl-6 pr-3 py-6">Descarga el formato completo del estándar de competencia</span>
+                                          variant="outline"
+                                          className="py-6 pl-3 pr-5 text-xl text-gray-800 dark:text-gray-200 hover:text-white hover:bg-gray-800 text-center  dark:hover:bg-gray-600 mb-3">
+                                          <span className="pl-3 pr-3 py-6">Descargar</span>
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2.25"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+                                        </Button>
                                       </div>
                                       <Separator className="mt-1 w-full" />
                                       <DrawerFooter className="w-full lg:w-1/2 mx-auto">
                                         <div className="flex flex-row place-content-end py-6">
                                           <p className="text-2xl text-red-500 font-bold mr-8 md:mr-10">
-                                            <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price} 
+                                            <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price}
                                           </p>
                                           <SecondaryButton href="./" linkText="Obtener" />
                                         </div>
@@ -427,9 +427,9 @@ export default function Certificaciones(params) {
             </Accordion> */}
           </div>
           <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-[4rem] h-auto lg:h-[24rem] mb-[5rem]">
-            <div>
+            <div className="px-2">
               <p className="text-4xl text-center text-white font-bold mb-3">
-                ¿Necesitas ayuda personalizada?
+                ¿Necesitas más ayuda?
               </p>
               <h1 className="text-xl text-center text-slate-300 mb-10">
                 Estamos listos para asesorarte. Un experto te ayudará a resolver todas las dudas.
@@ -457,12 +457,12 @@ export default function Certificaciones(params) {
         </section>
         {/* Reclutamiento */}
         <div className="container flex flex-col lg:flex-row justify-center w-11/12lg:w-full h-auto md:h-[26rem] lg:h-[19rem] mb-[7rem] mt-[1rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto border">
-          <div className="px-6 pb-8 lg:self-start">
+          <div className="px-2 lg:px-6 pb-8 lg:self-start">
             <Sprout
               size={70}
               strokeWidth={1.50}
-              className="bg-teal-500 dark:bg-slate-200 text-white dark:text-gray-800 p-3 rounded-full" />
-            <h3 className="text-3xl font-bold mb-2 mt-8">
+              className="bg-teal-500 dark:bg-slate-200 text-white dark:text-gray-800 p-3 rounded-full ml-auto mr-auto lg:ml-0" />
+            <h3 className="text-center lg:text-left text-3xl font-bold mb-2 mt-8">
               ¿Ya estás certificado y te interesa ser evaluador?
             </h3>
           </div>
@@ -470,7 +470,7 @@ export default function Certificaciones(params) {
             <p className="text-xl text-center lg:text-left py-3 mb-5">
               Ponte contacto con un asesor y aumenta tus ingresos realizando evaluaciones
             </p>
-            <Link href="./" className="group max-w-fit flex justify-center lg:justify-start">
+            <Link href="./" className="group max-w-fit flex justify-center lg:justify-start ml-auto mr-auto lg:ml-0">
               <span className="text-xl text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-400 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 rounded-full py-3 pl-5 pr-3">
                 Contactar ahora
                 <svg

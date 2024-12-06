@@ -271,17 +271,17 @@ export default function Home({ Component, pageProps }) {
                   return (
                     <div
                       key={paso.id}
-                      className="flex flex-col md:flex-row items-center md:items-start mb-[1.5rem] py-2">
-                      <div className="relative pl-8 md:pl-[6rem]">
-                        <span className="absolute -left-5 lg:left-9 top-3 bg-gray-700 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
+                      className="flex flex-col md:flex-row items-center md:items-start mb-1 lg:mb-[1.5rem] py-2">
+                      <div className="relative pl-4 md:pl-[6rem]">
+                        <span className="absolute -left-8 lg:left-9 top-2 lg:top-3 bg-gray-700 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
                           {paso.stepNumber}
                         </span>
                         <div className="group pl-8">
                           <h3 className="text-xl md:text-left font-bold py-3">
                             {paso.title}
                           </h3>
-                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300">
-                            <p className="text-muted-foreground text-xl mb-2 overflow-hidden">
+                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-150">
+                            <p className="text-muted-foreground text-xl mb-0 lg:mb-3 overflow-hidden">
                               {paso.description} <br />
                               <Link
                                 href="./"
@@ -591,7 +591,7 @@ export default function Home({ Component, pageProps }) {
                         key={criterio.id}>
                         <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden">
                           <CardHeader>
-                            <div className="absolute bottom-16 right-0 left-0 transform ease-in-out duration-300 group-hover:bottom-32">
+                            <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
                               <span className="text-[#55ccc9] px-4 py-6">
                                 {criterio.icon}
                               </span>
@@ -603,8 +603,8 @@ export default function Home({ Component, pageProps }) {
                               </CardDescription>
                             </div>
                           </CardHeader>
-                          <CardContent className="absolute -bottom-6 right-0 w-full h-0 overflow-hidden group-hover:overflow-visible transform ease-in-out duration-300 group-hover:h-2/5 text-white bg-gray-400 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-sm">
-                            <p className="text-lg absolute top-0 text-left w-full pr-3 pt-3">
+                          <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-sm">
+                            <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">
                               {criterio.content}
                             </p>
                           </CardContent>
@@ -614,7 +614,7 @@ export default function Home({ Component, pageProps }) {
                             </div>
                           </CardFooter> */}
                         </Card>
-                        <p className="invisible group-hover:visible transition-all ease-in-out duration-200">
+                        <p className="visible lg:invisible lg:group-hover:visible transition-all ease-in-out duration-200">
                           <Link href="./"
                             className="
                               w-full
