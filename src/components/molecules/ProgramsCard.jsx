@@ -7,6 +7,11 @@ import RHSpecialist from "@/public/img/pexels-thirdman-5256816.png";
 import { Separator } from "@/components/ui/separator";
 import SecondaryButton from "../atoms/SecondaryButton";
 
+// Icons
+import {
+  Clock4,
+} from "lucide-react";
+
 // Programs
 const programs = [
   {
@@ -44,12 +49,12 @@ export default function CoursesCard() {
           <div className={`w-full lg:w-1/2 text-left h-[23rem] md:h-auto px-6 md:px-[3rem] py-6 lg:py-0 bg-white dark:bg-gray-800 ${program.bgColor} ${program.flexRowDirection === "lg:flex-row-reverse" ? "lg:rounded-r-xl lg:rounded-l-none" : "lg:rounded-l-xl lg:rounded-r-none"} ${program.flexColDirection === "flex-col-reverse" ? "rounded-b-xl" : "rounded-t-xl"}`}>
             {/* Pulse red indicator */}
             <div className="flex justify-between">
-              <div className="relative w-fit mb-5 ml-6 mt-6 border rounded-full">
+              <div className="relative w-fit mb-5 ml-6 mt-6">
                 <span className="absolute -left-5 top-[0.6rem] w-1 h-1 bg-red-500 rounded-full px-1 py-1">
                 </span>
                 <span className="absolute -left-5 top-[0.6rem] w-2 h-2 bg-red-600 dark:bg-red-500 rounded-full animate-ping duration-800 ease-in">
                 </span>
-                <p className="leading-snug text-slate-600 dark:text-slate-400 px-3 py-1">Quedan pocos lugares</p>
+                <p className="leading-snug text-slate-600 dark:text-slate-400 px-1 py-1">Quedan pocos lugares</p>
               </div>
               <div className="mt-6">
                 <p className="tracking-wider text-2xl text-teal-500 font-bold py-1">
@@ -57,13 +62,23 @@ export default function CoursesCard() {
                 </p>
               </div>
             </div>
-            <p className="text-xl font-bold mt-3 mb-10 lg:mb-[1rem]">
-              {program.ProgramDescription}
-            </p>
-            <p className="text-left text-gray-500 text-xl pb-5 mb-2 lg:mb-[4rem]">
+            <p className="text-xl font-bold mt-1 mb-1">
               {program.ProgramName}
             </p>
-            <SecondaryButton href={program.ProgramHrefLink} linkText="Conoce el programa" />
+            <p className="text-left text-gray-500 dark:text-gray-400 text-xl pb-3 mb-2">
+              {program.ProgramDescription}
+            </p>
+            <div className="">
+              <ul className="w-full flex justify-between text-lg mb-8 border rounded-sm px-3 lg:px-8 py-3">
+                    <li className="py-1 flex items-center">
+                      <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-700 w-fit rounded-full px-2 py-2 mb-1">
+                        <Clock4 absoluteStrokeWidth={true} strokeWidth={1.25} className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                      </div>
+                      <span className="px-3">120 horas</span>
+                    </li>
+              </ul>
+              <SecondaryButton href={program.ProgramHrefLink} linkText="Conoce el programa" />
+            </div>
 
           </div>
           <div className="w-full lg:w-2/5 overflow-hidden">
@@ -76,7 +91,6 @@ export default function CoursesCard() {
             />
           </div>
         </div>
-      
     )
     )
     )

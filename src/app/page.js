@@ -169,7 +169,7 @@ export default function Home({ Component, pageProps }) {
     <>
       <main className="w-full pt-19 scroll-smooth">
         <section className="relative h-[42rem]">
-          <div className="flex justify-between items-center container h-full pt-1 md:pt-20 bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent to-17% rounded-2xl mt-10 px-[4rem]">
+          <div className="flex justify-between items-center container h-full pt-1 md:pt-20 bg-gradient-to-b lg:bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-[4rem]">
             <div className="w-full md:w-3/5">
               <h1 className="text-white text-3xl md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn">
                 La <span className="">certificación de competencias laborales</span> impulsarán tu carrera profesional al éxito
@@ -180,7 +180,7 @@ export default function Home({ Component, pageProps }) {
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn">
                 <CtaButton href="./proceso" linkText="Comienza ahora" />
                 <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center font-bold md:text-lg rounded-sm text-white px-4 py-3 mx-4 md:mb-1 mt-6" href="./asesor">
-                  Comienza con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline"/>
+                  Comienza con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" />
                 </Link>
               </div>
             </div>
@@ -227,10 +227,10 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <div className="container py-10 h-auto md:h-[16rem] mt-[4rem] mb-[6rem]">
-          <div className="flex flex-col md:flex-row items-center justify-between mt-10 py-10">
-            <h5 className="align-bottom text-3xl font-light dark:text-slate-100 text-left tracking-tight w-full md:w-1/3 mr-8">
+          <div className="flex flex-col md:flex-row-reverse items-center justify-between mt-10 py-10">
+            <h5 className="align-bottom text-3xl text-center lg:text-left font-light dark:text-slate-100 tracking-tight w-full md:w-1/3 mr-8">
               <span className="text-2xl font-normal">
-                Formamos parte del </span>Sistema Nacional de Competencias
+              </span>Sistema Nacional de Competencias Laborales
             </h5>
             <Image
               src={logoRedConocer}
@@ -247,9 +247,9 @@ export default function Home({ Component, pageProps }) {
 
         <section className="container w-full py-10 mt-[2rem]">
           {/* Pasos para certificarse */}
-          <div className="py-5 mb-[3rem] bg-slate-50 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
-            <h2 className="text-2xl md:text-3xl text-center lg:text-left font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-9 pl-0 lg:pl-10">
-              <span className="">Antes de empezar.</span> Conoce los pasos para la certificación
+          <div className="py-5 mb-[3rem] bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
+            <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-10 pl-0 lg:pl-10">
+              <span className="text-teal-600">Antes de empezar.</span> Conoce los pasos para la certificación
             </h2>
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
               <div className="relative w-full lg:w-1/2 h-full">
@@ -285,8 +285,8 @@ export default function Home({ Component, pageProps }) {
                               {paso.description} <br />
                               <Link
                                 href="./"
-                                className="text-lg text-teal-500 hover:text-teal-700 dark:hover:text-teal-400 inline-block mt-5">
-                                <span className="text-xl font-semibold">Ver más
+                                className="text-lg text-teal-600 hover:text-teal-700 dark:hover:text-teal-400 inline-block mt-5">
+                                <span className="text-xl">Ver más
                                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
                                 </span>
                               </Link>
@@ -328,8 +328,8 @@ export default function Home({ Component, pageProps }) {
               </DialogContent>
             </Dialog>
           </div>
-          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-5 mb-10 mr-10 py-10">
-            <li className="text-xl text-center font-bold flex flex-col align-middle">
+          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
               <LockKeyhole
                 absoluteStrokeWidth={true}
                 size={42}
@@ -339,7 +339,7 @@ export default function Home({ Component, pageProps }) {
                 Objetividad y confiabilidad
               </span>
             </li>
-            <li className="text-xl text-center font-bold flex flex-col align-middle">
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
               <Headset
                 absoluteStrokeWidth={true}
                 size={42}
@@ -349,7 +349,7 @@ export default function Home({ Component, pageProps }) {
                 Asesoría de expertos
               </span>
             </li>
-            <li className="text-xl text-center font-bold flex flex-col align-middle">
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
               <ShieldCheck
                 absoluteStrokeWidth={true}
                 size={42}
@@ -359,7 +359,7 @@ export default function Home({ Component, pageProps }) {
                 Calidad asegurada
               </span>
             </li>
-            <li className="text-xl text-center font-bold flex flex-col align-middle">
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
               <Award
                 absoluteStrokeWidth={true}
                 size={42}
@@ -376,20 +376,7 @@ export default function Home({ Component, pageProps }) {
           <div className="w-full mb-[5rem]">
             <h1 className="text-center text-3xl md:text-4xl font-bold mt-8">
               Convención anual 2024.
-              <span className="
-                before:block 
-                before:absolute 
-                before:-inset-1 
-                before:-skew-y-1 
-                before:bg-gray-500 
-                before:rounded-md 
-                relative 
-                inline-block 
-                ml-2">
-                <span className="relative text-white text-center px-1">
-                  Mejores momentos
-                </span>
-              </span>
+              Mejores momentos
             </h1>
             <p className="
               text-center 
@@ -424,7 +411,7 @@ export default function Home({ Component, pageProps }) {
             </p>
           </div>
           <Carousel>
-            <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-2 -ml-1">
+            <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-2">
               <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[670px] lg:col-span-2 lg:row-span-2">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
@@ -439,8 +426,8 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-500">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-2xl lg:text-4xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-white text-lg lg:text-2xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Capacitaciones
                           </Link>
                         </h1>
@@ -463,8 +450,8 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-orange-400">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Coaching
                           </Link>
                         </h1>
@@ -487,8 +474,8 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-blue-500">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Conferencias
                           </Link>
                         </h1>
@@ -511,8 +498,8 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-purple-400">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Talleres
                           </Link>
                         </h1>
@@ -534,8 +521,8 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-cyan-600">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-2xl lg:text-3xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Consultoría
                           </Link>
                         </h1>
@@ -572,13 +559,23 @@ export default function Home({ Component, pageProps }) {
         <section className="pb-[10rem] mt-10 h-auto bg-gradient-to-t  from-slate-100 from-60%  to-white dark:from-gray-900 dark:to-slate-950">
           {/* Criterios de evaluación */}
           <div className="container mt-[12rem] mb-[8rem] py-10">
-            <h4 className="text-center text-2xl md:text-3xl font-bold pb-2">
-              <span className="leading-[1rem]">
-                Prepárate previo a tu evaluación para reforzar cuatro elementos clave
-              </span>
-            </h4>
+            <div id="textSlider" className="relative w-full md:w-1/2 mx-auto">
+              <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
+                <p>Refuerza los elementos clave.</p>
+              </div>
+              <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
+                <div className="h-[5.6rem] overflow-hidden">
+                  <div className="animate-scroller">
+                    <p className="leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
+                    <p className="leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
+                    <p className="leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
+                    <p className="text-teal-600 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <p className="w-full lg:w-1/2 text-xl text-center text-muted-foreground mb-1 pb-8 mx-auto">
-              Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás listo o lista para la evaluación.
+              Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás listo o lista para tu evaluación.
             </p>
 
             <div className="bg-transparent px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem]">
@@ -654,7 +651,7 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         {/* Call to action section */}
-        <section className="w-full h-auto md:h-[35rem] animated-background bg-gradient-to-r from-indigo-300 from-1% via-sky-100 via-30% to-emerald-200 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8">
+        <section className="w-full h-auto md:h-[35rem] animated-background bg-gradient-to-r from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-500 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8">
           <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-2">
             <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8">
               <h5 className="text-3xl md:text-5xl text-center dark:text-white font-bold pt-3 mb-4">

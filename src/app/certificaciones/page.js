@@ -16,7 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain } from "lucide-react";
+import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain, Check } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -110,10 +110,10 @@ export default function Certificaciones(params) {
     <>
       <header className="w-full py-2 mb-1">
         <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[28rem] justify-center items-center">
-          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-10">
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales
+          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
+            <h1 className="text-2xl md:text-4xl text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales
             </h1>
-            <p className="text-lg md:text-xl text-center lg:text-left font-light py-3 mb-5 pr-5">
+            <p className="text-lg md:text-xl text-left py-3 mb-2 pr-5">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
             </p>
           </div>
@@ -126,14 +126,14 @@ export default function Certificaciones(params) {
           </div>
         </div>
         <div className="container">
-          <Separator className="" />
-          <div className="flex justify-end items-center py-6">
+          <Separator className="mb-8 lg:mb-2" />
+          <div className="flex justify-center lg:justify-end items-center py-6">
             <Image src={ISOimage} alt="ISO certification logo" width={60} height={60} className="" />
             <Separator orientation="vertical" className="" decorative />
             <div>
-              <h5 className="text-slate-900 dark:text-slate-200 text-xl font-bold px-6">Secure from the start, and throughout</h5>
+              <h5 className="text-slate-900 dark:text-slate-200  text-base lg:text-lg font-bold px-6">Secure from the start, and throughout</h5>
               <p className="text-muted-foreground dark:text-white text-sm px-6">
-                Certificados con validez oficial de SEP-CONOCER
+                Procesos de evaluación acreditados
               </p>
             </div>
           </div>
@@ -144,8 +144,8 @@ export default function Certificaciones(params) {
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
           <div className="w-full lg:container">
-            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[5rem] mb-[1.8rem]">
-              Certificaciones disponibles con Proyecta Empresarial
+            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[2rem] mb-[1.8rem]">
+              Certificaciones disponibles con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>
             </h4>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
               <Tabs defaultValue="educativo" className="w-full md:w-9/12">
@@ -166,8 +166,7 @@ export default function Certificaciones(params) {
                 <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
                   <Table className="mt-2">
                     <TableCaption>
-                      <p className="w-full">No es necesario algún requisito académico para la certificación de competencias laborales.
-                      </p>
+                      <p className="w-full">Certificaciones</p>
                     </TableCaption>
                     <TableHeader className="text-xl font-bold">
                       <TableRow className="">
@@ -189,17 +188,17 @@ export default function Certificaciones(params) {
                             <TableRow
                               key={estandar.id}
                               className="group/item">
-                              <TableCell>{estandar.title}</TableCell>
+                              <TableCell className="text-left text-base lg:text-xl">{estandar.title}</TableCell>
                               <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
                                 <Drawer className="relative">
-                                  <DrawerTrigger className="text-left">
+                                  <DrawerTrigger className="text-left text-base lg:text-xl">
                                     {estandar.content}
                                   </DrawerTrigger>
                                   <DrawerContent>
                                     <ScrollArea>
                                       <DrawerHeader className="flex w-full">
                                         <div className="content-center w-full mt-10 md:mt-4">
-                                          <DrawerTitle className="text-2xl mb-2 bg-slate-700 text-white rounded-sm py-4 px-4">
+                                          <DrawerTitle className="text-2xl mb-2 bg-slate-200 text-slate-800 rounded-sm py-4 px-4">
                                             {estandar.content}
                                           </DrawerTitle>
                                           <DrawerDescription
@@ -267,7 +266,7 @@ export default function Certificaciones(params) {
                                       <Separator className="mt-1 w-full" />
                                       <DrawerFooter className="w-full lg:w-1/2 mx-auto">
                                         <div className="flex flex-row place-content-end py-6">
-                                          <p className="text-2xl text-red-500 font-bold mr-8 md:mr-10">
+                                          <p className="text-2xl text-red-500 dark:text-red-400 font-bold mr-8 md:mr-10">
                                             <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price}
                                           </p>
                                           <SecondaryButton href="./" linkText="Obtener" />
@@ -292,7 +291,7 @@ export default function Certificaciones(params) {
                                 </Drawer>
                               </TableCell>
                               <TableCell className="text-right px-0 lg:px-2">
-                                <Link href="./" className="group/details invisible group-hover/item:visible text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-2 pr-0 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Obtener
+                                <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Obtener
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -323,15 +322,25 @@ export default function Certificaciones(params) {
                   Certificaciones para las organizaciones sociales
                 </TabsContent>
               </Tabs>
-              <div className="max-w-fit h-fit lg:w-3/12 border rounded-xl mt-[8rem] lg:mt-[8rem] dark:bg-slate-900 mx-4 lg:mx-0 px-8 lg:px-10 py-6">
-                <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
-                <p className="text-lg mb-5 leading-6">
-                  Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
-                </p>
-                <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
-                  Descargar
-                </Button>
+              <div className="max-w-fit h-fit lg:w-3/12  mt-[3rem] lg:mt-[5rem] mx-4 lg:mx-0 ">
+                <ul className="bg-blue-50 dark:bg-slate-800 rounded-lg px-9 lg:px-5 py-6 mb-8">
+                  <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
+                  <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
+                  <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
+                </ul>
+                <div className="border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900">
+                  <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
+                  <p className="text-lg mb-5 leading-6">
+                    Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
+                  </p>
+                  <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
+                    Descargar
+                  </Button>
+                  <p>Guía del candidato</p>
+                </div>
+
               </div>
+
             </div>
           </div>
         </section>

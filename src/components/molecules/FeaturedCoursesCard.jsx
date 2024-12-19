@@ -56,7 +56,7 @@ export default function FeaturedCoursesCard() {
           <div className={`flex ${course.flexColDirection} ${course.flexRowDirection} justify-center mb-[2rem] md:mb-[4rem] py-2 md:pt-2 md:pb-2 w-full drop-shadow-lg`} key={course.index}>
             <div className={`w-full lg:w-1/2 text-left h-[24rem] lg:h-auto px-6 md:px-[3rem] py-6 lg:py-0 bg-white dark:bg-gray-800 ${course.bgColor} ${course.flexRowDirection === "lg:flex-row-reverse" ? "lg:rounded-r-xl lg:rounded-l-none" : "lg:rounded-l-xl lg:rounded-r-none"} ${course.flexColDirection === "flex-col-reverse" ? "rounded-b-xl" : "rounded-t-xl"}`}>
               <div className="flex justify-between">
-                <div className={`w-fit mb-5 mt-3 ${course.labelType === "recomendado" ? "bg-amber-300/70 dark:bg-amber-200" : "bg-green-300/70 dark:bg-green-200"} rounded-md`}>
+                <div className={`w-fit mb-5 mt-5 ${course.labelType === "recomendado" ? "bg-amber-300/70 dark:bg-amber-200" : "bg-green-300/70 dark:bg-green-200"} rounded-md`}>
                   <p className={`text-sm font-bold ${course.labelType === "recomendado" ? "text-yellow-600" : "text-green-600"} px-3 pt-1 tracking-wide uppercase leading-loose`}>{course.labelType}</p>
                 </div>
                 <div className="mt-6">
@@ -71,13 +71,13 @@ export default function FeaturedCoursesCard() {
               </p>
               <div className="">
                 <ul className="w-full flex justify-between text-lg mb-8 border rounded-sm px-3 lg:px-8 py-3">
-                  <li className="py-1">
+                  <li className="py-1 flex items-center">
                     <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-700 w-fit rounded-full px-2 py-2 mb-1">
                       <FolderInput absoluteStrokeWidth={true} strokeWidth={1.25} className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                     </div>
-                    <span>6 módulos</span>
+                    <span className="px-3">6 módulos</span>
                   </li>
-                  {/* <li className="py-1">
+                  {/* <li className="py-1 flex items-center">
                     <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-700 w-fit rounded-full px-2 py-2">
                       <Clock4 className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                     </div>

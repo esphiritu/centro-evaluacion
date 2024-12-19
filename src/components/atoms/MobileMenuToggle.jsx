@@ -26,12 +26,12 @@ export default function MobileMenuToggle({links}) {
       {/* MobileMenu toggle button */}
       <Button 
         onClick={toggleMenu} 
-        className="flex md:hidden mx-2 z-40 text-gray-400 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full"
+        className="flex md:hidden mx-2 z-40 text-gray-500 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full"
         variant="ghost" 
         size="icon"
         >
           {isOpen ? 
-                  <X absoluteStrokeWidth={true} className="
+                  <X absoluteStrokeWidth={true} strokeWidth={1.5} className="
                     h-[1.5rem] 
                     w-[1.5rem] 
                     rotate-0 
@@ -39,7 +39,7 @@ export default function MobileMenuToggle({links}) {
                     transition-transform 
                     dark:rotate-90 
                     dark:scale-100"></X>
-                  : <MenuIcon absoluteStrokeWidth={true} className="
+                  : <MenuIcon absoluteStrokeWidth={true} strokeWidth={1.5} className="
                     h-[1.5rem] 
                     w-[1.5rem] 
                     rotate-0 
