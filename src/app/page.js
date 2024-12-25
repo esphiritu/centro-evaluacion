@@ -249,7 +249,7 @@ export default function Home({ Component, pageProps }) {
           {/* Pasos para certificarse */}
           <div className="py-5 mb-[3rem] bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
             <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-10 pl-0 lg:pl-10">
-              <span className="text-teal-600">Antes de empezar.</span> Conoce los pasos para la certificación
+              <span className="text-teal-500">Antes de empezar.</span> Conoce los pasos para la certificación
             </h2>
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
               <div className="relative w-full lg:w-1/2 h-full">
@@ -304,10 +304,10 @@ export default function Home({ Component, pageProps }) {
 
         <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
           <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-wider">
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
               Reconocimiento nacional
             </p>
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-thin pt-2 mb-4 md:leading-[3rem] px-0">
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
               ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
             </h1>
             <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
@@ -373,13 +373,12 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         <section className="container py-10 mb-[10rem] mt-[2rem]">
-          <div className="w-full mb-[5rem]">
-            <h1 className="text-center text-3xl md:text-4xl font-bold mt-8">
+          <div className="w-full mb-[5rem] text-center">
+            <h1 className="text-3xl md:text-4xl font-bold mt-8">
               Convención anual 2024.
               Mejores momentos
             </h1>
             <p className="
-              text-center 
               text-2xl 
               font-light 
               text-muted-foreground 
@@ -388,27 +387,7 @@ export default function Home({ Component, pageProps }) {
               mb-4">
               Participan escuelas, universidades y gobiernos en diferentes actividades
             </p>
-            <p className="text-center text-xl">
-              <Link
-                href="./"
-                className="
-                  group 
-                  text-xl 
-                  text-teal-600
-                  dark:text-teal-500 
-                  hover:text-teal-700
-                  dark:hover:text-teal-400  
-                  hover:bg-gray-100
-                  dark:hover:bg-gray-800 
-                  rounded-full 
-                  transition-all 
-                  duration-200 
-                  py-3 pl-5 pr-3">
-                <span className="py-3"> Próximos eventos
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 origin-left inline transition-all group-hover:translate-x-1 group-hover:text-teal-700 dark:group-hover:text-teal-400"><path d="m6 17 5-5-5-5" /></svg>
-                </span>
-              </Link>
-            </p>
+            <MainLink href="./" linkText="Próximos eventos" className="text-center" />
           </div>
           <Carousel>
             <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-2">
@@ -556,10 +535,10 @@ export default function Home({ Component, pageProps }) {
           <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
         </section>
 
-        <section className="pb-[10rem] mt-10 h-auto bg-gradient-to-t  from-slate-100 from-60%  to-white dark:from-gray-900 dark:to-slate-950">
+        <section className="pb-[10rem] mt-10 h-auto bg-gradient-to-t  from-blue-50/75 from-60%  to-white dark:from-gray-900 dark:to-slate-950">
           {/* Criterios de evaluación */}
           <div className="container mt-[12rem] mb-[8rem] py-10">
-            <div id="textSlider" className="relative w-full md:w-1/2 mx-auto">
+            <div id="textSlider" className="relative w-full lg:w-1/2 mx-auto pl-0 md:pl-[4rem]">
               <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
                 <p>Refuerza los elementos clave.</p>
               </div>
@@ -569,7 +548,7 @@ export default function Home({ Component, pageProps }) {
                     <p className="leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
                     <p className="leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
                     <p className="leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
-                    <p className="text-teal-600 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
+                    <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
                   </div>
                 </div>
               </div>
@@ -578,7 +557,7 @@ export default function Home({ Component, pageProps }) {
               Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás listo o lista para tu evaluación.
             </p>
 
-            <div className="bg-transparent px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem]">
+            <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] bg-white dark:bg-slate-700 text-right">
               <Carousel className="mb-6">
                 <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
                   {criterios.map((criterio => {
@@ -635,12 +614,12 @@ export default function Home({ Component, pageProps }) {
                 <CarouselPrevious className="lg:invisible" />
                 <CarouselNext className="lg:invisible" />
               </Carousel>
-              <MainLink href="./" linkText="Más información" />
+              <MainLink href="./" linkText="Explorar programas" className="text-center" />
             </div>
           </div>
           {/* Seccion de testimonios */}
           <div className="container">
-            <p className="text-center text-muted-foreground text-lg uppercase tracking-wide py-6">
+            <p className="text-center text-muted-foreground text-lg uppercase tracking-[0.2rem] py-6">
               Testimonios
             </p>
             <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-5 mt-2">

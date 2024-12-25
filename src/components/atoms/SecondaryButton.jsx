@@ -7,7 +7,8 @@ export default function SecondaryButton({ href, linkText }) {
       <Link
         href={href}
         className="
-        max-w-min
+        inline-block
+        max-w-fit
         text-lg 
         font-bold 
         text-white 

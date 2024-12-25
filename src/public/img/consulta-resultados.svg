@@ -5,7 +5,7 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="consulta-resultados.svg"
-   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    inkscape:export-filename="consulta-resultados.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -25,8 +25,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:zoom="0.63736285"
-     inkscape:cx="47.06895"
-     inkscape:cy="328.69816"
+     inkscape:cx="46.284467"
+     inkscape:cy="327.91368"
      inkscape:window-width="2160"
      inkscape:window-height="1251"
      inkscape:window-x="0"
@@ -34,12 +34,11 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg8" />
   <circle
-     style="fill:#ececec;fill-opacity:1;stroke-width:0;paint-order:stroke fill markers"
+     style="fill:#dbdbe3;fill-opacity:1;stroke-width:0;paint-order:stroke fill markers"
      id="path9"
      cx="514.10187"
      cy="512.73669"
-     r="412.104"
-     sodipodi:insensitive="true" />
+     r="412.104" />
   <rect
      style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:1;paint-order:stroke fill markers"
      id="rect14"
@@ -47,8 +46,7 @@
      height="399.98267"
      x="292.79739"
      y="309.68582"
-     ry="21.902504"
-     sodipodi:insensitive="true" />
+     ry="21.902504" />
   <path
      fill="#ffffff"
      d="m 285.34587,765.98936 c -1.01166,-10.49619 0.96953,-47.19827 0.97085,-57.72083 l 0.0974,-336.09913 c -0.0829,-45.05813 3.39152,-72.29492 66.0306,-72.27745 l 307.60438,0.0353 c 13.67393,-0.0919 27.13081,0.018 40.78237,0.70535 -3.21389,3.4696 -8.49194,4.63937 -12.31364,7.48891 -13.72653,10.23492 -12.33864,26.60048 -11.34144,40.76358 l 0.11586,1.53007 c -1.2077,4.84415 -0.39863,17.44859 -0.3973,23.22706 l 0.0127,369.39039 c 0.0251,25.28362 6.00288,64.71828 -35.36886,70.45166 -7.42635,1.02996 -14.61193,0.62544 -22.07774,0.58587 l -27.98988,-0.0142 c -6.43702,-0.0495 -13.09113,0.42869 -19.49265,0.0253 4.30451,-0.47266 8.81425,-0.30778 13.15561,-0.35175 -36.50417,-18.84896 -43.02111,-26.46272 -40.60968,-63.49673 -11.5322,0.51553 11.63127,16.17501 0.0807,16.17283 z"

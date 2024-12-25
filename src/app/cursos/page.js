@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 
 // Custom components
-import FeaturedCoursesCard from "@/components/molecules/FeaturedCoursesCard";
-import MostPopularCourses from "@/components/molecules/MostPopularCourses";
+import FeaturedCoursesCard from "@/components/cards/FeaturedCoursesCard";
+import MostPopularCourses from "@/components/cards/MostPopularCourses";
 
 // Components Data
 const soportes = [
@@ -84,7 +84,7 @@ export default function Cursos(params) {
   
           </div>
           <div className="py-10 mt-10">
-              <p className="text-center text-muted-foreground text-lg uppercase tracking-wide py-6">
+              <p className="text-center text-muted-foreground text-lg uppercase tracking-[0.2rem] py-6">
                 Categorías
               </p>
               <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">

@@ -48,10 +48,11 @@ import {
 } from "@/components/ui/carousel";
 
 // Custom components
-import ProgramsCard from "@/components/molecules/ProgramsCard";
+import ProgramsCard from "@/components/cards/ProgramsCard";
 import estandarIcon from "@/public/img/estandar-de-competencia.svg";
 import Footer from "@/components/organisms/Footer";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
+import MainLink from "@/components/atoms/MainLink";
 
 // Data for components
 const estandares = [
@@ -109,15 +110,21 @@ export default function Certificaciones(params) {
   return (
     <>
       <header className="w-full py-2 mb-1">
-        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[28rem] justify-center items-center">
-          <div className="relative w-full lg:w-2/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
-            <h1 className="text-2xl md:text-4xl text-left font-bold md:leading-[2.5rem] pt-10 mb-3 pr-5">Certificación de competencias laborales
+        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[30rem] justify-center items-center">
+          <div className="relative w-full lg:w-3/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
+            <h1 className="w-4/5 text-2xl md:text-4xl text-left  text-[#182e4f] font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
             </h1>
-            <p className="text-lg md:text-xl text-left py-3 mb-2 pr-5">
+            <span className="w-[3.5rem] h-[5px] bg-teal-400 inline-block mb-10"></span>
+            <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-3 mb-4 pr-5 lg:pr-10">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
             </p>
+            <ul className="px-6 lg:px-2 py-6">
+              <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
+              <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
+              <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
+            </ul>
           </div>
-          <div className="relative w-full lg:w-3/5 px-0 lg:px-10 mx-auto">
+          <div className="relative w-3/5 lg:w-2/5 px-0 lg:px-10 mx-auto">
             <Image
               src={heroSection}
               width="100%"
@@ -125,11 +132,10 @@ export default function Certificaciones(params) {
               alt="image with some people" />
           </div>
         </div>
-        <div className="container">
+        <div className="container mb-[4rem]">
           <Separator className="mb-8 lg:mb-2" />
-          <div className="flex justify-center lg:justify-end items-center py-6">
-            <Image src={ISOimage} alt="ISO certification logo" width={60} height={60} className="" />
-            <Separator orientation="vertical" className="" decorative />
+          <div className="flex justify-center lg:justify-end items-center pt-4">
+            <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
             <div>
               <h5 className="text-slate-900 dark:text-slate-200  text-base lg:text-lg font-bold px-6">Secure from the start, and throughout</h5>
               <p className="text-muted-foreground dark:text-white text-sm px-6">
@@ -144,7 +150,7 @@ export default function Certificaciones(params) {
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
           <div className="w-full lg:container">
-            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[2rem] mb-[1.8rem]">
+            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[3rem] mb-[1.8rem]">
               Certificaciones disponibles con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>
             </h4>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
@@ -228,20 +234,20 @@ export default function Certificaciones(params) {
                                           </li>
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
-                                              <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
-                                            </div>
-                                            <p className="mb-3 px-4">
-                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Comité desarrollador: </span>
-                                              {estandar.comite}
-                                            </p>
-                                          </li>
-                                          <li className="flex py-1">
-                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
                                               <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
                                               <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel en el Sistema Nacional de Competencia: </span>
                                               {estandar.snc}
+                                            </p>
+                                          </li>
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Comité desarrollador: </span>
+                                              {estandar.comite}
                                             </p>
                                           </li>
                                         </ul>
@@ -265,7 +271,7 @@ export default function Certificaciones(params) {
                                       </div>
                                       <Separator className="mt-1 w-full" />
                                       <DrawerFooter className="w-full lg:w-1/2 mx-auto">
-                                        <div className="flex flex-row place-content-end py-6">
+                                        <div className="flex flex-row place-content-end items-center">
                                           <p className="text-2xl text-red-500 dark:text-red-400 font-bold mr-8 md:mr-10">
                                             <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price}
                                           </p>
@@ -323,11 +329,6 @@ export default function Certificaciones(params) {
                 </TabsContent>
               </Tabs>
               <div className="max-w-fit h-fit lg:w-3/12  mt-[3rem] lg:mt-[5rem] mx-4 lg:mx-0 ">
-                <ul className="bg-blue-50 dark:bg-slate-800 rounded-lg px-9 lg:px-5 py-6 mb-8">
-                  <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
-                  <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
-                  <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
-                </ul>
                 <div className="border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900">
                   <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
                   <p className="text-lg mb-5 leading-6">
@@ -336,7 +337,6 @@ export default function Certificaciones(params) {
                   <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
                     Descargar
                   </Button>
-                  <p>Guía del candidato</p>
                 </div>
 
               </div>
@@ -344,7 +344,7 @@ export default function Certificaciones(params) {
             </div>
           </div>
         </section>
-        <section className="flex-grow-0 bg-gray-50 dark:bg-gray-900 mt-[6rem]">
+        <section className="flex-grow-0 bg-blue-50/85 dark:bg-gray-900 mt-[6rem]">
           <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
             <Image
               src={resultados}
@@ -357,7 +357,7 @@ export default function Certificaciones(params) {
             <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
               Explora los programas que tenemos para tí
             </h2>
-            <p className="text-2xl text-center text-gray-500 font-light pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto text-pretty">
+            <p className="text-2xl text-center text-gray-500 pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto text-pretty">
               Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
             </p>
             <ProgramsCard />
@@ -479,19 +479,7 @@ export default function Certificaciones(params) {
             <p className="text-xl text-center lg:text-left py-3 mb-5">
               Ponte contacto con un asesor y aumenta tus ingresos realizando evaluaciones
             </p>
-            <Link href="./" className="group max-w-fit flex justify-center lg:justify-start ml-auto mr-auto lg:ml-0">
-              <span className="text-xl text-teal-600 dark:text-teal-400 group-hover:text-teal-700 dark:group-hover:text-teal-400 group-hover:bg-gray-100 dark:group-hover:bg-gray-800 rounded-full py-3 pl-5 pr-3">
-                Contactar ahora
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                  className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover:translate-x-1 group-hover:text-teal-700 dark:group-hover:text-teal-400"><path d="m6 17 5-5-5-5" /></svg>
-              </span>
-            </Link>
+            <MainLink href="./" linkText="Contactar ahora" />
           </div>
         </div>
       </main>

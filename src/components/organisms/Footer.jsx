@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 function Footer() {
   return (
     <>
-      <footer className="bg-slate-100 dark:bg-slate-900">
+      <footer className="bg-slate-50 dark:bg-slate-900">
         <div className="container py-[5rem]">
         <h4 className="text-xl font-bold py-5">Proyecta empresarial</h4>
           <div className="flex flex-col lg:flex-row md:justify-between justify-center">

@@ -95,7 +95,7 @@ export default function Socios() {
                   <li className="flex justify-center items-center py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Buen manejo del estrés</li>
                   <li className="flex justify-center items-center py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Mejorar la comunicación</li>
                 </ol>
-                <SecondaryButton linkText="Participar" href="./" />
+                <SecondaryButton linkText="Participar" href="./" className="" />
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
