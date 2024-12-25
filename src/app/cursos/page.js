@@ -54,8 +54,8 @@ export default function Cursos(params) {
           <h1 className="text-4xl text-center text-white font-bold pb-6">
             Catálogo de cursos
           </h1>
-          <p className="text-xl text-center text-white  font-bold pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto">
-            Cursos de auto gestión completos
+          <p className="text-xl text-center text-white pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto">
+          Nuestros talleres, cursos y programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su campo. Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
           </p>
         </section>
   

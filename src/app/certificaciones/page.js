@@ -16,7 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain, Check } from "lucide-react";
+import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain, Check, Award, Trophy } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -53,6 +53,7 @@ import estandarIcon from "@/public/img/estandar-de-competencia.svg";
 import Footer from "@/components/organisms/Footer";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import MainLink from "@/components/atoms/MainLink";
+import SecondaryLink from "@/components/atoms/SecondaryLink";
 
 // Data for components
 const estandares = [
@@ -112,17 +113,18 @@ export default function Certificaciones(params) {
       <header className="w-full py-2 mb-1">
         <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[30rem] justify-center items-center">
           <div className="relative w-full lg:w-3/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
-            <h1 className="w-4/5 text-2xl md:text-4xl text-left  text-[#182e4f] font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
+            <h1 className="w-4/5 text-2xl md:text-4xl text-left font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
             </h1>
-            <span className="w-[3.5rem] h-[5px] bg-teal-400 inline-block mb-10"></span>
-            <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-3 mb-4 pr-5 lg:pr-10">
+            <span className="w-[3.5rem] h-[5px] bg-teal-400 inline-block mb-6"></span>
+            <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-1 mb-4 pr-5 lg:pr-10">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
             </p>
-            <ul className="px-6 lg:px-2 py-6">
-              <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
-              <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
-              <li className="flex py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
+            <ul className="px-6 lg:px-2 py-3">
+              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-500 min-w-4 min-h-4 rounded-full" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
+              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-500 min-w-4 min-h-4 rounded-full" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
+              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-500 min-w-4 min-h-4 rounded-full" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
             </ul>
+            <SecondaryButton href="./" linkText="Comienza tu certificación" />
           </div>
           <div className="relative w-3/5 lg:w-2/5 px-0 lg:px-10 mx-auto">
             <Image
@@ -150,7 +152,15 @@ export default function Certificaciones(params) {
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
           <div className="w-full lg:container">
-            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[3rem] mb-[1.8rem]">
+            <div className="flex items-center justify-start">
+              <Trophy
+                absoluteStrokeWidth={true}
+                size={22}
+                strokeWidth={1.50}
+                className="text-slate-500 dark:text-slate-100 min-w-6 min-h-6" />
+              <p className="text-left text-base text-slate-500 px-4 py-[0.3rem] rounded-full leading-wider tracking-widest font-bold w-fit">EMPIEZA AQUÍ</p>
+            </div>
+            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[1.8rem] mb-[1.8rem]">
               Certificaciones disponibles con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>
             </h4>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">

@@ -171,8 +171,8 @@ export default function Home({ Component, pageProps }) {
         <section className="relative h-[42rem]">
           <div className="flex justify-between items-center container h-full pt-1 md:pt-20 bg-gradient-to-b lg:bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-[4rem]">
             <div className="w-full md:w-3/5">
-              <h1 className="text-white text-3xl md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn">
-                La <span className="">certificación de competencias laborales</span> impulsarán tu carrera profesional al éxito
+              <h1 className="text-white text-3xl md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn text-pretty">
+                La <span className="">certificación de competencias laborales</span> mejorarán tus habilidades e impulsarán tu carrera profesional
               </h1>
               <p className="text-xl md:text-2xl text-white font-light animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
                 Respalda tus conocimientos y experiencia con certificaciones
@@ -196,7 +196,8 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
         </section>
-
+        {/* Feature Section */}
+        {/* Highlight the key benefits of getting certified through the company's educational programs. */}
         <section className="container h-auto lg:h-[32rem] mt-[6rem]">
           <div
             className="flex flex-col items-center justify-center h-full scroll-smooth"
@@ -302,76 +303,8 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
 
-        <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
-          <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
-              Reconocimiento nacional
-            </p>
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
-              ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
-            </h1>
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
-              Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
-            </p>
-            <Dialog>
-              <DialogTrigger>
-                <SecondaryButton href="./acerca" linkText="Acerca de nosotros" />
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
-                  <DialogDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          </div>
-          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
-            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-              <LockKeyhole
-                absoluteStrokeWidth={true}
-                size={42}
-                strokeWidth={1.50}
-                className="mx-auto text-teal-600" />
-              <span className="block mt-8">
-                Objetividad y confiabilidad
-              </span>
-            </li>
-            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-              <Headset
-                absoluteStrokeWidth={true}
-                size={42}
-                strokeWidth={1.50}
-                className="mx-auto text-teal-600" />
-              <span className="block mt-8">
-                Asesoría de expertos
-              </span>
-            </li>
-            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-              <ShieldCheck
-                absoluteStrokeWidth={true}
-                size={42}
-                strokeWidth={1.50}
-                className="mx-auto text-teal-600" />
-              <span className="block mt-8">
-                Calidad asegurada
-              </span>
-            </li>
-            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-              <Award
-                absoluteStrokeWidth={true}
-                size={42}
-                strokeWidth={1.50}
-                className="mx-auto text-teal-600" />
-              <span className="block mt-8">
-                Respaldo de OC más importante
-              </span>
-            </li>
-          </ul>
-        </section>
-
+        {/* Features List Section */}
+        {/* Overview of Workshops, Courses, and Training programs. */}
         <section className="container py-10 mb-[10rem] mt-[2rem]">
           <div className="w-full mb-[5rem] text-center">
             <h1 className="text-3xl md:text-4xl font-bold mt-8">
@@ -554,7 +487,7 @@ export default function Home({ Component, pageProps }) {
               </div>
             </div>
             <p className="w-full lg:w-1/2 text-xl text-center text-muted-foreground mb-1 pb-8 mx-auto">
-              Realiza una <strong>alineación al estándar de competencia</strong> para asegurarte que estás listo o lista para tu evaluación.
+            Nuestros programas están diseñados para equiparlo con los elementos clave para sobresalir en su campo. Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
             </p>
 
             <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] bg-white dark:bg-slate-700 text-right">
@@ -617,6 +550,77 @@ export default function Home({ Component, pageProps }) {
               <MainLink href="./" linkText="Explorar programas" className="text-center" />
             </div>
           </div>
+
+          <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
+          <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
+              Reconocimiento nacional
+            </p>
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
+              ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
+            </h1>
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
+              Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
+            </p>
+            <Dialog>
+              <DialogTrigger>
+                <SecondaryButton href="./acerca" linkText="Acerca de nosotros" />
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete your account
+                    and remove your data from our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          </div>
+          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <LockKeyhole
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Objetividad y confiabilidad
+              </span>
+            </li>
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <Headset
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Asesoría de expertos
+              </span>
+            </li>
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <ShieldCheck
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Calidad asegurada
+              </span>
+            </li>
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <Award
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Respaldo de OC más importante
+              </span>
+            </li>
+          </ul>
+        </section>
+
           {/* Seccion de testimonios */}
           <div className="container">
             <p className="text-center text-muted-foreground text-lg uppercase tracking-[0.2rem] py-6">
@@ -630,14 +634,15 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         {/* Call to action section */}
-        <section className="w-full h-auto md:h-[35rem] animated-background bg-gradient-to-r from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-500 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8">
-          <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-2">
-            <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8">
-              <h5 className="text-3xl md:text-5xl text-center dark:text-white font-bold pt-3 mb-4">
-                Su experiencia en otro nivel
+        <section className="w-full h-auto md:h-[38rem] animated-background bg-gradient-to-br from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-200 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8">
+          <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-8 text-center">
+            <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8 text-center">
+              <p className="text-center text-base bg-blue-400 text-white px-4 py-[0.3rem] rounded-full leading-relaxed w-fit mx-auto mb-4">INVERSIÓN INTELIGENTE</p>
+              <h5 className="text-3xl md:text-4xl text-center dark:text-white font-bold pt-3 mb-4 text-pretty w-full lg:w-3/4 mx-auto">
+              Libere su potencial con nuestros programas
               </h5>
               <p className="text-xl md:text-2xl text-center font-light dark:text-white mb-[1.5rem]">
-                Obtenga la tranquilidad de saber que sus evaluaciones están en manos expertas
+              Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y su carrera.
               </p>
             </div>
             <CtaButton href="./proceso" linkText="Comienza ahora" />
