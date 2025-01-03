@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // images
-import resultados from "@/public/img/consulta-resultados.svg";
+import cursos from "@/public/img/cursos.svg";
 import heroSection from "@/public/img/hero-section.png";
 import ISOimage from "@/public/img/depositphotos_356301122-stock-illustration-iso-9001-icon-standard-quality.jpg";
 
@@ -110,19 +110,18 @@ const estandares = [
 export default function Certificaciones(params) {
   return (
     <>
-      <header className="w-full py-2 mb-1">
-        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[30rem] justify-center items-center">
+      <header className="w-full py-2 mb-10">
+        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[36rem] justify-center items-center">
           <div className="relative w-full lg:w-3/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
             <h1 className="w-4/5 text-2xl md:text-4xl text-left font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
             </h1>
-            <span className="w-[3.5rem] h-[5px] bg-teal-400 inline-block mb-6"></span>
             <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-1 mb-4 pr-5 lg:pr-10">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
             </p>
             <ul className="px-6 lg:px-2 py-3">
-              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-500 min-w-4 min-h-4 rounded-full" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
-              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-500 min-w-4 min-h-4 rounded-full" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
-              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-500 min-w-4 min-h-4 rounded-full" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
+              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
+              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
+              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
             </ul>
             <SecondaryButton href="./" linkText="Comienza tu certificación" />
           </div>
@@ -131,37 +130,19 @@ export default function Certificaciones(params) {
               src={heroSection}
               width="100%"
               height="teal"
-              alt="image with some people" />
-          </div>
-        </div>
-        <div className="container mb-[4rem]">
-          <Separator className="mb-8 lg:mb-2" />
-          <div className="flex justify-center lg:justify-end items-center pt-4">
-            <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
-            <div>
-              <h5 className="text-slate-900 dark:text-slate-200  text-base lg:text-lg font-bold px-6">Secure from the start, and throughout</h5>
-              <p className="text-muted-foreground dark:text-white text-sm px-6">
-                Procesos de evaluación acreditados
-              </p>
-            </div>
+              alt="image with some people" as="image" />
           </div>
         </div>
       </header>
 
-      <main className="w-full">
+
+
+      <main className="w-full mt-6">
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
-          <div className="w-full lg:container">
-            <div className="flex items-center justify-start">
-              <Trophy
-                absoluteStrokeWidth={true}
-                size={22}
-                strokeWidth={1.50}
-                className="text-slate-500 dark:text-slate-100 min-w-6 min-h-6" />
-              <p className="text-left text-base text-slate-500 px-4 py-[0.3rem] rounded-full leading-wider tracking-widest font-bold w-fit">EMPIEZA AQUÍ</p>
-            </div>
+          <div className="w-full lg:container mb-10">
             <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[1.8rem] mb-[1.8rem]">
-              Certificaciones disponibles con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>
+              Certificaciones disponibles con <span className="whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>
             </h4>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
               <Tabs defaultValue="educativo" className="w-full md:w-9/12">
@@ -338,36 +319,55 @@ export default function Certificaciones(params) {
                   Certificaciones para las organizaciones sociales
                 </TabsContent>
               </Tabs>
-              <div className="max-w-fit h-fit lg:w-3/12  mt-[3rem] lg:mt-[5rem] mx-4 lg:mx-0 ">
-                <div className="border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900">
-                  <h3 className="text-xl font-bold mb-2">Documentos básicos</h3>
-                  <p className="text-lg mb-5 leading-6">
-                    Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
-                  </p>
-                  <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
-                    Descargar
-                  </Button>
+              <div className="max-w-fit h-fit lg:w-3/12  mt-[3rem] lg:mt-[2rem] mx-4 lg:mx-0">
+                <div className="flex flex-col justify-center items-center pt-4">
+                  <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
+                  <div className="py-3">
+                    <h5 className="text-center text-slate-900 dark:text-slate-200 text-base lg:text-lg font-bold px-3">Secure from the start</h5>
+                    <p className="text-center text-muted-foreground dark:text-white text-sm px-3">
+                      Procesos de evaluación acreditados
+                    </p>
+                  </div>
                 </div>
-
               </div>
-
+            </div>
+          </div>
+          <div className="container mt-[5rem]">
+            <h3 className="text-2xl font-bold">Documentos básicos</h3>
+            <div className="flex flex-col lg:flex-row">
+              <div className="w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
+                <p className="text-lg mb-5 leading-6">
+                  Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
+                </p>
+                <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
+                  Descargar
+                </Button>
+              </div>
+              <div className="w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
+                <p className="text-lg mb-5 leading-6">
+                  Guía del candidato
+                </p>
+                <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
+                  Descargar
+                </Button>
+              </div>
             </div>
           </div>
         </section>
-        <section className="flex-grow-0 bg-blue-50/85 dark:bg-gray-900 mt-[6rem]">
+        <section className="flex-grow-0 bg-slate-700 dark:bg-gray-900 mt-[6rem]">
           <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
             <Image
-              src={resultados}
+              src={cursos}
               width={140}
               height={140}
               alt="icon for"
               className="w-auto" />
           </div>
           <div className="container w-full pb-10 mt-6">
-            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
+            <h2 className="scroll-m-20 text-slate-200 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
               Explora los programas que tenemos para tí
             </h2>
-            <p className="text-2xl text-center text-gray-500 pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto text-pretty">
+            <p className="text-slate-400 text-2xl text-center pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto text-pretty">
               Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
             </p>
             <ProgramsCard />

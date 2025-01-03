@@ -32,7 +32,7 @@ export default function Socios() {
         // autoplay={2900}
         >
           <CarouselContent className="p-5 h-[38rem] mb-[5rem]">
-            <CarouselItem className="bg-gray-200 dark:bg-slate-900 rounded-2xl py-10 text-gray-900 dark:text-gray-50">
+            <CarouselItem className="dark:bg-slate-900 rounded-2xl py-10 text-gray-900 dark:text-gray-50">
               <div className="px-[10rem]">
                 <div className="mt-10 h-1/2">
                   <h1 className="font-bold text-xl md:text-3xl text-center mt-10 mb-6">Retos de la productividad de las
@@ -84,7 +84,7 @@ export default function Socios() {
           <CarouselNext />
         </Carousel>
         <section>
-          <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Eventos de Proyecta Empresarial</h2>
+          <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Eventos destacados</h2>
           <div className="relative container flex flex-col lg:flex-row items-center">
             <div className="w-full lg:w-1/2 px-8 text-center">
               <h3 className="text-2xl font-semibold mb-2">Conferecia digital</h3>
@@ -99,12 +99,12 @@ export default function Socios() {
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-10 inline-block w-full lg:w-3/4 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-10% to-blue-200 to-17% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-blue-200 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
   
-        <section className="mt-[8rem]">
-          <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Nuestros presentadores</h2>
+        <section className="container mt-[8rem]">
+          <h2 className="text-3xl font-bold py-4 mb-[5rem]">Nuestros presentadores</h2>
   
         </section>
 
@@ -112,6 +112,11 @@ export default function Socios() {
           <h3 className="text-3xl font-bold">Eventos programados</h3>
         </section>
   
+        <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
+          <h3 className="text-3xl font-bold">Conoce información inportante de los eventos</h3>
+
+        </section>
+
       </main>
       <Footer />
     </>

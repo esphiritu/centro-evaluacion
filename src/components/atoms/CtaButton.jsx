@@ -6,6 +6,7 @@ export default function CtaButton({ href, linkText }) {
     <Link 
       href={href}
       className="
+      block
       group 
       transition-all 
       duration-300
@@ -21,7 +22,8 @@ export default function CtaButton({ href, linkText }) {
       font-bold 
       md:text-xl 
       shadow-md 
-      mt-1 md:mt-6">
+      mt-1 md:mt-6
+      max-w-fit">
       {linkText}
       <svg
         xmlns="http://www.w3.org/2000/svg"
