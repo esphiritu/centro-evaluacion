@@ -1,12 +1,16 @@
+import Image from "next/image";
 import {
   Presentation,
   Rocket,
   Dumbbell,
-  Check, 
+  Check,
 } from "lucide-react";
 // Custom components
 import Footer from "@/components/organisms/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import inception from "@/public/img/457267054_529522399582357_4829443968981261987_n.jpg";
+import SecondImage from "@/public/img/gallery-karen.jpg";
+
 export default function Soluciones() {
   return (
     <>
@@ -62,28 +66,28 @@ export default function Soluciones() {
             <div className="flex flex-col lg:flex-row justify-around py-10">
               <Card>
                 <CardContent>
-                <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
                   <h4 className="text-5xl">32.720</h4>
                   <p className="text-base">Horas ahorradas al año</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent>
-                <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
                   <h4 className="text-5xl">74%</h4>
                   <p className="text-base">Incrementos en la productividad</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent>
-                <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
                   <h4 className="text-5xl">5.6x</h4>
                   <p className="text-base">ROI recurrente</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent>
-                <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
                   <h4 className="text-5xl">1.6</h4>
                   <p className="text-base">Meses para recuperar la inversión</p>
                 </CardContent>
@@ -92,10 +96,35 @@ export default function Soluciones() {
           </div>
         </section>
       </main>
+      <section className="py-10 bg-slate-50 my-10">
+        <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de la compañía</h4>
+        <div className="relative container px-10 flex flex-col space-y-8">
+          {/* First */}
+          <div className="relative z-10">
+            <Image src={inception} alt="image of the inception of the company" className="timeline-img" />
+            <div className="timeline-container">
+              <div aria-hidden="true" className="timeline-pointer"></div>
+              <div className="text-lg bg-white rounded-md shadow-md p-6">
+                <span className="uppercase font-bold text-teal-500">20 Agosto 2023</span>
+                <p>Lorem ipsum text, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut.</p>
+              </div>
+            </div>
+          </div>
+          {/* Second */}
+          <div className="relative z-10">
+            <Image src={SecondImage} alt="image of Karen Campos" className="timeline-img" />
+            <div className="timeline-container timeline-container-left">
+              <div aria-hidden="true" className="timeline-pointer timeline-pointer-left"></div>
+              <div className="text-lg bg-white rounded-md shadow-md p-6">
+                <span className="uppercase font-bold text-teal-500">03 diciembre 2024</span>
+                <p>Consectetur adipiscing elit. sed do eiusmod tempor incididunt ut.</p>
+              </div>
+            </div>
+          </div>
+          <div className="absolute z-0 w-2 h-full bg-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
+        </div>
+      </section>
       <section className="container py-10">
-        <h4 className="text-3xl font-bold py-4 mb-[5rem]">Acerca de la compañía</h4>
-          
-
         <h4 className="text-3xl font-bold py-4 mb-[5rem]">Nuestro equipo</h4>
       </section>
       <div className="container">

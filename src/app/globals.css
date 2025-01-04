@@ -74,3 +74,21 @@
       @apply bg-background text-foreground;
     }
   }
+
+  @layer components {
+    .timeline-img {
+      @apply sm:absolute w-24 h-24 object-cover rounded-full shadow-xl border-4 border-slate-50 lg:mx-auto lg:left-0 lg:right-0;
+    }
+    .timeline-container {
+      @apply relative pt-2 sm:pl-28 md:pt-0 lg:w-1/2 lg:ml-auto lg:pl-16;
+    }
+    .timeline-container-left {
+      @apply lg:ml-0 lg:mr-auto lg:pl-0 lg:pr-16;
+    }
+    .timeline-pointer {
+      @apply  absolute inset-0 left-10 sm:top-11 sm:left-25 lg:left-14 h-4 w-4 transform rotate-45 bg-white;
+    }
+    .timeline-pointer-left {
+      @apply lg:left-auto lg:right-14;
+    }
+  }

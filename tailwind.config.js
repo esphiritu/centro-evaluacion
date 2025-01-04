@@ -13,7 +13,21 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+          'xs': '480px',
+          'sm': '640px',
+          // => @media (min-width: 640px) 
+
+          'md': '768px',
+          // => @media (min-width: 768px) 
+    
+          'lg': '1024px',
+          // => @media (min-width: 1024px) 
+    
+          'xl': '1280px',
+          // => @media (min-width: 1280px) 
+    
+          '2xl': '1400px',
+          // => @media (min-width: 1400px) 
       },
     },
     extend: {
@@ -89,6 +103,14 @@ module.exports = {
         "slideIn": "slideIn 0.9s ease-in",
         "fadeIn": "fadeIn 2.5s ease",
         "scroller": "scroller 7s ease-in-out infinite",
+      },
+      inset: {
+        '17': '84px',
+        '25': '104px',
+        '33': '116px',
+        '50': '160px',
+        '67': '176px',
+        '83': '192px',
       },
     },
   },
