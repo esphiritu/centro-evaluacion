@@ -112,7 +112,7 @@ export default function Soluciones() {
           </div>
           {/* Second */}
           <div className="relative z-10">
-            <Image src={SecondImage} alt="image of Karen Campos" className="timeline-img" />
+            <Image src={SecondImage} alt="image of Karen Campos<p></p>" className="timeline-img" />
             <div className="timeline-container timeline-container-left">
               <div aria-hidden="true" className="timeline-pointer timeline-pointer-left"></div>
               <div className="text-lg bg-white rounded-md shadow-md p-6">

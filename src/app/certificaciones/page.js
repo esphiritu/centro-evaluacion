@@ -16,7 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain, Check, Award, Trophy } from "lucide-react";
+import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, Building2, GraduationCap, Store, HeartHandshake, File, BookMarked, ShieldCheck, Brain, Award, Trophy } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -118,11 +118,7 @@ export default function Certificaciones(params) {
             <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-1 mb-4 pr-5 lg:pr-10">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
             </p>
-            <ul className="px-6 lg:px-2 py-3">
-              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
-              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Procesos ágiles de certificación</span></li>
-              <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-2">Sin requisitos académicos</span></li>
-            </ul>
+            
             <SecondaryButton href="./" linkText="Comienza tu certificación" />
           </div>
           <div className="relative w-3/5 lg:w-2/5 px-0 lg:px-10 mx-auto">

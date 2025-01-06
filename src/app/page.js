@@ -16,6 +16,7 @@ import {
   Hammer,
   Medal,
   CircleChevronRight,
+  Check,
 } from "lucide-react";
 import {
   Carousel,
@@ -161,6 +162,7 @@ import staged from "@/public/img/gallery-staged.jpg";
 import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import presentation from "@/public/img/gallery-presentation.jpg";
 import procesoImage from "@/public/img/pexels-pixabay-209151.jpg";
+import checkPointsImage from "@/public/img/pexels-fauxels-3184328.jpg";
 
 
 
@@ -174,7 +176,7 @@ export default function Home({ Component, pageProps }) {
               <h1 className="text-white text-2xl text-center lg:text-left md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn text-pretty">
                 La <span className="">certificación de competencias laborales</span> mejorarán tus habilidades e impulsarán tu carrera profesional
               </h1>
-              <p className="text-xl md:text-2xl text-center lg:text-left text-white font-light animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
+              <p className="text-xl md:text-2xl text-center lg:text-left text-white font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
                 Respalda tus conocimientos y experiencia con certificaciones
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
@@ -204,7 +206,7 @@ export default function Home({ Component, pageProps }) {
             id="benefits">
             <h2 className="scroll-m-40 text-3xl md:text-4xl text-center font-extrabold tracking-tight py-10 mt-10">Beneficios de la certificación laboral</h2>
             <ul
-              className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
+              className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-[4.7rem]">
               {benefits.map((benefit => {
                 return (
                   <li
@@ -223,11 +225,11 @@ export default function Home({ Component, pageProps }) {
                 )
               }))}
             </ul>
-            <OutlineButton href="./certificaciones" linkText="Ver certificaciones" />
+            <OutlineButton href="./certificaciones" linkText="Ver certificaciones" className="" />
           </div>
         </section>
         {/* Partners Section */}
-        <div className="container py-10 h-auto md:h-[16rem] mb-[7rem]">
+        <div className="container py-10 h-auto">
           <div className="flex flex-col md:flex-row-reverse items-center justify-between mt-10 py-10">
             <h5 className="align-bottom text-3xl text-center lg:text-left font-light dark:text-slate-100 tracking-tight w-full md:w-1/3 mr-8">
               <span className="text-2xl font-normal">
@@ -244,12 +246,27 @@ export default function Home({ Component, pageProps }) {
               width={170}
               className="mx-5" />
           </div>
+          <div className="flex flex-col-reverse lg:flex-row mt-[4.5rem]">
+            <div className="w-full lg:w-1/2">
+              <h2 className="w- full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-10 pl-0 lg:pl-10">
+                La certificación es una oportunidad para alcanzar tus metas profesionales
+              </h2>
+              <ul className="text-lg pl-0 lg:pl-10 py-3">
+                <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
+                <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Procesos ágiles de certificación</span></li>
+                <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Sin requisitos académicos</span></li>
+              </ul>
+            </div>
+            <div className="w-full lg:w-1/2 p-0 lg:p-10">
+              <Image src={checkPointsImage} alt="This is what you get" className="object-cover rounded-xl" />
+            </div>
+          </div>
         </div>
         {/* Certification process section */}
         <section className="container w-full py-10 mt-[8rem]">
           {/* Pasos para certificarse */}
           <div className="py-5 mb-[3rem] bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
-            <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-10 pl-0 lg:pl-10">
+            <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-[4rem] pl-0 lg:pl-10">
               <span className="text-teal-500">Antes de empezar.</span> Conoce los pasos para la certificación
             </h2>
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
@@ -302,64 +319,64 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
         </section>
-        
+
         {/* Criterios de evaluación */}
         <div className="container mt-[6rem] mb-[8rem] py-10">
-            <div id="textSlider" className="relative w-full lg:w-1/2 mx-auto pl-0 md:pl-[4rem]">
-              <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
-                <p>Refuerza los elementos clave.</p>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
-                <div className="h-[5.6rem] overflow-hidden">
-                  <div className="animate-scroller">
-                    <p className="leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
-                    <p className="leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
-                    <p className="leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
-                    <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
-                  </div>
+          <div id="textSlider" className="relative w-full lg:w-1/2 mx-auto pl-0 md:pl-[4rem]">
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
+              <p>Refuerza los elementos clave.</p>
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
+              <div className="h-[5.6rem] overflow-hidden">
+                <div className="animate-scroller">
+                  <p className="leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
+                  <p className="leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
+                  <p className="leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
+                  <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
                 </div>
               </div>
             </div>
-            <p className="w-full lg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
+          </div>
+          <p className="w-full lg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
               dark:text-slate-200 font-thin mb-1 pb-8 mx-auto">
-              Nuestros programas están diseñados para equiparlo con los elementos clave para sobresalir en su campo. Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
-            </p>
-            <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
-              <Carousel className="mb-6">
-                <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
-                  {criterios.map((criterio => {
-                    return (
-                      <CarouselItem
-                        className="group pb-7 mb-7 lg:pb-2 lg:mb-1"
-                        key={criterio.id}>
-                        <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden">
-                          <CardHeader>
-                            <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
-                              <span className="text-[#55ccc9] px-4 py-6">
-                                {criterio.icon}
-                              </span>
-                              <CardTitle className="text-center mb-3">
-                                {criterio.title}
-                              </CardTitle>
-                              <CardDescription className="mb-1 text-muted-foreground">
-                                {criterio.description}
-                              </CardDescription>
-                            </div>
-                          </CardHeader>
-                          <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-sm">
-                            <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">
-                              {criterio.content}
-                            </p>
-                          </CardContent>
-                          {/* <CardFooter>
+            Nuestros programas están diseñados para equiparlo con los elementos clave para sobresalir en su campo. Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
+          </p>
+          <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
+            <Carousel className="mb-6">
+              <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
+                {criterios.map((criterio => {
+                  return (
+                    <CarouselItem
+                      className="group pb-7 mb-7 lg:pb-2 lg:mb-1"
+                      key={criterio.id}>
+                      <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden">
+                        <CardHeader>
+                          <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
+                            <span className="text-[#55ccc9] px-4 py-6">
+                              {criterio.icon}
+                            </span>
+                            <CardTitle className="text-center mb-3">
+                              {criterio.title}
+                            </CardTitle>
+                            <CardDescription className="mb-1 text-muted-foreground">
+                              {criterio.description}
+                            </CardDescription>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-sm">
+                          <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">
+                            {criterio.content}
+                          </p>
+                        </CardContent>
+                        {/* <CardFooter>
                             <div className="">
                               Hola!
                             </div>
                           </CardFooter> */}
-                        </Card>
-                        <p className="visible lg:invisible lg:group-hover:visible transition-all ease-in-out duration-200">
-                          <Link href="./"
-                            className="
+                      </Card>
+                      <p className="visible lg:invisible lg:group-hover:visible transition-all ease-in-out duration-200">
+                        <Link href="./"
+                          className="
                               w-full
                               inline-block
                               font-bold 
@@ -371,21 +388,21 @@ export default function Home({ Component, pageProps }) {
                               transition-colors 
                               ease-in-out 
                               duration-300">
-                            <span className="px-3 text-xl">Ver más</span>
-                          </Link>
-                        </p>
-                      </CarouselItem>
-                    )
-                  }))}
-                </CarouselContent>
-                <CarouselPrevious className="lg:invisible" />
-                <CarouselNext className="lg:invisible" />
-              </Carousel>
-              
-            </div>
-            <MainLink href="./" linkText="Explorar programas" className="text-center" />
+                          <span className="px-3 text-xl">Ver más</span>
+                        </Link>
+                      </p>
+                    </CarouselItem>
+                  )
+                }))}
+              </CarouselContent>
+              <CarouselPrevious className="lg:invisible" />
+              <CarouselNext className="lg:invisible" />
+            </Carousel>
+
           </div>
-        
+          <MainLink href="./" linkText="Explorar programas" className="text-center" />
+        </div>
+
 
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-10 lg:px-20 h-auto sm:h-auto md:h-[25rem] mt-[4rem] mb-[4rem] shadow-sm">
           <Image
@@ -405,7 +422,7 @@ export default function Home({ Component, pageProps }) {
           </p>
           <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
         </section>
-          {/* Features List Section */}
+        {/* Features List Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
         <section className="container py-10 mb-[10rem] mt-[2rem]">
           <div className="w-full mb-[5rem] text-center">
@@ -551,74 +568,74 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
         </section>
         <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
-            <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
-              <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
-                Reconocimiento nacional
-              </p>
-              <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
-                ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
-              </h1>
-              <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
-                Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
-              </p>
-              <Dialog>
-                <DialogTrigger>
+          <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
+              Reconocimiento nacional
+            </p>
+            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
+              ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
+            </h1>
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
+              Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
+            </p>
+            <Dialog>
+              <DialogTrigger>
                 Acerca de nosotros
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Are you absolutely sure?</DialogTitle>
-                    <DialogDescription>
-                      This action cannot be undone. This will permanently delete your account
-                      and remove your data from our servers.
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
-            </div>
-            <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
-              <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-                <LockKeyhole
-                  absoluteStrokeWidth={true}
-                  size={42}
-                  strokeWidth={1.50}
-                  className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Objetividad y confiabilidad
-                </span>
-              </li>
-              <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-                <Headset
-                  absoluteStrokeWidth={true}
-                  size={42}
-                  strokeWidth={1.50}
-                  className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Asesoría de expertos
-                </span>
-              </li>
-              <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-                <ShieldCheck
-                  absoluteStrokeWidth={true}
-                  size={42}
-                  strokeWidth={1.50}
-                  className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Calidad asegurada
-                </span>
-              </li>
-              <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
-                <Award
-                  absoluteStrokeWidth={true}
-                  size={42}
-                  strokeWidth={1.50}
-                  className="mx-auto text-teal-600" />
-                <span className="block mt-8">
-                  Respaldo de OC más importante
-                </span>
-              </li>
-            </ul>
-          </section>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete your account
+                    and remove your data from our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          </div>
+          <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <LockKeyhole
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Objetividad y confiabilidad
+              </span>
+            </li>
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <Headset
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Asesoría de expertos
+              </span>
+            </li>
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <ShieldCheck
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Calidad asegurada
+              </span>
+            </li>
+            <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
+              <Award
+                absoluteStrokeWidth={true}
+                size={42}
+                strokeWidth={1.50}
+                className="mx-auto text-teal-600" />
+              <span className="block mt-8">
+                Respaldo de OC más importante
+              </span>
+            </li>
+          </ul>
+        </section>
         <section className="pb-[10rem] mt-10 h-auto">
           {/* Seccion de testimonios */}
           <div className="container">
