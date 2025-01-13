@@ -113,7 +113,7 @@ export default function Certificaciones(params) {
       <header className="w-full py-2 mb-10">
         <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[36rem] justify-center items-center">
           <div className="relative w-full lg:w-3/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
-            <h1 className="w-4/5 text-2xl md:text-4xl text-left font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
+            <h1 className="w-4/5 text-2xl md:text-4xl lg:text-5xl text-left font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
             </h1>
             <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-1 mb-4 pr-5 lg:pr-10">
               Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
@@ -137,7 +137,7 @@ export default function Certificaciones(params) {
         <section className="py-2 h-auto">
           {/* Estándares disponibles */}
           <div className="w-full lg:container mb-10">
-            <h4 className="text-2xl md:text-3xl font-bold text-center md:text-left pb-6 pt-[1.8rem] mb-[1.8rem]">
+            <h4 className="text-2xl md:text-3xl font-bold text-center pb-6 pt-[1.8rem] mb-[2.4rem]">
               Certificaciones disponibles con <span className="whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>
             </h4>
             <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
@@ -284,7 +284,7 @@ export default function Certificaciones(params) {
                                 </Drawer>
                               </TableCell>
                               <TableCell className="text-right px-0 lg:px-2">
-                                <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-full z-10 transition-colors ease-in-out duration-300">Obtener
+                                <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-md z-10 transition-colors ease-in-out duration-300">Obtener
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -315,19 +315,10 @@ export default function Certificaciones(params) {
                   Certificaciones para las organizaciones sociales
                 </TabsContent>
               </Tabs>
-              <div className="max-w-fit h-fit lg:w-3/12  mt-[3rem] lg:mt-[2rem] mx-4 lg:mx-0">
-                <div className="flex flex-col justify-center items-center pt-4">
-                  <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
-                  <div className="py-3">
-                    <h5 className="text-center text-slate-900 dark:text-slate-200 text-base lg:text-lg font-bold px-3">Secure from the start</h5>
-                    <p className="text-center text-muted-foreground dark:text-white text-sm px-3">
-                      Procesos de evaluación acreditados
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
+          <Separator />
           <div className="container mt-[5rem]">
             <h3 className="text-2xl font-bold">Documentos básicos</h3>
             <div className="flex flex-col lg:flex-row">
@@ -347,10 +338,21 @@ export default function Certificaciones(params) {
                   Descargar
                 </Button>
               </div>
+              <div className="max-w-fit h-fit lg:w-3/12  mt-5 mx-4 lg:mx-0">
+                <div className="flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-700 rounded-lg px-6 py-6">
+                  <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
+                  <div className="py-3">
+                    <h5 className="text-center text-slate-900 dark:text-slate-200 text-base lg:text-lg font-bold px-3">Secure from the start</h5>
+                    <p className="text-center text-muted-foreground dark:text-white text-sm px-3">
+                      Procesos de evaluación acreditados
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <section className="flex-grow-0 bg-slate-700 dark:bg-gray-900 mt-[6rem]">
+        <section className="flex-grow-0 bg-blue-50/85 dark:bg-gray-900 mt-[6rem]">
           <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
             <Image
               src={cursos}
@@ -360,7 +362,7 @@ export default function Certificaciones(params) {
               className="w-auto" />
           </div>
           <div className="container w-full pb-10 mt-6">
-            <h2 className="scroll-m-20 text-slate-200 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
               Explora los programas que tenemos para tí
             </h2>
             <p className="text-slate-400 text-2xl text-center pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto text-pretty">
@@ -369,9 +371,27 @@ export default function Certificaciones(params) {
             <ProgramsCard />
           </div>
         </section>
-        <section className="mx-auto mb-15 py-10 mt-[3rem] mb-[2rem]">
-          <div className="py-[7rem] px-5 lg:px-0 mb-[5rem]">
-            {/* <Accordion 
+        {/* Reclutamiento */}
+        <div className="container flex flex-col lg:flex-row justify-center w-11/12lg:w-full h-auto md:h-[26rem] lg:h-[19rem] mb-[7rem] mt-[7rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto border">
+          <div className="px-2 lg:px-6 pb-8 lg:self-start">
+            <Sprout
+              size={70}
+              strokeWidth={1.50}
+              className="bg-teal-500 dark:bg-slate-200 text-white dark:text-gray-800 p-3 rounded-full ml-auto mr-auto lg:ml-0" />
+            <h3 className="text-center lg:text-left text-3xl font-bold mb-2 mt-8">
+              ¿Ya estás certificado y te interesa ser evaluador?
+            </h3>
+          </div>
+          <div className="px-6 pt-10 lg:self-end">
+            <p className="text-xl text-center lg:text-left py-3 mb-5">
+              Ponte contacto con un asesor y aumenta tus ingresos realizando evaluaciones
+            </p>
+            <MainLink href="./" linkText="Contactar ahora" />
+          </div>
+        </div>
+        <section className="mx-auto">
+          {/* <div className="py-[7rem] px-5 lg:px-0 mb-[5rem]">
+            <Accordion 
               type="single" 
               collapsible 
               className="w-full md:w-4/5 m-auto ">
@@ -439,9 +459,9 @@ export default function Certificaciones(params) {
                   Ninguno. La evalución diagnóstica la ofrecemos gratis.
                 </AccordionContent>
               </AccordionItem>
-            </Accordion> */}
-          </div>
-          <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-[4rem] h-auto lg:h-[24rem] mb-[5rem]">
+            </Accordion>
+          </div> */}
+          <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-[4rem] h-auto lg:h-[30rem]">
             <div className="px-2">
               <p className="text-4xl text-center text-white font-bold mb-3">
                 ¿Necesitas más ayuda?
@@ -470,24 +490,6 @@ export default function Certificaciones(params) {
             </div>
           </div>
         </section>
-        {/* Reclutamiento */}
-        <div className="container flex flex-col lg:flex-row justify-center w-11/12lg:w-full h-auto md:h-[26rem] lg:h-[19rem] mb-[7rem] mt-[1rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto border">
-          <div className="px-2 lg:px-6 pb-8 lg:self-start">
-            <Sprout
-              size={70}
-              strokeWidth={1.50}
-              className="bg-teal-500 dark:bg-slate-200 text-white dark:text-gray-800 p-3 rounded-full ml-auto mr-auto lg:ml-0" />
-            <h3 className="text-center lg:text-left text-3xl font-bold mb-2 mt-8">
-              ¿Ya estás certificado y te interesa ser evaluador?
-            </h3>
-          </div>
-          <div className="px-6 pt-10 lg:self-end">
-            <p className="text-xl text-center lg:text-left py-3 mb-5">
-              Ponte contacto con un asesor y aumenta tus ingresos realizando evaluaciones
-            </p>
-            <MainLink href="./" linkText="Contactar ahora" />
-          </div>
-        </div>
       </main>
       <Footer />
     </>

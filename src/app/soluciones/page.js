@@ -96,32 +96,32 @@ export default function Soluciones() {
           </div>
         </section>
       </main>
-      <section className="py-10 bg-slate-50 my-10">
-        <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de la compañía</h4>
+      <section className="py-10 bg-blue-50/85 dark:bg-gray-900 my-10">
+        <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span></h4>
         <div className="relative container px-10 flex flex-col space-y-8">
-          {/* First */}
+          {/* First milestone */}
           <div className="relative z-10">
             <Image src={inception} alt="image of the inception of the company" className="timeline-img" />
             <div className="timeline-container">
               <div aria-hidden="true" className="timeline-pointer"></div>
-              <div className="text-lg bg-white rounded-md shadow-md p-6">
+              <div className="text-lg bg-white dark:bg-gray-700 rounded-md shadow-md p-6">
                 <span className="uppercase font-bold text-teal-500">20 Agosto 2023</span>
                 <p>Lorem ipsum text, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut.</p>
               </div>
             </div>
           </div>
-          {/* Second */}
+          {/* Second milestone*/}
           <div className="relative z-10">
             <Image src={SecondImage} alt="image of Karen Campos<p></p>" className="timeline-img" />
             <div className="timeline-container timeline-container-left">
               <div aria-hidden="true" className="timeline-pointer timeline-pointer-left"></div>
-              <div className="text-lg bg-white rounded-md shadow-md p-6">
+              <div className="text-lg bg-white dark:bg-gray-700 rounded-md shadow-md p-6">
                 <span className="uppercase font-bold text-teal-500">03 diciembre 2024</span>
                 <p>Consectetur adipiscing elit. sed do eiusmod tempor incididunt ut.</p>
               </div>
             </div>
           </div>
-          <div className="absolute z-0 w-2 h-full bg-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
+          <div className="absolute w-2 h-full border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
         </div>
       </section>
       <section className="container py-10">

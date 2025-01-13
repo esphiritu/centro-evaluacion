@@ -15,6 +15,7 @@ import {
 // Custom components
 import FeaturedCoursesCard from "@/components/cards/FeaturedCoursesCard";
 import MostPopularCourses from "@/components/cards/MostPopularCourses";
+import TypingEffect from "@/components/atoms/TypingEffect";
 
 // Components Data
 const soportes = [
@@ -51,21 +52,61 @@ export default function Cursos(params) {
   return (
     <>
       <main className="w-full pt-19">
-        <section className="bg-slate-700 py-10 h-auto lg:h-[24rem]">
-          <p className="text-lg text-center text-teal-300 py-4 uppercase tracking-wider mt-[3rem]">
+        <section className="bg-slate-700 py-10 h-auto lg:h-[34rem]">
+          <p className="w-fit text-base text-center text-slate-900 bg-teal-300 py-2 px-6 tracking-wider mt-[3rem] mb-8 mx-auto rounded-full">
             Oferta educativa
           </p>
-          <h1 className="text-4xl text-center text-white font-bold pb-6">
-            Catálogo de cursos
+          <h1 className="animate-fadeIn text-4xl text-center text-white font-bold pb-6">
+            <TypingEffect />
           </h1>
           <p className="text-xl md:text-2xl text-center text-white text-pretty font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1 w-full lg:w-2/3 mx-auto">
             Nuestros talleres, cursos y programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su campo. Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
           </p>
         </section>
-
+        <div className="flex flex-col justify-center items-center bg-teal-100/50 dark:bg-teal-100  lg:flex-row mb-[4rem] gap-8">
+          {soportes.map(soporte => {
+            return (
+              <div className="flex flex-col lg:flex-row justify-start items-center py-6" key={soporte.id}>
+                <div className="flex justify-center items-center bg-teal-50 dark:bg-slate-700 w-fit rounded-lg px-5 py-5 mb-4 lg:mb-1">
+                  {soporte.icon}
+                </div>
+                <div>
+                  <h5 className="dark:text-slate-700 text-center lg:text-left text-xl font-bold px-6">{soporte.title}</h5>
+                  <p className=" dark:text-slate-700 text-sm px-6">
+                    {soporte.description}
+                  </p>
+                </div>
+              </div>
+            )
+          }
+          )}
+        </div>
         <section className="">
-
-          <div className="py-[2rem] mb-[10rem] bg-blue-50/85 dark:bg-gray-900">
+          {/* Cálogo de cursos */}
+          <div className="py-6 mt-6">
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
+              Explora el catálogo de cursos con reconocimiento oficial
+            </h2>
+            <p className="text-xl text-center text-gray-500 pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">
+              Encuentra los mejores cursos de tu sector e industria para maximizar tus habilidades y experiencia
+            </p>
+            <div className="container w-full lg:w-4/5 py-[3rem]">
+              <div className="flex flex-col lg:flex-row justify-center">
+                <div className="w-full lg:w-2/6 h-full bg-orange-400">
+                  Habilidades digitales
+                </div>
+                <div className="w-full lg:w-4/6 py-[2rem] px-[3.5rem] h-[14rem] border rounded-r-md">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white pt-4">
+                    Habilidades y cultura digitales para la docencia
+                  </h3>
+                  <p className="text-gray-500 dark:text-white py-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing el, adipiscing elit dark, sed diam nonumy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="py-[2rem] mb-[6rem] bg-blue-50/85 dark:bg-gray-900">
             <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
               <Image
                 src={resultados}
@@ -84,48 +125,16 @@ export default function Cursos(params) {
               <FeaturedCoursesCard />
             </div>
           </div>
-
-          <div className="container flex flex-col lg:flex-row justify-between py-6 mb-4 mt-[4rem]">
-            {soportes.map(soporte => {
-              return (
-                <div className="flex justify-start items-center py-6" key={soporte.id}>
-                  <div className="flex justify-center items-center bg-slate-100 dark:bg-slate-700 w-fit rounded-lg px-5 py-5 mb-1">
-                    {soporte.icon}
-                  </div>
-                  <div>
-                    <h5 className="text-slate-900 dark:text-white text-xl font-bold px-6">{soporte.title}</h5>
-                    <p className="text-muted-foreground dark:text-white text-sm px-6">
-                      {soporte.description}
-                    </p>
-                  </div>
-                </div>
-              )
-            }
-            )}
-
-          </div>
         </section>
 
         <section className="container">
-        <h2 className="scroll-m-20 text-2xl lg:text-3xl text-left font-bold tracking-normal pb-4 mb-3 lg:mb-9 mt-[8rem]">
+          <h2 className="scroll-m-20 text-2xl lg:text-3xl text-left font-bold tracking-normal pb-4 mb-3 lg:mb-9 mt-[8rem]">
             Cursos más populares con reconocimiento oficial
           </h2>
           <MostPopularCourses />
-
-          <div className="py-10 mt-10">
-            <p className="text-center text-muted-foreground text-lg uppercase tracking-[0.2rem] py-6">
-              Categorías
-            </p>
-            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
-              Explora los cursos por categoría
-            </h2>
-            <p className="text-xl text-center text-gray-500 pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">
-              Encuentra los mejores cursos de tu sector e industria para maximizar tus habilidades y experiencia
-            </p>
-          </div>
         </section>
 
-        <section className="bg-slate-700 py-[5rem] h-auto lg:h-[28rem]">
+        <section className="bg-slate-700 py-[5rem] h-auto lg:h-[28rem] mt-[12rem]">
           <div className="container flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/3 text-white">
               <h2 className="text-4xl font-bold">Enroll today and <span className="text-teal-300">level up your skills</span></h2>
@@ -133,7 +142,7 @@ export default function Cursos(params) {
               <p className="text-lg mt-8">Nulla viverra urna facilisis amet, vitae sapien. Feugiat tortor nisl eu faucibus dolor mauris. Malesuada tincidunt rutrum turpis vitae sed euismod urna etiam mi. Vitae, rutrum quis enim integer.</p>
             </div>
             <div className="w-full lg:w-2/3">
-              <div className="bg-slate-200 h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0">
+              <div className="bg-white h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0">
                 <h3 className="text-2xl text-center text-slate-800 tracking-tight uppercase font-bold py-10">
                   Comienza ahora
                 </h3>

@@ -1,10 +1,7 @@
-import Link from "next/link";
 
-export default function SecondaryButton({ href, linkText }) {
+export default function ButtonAlike({  ButtonText }) {
   return (
-    <p>
-      <Link
-        href={href}
+      <span
         className="
         inline-block
         max-w-fit
@@ -18,8 +15,8 @@ export default function SecondaryButton({ href, linkText }) {
         transition-colors 
         ease-in-out 
         duration-300">
-        <span className="px-3 text-xl">{linkText}</span>
-      </Link>
-    </p>
+        <span className="px-3 text-xl">{ButtonText}</span>
+      </span>
+    
   )
 }

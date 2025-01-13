@@ -86,8 +86,8 @@ export default function Socios() {
         <section>
           <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Eventos destacados</h2>
           <div className="relative container flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 px-8 text-center">
-              <h3 className="text-2xl font-semibold mb-2">Conferecia digital</h3>
+            <div className="w-full lg:w-1/2 px-8 text-center pt-10">
+              <h3 className="text-3xl font-semibold mb-2">Conferecia digital</h3>
               <p className="text-xl">Mejorar tu productividad y fortalecer tu empresa</p>
               <div className="text-lg max-h-fit mt-10 mb-10">
                 <p className="font-bold mb-3">Aprenderás:</p>
@@ -99,7 +99,7 @@ export default function Socios() {
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-blue-200 to-27% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-teal-100 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
   

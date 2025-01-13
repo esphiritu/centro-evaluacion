@@ -6,7 +6,8 @@ function Footer() {
     <>
       <footer className="bg-slate-50 dark:bg-slate-900">
         <div className="container py-[5rem]">
-        <h4 className="text-xl font-bold py-5">Proyecta empresarial</h4>
+        <h4 className="text-xl font-bold pt-5">Proyecta empresarial</h4>
+        <span className="w-[7.5rem] h-[3px] bg-teal-300 inline-block"></span>
           <div className="flex flex-col lg:flex-row md:justify-between justify-center">
             <div className="py-5">
               <h5 className="text-lg font-bold pt-4">Centro de evaluación</h5>

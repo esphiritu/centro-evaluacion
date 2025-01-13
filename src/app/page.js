@@ -163,6 +163,7 @@ import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import presentation from "@/public/img/gallery-presentation.jpg";
 import procesoImage from "@/public/img/pexels-pixabay-209151.jpg";
 import checkPointsImage from "@/public/img/pexels-fauxels-3184328.jpg";
+import ButtonAlike from "@/components/atoms/ButtonAlike";
 
 
 
@@ -229,7 +230,7 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
         {/* Partners Section */}
-        <div className="container py-10 h-auto">
+        <div className="container py-5 h-auto">
           <div className="flex flex-col md:flex-row-reverse items-center justify-between mt-10 py-10">
             <h5 className="align-bottom text-3xl text-center lg:text-left font-light dark:text-slate-100 tracking-tight w-full md:w-1/3 mr-8">
               <span className="text-2xl font-normal">
@@ -248,9 +249,10 @@ export default function Home({ Component, pageProps }) {
           </div>
           <div className="flex flex-col-reverse lg:flex-row mt-[4.5rem]">
             <div className="w-full lg:w-1/2">
-              <h2 className="w- full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-10 pl-0 lg:pl-10">
+              <h2 className="w-full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-4 pl-0 lg:pl-10">
                 La certificación es una oportunidad para alcanzar tus metas profesionales
               </h2>
+              <p className="w-full lg:w-4/5 text-lg md:text-xl text-muted-foreground text-pretty mb-8 pl-0 lg:pl-10">Estamos listos para ayudarte en el proceso de certificación laboral</p>
               <ul className="text-lg pl-0 lg:pl-10 py-3">
                 <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
                 <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Procesos ágiles de certificación</span></li>
@@ -263,14 +265,14 @@ export default function Home({ Component, pageProps }) {
           </div>
         </div>
         {/* Certification process section */}
-        <section className="container w-full py-10 mt-[8rem]">
+        <section className="container w-full py-10 mt-[3rem]">
           {/* Pasos para certificarse */}
-          <div className="py-5 mb-[3rem] bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
-            <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-[4rem] pl-0 lg:pl-10">
+          <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-[4rem] pl-0 lg:pl-10">
               <span className="text-teal-500">Antes de empezar.</span> Conoce los pasos para la certificación
             </h2>
+          <div className="py-5 mb-[4rem] bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
-              <div className="relative w-full lg:w-1/2 h-full">
+              <div className="relative w-full lg:w-1/2 h-full mt-[2.5rem]">
                 <Image
                   src={procesoImage}
                   alt="Proceso para la certificación"
@@ -284,7 +286,7 @@ export default function Home({ Component, pageProps }) {
                   }} />
                 <AnimatedText />
               </div>
-              <div className="w-full lg:w-1/2 pl-8 pt-10 lg:pt-2 md:pl-[2rem] mb-[2rem]">
+              <div className="w-full lg:w-1/2 pl-8 pt-10 lg:pt-2 md:pl-[2rem] mb-[2rem] mt-2 lg:mt-6">
                 {pasos.map((paso => {
                   return (
                     <div
@@ -400,7 +402,7 @@ export default function Home({ Component, pageProps }) {
             </Carousel>
 
           </div>
-          <MainLink href="./" linkText="Explorar programas" className="text-center" />
+         <div className="w-fit float-right"><MainLink href="./" linkText="Explorar programas" /></div>
         </div>
 
 
@@ -580,7 +582,7 @@ export default function Home({ Component, pageProps }) {
             </p>
             <Dialog>
               <DialogTrigger>
-                Acerca de nosotros
+                <ButtonAlike ButtonText="Acerca de nosotros" />
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
@@ -658,7 +660,7 @@ export default function Home({ Component, pageProps }) {
               <h5 className="text-3xl md:text-4xl text-center dark:text-white font-bold pt-3 mb-4 text-pretty w-full lg:w-3/4 mx-auto">
                 Libere su potencial con nuestros programas
               </h5>
-              <p className="text-xl md:text-2xl text-center font-light dark:text-white mb-[1.5rem]">
+              <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-[1.5rem]">
                 Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y su carrera.
               </p>
             </div>
