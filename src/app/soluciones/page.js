@@ -96,7 +96,7 @@ export default function Soluciones() {
           </div>
         </section>
       </main>
-      <section className="py-10 bg-blue-50/85 dark:bg-gray-900 my-10">
+      <section className="py-[6rem] bg-blue-100 dark:bg-gray-900 my-10" id="acerca">
         <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span></h4>
         <div className="relative container px-10 flex flex-col space-y-8">
           {/* First milestone */}

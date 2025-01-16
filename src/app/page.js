@@ -2,22 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 // Shadcn UI components
-import {
-  Key,
-  LockKeyhole,
-  ShieldCheck,
-  Headset,
-  Award,
-  ArrowDown,
-  TrendingUp,
-  FileBadge,
-  Lightbulb,
-  BookOpenCheck,
-  Hammer,
-  Medal,
-  CircleChevronRight,
-  Check,
-} from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -25,14 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import {
   HoverCard,
   HoverCardContent,
@@ -46,6 +23,22 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,
+} from "@/components/ui/table";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Separator } from "@/components/ui/separator";
 
 // Custom components
 import Footer from "@/components/organisms/Footer";
@@ -55,6 +48,31 @@ import MainLink from "@/components/atoms/MainLink";
 import OutlineButton from "@/components/atoms/OutlineButton";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import AnimatedText from "@/components/molecules/AnimatedText";
+import SecondaryLink from "@/components/atoms/SecondaryLink";
+import ButtonAlike from "@/components/atoms/ButtonAlike";
+
+// Lucide icons
+import { 
+  User, 
+  BookMarked, 
+  ShieldCheck, 
+  Brain,  
+  Key,
+  LockKeyhole,
+  Headset,
+  Award,
+  ArrowDown,
+  TrendingUp,
+  FileBadge,
+  Lightbulb,
+  BookOpenCheck,
+  Hammer,
+  Medal,
+  CircleChevronRight,
+  Check } from "lucide-react";
+
+// Custom icons
+import estandarIcon from "@/public/img/estandar-de-competencia.svg";
 
 
 // Data for components
@@ -141,16 +159,57 @@ const criterios = [
   },
 ];
 
-// Styles for the Image used as background
-// const styles = {
-//   heroImage: {
-//     backgroundImage: 'url(https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
-//     backgroundPosition: 'center',
-//     backgroundSize: 'cover',
-//     backgroundRepeat: 'no-repeat',
-//   },
-// };
-
+// Información de los estándares de competencia que se ofrecen
+const estandares = [
+  {
+    id: "EC0217.01",
+    title: "EC0217.01",
+    description: "Servicios educativos",
+    content: "Impartición de cursos de formación de capital humano de manera presencial grupal",
+    snc: "3/5",
+    borColor: "border-t-purple-400",
+    comite: "Asociación Mexicana de Capacitación de Personal y Empresarial, A.C",
+    sector: "Servicios educativos",
+    ocupaciones: "Capacitador, facilitador, instructor",
+    duracion: "1 hora en gabinete y 2 horas en campo, totalizando 3 horas",
+    proposito: "El estándar de competencia impartición de cursos de formación del capital humano de manera presencial y grupal contempla las funciones sustantivas de preparar, conducir y evaluar cursos de capacitación. Preparar la sesión mediante la planeación de la sesión y la comprobación de la existencia y el funcionamiento de los recursos requeridos para la sesión. Conducir la sesión realizando el encuadre, desarrollo y cierre, empleando técnicas instruccionales y grupales que faciliten el proceso de aprendizaje. Evaluar el aprendizaje antes, durante y al final del curso, considerando la satisfacción de los participantes/capacitandos",
+    requisitos: "Ninguno",
+    icon: estandarIcon,
+    price: "$5,000 MXN",
+  },
+  {
+    id: "EC0366",
+    title: "EC0366",
+    description: "Servicios educativos",
+    content: "Desarrollo de cursos de formación en línea",
+    snc: "3/5",
+    borColor: "border-t-blue-400",
+    comite: "Comité de Gestión por Competencias de la Formación para el Trabajo",
+    sector: "Servicios educativos",
+    ocupaciones: "Instructor y capacitador",
+    duracion: "6 horas",
+    proposito: "Servir como referente para la evaluación y certificación de las personas que se desempeñan como desarrolladores de cursos para formación en línea.",
+    requisitos: "Ninguno",
+    icon: estandarIcon,
+    price: "$5,500 MXN",
+  },
+  {
+    id: "EC0301",
+    title: "EC0301",
+    description: "Servicios educativos",
+    content: "Diseño de cursos de formación del capital humano de manera presencial grupal, sus instrumentos de evaluación y manuales del curso",
+    snc: "3/5",
+    borColor: "border-t-orange-400",
+    comite: "Asociación Mexicana de Capacitación de Personal y Empresarial. AMECAP, A.C. ",
+    sector: "Servicios educativos",
+    ocupaciones: "Capacitador, facilitador, instructor",
+    duracion: "2 horas en gabinete y 1 hora en campo, totalizando 3 horas",
+    proposito: "Servir como referente para la evaluación y certificación de las personas que diseñan cursos de formación del capital humano de manera presencial grupal, diseñando cursos de capacitación presenciales, diseñando instrumentos para la evaluación de cursos de capacitación presenciales y desarrollando manuales del curso de capacitación presenciales",
+    requisitos: "Ninguno",
+    icon: estandarIcon,
+    price: "$5,800 MXN",
+  },
+]
 
 // Images
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
@@ -163,7 +222,6 @@ import diagnostico from "@/public/img/evaluacion-diagnostica.svg";
 import presentation from "@/public/img/gallery-presentation.jpg";
 import procesoImage from "@/public/img/pexels-pixabay-209151.jpg";
 import checkPointsImage from "@/public/img/pexels-fauxels-3184328.jpg";
-import ButtonAlike from "@/components/atoms/ButtonAlike";
 
 
 
@@ -181,9 +239,9 @@ export default function Home({ Component, pageProps }) {
                 Respalda tus conocimientos y experiencia con certificaciones
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
-                <CtaButton href="./proceso" linkText="Comienza ahora" className="text-center" />
-                <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center font-bold md:text-lg rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="./asesor">
-                  <span className="whitespace-nowrap">Comienza con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" /></span>
+                <CtaButton href="./proceso" linkText="Comenzar ahora" className="text-center" />
+                <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center font-bold md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="./asesor">
+                  <span className="whitespace-nowrap">Comenzar con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" /></span>
                 </Link>
               </div>
             </div>
@@ -192,7 +250,7 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute -bottom-[5vw] md:bottom-[2vw] right-2/4">
-            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-200 rounded-full border-1 border-slate-300 p-2 text-white hover:text-teal-600">
+            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-500 rounded-full border-1 border-slate-300 p-2 text-white">
               <Link href="#benefits">
                 <ArrowDown className="h-8 w-8" />
               </Link>
@@ -226,7 +284,7 @@ export default function Home({ Component, pageProps }) {
                 )
               }))}
             </ul>
-            <OutlineButton href="./certificaciones" linkText="Ver certificaciones" className="" />
+            <MainLink href="#certificaciones" linkText="Ver certificaciones" className="" />
           </div>
         </section>
         {/* Partners Section */}
@@ -252,7 +310,7 @@ export default function Home({ Component, pageProps }) {
               <h2 className="w-full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-4 pl-0 lg:pl-10">
                 La certificación es una oportunidad para alcanzar tus metas profesionales
               </h2>
-              <p className="w-full lg:w-4/5 text-lg md:text-xl text-muted-foreground text-pretty mb-8 pl-0 lg:pl-10">Estamos listos para ayudarte en el proceso de certificación laboral</p>
+              <p className="w-full lg:w-4/5 text-lg md:text-xl text-muted-foreground text-pretty mb-8 pl-0 lg:pl-10">Procesos confiables respaldados por el Organismo Certificador más importante de America Latina: ICE México.</p>
               <ul className="text-lg pl-0 lg:pl-10 py-3">
                 <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
                 <li className="flex p-1 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Procesos ágiles de certificación</span></li>
@@ -321,6 +379,190 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
         </section>
+        
+        {/* Estándares disponibles */}
+        <div className="w-full lg:container mb-10" id="certificaciones">
+            <h4 className="text-2xl md:text-3xl font-bold text-center pb-6 pt-[1.8rem] mb-[2.4rem]">
+              Certificaciones disponibles con <span className="whitespace-nowrap px-3 rounded-md text-teal-500 font-bold">Proyecta Empresarial</span>
+            </h4>
+            <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
+              <Tabs defaultValue="educativo" className="w-full md:w-11/12">
+                <TabsList className="overflow-x-scroll no-scrollbar overflow-y-hidden">
+                  <TabsTrigger value="educativo" className="rounded-full">
+                    <span className="inline">Sector educativo</span>
+                  </TabsTrigger>
+                  <TabsTrigger value="empresarial" className="rounded-full">
+                    <span className="inline">Sector empresarial</span>
+                  </TabsTrigger>
+                  <TabsTrigger value="gobierno" className="rounded-full">
+                    <span className="inline">Sector gobierno</span>
+                  </TabsTrigger>
+                  <TabsTrigger value="social" className="rounded-full">
+                    <span className="inline">Sector social</span>
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
+                  <Table className="mt-2">
+                    {/* <TableCaption>
+                      <p className="w-full">Certificaciones</p>
+                    </TableCaption> */}
+                    <TableHeader className="text-xl bg-slate-200 dark:bg-slate-700">
+                      <TableRow className="">
+                        <TableHead
+                          className="w-2/12 md:1/6 lg:w-1/5 py-4">
+                          Código EC</TableHead>
+                        <TableHead
+                          className="w-7/12 md:4/6 lg:w-3/5 py-4">
+                          Estándar de competencia</TableHead>
+                        <TableHead
+                          className="w-3/12 md:1/6 lg:w-1/5 py-4">
+                        </TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody className="text-xl">
+                      {estandares.map(
+                        (estandar => {
+                          return (
+                            <TableRow
+                              key={estandar.id}
+                              className="group/item">
+                              <TableCell className="text-left text-base lg:text-xl">{estandar.title}</TableCell>
+                              <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
+                                <Drawer className="relative">
+                                  <DrawerTrigger className="text-left text-base lg:text-xl">
+                                    {estandar.content}
+                                  </DrawerTrigger>
+                                  <DrawerContent>
+                                    <ScrollArea>
+                                      <DrawerHeader className="flex w-full">
+                                        <div className="content-center w-full mt-10 md:mt-4">
+                                          <DrawerTitle className="text-2xl mb-2 bg-slate-200 text-slate-800 rounded-sm py-4 px-4">
+                                            {estandar.content}
+                                          </DrawerTitle>
+                                          <DrawerDescription
+                                            className="text-lg">
+                                            Detalles del estándar de compencia
+                                          </DrawerDescription>
+                                          <Separator className="mt-3 w-full" />
+                                        </div>
+                                      </DrawerHeader>
+
+                                      <div className="w-full text-xl text-gray-700 dark:text-gray-400 lg:w-1/2 mx-auto px-5 py-2">
+                                        <h2 className="text-2xl mb-5">{estandar.title}</h2>
+                                        <p className="mb-6">
+                                          <span className="text-slate-800 dark:text-gray-200 font-bold">
+                                            Propósito: </span>
+                                          {estandar.proposito}
+                                        </p>
+                                        <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-3">
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <User className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Ocupaciones asociadas: </span>
+                                              {estandar.ocupaciones}
+                                            </p>
+                                          </li>
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel en el Sistema Nacional de Competencia: </span>
+                                              {estandar.snc}
+                                            </p>
+                                          </li>
+                                          <li className="flex py-1">
+                                            <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                              <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
+                                            </div>
+                                            <p className="mb-3 px-4">
+                                              <span className="text-slate-800 dark:text-gray-200 font-bold">Comité desarrollador: </span>
+                                              {estandar.comite}
+                                            </p>
+                                          </li>
+                                        </ul>
+                                        <p className="text-sm text-muted-foreground py-4 mt-5">Descarga el formato completo del estándar de competencia</p>
+                                        <Button
+                                          variant="outline"
+                                          className="py-6 pl-3 pr-5 text-xl text-gray-800 dark:text-gray-200 hover:text-white hover:bg-gray-800 text-center  dark:hover:bg-gray-600 mb-3">
+                                          <span className="pl-3 pr-3 py-6">Descargar</span>
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2.25"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+                                        </Button>
+                                      </div>
+                                      <Separator className="mt-1 w-full" />
+                                      <DrawerFooter className="w-full lg:w-1/2 mx-auto">
+                                        <div className="flex flex-row place-content-end items-center">
+                                          <p className="text-2xl text-red-500 dark:text-red-400 font-bold mr-8 md:mr-10">
+                                            <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price}
+                                          </p>
+                                          <SecondaryButton href="./" linkText="Obtener" />
+                                        </div>
+                                        <DrawerClose className="absolute top-0 left-3 mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300 z-20">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="48"
+                                            height="48"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="1.75"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                        </DrawerClose>
+
+                                      </DrawerFooter>
+                                    </ScrollArea>
+                                  </DrawerContent>
+                                </Drawer>
+                              </TableCell>
+                              <TableCell className="text-right px-0 lg:px-2">
+                                <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-md z-10 transition-colors ease-in-out duration-300">Obtener
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover/details:translate-x-1 group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
+                                </Link>
+                              </TableCell>
+                            </TableRow>
+                          )
+                        })
+                      )}
+                    </TableBody>
+                  </Table>
+                </TabsContent>
+                <TabsContent value="empresarial">
+                  Certificaciones disponibles para el sector productivo
+                </TabsContent>
+                <TabsContent value="gobierno">
+                  Certificaciones para el sector del servicio público
+                </TabsContent>
+                <TabsContent value="social">
+                  Certificaciones para las organizaciones sociales
+                </TabsContent>
+              </Tabs>
+              
+            </div>
+          </div>
 
         {/* Criterios de evaluación */}
         <div className="container mt-[6rem] mb-[8rem] py-10">
@@ -339,9 +581,9 @@ export default function Home({ Component, pageProps }) {
               </div>
             </div>
           </div>
-          <p className="w-full lg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
+          <p className="w-full lhover:text-whiteg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
               dark:text-slate-200 font-thin mb-1 pb-8 mx-auto">
-            Nuestros programas están diseñados para equiparlo con los elementos clave para sobresalir en su campo. Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
+            Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y conocimiento.
           </p>
           <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
             <Carousel className="mb-6">
@@ -419,10 +661,10 @@ export default function Home({ Component, pageProps }) {
               Gratis
             </span>
           </h1>
-          <p className="text-xl text-muted-foreground pt-1 pb-8 mb-5">
+          <p className="text-xl text-muted-foreground pt-1 pb-3 mb-5">
             Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.
           </p>
-          <SecondaryButton href="./asesor" linkText="Agenda una evaluación" />
+          <SecondaryButton href="./asesor" linkText="Solicitar información" />
         </section>
         {/* Features List Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
@@ -577,23 +819,10 @@ export default function Home({ Component, pageProps }) {
             <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
               ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
             </h1>
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-10 w-full md:w-3/4">
+            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-3 w-full md:w-3/4">
               Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
             </p>
-            <Dialog>
-              <DialogTrigger>
-                <ButtonAlike ButtonText="Acerca de nosotros" />
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
-                  <DialogDescription>
-                    This action cannot be undone. This will permanently delete your account
-                    and remove your data from our servers.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+            <SecondaryButton href="./soluciones#acerca" linkText="Acerca de nosotros" />
           </div>
           <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
             <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
@@ -640,14 +869,14 @@ export default function Home({ Component, pageProps }) {
         </section>
         <section className="pb-[10rem] mt-10 h-auto">
           {/* Seccion de testimonios */}
-          <div className="container">
+          <div className="container bg-slate-50 dark:bg-slate-900 rounded-2xl py-8">
             <p className="text-center text-muted-foreground text-lg uppercase tracking-[0.2rem] py-4">
               Testimonios
             </p>
-            <h2 className="text-center text-3xl font-extrabold tracking-tight lg:text-5xl mb-4 mt-2">
+            <h2 className="text-center text-3xl font-bold tracking-tight lg:text-4xl mb-4 mt-2">
               Casos de éxito
             </h2>
-            <span className="w-[11.5rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+            <span className="w-[9rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
             <Testimonios />
           </div>
         </section>
@@ -661,7 +890,7 @@ export default function Home({ Component, pageProps }) {
                 Libere su potencial con nuestros programas
               </h5>
               <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-[1.5rem]">
-                Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y su carrera.
+              Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
               </p>
             </div>
             <CtaButton href="./proceso" linkText="Comienza ahora" />

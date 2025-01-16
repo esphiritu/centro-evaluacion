@@ -10,7 +10,7 @@ function Footer() {
         <span className="w-[7.5rem] h-[3px] bg-teal-300 inline-block"></span>
           <div className="flex flex-col lg:flex-row md:justify-between justify-center">
             <div className="py-5">
-              <h5 className="text-lg font-bold pt-4">Centro de evaluación</h5>
+              <h5 className="text-lg font-bold pt-4">Centro de evaluación autorizado</h5>
               <p className="text-base pt-1 pb-4">Cédula de acreditación: CE009241.2024</p>
               <div className="py-2">
                 <p className="text-lg font-bold pt-4">Servicios</p>
@@ -29,7 +29,7 @@ function Footer() {
                 <Mail size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold pt-5 pb-1">Buzón de quejas</p>
-              <p className="mb-4">¿Qué podemos hacer para mejorar Proyecta Empresarial?</p>
+              <p className="mb-4">¿Qué podemos hacer para mejorar <span className="font-bold">Proyecta Empresarial</span>?</p>
               <Button
                 className="
                   py-6 

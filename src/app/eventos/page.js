@@ -10,6 +10,14 @@ import {
 } from "@/components/ui/carousel";
 import { CalendarDays, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 // Images
 import Convencion from "@/public/img/Convencion-2024.jpg";
 // Custom components
@@ -17,6 +25,7 @@ import MainLink from "@/components/atoms/MainLink";
 import SecondaryLink from "@/components/atoms/SecondaryLink";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import Footer from "@/components/organisms/Footer";
+import ButtonAlike from "@/components/atoms/ButtonAlike";
 
 // Lucide icons
 import { Check } from "lucide-react";
@@ -51,7 +60,7 @@ export default function Socios() {
                       </span>
                     </span></h1>
                   <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
-    
+
                 </div>
                 {/* Información general del evento */}
                 <div className="flex flex-col lg:flex-row justify-between mt-8 items-center">
@@ -66,12 +75,12 @@ export default function Socios() {
                       <time dateTime="2024-09-28" className="uppercase text-left text-xl font-light px-5">28 SEP 2024</time>
                     </div>
                   </div>
-                  
+
                   <Button className="bg-teal-600 hover:bg-teal-700 px-4 text-lg text-white font-extrabold mt-5">Regístrate</Button>
                 </div>
                 <p className="text-base md:text-lg text-right mt-6"><span className="font-bold">Webinar gratuito.</span> Cupo limitado</p>
               </div>
-  
+
             </CarouselItem>
             <CarouselItem>
               <h1 className="text-2xl md:text-3xl">Presentación del libro</h1>
@@ -95,23 +104,36 @@ export default function Socios() {
                   <li className="flex justify-center items-center py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Buen manejo del estrés</li>
                   <li className="flex justify-center items-center py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Mejorar la comunicación</li>
                 </ol>
-                <SecondaryButton linkText="Participar" href="./" className="" />
+                <Dialog>
+                  <DialogTrigger>
+                    <ButtonAlike ButtonText="Agendar lugar" />
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Are you absolutely sure?</DialogTitle>
+                      <DialogDescription>
+                        This action cannot be undone. This will permanently delete your account
+                        and remove your data from our servers.
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-teal-100 to-27% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-teal-200 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
-  
+
         <section className="container mt-[8rem]">
           <h2 className="text-3xl font-bold py-4 mb-[5rem]">Nuestros presentadores</h2>
-  
+
         </section>
 
         <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
           <h3 className="text-3xl font-bold">Eventos programados</h3>
         </section>
-  
+
         <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
           <h3 className="text-3xl font-bold">Conoce información inportante de los eventos</h3>
 

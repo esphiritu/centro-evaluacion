@@ -88,13 +88,13 @@ export default function Testimonios() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <div className="absolute -bottom-4 md:-bottom-8 right-[50%] bg-slate-200 dark:bg-slate-600 max-w-min px-3 py-2 rounded-full h-[2rem]">
+      <div className="absolute -bottom-4 md:bottom-1 left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
         <div className="flex items-center justify-center gap-2">
         {indicators.map((_, indx) => (
             <div
               key={indx}
               className={`
-              transition-all w-3 h-3 bg-black dark:bg-white rounded-full
+              transition-all w-3 h-3 bg-white dark:bg-white rounded-full
               ${current === indx + 1 ? "p-2" : "bg-opacity-50 dark:bg-opacity-30"}
             `}
             />
