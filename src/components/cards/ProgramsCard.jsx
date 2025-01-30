@@ -50,8 +50,8 @@ const programs = [
 export default function CoursesCard() {
   return (
     programs.map((program => (
-      <div key={program.ProgramId} className={`relative flex ${program.flexColDirection} ${program.flexRowDirection} justify-center mb-[2rem] md:mb-[7rem] py-4 md:pt-2 md:pb-10 w-full drop-shadow-lg`}>
-        <div className={`w-full lg:w-1/2 text-left h-auto lg:h-[27rem] px-6 md:px-[3.5rem] py-6 lg:py-4 bg-white dark:bg-gray-800 ${program.bgColor} ${program.flexRowDirection === "lg:flex-row-reverse" ? "lg:rounded-r-xl lg:rounded-l-none" : "lg:rounded-l-xl lg:rounded-r-none"} ${program.flexColDirection === "flex-col-reverse" ? "rounded-b-xl" : "rounded-t-xl"}`}>
+      <div key={program.ProgramId} className="relative flex flex-col-reverse lg:flex-row justify-center mb-[2rem] md:mb-[7rem] py-4 md:pt-2 md:pb-10 w-full drop-shadow-lg">
+        <div className="w-full lg:w-1/2 text-left h-auto lg:h-[27rem] px-6 md:px-[3.5rem] py-6 lg:py-4 bg-white dark:bg-gray-800 lg:rounded-l-xl lg:rounded-r-none rounded-b-xl rounded-t-none">
           <div className="flex justify-end mb-4">
             <div className="mt-6">
               <p className="tracking-wider text-2xl text-teal-500 font-bold py-1">
@@ -77,7 +77,6 @@ export default function CoursesCard() {
             
             <SecondaryLink href={program.ProgramHrefLink} linkText="Conoce el programa" className="" />
           </div>
-
         </div>
         <div className="relative w-full h-[18rem] lg:h-[27rem] lg:w-2/5 overflow-hidden">
           <Image
@@ -87,7 +86,7 @@ export default function CoursesCard() {
             fill={true}
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw,"
-            className={`${program.flexRowDirection === "lg:flex-row-reverse" ? "lg:rounded-l-xl lg:rounded-r-none" : "lg:rounded-r-xl lg:rounded-l-none"} ${program.flexColDirection === "flex-col-reverse" ? "rounded-t-xl" : "rounded-b-xl"}`}
+            className="lg:rounded-r-xl lg:rounded-l-none rounded-t-xl rounded-b-none"
           />
           {/* status indicator */}
           <div className="absolute top-2 left-10">

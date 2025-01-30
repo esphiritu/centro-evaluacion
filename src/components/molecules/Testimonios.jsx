@@ -28,7 +28,7 @@ export default function Testimonios() {
   for (let i = 0; i < count; i++) {
     indicators.push(<div key={i}></div>);
   }
- 
+
   // Initializes the carousel API and sets up event listeners
   React.useEffect(() => {
     // Checks if api is not null, false or undefined. If it is then return, otherwise go to the next line
@@ -40,7 +40,7 @@ export default function Testimonios() {
     setCount(api.scrollSnapList().length)
     // Sets the initial current state based on the selected scroll snap
     setCurrent(api.selectedScrollSnap() + 1)
- 
+
     // listens for the Select event from the carousel and updates the current state accordingly
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1)
@@ -58,8 +58,26 @@ export default function Testimonios() {
     >
       <CarouselContent className="p-0 md:p-5 h-auto md:h-[32rem]">
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-          <div className="w-full scroll-m-20">
-            <Image src={testimonial} width={120} height={120} className="w-fit mx-auto rounded-full" alt="Picture of ..."></Image>
+          <div className="flex justify-center items-center w-full scroll-m-20">
+            <Image src={testimonial} width={100} height={100} className="w-fit rounded-full" alt="Picture of ..."></Image>
+            <div className="px-10 text-left">
+              <p className="font-bold text-xl">Sara Wilson</p>
+              <p className="text-muted-foreground">Diseñadora profesional</p>
+            </div>
+          </div>
+          <div className="relative w-4/5 md:w-2/3 mx-auto">
+            <p className="text-lg md:text-xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
+            <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
+            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
+          </div>
+        </CarouselItem>
+        <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
+          <div className="flex justify-center items-center  w-full scroll-m-20">
+            <Image src={testimonialOne} width={100} height={100} className="w-fit rounded-full" alt="Picture of ..."></Image>
+            <div className="px-10 text-left">
+              <p className="font-bold text-xl">Alejandro García</p>
+              <p className="text-muted-foreground">Profesor universitario</p>
+            </div>
           </div>
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
@@ -68,18 +86,12 @@ export default function Testimonios() {
           </div>
         </CarouselItem>
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-        <div className="w-full scroll-m-20">
-            <Image src={testimonialOne} width={120} height={120} className="w-fit mx-auto rounded-full" alt="Picture of ..."></Image>
-          </div>
-          <div className="relative w-4/5 md:w-2/3 mx-auto">
-            <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
-            <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
-            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
-          </div>
-        </CarouselItem>
-        <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
-        <div className="w-full scroll-m-20">
-            <Image src={testimonialTwo} width={120} height={120} className="w-fit mx-auto rounded-full" alt="Picture of ..."></Image>
+          <div className="flex justify-center items-center w-full scroll-m-20">
+            <Image src={testimonialTwo} width={100} height={100} className="w-fit rounded-full" alt="Picture of ..."></Image>
+            <div className="px-10 text-left">
+              <p className="font-bold text-xl">Mónica Venegas</p>
+              <p className="text-muted-foreground">Arquitecta</p>
+            </div>
           </div>
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
@@ -90,7 +102,7 @@ export default function Testimonios() {
       </CarouselContent>
       <div className="absolute -bottom-4 md:bottom-1 left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
         <div className="flex items-center justify-center gap-2">
-        {indicators.map((_, indx) => (
+          {indicators.map((_, indx) => (
             <div
               key={indx}
               className={`

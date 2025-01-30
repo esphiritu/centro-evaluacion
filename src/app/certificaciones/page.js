@@ -7,45 +7,13 @@ import cursos from "@/public/img/cursos.svg";
 import heroSection from "@/public/img/hero-section.png";
 import ISOimage from "@/public/img/depositphotos_356301122-stock-illustration-iso-9001-icon-standard-quality.jpg";
 
+// Lucide icons
+import { Sprout, } from "lucide-react";
+
 // Shandcn UI components
 
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Lightbulb, BookOpenCheck, Hammer, Medal, User, Sprout, BookMarked, ShieldCheck, Brain, } from "lucide-react";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import {
   Dialog,
   DialogContent,
@@ -55,17 +23,17 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+
 // Custom components
 import ProgramsCard from "@/components/cards/ProgramsCard";
 import estandarIcon from "@/public/img/estandar-de-competencia.svg";
 import Footer from "@/components/organisms/Footer";
-import SecondaryButton from "@/components/atoms/SecondaryButton";
 import MainLink from "@/components/atoms/MainLink";
-import SecondaryLink from "@/components/atoms/SecondaryLink";
+import CtaButton from "@/components/atoms/CtaButton";
 import ButtonAlike from "@/components/atoms/ButtonAlike";
 
 // SVG elements
-const Headset = <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+const Headset = <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" /><path d="M21 16v2a4 4 0 0 1-4 4h-5" /></svg>
 
 // Data for components
 const estandares = [
@@ -122,25 +90,9 @@ const estandares = [
 export default function Certificaciones(params) {
   return (
     <>
-      <header className="w-full py-2 mb-10">
-        <div className="container z-20 flex flex-col-reverse lg:flex-row h-auto lg:h-[36rem] justify-center items-center">
-          <div className="relative w-full lg:w-3/5 flex flex-col justify-normal items-center lg:items-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 mt-2 lg:mt-10">
-            <h1 className="w-4/5 text-2xl md:text-4xl lg:text-5xl text-left font-bold md:leading-[2.5rem] pt-5 pb-4 pr-5">Certificación de Competencias Laborales
-            </h1>
-            <p className="w-4/5 text-lg md:text-xl text-left text-slate-500 py-1 mb-4 pr-5 lg:pr-10">
-              Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
-            </p>
-            
-            <SecondaryButton href="./" linkText="Comienza tu certificación" />
-          </div>
-        </div>
-      </header>
-
-
-
       <main className="w-full mt-6">
         <section className="py-2 h-auto">
-          
+
           <Separator className="my-[5rem]" />
           <div className="container mt-[6rem]">
             <h3 className="text-2xl font-bold">Documentos básicos</h3>
@@ -188,8 +140,8 @@ export default function Certificaciones(params) {
             <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
               Explora los programas que tenemos para tí
             </h2>
-            <p className="text-slate-400 text-xl text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">
-              Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
+            <p className="text-muted-foreground text-xl text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">
+              Domina las habilidades más demandadas actualmente con capacitación personalizada en áreas como liderazgo, comunicación, marketing digital y más. Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
             </p>
             <ProgramsCard />
           </div>
@@ -213,77 +165,6 @@ export default function Certificaciones(params) {
           </div>
         </div>
         <section className="mx-auto">
-          {/* <div className="py-[7rem] px-5 lg:px-0 mb-[5rem]">
-            <Accordion 
-              type="single" 
-              collapsible 
-              className="w-full md:w-4/5 m-auto ">
-              <h2 className="text-3xl font-bold pt-6 pb-3">
-                Preguntas frecuentes
-              </h2>
-              <p className="
-                text-muted-foreground 
-                text-xl 
-                mb-[3rem]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-              </p>
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="
-                text-pretty 
-                text-left
-                text-slate-600
-                dark:text-slate-300 
-                font-bold">¿En cuanto tiempo me entregan mi certificado?</AccordionTrigger>
-                <AccordionContent className="
-                text-pretty 
-                text-muted-foreground 
-                py-8">
-                  En promedio, 30 días a partir de la evaluación
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-pretty text-left text-slate-600 dark:text-white font-bold">¿Qué es una alineación?</AccordionTrigger>
-                <AccordionContent className="
-                  text-pretty 
-                  text-muted-foreground 
-                  py-8">
-                  La alineación es
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="
-                  text-pretty 
-                  text-left
-                  text-slate-600 
-                  dark:text-slate-300 
-                  font-bold">
-                    ¿Puedo hacer la evaluación en línea?
-                </AccordionTrigger>
-                <AccordionContent className="
-                  text-pretty 
-                  text-muted-foreground 
-                  py-8">
-                  En algunos casos, dependiendo del estándar de competencia al que estés aplicando. Algunos estándares de competencia lo permiten, mientras que otros no.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="
-                  text-pretty 
-                  text-left
-                  text-slate-600 
-                  dark:text-slate-300 
-                  font-bold">
-                    ¿Cuál es el costo de la evaluación diagnóstica?
-                </AccordionTrigger>
-                <AccordionContent className="
-                  text-pretty 
-                  text-muted-foreground 
-                  py-8">
-                  Ninguno. La evalución diagnóstica la ofrecemos gratis.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div> */}
           <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-[4rem] h-auto lg:h-[30rem]">
             <div className="px-2">
               <p className="text-4xl text-center text-white font-bold mb-3">
@@ -293,21 +174,21 @@ export default function Certificaciones(params) {
                 Estamos listos para asesorarte. Un experto te ayudará a resolver todas las dudas.
               </h1>
               <Dialog>
-                  <DialogTrigger className="block w-fit mx-auto">
-                    <ButtonAlike ButtonText="Contactar soporte" iconButton={Headset} className="" />
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>
-                        <p className="text-xl">Selecciona un tema con el que necesites ayuda.</p>
-                      </DialogTitle>
-                      <DialogDescription>
-                        
-                        <p>Lorem Ipsum tido width .</p>
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
+                <DialogTrigger className="block w-fit mx-auto">
+                  <ButtonAlike ButtonText="Contactar soporte" iconButton={Headset} className="" />
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>
+                      <p className="text-xl">Selecciona un tema con el que necesites ayuda.</p>
+                    </DialogTitle>
+                    <DialogDescription>
+
+                      <p>Lorem Ipsum tido width .</p>
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </section>

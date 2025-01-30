@@ -6,7 +6,7 @@ function TypingEffect() {
     <>
       <Typewriter
         options={{
-          strings: ['Aprendamos junto con la AI', 'Ventas directas', 'Marketing digital', 'Gestión emocional', 'Administración del tiempo',],
+          strings: ['Desarrollo de habilidades digitales', 'Programas personalizados', 'Aprendizaje práctico', 'Formatos flexibles', 'Instructores expertos',],
           autoStart: true,
           loop: true,
           delay: 100,

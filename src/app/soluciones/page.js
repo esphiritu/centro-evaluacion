@@ -19,49 +19,54 @@ export default function Soluciones() {
 
         </section>
         <section className="container">
-          <h2 className="text-4xl text-center font-bold py-4">Servicios</h2>
-          <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
-            <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
-              <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
-                <Presentation size={32} strokeWidth={2} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-left mt-8 mb-4">
-                Capacitaciones
-              </h3>
-              <p className="text-lg text-muted-foreground text-left">
-                Texto que desccribe el servicio que se presta
-              </p>
-            </li>
-            <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
-              <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
-                <Rocket size={32} strokeWidth={2} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-left mt-8 mb-4">
-                Consultoría
-              </h3>
-              <p className="text-lg text-muted-foreground text-left">
-                Texto que desccribe el servicio que se presta
-              </p>
-            </li>
-            <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
-              <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
-                <Dumbbell size={32} strokeWidth={2} className="text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-left mt-8 mb-4">
-                Coaching
-              </h3>
-              <p className="text-lg text-muted-foreground text-left">
-                Texto que desccribe el servicio que se presta
-              </p>
-            </li>
-          </ul>
+          <div className=" mb-[10rem] mt-10">
+            <h2 className="text-4xl text-center font-bold py-4">Servicios</h2>
+            <p className="w-full lg:w-2/3 text-xl text-muted-foreground text-center mb-[5rem] mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
+            <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
+              <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
+                <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                  <Presentation size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                  Capacitaciones
+                </h3>
+                <p className="text-lg text-muted-foreground text-left">
+                  Impulsa tu negocio con nuestras soluciones de capacitación personalizadas, diseñadas para potenciar el rendimiento de su equipo.
+                </p>
+              </li>
+              <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
+                <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                  <Rocket size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                  Consultoría
+                </h3>
+                <p className="text-lg text-muted-foreground text-left">
+                Nuestro equipo trabajará contigo para identificar oportunidades, superar desafíos y alcanzar tus objetivos de manera eficiente.
+                </p>
+              </li>
+              <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
+                <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                  <Dumbbell size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                  Coaching
+                </h3>
+                <p className="text-lg text-muted-foreground text-left">
+                  Construya liderazgo, mejore la toma de decisiones y maximize el impacto de los altos directivos en su organización.
+                </p>
+              </li>
+            </ul>
+          </div>
 
-          <h3 className="text-3xl text-center font-bold py-4 mb-[5rem]">Portafolio</h3>
+          <div className="mb-[10rem]">
+            <h3 className="text-3xl text-center font-bold py-10">Portafolio</h3>
+          </div>
 
           <div className="border rounded-xl px-10 py-10">
             <h3 className="w-full text-3xl text-center font-bold py-1 mb-3">Resultados medibles</h3>
-            <p className="w-5/6 text-xl text-center md:text-2xl text-pretty font-thin dark:text-white mb-[2.5rem] mx-auto">
-              Una consultora de estrategia ha llevado a cabo un análisis comparativo paralelo para evaluar el ahorro de tiempo y el retorno de la inversión frente a los sistemas de gastos tradicionales.
+            <p className="w-5/6 text-xl text-center text-pretty text-muted-foreground mb-[2.5rem] mx-auto">
+              Nuestros servicios han ayudado a innumerables individuos y empresas a alcanzar un éxito medible. Ahorro de tiempo y el retorno de la inversión frente a los sistemas de gastos tradicionales.
             </p>
             <div className="flex flex-col lg:flex-row justify-around py-10">
               <Card>
@@ -96,8 +101,12 @@ export default function Soluciones() {
           </div>
         </section>
       </main>
-      <section className="py-[6rem] bg-blue-100 dark:bg-gray-900 my-10" id="acerca">
-        <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span></h4>
+      <section className="container py-10 mt-[9rem]" id="acerca">
+        <h4 className="text-3xl font-bold pt-[6rem] mb-4">Nuestro equipo</h4>
+        <p className="w-full lg:w-5/6 text-xl">En Proyecta Empresarial, nuestra misión es <strong>empoderar a nuestros clientes con soluciones educativas</strong> que impulsan el éxito y el crecimiento organizacional. Estamos dedicados a brindar un servicio excepcional, fomentar asociaciones a largo plazo y superar continuamente las expectativas.</p>
+      </section>
+      <section className="py-[6rem] bg-teal-200 dark:bg-gray-900 mt-[12rem]">
+        <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de <span className="bg-slate-400 whitespace-nowrap px-3 rounded-md text-white font-bold">Proyecta Empresarial</span></h4>
         <div className="relative container px-10 flex flex-col space-y-8">
           {/* First milestone */}
           <div className="relative z-10">
@@ -121,14 +130,12 @@ export default function Soluciones() {
               </div>
             </div>
           </div>
-          <div className="absolute w-2 h-full border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
+          <div className="absolute w-2 h-full bg-white border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
         </div>
       </section>
-      <section className="container py-10">
-        <h4 className="text-3xl font-bold py-4 mb-[5rem]">Nuestro equipo</h4>
-      </section>
-      <div className="container">
-        <h5 className="text-3xl font-bold py-4 mb-[5rem]">Contacto</h5>
+      <div className="container mt-[8rem]">
+        <h5 className="text-3xl font-bold py-4">Contacto empresarial</h5>
+        <p className="text-xl mb-[5rem]">Confía en nosotros para ser tu socio estratégico. Juntos, construiremos un futuro sólido y próspero para tu negocio.</p>
         <ul className="list-disc pl-5 text-xl text-gray-800 dark:text-gray-400">
           <li>Dirección</li>
           <li>Teléfono</li>

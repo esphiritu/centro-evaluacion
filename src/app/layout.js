@@ -1,6 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from 'next-themes';
-import HybridHeader from "@/components/organisms/HybridHeader";
+import HybridHeader from "@/components/organisms/HybridHeader"; 
+import { Toaster } from '@/components/ui/toaster';
 
 // Google Fonts
 import { Yantramanav } from "next/font/google";
@@ -21,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" dir="ltr" suppressHydrationWarning={true} className="!scroll-smooth">
+    <html lang="es" dir="ltr" suppressHydrationWarning={true} className="scroll-smooth">
       <body className={`${yan.className} pt-20 text-[#182e4f] dark:text-gray-50 antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider 
           attribute="class"
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           <HybridHeader />
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

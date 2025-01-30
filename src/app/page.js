@@ -236,7 +236,7 @@ export default function Home({ Component, pageProps }) {
                 La <span className="">certificación de competencias laborales</span> mejorarán tus habilidades e impulsarán tu carrera profesional
               </h1>
               <p className="text-xl md:text-2xl text-center lg:text-left text-white font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
-                Respalda tus conocimientos y experiencia con certificaciones
+                Respalda tus conocimientos y experiencia con las certificaciones más valoradas en tu industria
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
                 <CtaButton href="./proceso" linkText="Comenzar ahora" className="text-center" />
@@ -426,7 +426,7 @@ export default function Home({ Component, pageProps }) {
                             <TableRow
                               key={estandar.id}
                               className="group/item">
-                              <TableCell className="text-left text-base lg:text-xl">{estandar.title}</TableCell>
+                              <TableCell className="text-teal-600 text-left text-base lg:text-xl"><span className="bg-teal-50 px-3 py-2 rounded-sm">{estandar.title}</span></TableCell>
                               <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
                                 <Drawer className="relative">
                                   <DrawerTrigger className="text-left text-base lg:text-xl">
@@ -568,7 +568,7 @@ export default function Home({ Component, pageProps }) {
         <div className="container mt-[6rem] mb-[8rem] py-10">
           <div id="textSlider" className="relative w-full lg:w-1/2 mx-auto pl-0 md:pl-[4rem]">
             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
-              <p>Refuerza los elementos clave.</p>
+              <p>Refuerza cuatro aspectos clave.</p>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
               <div className="h-[5.6rem] overflow-hidden">
@@ -581,9 +581,9 @@ export default function Home({ Component, pageProps }) {
               </div>
             </div>
           </div>
-          <p className="w-full lhover:text-whiteg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
+          <p className="w-full lg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
               dark:text-slate-200 font-thin mb-1 pb-8 mx-auto">
-            Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y conocimiento.
+                Únase a nosotros para desarrollar las habilidades, la confianza así como los conocimientos para prosperar en un mundo competitivo y mejorar sus perspectivas profesionales.
           </p>
           <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
             <Carousel className="mb-6">
@@ -662,7 +662,7 @@ export default function Home({ Component, pageProps }) {
             </span>
           </h1>
           <p className="text-xl text-muted-foreground pt-1 pb-3 mb-5">
-            Resultados confiables respaldados por el Organismo Certificador más importante de America Latina: <em>ICE México</em>.
+          Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
           </p>
           <SecondaryButton href="./asesor" linkText="Solicitar información" />
         </section>
@@ -699,9 +699,9 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-500">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-200">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-lg lg:text-2xl text-center w-full">
+                        <h1 className="text-lg lg:text-2xl text-center w-full">
                           <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Capacitaciones
                           </Link>
@@ -723,9 +723,9 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-orange-400">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#ffccaa]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                        <h1 className="text-lg lg:text-xl text-center w-full">
                           <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Coaching
                           </Link>
@@ -747,9 +747,9 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-blue-500">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#aaccff]">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                        <h1 className="text-lg lg:text-xl text-center w-full">
                           <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Conferencias
                           </Link>
@@ -771,9 +771,9 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-purple-400">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#C5CAFF]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                        <h1 className="text-lg lg:text-xl text-center w-full">
                           <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Talleres
                           </Link>
@@ -794,9 +794,9 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-cyan-600">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-[#faccd4]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-white text-lg lg:text-xl text-center w-full">
+                        <h1 className="text-lg lg:text-xl text-center w-full">
                           <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Consultoría
                           </Link>
@@ -867,16 +867,14 @@ export default function Home({ Component, pageProps }) {
             </li>
           </ul>
         </section>
-        <section className="pb-[10rem] mt-10 h-auto">
+        <section className="pb-[12rem] mt-10 h-auto">
           {/* Seccion de testimonios */}
-          <div className="container bg-slate-50 dark:bg-slate-900 rounded-2xl py-8">
-            <p className="text-center text-muted-foreground text-lg uppercase tracking-[0.2rem] py-4">
-              Testimonios
-            </p>
-            <h2 className="text-center text-3xl font-bold tracking-tight lg:text-4xl mb-4 mt-2">
+          <div className="container bg-slate-50 dark:bg-slate-900 rounded-3xl py-8">
+            <h2 className="text-center text-3xl font-bold tracking-tight lg:text-4xl mb-4 mt-6">
               Casos de éxito
             </h2>
-            <span className="w-[9rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+            <span className="w-[7rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+            
             <Testimonios />
           </div>
         </section>
@@ -890,7 +888,7 @@ export default function Home({ Component, pageProps }) {
                 Libere su potencial con nuestros programas
               </h5>
               <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-[1.5rem]">
-              Únase a nosotros para mejorar sus conocimientos y mejorar sus perspectivas profesionales.
+              Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y conocimientos.
               </p>
             </div>
             <CtaButton href="./proceso" linkText="Comienza ahora" />
