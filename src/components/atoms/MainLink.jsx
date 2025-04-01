@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function MainLink({ href, linkText }) {
   return (
-    <p className="text-xl mb-8">
+    <p className="text-xl text-right mb-8">
       <Link 
         href={href} 
         className="

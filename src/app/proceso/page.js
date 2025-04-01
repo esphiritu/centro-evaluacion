@@ -37,8 +37,8 @@ export default function Proceso() {
 
         </div>
         <div className="w-full lg:w-1/2 border rounded-2xl shadow-lg px-[3rem] py-6">
-          <h4 className="text-3xl font-bold py-4 mb-3">Información general</h4>
-          <p className="text-lg mb-8">Completa los campos requeridos para iniciar el trámite de certificación laboral. Una vez recibida tu solicitud, uno de nuestros ejecutivos se pondrá en contacto contigo para continuar el proceso.</p>
+          <h4 className="text-3xl font-bold py-4 mb-3">Información del aspirante</h4>
+          <p className="text-lg text-muted-foreground mb-8">Completa los campos requeridos para iniciar el trámite de certificación laboral. Una vez recibida tu solicitud, uno de nuestros ejecutivos se pondrá en contacto contigo para continuar el proceso.</p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit()} className="w-2/3 space-y-6">
               <FormField
@@ -46,7 +46,7 @@ export default function Proceso() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-bold">Ingresa nombre completo</FormLabel>
+                    <FormLabel className="text-lg">Ingresa nombre completo</FormLabel>
                     <FormControl>
                       <Input placeholder="Nombre" {...field} autoComplete="true" />
                     </FormControl>
@@ -56,19 +56,21 @@ export default function Proceso() {
               />
               <Button type="submit" className="
                       h-auto
+                      w-fit
                       transition-all 
                       duration-300
                       ease-in-out 
                       text-center 
-                      bg-amber-300
-                      hover:bg-amber-400
+                      bg-teal-500
+                      hover:bg-teal-500
                       rounded-sm 
-                      text-slate-800 
+                      text-white 
                       font-bold
                       py-3
                       px-8
-                      md:text-xl 
-                      shadow-md">
+                      md:text-lg 
+                      shadow-md
+                      block">
                 Enviar solicitud</Button>
             </form>
           </Form>

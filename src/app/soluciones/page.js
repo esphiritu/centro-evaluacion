@@ -66,7 +66,7 @@ export default function Soluciones() {
           <div className="border rounded-xl px-10 py-10">
             <h3 className="w-full text-3xl text-center font-bold py-1 mb-3">Resultados medibles</h3>
             <p className="w-5/6 text-xl text-center text-pretty text-muted-foreground mb-[2.5rem] mx-auto">
-              Nuestros servicios han ayudado a innumerables individuos y empresas a alcanzar un éxito medible. Ahorro de tiempo y el retorno de la inversión frente a los sistemas de gastos tradicionales.
+              Nuestros servicios han ayudado a innumerables individuos y empresas a alcanzar un éxito medible. Ahorro de tiempo, reducción de costos, mayor productividad y mejor retorno de la inversión.
             </p>
             <div className="flex flex-col lg:flex-row justify-around py-10">
               <Card>

@@ -95,7 +95,7 @@ export default function Certificaciones(params) {
 
           <Separator className="my-[5rem]" />
           <div className="container mt-[6rem]">
-            <h3 className="text-2xl font-bold">Documentos básicos</h3>
+            <h3 className="text-2xl font-bold">Documentos básicos del aspirante</h3>
             <div className="flex flex-col lg:flex-row">
               <div className="w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
                 <p className="text-lg mb-5 leading-6">
@@ -128,16 +128,9 @@ export default function Certificaciones(params) {
           </div>
         </section>
         <section className="flex-grow-0 bg-blue-50/85 dark:bg-gray-900 mt-[6rem]">
-          <div className="bg-transparent max-w-28 mx-auto pt-[5rem]">
-            <Image
-              src={cursos}
-              width={140}
-              height={140}
-              alt="icon for"
-              className="w-auto" />
-          </div>
+          
           <div className="container w-full pb-10 mt-6">
-            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4 pt-[5rem]">
               Explora los programas que tenemos para tí
             </h2>
             <p className="text-muted-foreground text-xl text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">

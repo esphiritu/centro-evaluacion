@@ -121,7 +121,7 @@ export default function Socios() {
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-teal-200 to-27% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% md:from-2% to-slate-200 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
 

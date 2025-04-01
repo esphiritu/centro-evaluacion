@@ -25,7 +25,7 @@ function Footer() {
               </div>
             </div>
             <div className="text-lg py-5">
-              <div className="bg-gray-800 rounded-full p-3 w-fit h-fit">
+              <div className="bg-teal-400 rounded-full p-3 w-fit h-fit">
                 <Mail size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold pt-5 pb-1">Buzón de quejas</p>
@@ -47,7 +47,7 @@ function Footer() {
               </Button>
             </div>
             <div className="text-lg py-5">
-              <div className="bg-gray-800 rounded-full p-3 w-fit h-fit">
+              <div className="bg-teal-400 rounded-full p-3 w-fit h-fit">
                 <MessageSquareText size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold pt-5 pb-1">Contáctanos ahora</p>
