@@ -45,12 +45,8 @@ import Footer from "@/components/organisms/Footer";
 import Testimonios from "@/components/molecules/Testimonios";
 import CtaButton from "@/components/atoms/CtaButton";
 import MainLink from "@/components/atoms/MainLink";
-import OutlineButton from "@/components/atoms/OutlineButton";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import AnimatedText from "@/components/molecules/AnimatedText";
-import SecondaryLink from "@/components/atoms/SecondaryLink";
-import ButtonAlike from "@/components/atoms/ButtonAlike";
-
 // Lucide icons
 import {
   User,
