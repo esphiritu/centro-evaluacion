@@ -15,20 +15,27 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 // Creates a Zod object schema.
 const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Escribe tu nombre completo",
+  }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Escriba un correo válido",
   }),
   subject: z.string({
-    required_error: "Please select a subject.",
+    required_error: "Elija un tema",
   }),
   date: z.date({
-    required_error: "Please select a date.",
+    required_error: "Seleccione una fecha y hora",
   }),
 });
 
 export default function ContactForm() {
   const form = useForm({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+    },
   });
 
   function onSubmit(values) {
@@ -40,40 +47,53 @@ export default function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="your@email.com" {...field} />
-              </FormControl>
-              <FormDescription>We'll never share your email with anyone else.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
+      <FormField
+        control={form.control}
+        name="username"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel className="text-md">Nombre completo</FormLabel>
+            <FormControl>
+              <Input placeholder="Nombre" {...field} autoComplete="true" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="email"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel className="text-md">Email</FormLabel>
+            <FormControl>
+              <Input placeholder="correo@gmail.com" {...field} autoComplete="true" />
+            </FormControl>
+            
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
           control={form.control}
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel className="text-md">Tema</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a subject" />
+                    <SelectValue placeholder="Elije un asunto" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="general">General Inquiry</SelectItem>
-                  <SelectItem value="support">Support</SelectItem>
-                  <SelectItem value="feedback">Feedback</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem className="text-lg" value="general">Pregunta general</SelectItem>
+                  <SelectItem className="text-lg" value="support">Evaluación diagnóstica</SelectItem>
+                  <SelectItem className="text-lg" value="feedback">Costos</SelectItem>
+                  <SelectItem className="text-lg" value="other">Otro</SelectItem>
                 </SelectContent>
               </Select>
-              <FormDescription>Choose the subject that best fits your message.</FormDescription>
+              <FormDescription>Elije un asunto que deseas tratar</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -83,15 +103,15 @@ export default function ContactForm() {
           name="date"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>Date</FormLabel>
+              <FormLabel className="text-base">Fecha</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
                     <Button
                       variant={"outline"}
-                      className={cn("w-[240px] pl-3 text-left font-normal", !field.value && "text-muted-foreground")}
+                      className={cn("w-[240px] h-[3.2rem] pl- 4 text-left font-normal text-lg", !field.value && "text-muted-foreground")}
                     >
-                      {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
+                      {field.value ? format(field.value, "PPP") : <span>Elige una fecha</span>}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
                   </FormControl>
@@ -111,7 +131,24 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="
+                      h-auto
+                      w-fit
+                      transition-all 
+                      duration-300
+                      ease-in-out 
+                      text-center 
+                      bg-teal-500
+                      hover:bg-teal-500
+                      rounded-sm 
+                      text-white 
+                      font-bold
+                      py-3
+                      px-8
+                      md:text-lg 
+                      shadow-md
+                      block">
+                Enviar solicitud</Button>
       </form>
     </Form>
   );

@@ -91,8 +91,11 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full mt-6">
+      <section className="container py-10 mt-[9rem]">
+        <h4 className="text-3xl font-bold pt-[6rem] mb-4">Niveles de competencia</h4>
+        <p className="w-full lg:w-5/6 text-xl text-muted-foreground">Nuestra misión es <strong>empoderar a nuestros clientes con soluciones educativas</strong> que impulsan el éxito y el crecimiento organizacional. Estamos dedicados a brindar un servicio excepcional, fomentar asociaciones a largo plazo y superar continuamente las expectativas.</p>
+      </section>
         <section className="py-2 h-auto">
-
           <Separator className="my-[5rem]" />
           <div className="container mt-[6rem]">
             <h3 className="text-2xl font-bold">Documentos básicos del aspirante</h3>

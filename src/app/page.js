@@ -450,7 +450,7 @@ export default function Home({ Component, pageProps }) {
                                             <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
                                           </div>
                                           <p className="mb-3 px-4">
-                                            <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel en el Sistema Nacional de Competencia: </span>
+                                            <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel de Competencia: </span>
                                             {estandar.snc}
                                           </p>
                                         </li>
