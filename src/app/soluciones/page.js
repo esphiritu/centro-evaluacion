@@ -14,20 +14,20 @@ import SecondImage from "@/public/img/gallery-karen.jpg";
 export default function Soluciones() {
   return (
     <>
-      <main className="w-full pt-19">
+      <main className="w-full pt-19 pt-[8rem]">
         <section>
 
         </section>
         <section className="container">
           <div className=" mb-[10rem] mt-10">
-            <h2 className="text-4xl text-center font-bold py-4">Servicios</h2>
-            <p className="w-full lg:w-2/3 text-xl text-muted-foreground text-center mb-[5rem] mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
+            <h2 className="text-4xl text-center font-bold py-4 mb-6">Servicios</h2>
+            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
             <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
                 <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
                   <Presentation size={32} strokeWidth={2} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                <h3 className="text-2xl text-left mt-8 mb-4">
                   Capacitaciones
                 </h3>
                 <p className="text-lg text-muted-foreground text-left">
@@ -38,7 +38,7 @@ export default function Soluciones() {
                 <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
                   <Rocket size={32} strokeWidth={2} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                <h3 className="text-2xl text-left mt-8 mb-4">
                   Consultoría
                 </h3>
                 <p className="text-lg text-muted-foreground text-left">
@@ -49,7 +49,7 @@ export default function Soluciones() {
                 <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
                   <Dumbbell size={32} strokeWidth={2} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                <h3 className="text-2xl text-left mt-8 mb-4">
                   Coaching
                 </h3>
                 <p className="text-lg text-muted-foreground text-left">
@@ -64,8 +64,8 @@ export default function Soluciones() {
           </div>
 
           <div className="border rounded-xl px-10 py-10">
-            <h3 className="w-full text-3xl text-center font-bold py-1 mb-3">Resultados medibles</h3>
-            <p className="w-5/6 text-xl text-center text-pretty text-muted-foreground mb-[2.5rem] mx-auto">
+            <h3 className="w-full text-3xl text-center font-bold py-1 mb-6">Resultados medibles</h3>
+            <p className="w-5/6 text-2xl text-center text-pretty text-muted-foreground font-light mb-[2.5rem] mx-auto">
               Nuestros servicios han ayudado a innumerables individuos y empresas a alcanzar un éxito medible. Ahorro de tiempo, reducción de costos, mayor productividad y mejor retorno de la inversión.
             </p>
             <div className="flex flex-col lg:flex-row justify-around py-10">
@@ -105,7 +105,7 @@ export default function Soluciones() {
         <h4 className="text-3xl font-bold pt-[6rem] mb-4">Nuestro equipo</h4>
         <p className="w-full lg:w-5/6 text-xl">En Proyecta Empresarial, nuestra misión es <strong>empoderar a nuestros clientes con soluciones educativas</strong> que impulsan el éxito y el crecimiento organizacional. Estamos dedicados a brindar un servicio excepcional, fomentar asociaciones a largo plazo y superar continuamente las expectativas.</p>
       </section>
-      <section className="py-[6rem] bg-teal-200 dark:bg-gray-900 mt-[12rem]">
+      <section className="py-[6rem] bg-slate-100 dark:bg-gray-900 mt-[12rem]">
         <h4 className="container text-3xl font-bold py-4 mb-[5rem]">Acerca de <span className="bg-slate-400 whitespace-nowrap px-3 rounded-md text-white font-bold">Proyecta Empresarial</span></h4>
         <div className="relative container px-10 flex flex-col space-y-8">
           {/* First milestone */}
@@ -130,7 +130,7 @@ export default function Soluciones() {
               </div>
             </div>
           </div>
-          <div className="absolute w-2 h-full bg-white border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
+          <div className="absolute w-2 h-full bg-gray-300 border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
         </div>
       </section>
       <div className="container mt-[8rem]">

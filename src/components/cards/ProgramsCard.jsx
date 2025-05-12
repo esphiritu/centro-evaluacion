@@ -52,14 +52,7 @@ export default function CoursesCard() {
     programs.map((program => (
       <div key={program.ProgramId} className="relative flex flex-col-reverse lg:flex-row justify-center mb-[2rem] md:mb-[7rem] py-4 md:pt-2 md:pb-10 w-full drop-shadow-lg">
         <div className="w-full lg:w-1/2 text-left h-auto lg:h-[27rem] px-6 md:px-[3.5rem] py-6 lg:py-4 bg-white dark:bg-gray-800 lg:rounded-l-xl lg:rounded-r-none rounded-b-xl rounded-t-none">
-          <div className="flex justify-end mb-4">
-            <div className="mt-6">
-              <p className="tracking-wider text-2xl text-teal-500 font-bold py-1">
-                {program.Price}
-              </p>
-            </div>
-          </div>
-          <h2 className="text-2xl font-bold mb-1">
+          <h2 className="text-2xl font-bold mb-1 mt-10">
             {program.ProgramName}
           </h2>
           <p className="text-left text-gray-500 dark:text-gray-400 text-lg pb-3 mb-6">
@@ -74,8 +67,14 @@ export default function CoursesCard() {
                 <span className="px-3">120 horas</span>
               </li>
             </ul>
-            
             <SecondaryLink href={program.ProgramHrefLink} linkText="Conoce el programa" className="" />
+            <div className="flex justify-end mb-4">
+            <div className="mt-6">
+              <p className="tracking-wider text-2xl text-teal-500 font-bold py-1">
+                {program.Price}
+              </p>
+            </div>
+          </div>
           </div>
         </div>
         <div className="relative w-full h-[18rem] lg:h-[27rem] lg:w-2/5 overflow-hidden">

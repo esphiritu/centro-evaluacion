@@ -90,15 +90,15 @@ const estandares = [
 export default function Certificaciones(params) {
   return (
     <>
-      <main className="w-full mt-6">
-      <section className="container py-10 mt-[9rem]">
-        <h4 className="text-3xl font-bold pt-[6rem] mb-4">Niveles de competencia</h4>
-        <p className="w-full lg:w-5/6 text-xl text-muted-foreground">Nuestra misión es <strong>empoderar a nuestros clientes con soluciones educativas</strong> que impulsan el éxito y el crecimiento organizacional. Estamos dedicados a brindar un servicio excepcional, fomentar asociaciones a largo plazo y superar continuamente las expectativas.</p>
-      </section>
+      <main className="w-full mt-6 pt-[8rem]">
+        <section className="container py-10 mt-[9rem]">
+          <h4 className="text-3xl font-bold pt-[6rem] mb-4">Niveles de competencia</h4>
+          <p className="w-full lg:w-5/6 text-xl text-muted-foreground">Nuestra misión es <strong>empoderar a nuestros clientes con soluciones educativas</strong> que impulsan el éxito y el crecimiento organizacional. Estamos dedicados a brindar un servicio excepcional, fomentar asociaciones a largo plazo y superar continuamente las expectativas.</p>
+        </section>
         <section className="py-2 h-auto">
           <Separator className="my-[5rem]" />
           <div className="container mt-[6rem]">
-            <h3 className="text-2xl font-bold">Documentos básicos del aspirante</h3>
+            <h3 className="text-2xl">Documentos básicos del aspirante</h3>
             <div className="flex flex-col lg:flex-row">
               <div className="w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
                 <p className="text-lg mb-5 leading-6">
@@ -112,8 +112,21 @@ export default function Certificaciones(params) {
                 <p className="text-lg mb-5 leading-6">
                   Guía del candidato
                 </p>
-                <Button className="text-xl text-white bg-teal-500 hover:bg-teal-600 px-5 py-1 mr-2 rounded-md z-10 transition-colors  ease-in-out duration-300">
-                  Descargar
+                <Button
+                  variant="outline"
+                  className="py-6 pl-3 pr-5 mt-5 text-xl text-white dark:text-gray-200 bg-gray-800 hover:bg-gray-300 text-center dark:hover:bg-gray-500 mb-3">
+                  <span className="pl-3 pr-3 py-6">Descargar</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.25"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
                 </Button>
               </div>
               <div className="max-w-fit h-fit lg:w-3/12  mt-5 mx-4 lg:mx-0">
@@ -130,13 +143,13 @@ export default function Certificaciones(params) {
             </div>
           </div>
         </section>
-        <section className="flex-grow-0 bg-blue-50/85 dark:bg-gray-900 mt-[6rem]">
-          
-          <div className="container w-full pb-10 mt-6">
-            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4 pt-[5rem]">
+        <section className="flex-grow-0 bg-slate-50/85 dark:bg-gray-900 mt-[6rem]">
+
+          <div className="container w-full pb-10 pt-[3.6rem] mt-6">
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4 pt-[5rem] mb-5">
               Explora los programas que tenemos para tí
             </h2>
-            <p className="text-muted-foreground text-xl text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">
+            <p className="text-muted-foreground text-2xl font-light text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">
               Domina las habilidades más demandadas actualmente con capacitación personalizada en áreas como liderazgo, comunicación, marketing digital y más. Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
             </p>
             <ProgramsCard />

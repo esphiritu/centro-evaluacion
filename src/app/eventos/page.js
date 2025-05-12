@@ -1,5 +1,6 @@
 // Next.js components
 import Image from "next/image";
+import Link from "next/link";
 // Shadcn UI components
 import {
   Carousel,
@@ -40,7 +41,7 @@ export default function Socios() {
         }}
         // autoplay={2900}
         >
-          <CarouselContent className="p-5 h-[38rem] mb-[5rem]">
+          <CarouselContent className="p-5 h-[38rem] mb-[5rem] pt-[8rem]">
             <CarouselItem className="dark:bg-slate-900 rounded-2xl py-10 text-gray-900 dark:text-gray-50">
               <div className="px-[10rem]">
                 <div className="mt-10 h-1/2">
@@ -95,18 +96,19 @@ export default function Socios() {
         <section>
           <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Eventos destacados</h2>
           <div className="relative container flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 px-8 text-center pt-10">
-              <h3 className="text-3xl font-semibold mb-2">Conferecia digital</h3>
-              <p className="text-xl">Mejorar tu productividad y fortalecer tu empresa</p>
-              <div className="text-lg max-h-fit mt-10 mb-10">
-                <p className="font-bold mb-3">Aprenderás:</p>
+            <div className="w-full lg:w-1/2 px-2 text-center pt-10">
+              <h3 className="text-3xl font-light mb-3 uppercase">Liderazgo e IA para emprendedoras</h3>
+              <p className="text-xl mb-4">Mejorar tu productividad y fortalecer tu empresa</p>
+              <span className="w-[7rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+              <div className="text-lg max-h-fit mt-10 mb-8">
+                <p className="mb-3">Aprenderás:</p>
                 <ol className="mb-10">
-                  <li className="flex justify-center items-center py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Buen manejo del estrés</li>
-                  <li className="flex justify-center items-center py-1"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Mejorar la comunicación</li>
+                  <li className="flex justify-center items-center text-muted-foreground"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Buen manejo del estrés</li>
+                  <li className="flex justify-center items-center text-muted-foreground"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Mejorar la comunicación</li>
                 </ol>
                 <Dialog>
                   <DialogTrigger>
-                    <ButtonAlike ButtonText="Agendar lugar" />
+                    <ButtonAlike ButtonText="Agendar asistencia" />
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
@@ -130,12 +132,37 @@ export default function Socios() {
 
         </section>
 
-        <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
-          <h3 className="text-3xl font-bold">Eventos programados</h3>
+        <section className="container mb-10">
+          <h3 className="text-3xl font-bold mb-6">Próximos eventos</h3>
+          <div className="flex flex-col lg:flex-row space-x-10">
+            <div className="border rounded-xl shadow-lg w-full lg:w-1/3 px-8 py-7">
+              <h2 className="text-2xl mb-8 mt-2">
+                Estrategias de Marketing Digital
+              </h2>
+              <div className="flex space-x-5 mb-9">
+                <div className="w-fit border rounded-xl px-4 py-2 leading-[0.7]">
+                  <time dateTime="2008-02-14 20:00"><span className="text-3xl text-center font-bold">14</span><br /><span className="pl-1 text-red-600">Feb</span></time>
+                </div>
+                <div>
+                  <p className="text-lg">Fecha límite de registro</p>
+                  <p className="text-xl font-bold">Quedan 2 días</p>
+                </div>
+              </div>
+              <Link href="./"
+                className="w-full inline-block font-bold text-white text-center bg-teal-500 hover:bg-teal-600 px-4 py-3 rounded-sm transition-colors ease-in-out duration-300">
+                <span className="px-3 text-xl">Reservar lugar</span>
+              </Link>
+            </div>
+
+            <div className="border rounded-md shadow-lg w-full lg:w-1/3">
+            </div>
+            <div className="border rounded-md shadow-lg w-full lg:w-1/3">
+            </div>
+          </div>
         </section>
 
         <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
-          <h3 className="text-3xl font-bold">Conoce información inportante de los eventos</h3>
+          <h3 className="text-3xl font-bold">Conoce información importante de los eventos</h3>
 
         </section>
 

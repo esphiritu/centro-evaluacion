@@ -225,7 +225,7 @@ import checkPointsImage from "@/public/img/pexels-fauxels-3184328.jpg";
 export default function Home({ Component, pageProps }) {
   return (
     <>
-      <main className="w-full pt-19 scroll-smooth">
+      <main className="w-full pt-19 scroll-smooth pt-[8rem]">
         <section className="relative h-[42rem]">
           <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-gradient-to-b lg:bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-[4rem]">
             <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start">
@@ -237,7 +237,7 @@ export default function Home({ Component, pageProps }) {
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
                 <CtaButton href="./proceso" linkText="Comenzar ahora" className="text-center" />
-                <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center font-bold md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="./asesor">
+                <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="./asesor">
                   <span className="whitespace-nowrap">Comenzar con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" /></span>
                 </Link>
               </div>
@@ -271,7 +271,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
                       {benefit.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-left mt-8 mb-4">
+                    <h3 className="text-2xl font-normal text-left mt-8 mb-4">
                       {benefit.title}
                     </h3>
                     <p className="text-xl text-muted-foreground text-left">
@@ -336,7 +336,7 @@ export default function Home({ Component, pageProps }) {
                           {paso.stepNumber}
                         </span>
                         <div className="group pl-8">
-                          <h3 className="text-xl md:text-left font-bold py-3">
+                          <h3 className="text-xl md:text-left font-normal py-3">
                             {paso.title}
                           </h3>
                           <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-150">
@@ -387,7 +387,7 @@ export default function Home({ Component, pageProps }) {
                   {/* <TableCaption>
                       <p className="w-full">Certificaciones</p>
                     </TableCaption> */}
-                  <TableHeader className="text-xl bg-slate-200 dark:bg-slate-700">
+                  <TableHeader className="text-xl bg-transparent">
                     <TableRow className="">
                       <TableHead
                         className="w-2/12 md:1/6 lg:w-1/5 py-4">
@@ -464,10 +464,10 @@ export default function Home({ Component, pageProps }) {
                                           </p>
                                         </li>
                                       </ul>
-                                      <p className="text-sm text-muted-foreground py-4 mt-5">Descarga el formato completo del estándar de competencia</p>
+
                                       <Button
                                         variant="outline"
-                                        className="py-6 pl-3 pr-5 text-xl text-gray-800 dark:text-gray-200 hover:text-white hover:bg-gray-800 text-center  dark:hover:bg-gray-600 mb-3">
+                                        className="py-6 pl-3 pr-5 mt-5 text-xl text-white dark:text-gray-200 bg-gray-800 hover:bg-gray-300 text-center dark:hover:bg-gray-500">
                                         <span className="pl-3 pr-3 py-6">Descargar</span>
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -481,6 +481,7 @@ export default function Home({ Component, pageProps }) {
                                           strokeLinejoin="round"
                                           className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
                                       </Button>
+                                      <p className="text-sm text-muted-foreground py-4">Descarga la información completa del estándar de competencia</p>
                                     </div>
                                     <Separator className="mt-1 w-full" />
                                     <DrawerFooter className="w-full lg:w-1/2 mx-auto">
@@ -595,7 +596,7 @@ export default function Home({ Component, pageProps }) {
                             <span className="text-[#55ccc9] px-4 py-6">
                               {criterio.icon}
                             </span>
-                            <CardTitle className="text-center mb-3">
+                            <CardTitle className="text-center mb-3 font-normal">
                               {criterio.title}
                             </CardTitle>
                             <CardDescription className="mb-1 text-muted-foreground">
@@ -651,8 +652,8 @@ export default function Home({ Component, pageProps }) {
             height={100}
             alt="icon for"
             className="max-w-auto mb-1" />
-          <h1 className="relative text-3xl md:text-4xl font-bold pt-5 pb-1">
-            Inicia una evaluación diagnóstica
+          <h1 className="relative text-2xl md:text-3xl font-bold pt-5 pb-1">
+            Inicia una prueba diagnóstica
             <span className="absolute text-center text-sm bg-red-400 text-white px-2 inline-block ml-1 rounded-full leading-relaxed">
               Gratis
             </span>
@@ -666,7 +667,7 @@ export default function Home({ Component, pageProps }) {
         {/* Overview of Workshops, Courses, and Training programs. */}
         <section className="container py-10 mb-[10rem] mt-[2rem]">
           <div className="w-full mb-[5rem] text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mt-8">
+            <h1 className="text-3xl md:text-4xl font-bold mt-8 mb-5">
               Convención anual 2024.
               Mejores momentos
             </h1>
@@ -805,7 +806,7 @@ export default function Home({ Component, pageProps }) {
             <CarouselPrevious className="lg:invisible" />
             <CarouselNext className="lg:invisible" />
           </Carousel>
-          <MainLink href="./" linkText="Próximos eventos" />
+          <MainLink href="./eventos" linkText="Próximos eventos" />
         </section>
         <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
           <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">

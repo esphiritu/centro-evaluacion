@@ -50,7 +50,7 @@ import HeroImageEducation from "@/public/img/hero-image-education-3.png";
 export default function Cursos(params) {
   return (
     <>
-      <main className="w-full pt-19">
+      <main className="w-full pt-[8rem]">
         <section className="bg-slate-700 py-10 h-auto lg:h-[34rem]">
           <p className="w-fit text-base text-center text-slate-900 bg-teal-300 py-2 px-6 tracking-wider mt-[3rem] mb-8 mx-auto rounded-full">
             Oferta educativa

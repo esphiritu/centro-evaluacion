@@ -1,10 +1,12 @@
 "use client";
-import * as React from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
+import * as React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { DayPicker  } from "react-day-picker";
+import { format } from "date-fns";
+import es from "date-fns/locale/es"; 
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 
 function Calendar({
   className,
@@ -14,17 +16,35 @@ function Calendar({
 }) {
   return (
     (<DayPicker
+      locale={es}
+      labels={{
+        labelDayButton: (date, { today, selected }) => {
+          let label = format(date, "PPPP", { locale: es });
+          if (today) label = `Hoy, ${label}`;
+          if (selected) label = `${label}, Seleccionado`;
+          return label;
+        },
+        labelWeekNumber: (weekNumber) => `Semana ${weekNumber}`,
+        labelNext: () => "Próximo mes",
+        labelPrevious: () => "Mes anterior",
+        labelMonthDropdown: () => "Selecciona el mes",
+        labelYearDropdown: () => "Selecciona el año"
+      }}
+      formatters={{
+        formatCaption: (date, options) => format(date, "LLLL", options),
+        // formatDay: (date, options, dateLib)
+      }}
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
         caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
+        caption_label: "text-l6 font-bold",
         nav: "space-x-1 flex items-center",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-60"
         ),
         nav_button_previous: "absolute left-1",
         nav_button_next: "absolute right-1",
@@ -40,7 +60,7 @@ function Calendar({
         ),
         day_range_end: "day-range-end",
         day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+          "bg-teal-500 text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-teal-500 focus:text-primary-foreground",
         day_today: "bg-accent text-accent-foreground",
         day_outside:
           "day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
@@ -52,10 +72,10 @@ function Calendar({
       }}
       components={{
         IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("h-4 w-4", className)} {...props} />
+          <ChevronLeft className={cn("h-6 w-6", className)} {...props} />
         ),
         IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("h-4 w-4", className)} {...props} />
+          <ChevronRight className={cn("h-6 w-6", className)} {...props} />
         ),
       }}
       {...props} />)
