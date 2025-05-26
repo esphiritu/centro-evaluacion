@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 
-// Shadcn UI components
+// Icons from Lucide
 import {
   Headset,
   Tablet,
@@ -59,7 +59,7 @@ export default function Cursos(params) {
             <TypingEffect />
           </h1>
           <p className="text-xl md:text-2xl text-center text-white text-pretty font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1 w-full lg:w-2/3 mx-auto">
-          Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo. Nuestros talleres, cursos y programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
+          Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo. Nuestros talleres,  programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
           </p>
         </section>
         <section className="">

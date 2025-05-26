@@ -13,7 +13,7 @@ export default function HybridHeader () {
       alt: "Some alternative text for  accesibility",
     },
     {
-      text: "Soluciones empresariales",
+      text: "Soluciones",
       href: "/soluciones",
       title:
         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",

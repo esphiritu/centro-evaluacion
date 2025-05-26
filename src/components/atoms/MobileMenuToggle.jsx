@@ -1,37 +1,47 @@
 'use client'
-import React, { useState, useEffect,useContext, createContext } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { SlimModeToggle } from "@/utilities/dark-light-functionality/SlimModeToggle";
 import { Button } from "@/components/ui/button";
 import { MenuIcon, X } from "lucide-react";
 import { useMediaQuery } from "@/utilities/media-query/use-media-query";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, } from "@/components/ui/tooltip"
 // Create a new context in parent component
 const mobileMenuContext = React.createContext();
 
 
 // Minimal client component for mobile menu with a state
-export default function MobileMenuToggle({links}) {
+export default function MobileMenuToggle({ links }) {
   // Create a state variable to monitoring the state of the menu
   const [isOpen, setIsOpen] = useState(null);
   // Create a method to change the state of the menu
   const toggleMenu = () => setIsOpen(!isOpen);
-  const value = {toggleMenu, isOpen, setIsOpen};
+  const value = { toggleMenu, isOpen, setIsOpen };
   return (
     <>
       {/* DarkMode toggle button */}
-      <SlimModeToggle className="npm">
-        <span className="sr-only">dark mode</span>
-      </SlimModeToggle>
+
+      <div className="relative flex flex-col items-center group">
+        <SlimModeToggle className="npm">
+          <span className="sr-only">dark mode</span>
+        </SlimModeToggle>
+        <div className="absolute -bottom-8 flex-col items-center hidden mb-5 group-hover:flex">
+          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-xs leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg"><p className="pt-1 pb-1">Cambiar tema</p></span>
+          <div className="w-auto h-auto -mt-[2rem] rotate-45 bg-black dark:bg-slate-400"></div>
+        </div>
+      </div>
+
+
       {/* MobileMenu toggle button */}
-      <Button 
-        onClick={toggleMenu} 
+      <Button
+        onClick={toggleMenu}
         className="flex md:hidden mx-2 z-40 text-gray-500 dark:text-gray-400 hover:text-teal-500 dark:hover:text-teal-500 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full"
-        variant="ghost" 
+        variant="ghost"
         size="icon"
-        >
-          {isOpen ? 
-                  <X absoluteStrokeWidth={true} strokeWidth={1.5} className="
+      >
+        {isOpen ?
+          <X absoluteStrokeWidth={true} strokeWidth={1.5} className="
                     h-[1.5rem] 
                     w-[1.5rem] 
                     rotate-0 
@@ -39,7 +49,7 @@ export default function MobileMenuToggle({links}) {
                     transition-transform 
                     dark:rotate-90 
                     dark:scale-100"></X>
-                  : <MenuIcon absoluteStrokeWidth={true} strokeWidth={1.5} className="
+          : <MenuIcon absoluteStrokeWidth={true} strokeWidth={1.5} className="
                     h-[1.5rem] 
                     w-[1.5rem] 
                     rotate-0 
@@ -47,15 +57,15 @@ export default function MobileMenuToggle({links}) {
                     transition-transform 
                     dark:rotate-0 
                     dark:scale-100"></MenuIcon>
-                } 
-          <span className="sr-only">mobile menu</span>
+        }
+        <span className="sr-only">mobile menu</span>
       </Button>
       {/* Only when 'isOpen' variable is true, MobileMenu component is rendered */}
       <AnimatePresence>
-        {isOpen && 
+        {isOpen &&
           // Wrap up the MobileMenu component for consuming the context data within the child component
-          <mobileMenuContext.Provider value={value}> 
-              <MobileMenu navigation={links} />
+          <mobileMenuContext.Provider value={value}>
+            <MobileMenu navigation={links} />
           </mobileMenuContext.Provider>
         }
       </AnimatePresence>
@@ -64,9 +74,9 @@ export default function MobileMenuToggle({links}) {
 }
 
 // MobileMenu component (conditionally rendered based on state)
-export function MobileMenu({navigation}) {
+export function MobileMenu({ navigation }) {
   // Access the context data created in parent component
-  const {toggleMenu, isOpen} = React.useContext(mobileMenuContext);
+  const { toggleMenu, isOpen } = React.useContext(mobileMenuContext);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   // Call toggleMenu if both conditions are met. Basically it closes the Mobile menu if it is open and the client is using a desktop browser
@@ -84,17 +94,17 @@ export function MobileMenu({navigation}) {
       className={isDesktop ? "hidden" : "fixed z-20 left-0 top-0 w-full min-h-screen bg-slate-100 dark:bg-slate-800 p-10 disabled:scroll"}
       initial={{ x: '200vw' }}
       animate={{ x: 0 }}
-      transition={{type: 'tween'}}
+      transition={{ type: 'tween' }}
       whileInView={{ opacity: 1 }}
       exit={{ x: '200vw', opacity: 0 }}
-      
+
     >
       {/* Create mobile navigation links from an array*/}
       {navigation.map((link) => (
         <li key={link.href}>
-          <Link 
-            href={link.href} 
-            onClick={toggleMenu} 
+          <Link
+            href={link.href}
+            onClick={toggleMenu}
             className="
             text-2xl 
             font-semibold 
@@ -117,12 +127,12 @@ export function MobileMenu({navigation}) {
             disabled:opacity-50 
             data-[active]:bg-accent/50 
             data-[state=open]:bg-accent/50">
-              {link.text}
-            </Link>
+            {link.text}
+          </Link>
         </li>
-        )
       )
-    }
+      )
+      }
     </motion.ul>
   );
 }

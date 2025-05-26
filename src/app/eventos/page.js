@@ -9,16 +9,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 import { CalendarDays, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 // Images
 import Convencion from "@/public/img/Convencion-2024.jpg";
 // Custom components
@@ -97,7 +97,7 @@ export default function Socios() {
           <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Eventos destacados</h2>
           <div className="relative container flex flex-col lg:flex-row items-center">
             <div className="w-full lg:w-1/2 px-2 text-center pt-10">
-              <h3 className="text-3xl font-light mb-3 uppercase">Liderazgo e IA para emprendedoras</h3>
+              <h3 className="text-3xl font-light mb-3 uppercase tracking-wide">Liderazgo e IA para emprendedoras</h3>
               <p className="text-xl mb-4">Mejorar tu productividad y fortalecer tu empresa</p>
               <span className="w-[7rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
               <div className="text-lg max-h-fit mt-10 mb-8">
@@ -106,20 +106,23 @@ export default function Socios() {
                   <li className="flex justify-center items-center text-muted-foreground"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Buen manejo del estrés</li>
                   <li className="flex justify-center items-center text-muted-foreground"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Mejorar la comunicación</li>
                 </ol>
-                <Dialog>
-                  <DialogTrigger>
-                    <ButtonAlike ButtonText="Agendar asistencia" />
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>Are you absolutely sure?</DialogTitle>
-                      <DialogDescription>
+                <Sheet>
+                  <SheetTrigger>
+                    <div
+                      className="w-full inline-block font-bold text-white text-center bg-teal-500 hover:bg-teal-600 px-4 py-3 rounded-sm transition-colors ease-in-out duration-300">
+                      <span className="px-3 text-xl">Reservar lugar</span>
+                    </div>
+                  </SheetTrigger>
+                  <SheetContent>
+                    <SheetHeader>
+                      <SheetTitle className="text-xl">Reservar lugar</SheetTitle>
+                      <SheetDescription>
                         This action cannot be undone. This will permanently delete your account
                         and remove your data from our servers.
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
+                      </SheetDescription>
+                    </SheetHeader>
+                  </SheetContent>
+                </Sheet>
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
@@ -131,7 +134,6 @@ export default function Socios() {
           <h2 className="text-3xl font-bold py-4 mb-[5rem]">Nuestros presentadores</h2>
 
         </section>
-
         <section className="container mb-10">
           <h3 className="text-3xl font-bold mb-6">Próximos eventos</h3>
           <div className="flex flex-col lg:flex-row space-x-10">
@@ -144,28 +146,37 @@ export default function Socios() {
                   <time dateTime="2008-02-14 20:00"><span className="text-3xl text-center font-bold">14</span><br /><span className="pl-1 text-red-600">Feb</span></time>
                 </div>
                 <div>
-                  <p className="text-lg">Fecha límite de registro</p>
-                  <p className="text-xl font-bold">Quedan 2 días</p>
+                  <p className="text-lg">Gratis</p>
+                  <p className="text-xl font-bold">Reunión en Zoom</p>
                 </div>
               </div>
-              <Link href="./"
-                className="w-full inline-block font-bold text-white text-center bg-teal-500 hover:bg-teal-600 px-4 py-3 rounded-sm transition-colors ease-in-out duration-300">
-                <span className="px-3 text-xl">Reservar lugar</span>
-              </Link>
+              <Sheet>
+                <SheetTrigger className="w-full">
+                  <div
+                    className="font-bold text-white text-center bg-teal-500 hover:bg-teal-600 px-4 py-3 rounded-sm transition-colors ease-in-out duration-300">
+                    <span className="px-3 text-xl">Reservar lugar</span>
+                  </div>
+                </SheetTrigger>
+                <SheetContent>
+                  <SheetHeader>
+                    <SheetTitle>Reserva lugar</SheetTitle>
+                    <SheetDescription>
+                      This action cannot be undone. This will permanently delete your account
+                      and remove your data from our servers.
+                    </SheetDescription>
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
             </div>
-
             <div className="border rounded-md shadow-lg w-full lg:w-1/3">
             </div>
             <div className="border rounded-md shadow-lg w-full lg:w-1/3">
             </div>
           </div>
         </section>
-
         <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
           <h3 className="text-3xl font-bold">Conoce información importante de los eventos</h3>
-
         </section>
-
       </main>
       <Footer />
     </>

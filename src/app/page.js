@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import ContactForm from "@/components/organisms/ContactForm";
 import {
   HoverCard,
   HoverCardContent,
@@ -23,6 +24,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -47,6 +49,8 @@ import CtaButton from "@/components/atoms/CtaButton";
 import MainLink from "@/components/atoms/MainLink";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import AnimatedText from "@/components/molecules/AnimatedText";
+import FormItemsEc from "@/components/molecules/FormItemsEc";
+
 // Lucide icons
 import {
   User,
@@ -284,25 +288,7 @@ export default function Home({ Component, pageProps }) {
           </div>
           <MainLink href="#certificaciones" linkText="Ver certificaciones" />
         </section>
-        {/* Partners Section */}
-        <div className="container py-5 h-auto">
-          <div className="flex flex-col-reverse lg:flex-row mt-[4.5rem]">
-            <div className="w-full lg:w-1/2">
-              <h2 className="w-full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-4 pl-0 lg:pl-10">
-                La oportunidad para alcanzar tus metas profesionales
-              </h2>
-              <p className="w-full lg:w-4/5 text-lg md:text-xl text-muted-foreground text-pretty mb-8 pl-0 lg:pl-10">Procesos confiables respaldados por el Organismo Certificador más importante de America Latina: ICE México.</p>
-              <ul className="text-lg pl-0 lg:pl-10 py-3">
-                <li className="flex py-2 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
-                <li className="flex py-2 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Procesos ágiles de certificación</span></li>
-                <li className="flex py-2 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Sin requisitos académicos</span></li>
-              </ul>
-            </div>
-            <div className="w-full lg:w-1/2 p-0 lg:p-10">
-              <Image src={checkPointsImage} alt="This is what you get" className="object-cover rounded-xl" />
-            </div>
-          </div>
-        </div>
+        
         {/* Certification process section */}
         <section className="container w-full py-10 mt-[3rem]">
           {/* Pasos para certificarse */}
@@ -570,9 +556,9 @@ export default function Home({ Component, pageProps }) {
             <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
               <div className="h-[5.6rem] overflow-hidden">
                 <div className="animate-scroller">
-                  <p className="text-slate-400 leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
-                  <p className="text-slate-400 leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
-                  <p className="text-slate-400 leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
+                  <p className="text-slate-500 leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
+                  <p className="text-slate-500 leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
+                  <p className="text-slate-500 leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
                   <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
                 </div>
               </div>
@@ -661,7 +647,24 @@ export default function Home({ Component, pageProps }) {
           <p className="text-xl text-muted-foreground pt-1 pb-3 mb-5">
             Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
           </p>
-          <SecondaryButton href="./asesor" linkText="Solicitar información" />
+          <Dialog>
+                <DialogTrigger className="flex items-center py-3 pl-3 pr-3 text-lg text-white dark:text-gray-200 bg-teal-500 hover:bg-teal-600 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
+                  <span className="px-2"> Solicitar información</span>
+                </DialogTrigger>
+                <DialogContent className="py-10 px-[2.5rem]">
+                  <DialogHeader className="mb-[0.5rem]">
+                    <DialogTitle className="text-3xl mb-4">Agenda una asesoría</DialogTitle>
+                    {/* <DialogDescription className="text-base">
+                      Tu opinión es invaluable para nosotros. En Proyecta Empresarial, valoramos profundamente tus comentarios y sugerencias. Cada aporte nos ayuda a mejorar continuamente nuestros servicios y ofrecerte mejor atención
+                    </DialogDescription> */}
+                  </DialogHeader>
+                  <div className="">
+                    <ContactForm>
+                      <FormItemsEc />
+                    </ContactForm>
+                  </div>
+                </DialogContent>
+              </Dialog>
         </section>
         {/* Features List Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
@@ -808,7 +811,7 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
           <MainLink href="./eventos" linkText="Próximos eventos" />
         </section>
-        <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[3rem]">
+        <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[2rem]">
           <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
             <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
               Reconocimiento nacional
@@ -864,7 +867,26 @@ export default function Home({ Component, pageProps }) {
             </li>
           </ul>
         </section>
-        <section className="pb-[12rem] mt-10 h-auto dark:bg-slate-900 ">
+        {/* Partners Section */}
+        <div className="container py-5 h-auto">
+          <div className="flex flex-col-reverse lg:flex-row mt-[2.5rem]">
+            <div className="w-full lg:w-1/2">
+              <h2 className="w-full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-4 pl-0 lg:pl-10">
+                La oportunidad para alcanzar tus metas profesionales
+              </h2>
+              <p className="w-full lg:w-4/5 text-lg md:text-xl text-muted-foreground text-pretty mb-8 pl-0 lg:pl-10">Procesos confiables respaldados por el Organismo Certificador más importante de America Latina: ICE México.</p>
+              <ul className="text-lg pl-0 lg:pl-10 py-3">
+                <li className="flex py-2 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Certificados con validez oficial de <strong className="whitespace-nowrap">SEP-CONOCER</strong></span></li>
+                <li className="flex py-2 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Procesos ágiles de certificación</span></li>
+                <li className="flex py-2 items-center"><Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem]" /> <span className="text-slate-700 dark:text-slate-400 pl-3">Sin requisitos académicos</span></li>
+              </ul>
+            </div>
+            <div className="w-full lg:w-1/2 p-0 lg:p-10">
+              <Image src={checkPointsImage} alt="This is what you get" className="object-cover rounded-xl" />
+            </div>
+          </div>
+        </div>
+        <section className="pb-[12rem] mt-5 h-auto dark:bg-slate-900 ">
           {/* Seccion de testimonios */}
           <div className="container py-[6rem]">
             <h2 className="text-center text-3xl font-bold tracking-tight lg:text-4xl mb-4 mt-6">

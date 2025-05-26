@@ -9,7 +9,7 @@ export default function SecondaryButton({ href, linkText }) {
         inline-block
         max-w-fit
         text-lg 
-        font-bold 
+        font-normal 
         text-white 
         bg-teal-500 
         hover:bg-teal-600 

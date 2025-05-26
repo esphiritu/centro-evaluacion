@@ -1,5 +1,8 @@
 'use client';
-import ContactForm from "@/components/organisms/contact-form";
+import ContactForm from "@/components/organisms/ContactForm";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Info } from "lucide-react";
+
 
 export default function Blog(params) {
   return (
@@ -8,8 +11,16 @@ export default function Blog(params) {
         <div className="relative w-full lg:w-1/2 flex flex-col lg:items-start justify-self-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 lg:px-10 mt-2 lg:mt-10">
           <h1 className="text-3xl text-left text-pretty font-bold md:leading-[2.5rem] pb-4">Solicitud de Certificación de Competencias Laborales
           </h1>
+          <Alert>
+            <Info />
+            <AlertTitle>Heads up!</AlertTitle>
+            <AlertDescription>
+              You can add components and dependencies to your app using the cli.
+            </AlertDescription>
+          </Alert>
+
           <p className="text-xl text-muted-foreground mt-8 pr-10">Completa los campos requeridos para iniciar el trámite de certificación laboral. Una vez recibida tu solicitud, uno de nuestros asesores
-             se pondrá en contacto contigo para continuar el proceso.</p>
+            se pondrá en contacto contigo para continuar el proceso.</p>
         </div>
         <div className="relative w-full lg:w-1/2 border-none lg:border rounded shadow-none lg:shadow-lg px-0 lg:px-[3rem] py-[3.5rem]">
           <ContactForm />

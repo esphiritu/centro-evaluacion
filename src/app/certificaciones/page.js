@@ -14,14 +14,9 @@ import { Sprout, } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, } from "@/components/ui/dialog";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
+
 
 
 // Custom components
@@ -100,7 +95,7 @@ export default function Certificaciones(params) {
           <div className="container mt-[6rem]">
             <h3 className="text-2xl">Documentos básicos del aspirante</h3>
             <div className="flex flex-col lg:flex-row">
-              <div className="w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
+              <div className="w-full lg:w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
                 <p className="text-lg mb-5 leading-6">
                   Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
                 </p>
@@ -108,7 +103,7 @@ export default function Certificaciones(params) {
                   Descargar
                 </Button>
               </div>
-              <div className="w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
+              <div className="w-full lg:w-1/3 border rounded-xl px-8 lg:px-10 py-6 dark:bg-slate-900 mt-5 mr-8">
                 <p className="text-lg mb-5 leading-6">
                   Guía del candidato
                 </p>
@@ -141,6 +136,26 @@ export default function Certificaciones(params) {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="container flex flex-col lg:flex-row my-10 py-[3rem] space-y-8">
+            <div className="w-full lg:w-1/2">
+              <h3 className="text-3xl font-bold leading-[4rem]">Preguntas frecuentes</h3>
+              <p className="texl-xl">¿Tienes más preguntas? <span className="underline">Contáctanos</span></p>
+            </div>
+            <Accordion type="single" collapsible className="w-full lg:w-1/2">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>How can I manage my time?</AccordionTrigger>
+                <AccordionContent>
+                  You can change your donation percentage, pause your donation, or opt out of donating at any time from the Payments & payouts section of your account.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </section>
         <section className="flex-grow-0 bg-slate-50/85 dark:bg-gray-900 mt-[6rem]">
