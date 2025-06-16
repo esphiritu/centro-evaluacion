@@ -34,13 +34,15 @@ function Footer() {
 
 
               <Dialog>
-                <DialogTrigger className="flex items-center py-3 pl-3 pr-5 text-lg text-white hover:text-gray-800 dark:text-gray-200 bg-gray-800 hover:bg-gray-300 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
+                <DialogTrigger aria-describedby="buzon" className="flex items-center py-3 pl-3 pr-5 text-lg text-white hover:text-gray-800 dark:text-gray-200 bg-gray-800 hover:bg-gray-300 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
                   <span className="px-2"> Enviar comentarios</span>
                   <SendHorizontal size={20} strokeWidth={1.5} absoluteStrokeWidth={true} />
                 </DialogTrigger>
-                <DialogContent className="py-10 px-[2.5rem]">
+                <DialogContent className="py-10 px-[2.5rem] lg:px-[4rem]" id="buzon">
                   <DialogHeader className="mb-[2rem]">
-                    <DialogTitle className="text-2xl mb-4">Ayudanos a mejorar</DialogTitle>
+                    <div className="flex flex-row items-baseline space-x-5">
+                      <DialogTitle className="text-3xl mb-4">Ayudanos a mejorar</DialogTitle>
+                    </div>
                     <DialogDescription className="text-base">
                       Tu opinión es invaluable para nosotros. En Proyecta Empresarial, valoramos profundamente tus comentarios y sugerencias. Cada aporte nos ayuda a mejorar continuamente nuestros servicios y ofrecerte mejor atención
                     </DialogDescription>

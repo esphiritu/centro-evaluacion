@@ -58,6 +58,7 @@ import {
   ShieldCheck,
   Brain,
   Key,
+  ArrowRight,
   LockKeyhole,
   Headset,
   Award,
@@ -233,15 +234,27 @@ export default function Home({ Component, pageProps }) {
         <section className="relative h-[42rem]">
           <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-gradient-to-b lg:bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-[4rem]">
             <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start">
-              <h1 className="text-white text-2xl text-center lg:text-left md:text-4xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn text-pretty">
-                La <span className="">certificación de competencias laborales</span> mejorarán tus habilidades e impulsarán tu carrera profesional
+              <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn text-pretty">
+                Impulsa tu crecimiento profesional
               </h1>
               <p className="text-xl md:text-2xl text-center lg:text-left text-white font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
-                Respalda tus conocimientos y experiencia con las certificaciones más valoradas en tu industria
+                Respalda tus conocimientos y experiencia con <strong>certificaciones oficiales</strong>
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
-                <CtaButton href="./proceso" linkText="Comenzar ahora" className="text-center" />
-                <Link className="transition-all duration-300 ease-in-out hover:bg-white/15 text-center md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="./asesor">
+
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <CtaButton href="./proceso" linkText="Comenzar ahora" className="text-center" />
+                  </HoverCardTrigger>
+                  <HoverCardContent className="flex justify-between items-start mt-4 p-3 bg-slate-50 dark:bg-slate-800">
+                    <Award size={24} className="w-1/5 mt-1" />
+                    <div className="w-4/5 pr-2">
+                      <h4 className="font-semibold mb-3">Ingresa tu solucitud</h4>
+                      <p className="text-muted-foreground text-sm">El proceso de certificación es más fácil ahora</p>
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
+                <Link className="scroll-smooth transition-all duration-300 ease-in-out hover:bg-white/15 text-center md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="#asesor">
                   <span className="whitespace-nowrap">Comenzar con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" /></span>
                 </Link>
               </div>
@@ -288,7 +301,7 @@ export default function Home({ Component, pageProps }) {
           </div>
           <MainLink href="#certificaciones" linkText="Ver certificaciones" />
         </section>
-        
+
         {/* Certification process section */}
         <section className="container w-full py-10 mt-[3rem]">
           {/* Pasos para certificarse */}
@@ -299,6 +312,8 @@ export default function Home({ Component, pageProps }) {
             <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
               <div className="relative w-full lg:w-1/2 h-full mt-[2.5rem]">
                 <Image
+                  placeholder="empty"
+                  priority={true}
                   src={procesoImage}
                   alt="Proceso para la certificación"
                   quality={75}
@@ -403,8 +418,11 @@ export default function Home({ Component, pageProps }) {
                                   <ScrollArea>
                                     <DrawerHeader className="flex w-full">
                                       <div className="content-center w-full mt-10 md:mt-4">
-                                        <DrawerTitle className="text-2xl mb-2 bg-slate-200 text-slate-800 rounded-sm py-4 px-4">
-                                          {estandar.content}
+                                        <DrawerTitle className="text-2xl mb-6 border border-collapse border-slate-200 shadow-md text-slate-800 rounded-sm py-4 px-6">
+                                          <div className="flex flex-row items-center justify-start space-x-7">
+                                            <h2 className="text-2xl text-teal-600">{estandar.title}</h2>
+                                            <p className="text-slate-900 dark:text-slate-300">{estandar.content}</p>
+                                          </div>
                                         </DrawerTitle>
                                         <DrawerDescription
                                           className="text-lg">
@@ -415,7 +433,6 @@ export default function Home({ Component, pageProps }) {
                                     </DrawerHeader>
 
                                     <div className="w-full text-xl text-gray-700 dark:text-gray-400 lg:w-1/2 mx-auto px-5 py-2">
-                                      <h2 className="text-2xl mb-5 text-teal-600">{estandar.title}</h2>
                                       <p className="mb-6">
                                         <span className="text-slate-800 dark:text-gray-200 font-bold">
                                           Propósito: </span>
@@ -477,19 +494,27 @@ export default function Home({ Component, pageProps }) {
                                         </p>
                                         <SecondaryButton href="./" linkText="Obtener" />
                                       </div>
-                                      <DrawerClose className="absolute top-0 left-3 mx-auto hover:bg-slate-100 hover:text-teal-600 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300 z-20">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="48"
-                                          height="48"
-                                          viewBox="0 0 24 24"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          strokeWidth="1.75"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
-                                      </DrawerClose>
+                                      <div className="group">
+                                        <DrawerClose className="absolute top-0 right-5 mx-auto hover:bg-slate-100 text-slate-600 dark:text-slate-200 hover:text-slate-900 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300 z-20">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="48"
+                                            height="48"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="1.25"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                          <div className="absolute right-1 lg:right-2 translate-x-0 lg:translate-x-1/2 translate-y-2 mt-3 flex-col items-center hidden group-hover:flex z-50">
+                                            <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+                                              <p className="pt-1 pb-1">Cerrar</p>
+                                            </span>
+                                          </div>
+                                        </DrawerClose>
+
+                                      </div>
 
                                     </DrawerFooter>
                                   </ScrollArea>
@@ -529,7 +554,7 @@ export default function Home({ Component, pageProps }) {
               </TabsContent>
             </Tabs>
           </div>
-        </div>
+        </div >
         <div className="container flex flex-col md:flex-row-reverse items-center justify-between mt-10 py-10">
           <h5 className="align-bottom text-3xl text-center lg:text-left font-light dark:text-slate-100 tracking-tight w-full md:w-1/3 mr-8">
             <span className="text-2xl font-normal">
@@ -568,7 +593,7 @@ export default function Home({ Component, pageProps }) {
               dark:text-slate-200 font-thin mb-1 pb-8 mx-auto">
             Únase a nosotros para desarrollar las habilidades, la confianza así como los conocimientos para prosperar en un mundo competitivo y mejorar sus perspectivas profesionales.
           </p>
-          <div className="px-0 lg:px-10 lg:border lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
+          <div className="px-0 lg:px-10 lg:border lg:border-slate-400 lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
             <Carousel className="mb-6">
               <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
                 {criterios.map((criterio => {
@@ -595,11 +620,6 @@ export default function Home({ Component, pageProps }) {
                             {criterio.content}
                           </p>
                         </CardContent>
-                        {/* <CardFooter>
-                            <div className="">
-                              Hola!
-                            </div>
-                          </CardFooter> */}
                       </Card>
                       <p className="visible lg:invisible lg:group-hover:visible transition-all ease-in-out duration-200">
                         <Link href="./"
@@ -648,23 +668,23 @@ export default function Home({ Component, pageProps }) {
             Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
           </p>
           <Dialog>
-                <DialogTrigger className="flex items-center py-3 pl-3 pr-3 text-lg text-white dark:text-gray-200 bg-teal-500 hover:bg-teal-600 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
-                  <span className="px-2"> Solicitar información</span>
-                </DialogTrigger>
-                <DialogContent className="py-10 px-[2.5rem]">
-                  <DialogHeader className="mb-[0.5rem]">
-                    <DialogTitle className="text-3xl mb-4">Agenda una asesoría</DialogTitle>
-                    {/* <DialogDescription className="text-base">
-                      Tu opinión es invaluable para nosotros. En Proyecta Empresarial, valoramos profundamente tus comentarios y sugerencias. Cada aporte nos ayuda a mejorar continuamente nuestros servicios y ofrecerte mejor atención
-                    </DialogDescription> */}
-                  </DialogHeader>
-                  <div className="">
-                    <ContactForm>
-                      <FormItemsEc />
-                    </ContactForm>
-                  </div>
-                </DialogContent>
-              </Dialog>
+            <DialogTrigger aria-describedby="prueba" className="flex items-center py-3 px-3 text-lg text-white dark:text-gray-200 bg-teal-500 hover:bg-teal-600 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
+              <p className="px-2">Solicitar información</p>
+            </DialogTrigger>
+            <DialogContent className="py-10 px-[2.5rem] lg:px-[3.5rem]" id="prueba">
+              <DialogHeader className="mb-[0.5rem]">
+                <DialogTitle className="text-3xl mb-4">Agenda una prueba diagnóstica</DialogTitle>
+                <DialogDescription className="text-base text-muted-foreground">
+                  Completa el formulario para agendar tu prueba.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="">
+                <ContactForm>
+                  <FormItemsEc />
+                </ContactForm>
+              </div>
+            </DialogContent>
+          </Dialog>
         </section>
         {/* Features List Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
@@ -700,11 +720,13 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-200">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-2xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-lg lg:text-2xl text-center w-full dark:text-slate-900">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Capacitaciones
+                            <ArrowRight className="inline-block ml-2" />
                           </Link>
                         </h1>
+
                       </div>
                     </div>
                   </div>
@@ -724,9 +746,10 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#ffccaa]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Coaching
+                            <ArrowRight className="inline-block ml-2" />
                           </Link>
                         </h1>
                       </div>
@@ -748,9 +771,10 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#aaccff]">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Conferencias
+                            <ArrowRight className="inline-block ml-2" />
                           </Link>
                         </h1>
                       </div>
@@ -772,9 +796,10 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#C5CAFF]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Talleres
+                            <ArrowRight className="inline-block ml-2" />
                           </Link>
                         </h1>
                       </div>
@@ -795,9 +820,10 @@ export default function Home({ Component, pageProps }) {
                     </div>
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-[#faccd4]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out hover:bg-gray-900/75 hover:lg:bg-white/25 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                        <h1 className="text-base lg:text-xl text-center dark:text-slate-900 w-full">
+                          <Link href="./" className="transition-all duration-200 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
                             Consultoría
+                            <ArrowRight className="inline-block ml-2" />
                           </Link>
                         </h1>
                       </div>
@@ -892,29 +918,28 @@ export default function Home({ Component, pageProps }) {
             <h2 className="text-center text-3xl font-bold tracking-tight lg:text-4xl mb-4 mt-6">
               Casos de éxito
             </h2>
-            <span className="w-[7rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+            <span className="w-[4rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
 
             <Testimonios />
           </div>
         </section>
-
-        {/* Call to action section */}
-        <section className="w-full h-auto md:h-[38rem] animated-background bg-gradient-to-tr from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-200 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8">
-          <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-8 text-center">
-            <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8 text-center">
-              <p className="text-center text-base bg-blue-400 text-white px-4 py-[0.3rem] rounded-full leading-relaxed w-fit mx-auto mb-4">INVERSIÓN INTELIGENTE</p>
-              <h5 className="text-3xl md:text-4xl text-center dark:text-white font-bold pt-3 mb-4 text-pretty w-full lg:w-3/4 mx-auto">
-                Libere su potencial con nuestros programas
-              </h5>
-              <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-[1.5rem]">
-                Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y conocimientos.
-              </p>
+        <section className="bg-slate-600 py-[6rem] h-auto lg:h-[28rem] scroll-mt-28" id="asesor">
+          <div className="container flex flex-col lg:flex-row">
+            <div className="w-full lg:w-1/3 text-white">
+              <h2 className="text-3xl font-semibold leading-[2.4rem]">Asesoría personalizada durante el  <span className="text-teal-300">proceso de certificación</span></h2>
+              <p className="text-xl mt-8">¡Hola! Soy <span className="font-bold">Patricia Martínez</span> asesor de Proyecta Empresarial, estoy para ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo.</p>
             </div>
-            <CtaButton href="./proceso" linkText="Comienza ahora" />
-            <p className="text-lg dark:text-white pb-6 mt-4">¡Obten 20% de descuento!</p>
+            <div className="w-full lg:w-2/3">
+              <div className="bg-white h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0">
+                <h3 className="text-2xl text-center text-slate-800 tracking-tight uppercase font-thin py-10">
+                  ¡Quiero obtener más información!
+                </h3>
+              </div>
+            </div>
           </div>
         </section>
-      </main>
+
+      </main >
       <Footer />
     </>
   );

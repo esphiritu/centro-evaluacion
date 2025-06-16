@@ -27,7 +27,7 @@ export default function MobileMenuToggle({ links }) {
           <span className="sr-only">dark mode</span>
         </SlimModeToggle>
         <div className="absolute -bottom-8 flex-col items-center hidden mb-5 group-hover:flex">
-          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-xs leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg"><p className="pt-1 pb-1">Cambiar tema</p></span>
+          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg"><p className="pt-1 pb-1">Cambiar tema</p></span>
           <div className="w-auto h-auto -mt-[2rem] rotate-45 bg-black dark:bg-slate-400"></div>
         </div>
       </div>

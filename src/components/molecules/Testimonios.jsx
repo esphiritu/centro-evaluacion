@@ -68,7 +68,7 @@ export default function Testimonios() {
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-lg md:text-xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
             <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
-            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
+            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-400 w-10 h-10" />
           </div>
         </CarouselItem>
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
@@ -82,7 +82,7 @@ export default function Testimonios() {
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
             <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
-            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-700 w-10 h-10" />
+            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-400 w-10 h-10" />
           </div>
         </CarouselItem>
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
@@ -96,11 +96,11 @@ export default function Testimonios() {
           <div className="relative w-4/5 md:w-2/3 mx-auto">
             <p className="text-xl md:text-2xl py-10"> There is something so natural about collaborating in Freehand. It feels like you are holding a marker, and making ideas happen. I can not imagine doing that in another tool. It captures that human essence of being in person and talking to someone that is right next to you and getting work done together. Especially in todays world when everything is remote. It makes for really organic communication.</p>
             <p className="text-lg text-muted-foreground">Sea parte de nuestros clientes satisfechos que confían en nuestras evaluaciones</p>
-            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-500 w-10 h-10" />
+            <Quote fill="teal" strokeWidth={0} className="absolute right-0 top-3/4 text-teal-400 w-10 h-10" />
           </div>
         </CarouselItem>
       </CarouselContent>
-      <div className="absolute -bottom-4 md:bottom-1 left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
+      <div className="absolute -bottom-4 -md:bottom-[1rem] left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
         <div className="flex items-center justify-center gap-2">
           {indicators.map((_, indx) => (
             <div
@@ -113,8 +113,22 @@ export default function Testimonios() {
           ))}
         </div>
       </div>
-      <CarouselPrevious />
-      <CarouselNext />
+      <div className="relative group">
+        <CarouselPrevious />
+        <div className="absolute right-15 lg:right-25 translate-x-0 lg:translate-x-1/2 translate-y-3/4 mt-3 flex-col items-center hidden group-hover:flex">
+          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+            <p className="pt-1 pb-1">Anterior</p>
+          </span>
+        </div>
+      </div>
+      <div className="relative group">
+        <CarouselNext />
+        <div className="absolute right-1 lg:right-6 translate-x-0 lg:translate-x-1/2 translate-y-3/4 mt-3 flex-col items-center hidden group-hover:flex">
+          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+            <p className="pt-1 pb-1">Siguiente</p>
+          </span>
+        </div>
+      </div>
     </Carousel>
   )
 }

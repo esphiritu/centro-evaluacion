@@ -22,7 +22,7 @@ export default function Soluciones() {
         </section>
         <section className="container">
           <div className=" mb-[10rem] mt-10">
-            <h2 className="text-4xl text-center font-bold py-4 mb-6">Servicios</h2>
+            <h2 className="text-4xl text-center font-bold py-4 mb-6">Soluciones empresariales</h2>
             <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
             <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
@@ -103,7 +103,7 @@ export default function Soluciones() {
           </div>
         </section>
       </main>
-      <section className="container py-10 mt-[9rem]" id="acerca">
+      <section className="container pt-[9rem] mt-[9rem]" id="acerca">
         <div className="flex flex-col lg:flex-row justify-start">
           <div className="w-full lg:w-1/2">
             <h4 className="text-3xl font-bold mb-4">Nuestro equipo</h4>
@@ -158,7 +158,7 @@ export default function Soluciones() {
               </div>
             </div>
           </div>
-          <div className="absolute w-2 h-full bg-gray-300 border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
+          <div className="absolute w-2 h-full bg-gray-400 dark:bg-gray-300 border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
         </div>
       </section>
       <div className="container mt-[8rem]">

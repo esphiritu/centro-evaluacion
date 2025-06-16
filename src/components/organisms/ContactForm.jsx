@@ -22,7 +22,10 @@ const formSchema = z.object({
     message: "Escriba un correo válido",
   }),
   subject: z.string({
-    required_error: "Seleccione un estándar de competencia",
+    required_error: "Por favor, selecciona un asunto.", // Mensaje si no se selecciona nada
+  }),
+  ec: z.string({
+    required_error: "Por favor, selecciona un estándar de competencia.", // Mensaje si no se selecciona nada
   }),
   date: z.date({
     required_error: "Seleccione una fecha y hora",
@@ -90,6 +93,8 @@ export default function ContactForm({ children }) {
       usermiddlename: "",
       userphone: "",
       email: "",
+      subject: "",
+      ec: "",
     },
   });
 
@@ -122,12 +127,14 @@ export default function ContactForm({ children }) {
               </FormItem>
             )}
           />
+
+          
         </div>
         <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0 lg:space-x-5">
           {/* Campo de primer apellido */}
           <FormField
             control={form.control}
-            name="usermiddlename" id="usermiddlename"
+            name="userlastname" id="userlastname"
             render={({ field }) => (
               <FormItem className="w-full lg:w-1/2">
                 <FormLabel className="text-lg font-normal" htmlFor="userlastname">Apellido paterno</FormLabel>
@@ -188,37 +195,40 @@ export default function ContactForm({ children }) {
                 </FormItem>
               )}
             />
+            
           </div>
         </div>
         <div className="flex items-center space-x-2">
-          <Checkbox id="terms2" />
+          <Checkbox id="terms2" name="terms2" />
           <label
             htmlFor="terms2"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 pt-1 pl-2"
+            className="text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 pt-1 pl-2"
           >
             Accepto términos y condiciones
           </label>
         </div>
         <Separator />
-        <Button type="submit" className="
-                      h-auto
-                      w-fit
-                      transition-all 
-                      duration-300
-                      ease-in-out 
-                      text-center 
-                      bg-teal-500
-                      hover:bg-teal-500
-                      rounded-sm 
-                      text-white 
-                      font-bold
-                      py-3
-                      px-8
-                      md:text-lg 
-                      shadow-md
-                      block">
-          Enviar</Button>
-        <div className="flex justify-center items-center leading-0 pt-5"><Lock className="text-muted-foreground" strokeWidth={2.5} size={16} /> <p className="text-muted-foreground pl-3 pt-1">Tus datos están protegidos por nuestra política de privacidad</p></div>
+        <div className="flex justify-between">
+          <Button type="submit" className="
+                        h-auto
+                        w-fit
+                        transition-all 
+                        duration-300
+                        ease-in-out 
+                        text-center 
+                        bg-teal-500
+                        hover:bg-teal-500
+                        rounded-sm 
+                        text-white 
+                        font-bold
+                        py-3
+                        px-8
+                        md:text-lg 
+                        shadow-md
+                        block">
+            Enviar</Button>
+          <div className="flex justify-center items-center leading-0 pt-5"><Lock className="text-muted-foreground" strokeWidth={2.0} size={14} /> <p className="text-muted-foreground text-sm pl-2 pt-1">Tus datos están protegidos por nuestra política de privacidad</p></div>
+        </div>
       </form>
       
     </Form>

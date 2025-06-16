@@ -1,6 +1,8 @@
 // Next.js components
 import Image from "next/image";
 
+// Custom components
+import CtaButton from "@/components/atoms/CtaButton";
 
 // Icons from Lucide
 import {
@@ -8,6 +10,10 @@ import {
   Tablet,
   LibraryBig,
   Mouse,
+  Award,
+  Clock,
+  Check,
+  Flame,
 } from "lucide-react";
 
 // Custom components
@@ -52,19 +58,17 @@ export default function Cursos(params) {
     <>
       <main className="w-full pt-[8rem]">
         <section className="bg-slate-700 py-10 h-auto lg:h-[34rem]">
-          <p className="w-fit text-base text-center text-slate-900 bg-teal-300 py-2 px-6 tracking-wider mt-[3rem] mb-8 mx-auto rounded-full">
-            Oferta educativa
-          </p>
           <h1 className="animate-fadeIn text-4xl text-center text-white font-bold pb-6">
             <TypingEffect />
           </h1>
           <p className="text-xl md:text-2xl text-center text-white text-pretty font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1 w-full lg:w-2/3 mx-auto">
-          Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo. Nuestros talleres,  programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
+            Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo. Nuestros talleres,  programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
           </p>
         </section>
         <section className="">
           {/* Catálogo de cursos */}
           <div className="py-6 mt-6">
+            <h2 className="text-4xl font-bold">Inscríbete hoy y <span className="text-teal-500">potencia tus habilidades</span></h2>
             <div className="container w-full flex flex-col lg:flex-row justify-center">
               <div className="w-1/2 flex flex-col justify-center items-end mb-[4rem] gap-4">
                 {soportes.map(soporte => {
@@ -88,24 +92,44 @@ export default function Cursos(params) {
                 <Image className="w-2/3" src={HeroImageEducation} alt="Caracteerísticas de los cursos en línea" />
               </div>
             </div>
+
             <div className="container w-full lg:w-4/5 py-[3rem] mt-10">
               <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
-                Explora el catálogo de cursos con reconocimiento oficial
+                Explora el catálogo de cursos con <span className="text-teal-500">reconocimiento oficial</span>
               </h2>
               <p className="text-xl text-center text-gray-500 pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">
-                Encuentra los mejores cursos de tu sector e industria para maximizar tus habilidades y experiencia
+                Encuentra los mejores cursos de tu sector e industria para maximizar tus conocimientos y habilidades
               </p>
               <div className="flex flex-col lg:flex-row justify-center">
                 <div className="w-full lg:w-2/6 h-full bg-orange-400">
                   Habilidades digitales
                 </div>
-                <div className="w-full lg:w-4/6 py-[2rem] px-[3.5rem] h-[14rem] border rounded-r-md">
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white pt-4">
-                    Habilidades y cultura digitales para la docencia
+                <div className="w-full lg:w-4/6 py-[2rem] px-[3.5rem] h-auto border rounded-r-md">
+                  <h3 className="relative text-2xl font-bold text-gray-800 dark:text-white pt-2">
+                    Liderazgo para emprendedoras en la era de la IA
+                    <span className="absolute -top-4 text-center text-sm font-normal leading-loose bg-red-400 text-white pl-2 pr-3 inline-block ml-1 rounded-full">
+                      <Flame size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="inline-block" />  Nuevo
+                    </span>
                   </h3>
-                  <p className="text-gray-500 dark:text-white py-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing el, adipiscing elit dark, sed diam nonumy.
+
+                  <p className="text-gray-500 dark:text-white py-2 mb-2">
+                    Mejora tu productividad y fortalece tu empresa
                   </p>
+                  <p className="mb-3">Aprenderás:</p>
+                  <ol className="mb-10">
+                    <li className="flex justify-start items-center text-muted-foreground"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Buen manejo del estrés</li>
+                    <li className="flex justify-start items-center text-muted-foreground"><Check size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-teal-600 min-w-7" /> Mejorar la comunicación</li>
+                  </ol>
+                  <div className="flex flex-col lg:flex-row space-x-4">
+                    <div className="w-1/3 flex flex-row text-lg">
+                      <Award size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="inline-block" />
+                      <p className="pl-2 leading-snug"><strong>Constacia de capacitación</strong></p>
+                    </div>
+                    <div className="w-1/3 flex flex-row text-lg">
+                      <Clock size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="inline-block" />
+                      <p className="pl-2 leading-snug">20 horas de duración</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,25 +157,25 @@ export default function Cursos(params) {
 
         <section className="container">
           <h2 className="scroll-m-20 text-2xl lg:text-3xl text-left font-bold tracking-normal pb-4 mb-3 lg:mb-9 mt-[8rem]">
-            Cursos más populares con reconocimiento oficial
+            Cursos más populares
           </h2>
           <MostPopularCourses />
         </section>
 
-        <section className="bg-slate-700 py-[5rem] h-auto lg:h-[28rem] mt-[12rem]">
-          <div className="container flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/3 text-white">
-              <h2 className="text-4xl font-bold">Inscríbete hoy y <span className="text-teal-300">potencia tus habilidades</span></h2>
-              <span className="w-[3.5rem] h-[5px] bg-white inline-block"></span>
-              <p className="text-xl mt-8">Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo.</p>
+        {/* Call to action section */}
+        <section className="w-full h-auto md:h-[38rem] animated-background bg-gradient-to-tr from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-200 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8 mt-[12rem]">
+          <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-8 text-center">
+            <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8 text-center">
+              <p className="text-center text-base bg-blue-400 text-white px-4 py-[0.3rem] rounded-full leading-relaxed w-fit mx-auto mb-4">INVERSIÓN INTELIGENTE</p>
+              <h5 className="text-3xl md:text-4xl text-center dark:text-white font-bold pt-3 mb-4 text-pretty w-full lg:w-3/4 mx-auto">
+                Libere su potencial con nuestros programas
+              </h5>
+              <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-[1.5rem]">
+                Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y conocimientos.
+              </p>
             </div>
-            <div className="w-full lg:w-2/3">
-              <div className="bg-white h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0">
-                <h3 className="text-2xl text-center text-slate-800 tracking-tight uppercase font-bold py-10">
-                  Comienza ahora
-                </h3>
-              </div>
-            </div>
+            <CtaButton href="./proceso" linkText="Comienza ahora" />
+            <p className="text-lg dark:text-white pb-6 mt-4">¡Obten <span className="font-bold">40% de descuento</span> en tu primer capacitación!</p>
           </div>
         </section>
       </main>

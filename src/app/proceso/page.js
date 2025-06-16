@@ -17,7 +17,7 @@ export default function Proceso({params}) {
           <h3 className="text-xl font-bold py-4 mt-6">Resumen de solicitud</h3>
           <p className="text-lg">Proceso que está solicitando</p>
           <p className="text-lg mb-10">Nombre del estándar de competencia</p>
-          <Alert>
+          <Alert className="mt-10">
             <Info className="w-4 h-4 text-slate-400"/>
             {/* <AlertTitle>No te quedes fuera</AlertTitle> */}
             <AlertDescription className="text-lg text-muted-foreground mb-4">

@@ -164,13 +164,13 @@ const CarouselPrevious = React.forwardRef(({ className, variant = "outline", siz
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("absolute h-11 w-11 rounded-full shadow-md text-white hover:text-white bg-gray-700 hover:bg-slate-500", orientation === "horizontal"
-        ? "left-4 lg:left-3 top-1/2 -translate-y-1/2"
+      className={cn("absolute h-10 w-10 rounded-full shadow-md text-white hover:text-slate-900 bg-gray-700 hover:bg-slate-300", orientation === "horizontal"
+        ? "left-2 lg:right-25 top-3/2 -translate-y-1/2"
         : "-top-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}>
-      <ChevronLeft className="h-7 w-7" />
+      <ChevronLeft className="h-6 w-6" />
       <span className="sr-only">Previous slide</span>
     </Button>)
   );
@@ -185,13 +185,13 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
       ref={ref}
       variant={variant}
       size={size}
-      className={cn("absolute h-11 w-11 rounded-full shadow-md text-white hover:text-white bg-gray-700 hover:bg-slate-500", orientation === "horizontal"
-        ? "right-6 lg:right-6 top-1/2 -translate-y-1/2"
+      className={cn("absolute h-10 w-10 rounded-full shadow-md text-white hover:text-slate-900 bg-gray-700 hover:bg-slate-300", orientation === "horizontal"
+        ? "right-1 lg:right-6 top-3/2 -translate-y-1/2"
         : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90", className)}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}>
-      <ChevronRight className="h-7 w-7" />
+      <ChevronRight className="h-6 w-6" />
       <span className="sr-only">Next slide</span>
     </Button>)
   );
