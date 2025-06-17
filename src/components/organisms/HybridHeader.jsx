@@ -13,15 +13,8 @@ export default function HybridHeader () {
       alt: "Some alternative text for  accesibility",
     },
     {
-      text: "Soluciones",
-      href: "/soluciones",
-      title:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-      alt: "Some alternative text for  accesibility",
-    },
-    {
-      text: "Cursos",
-      href: "/cursos",
+      text: "Alineaciones",
+      href: "/alineaciones",
       title:
         "Features in the medical sector",
       alt: "For sighted users to preview content available behind a link.",
@@ -31,6 +24,13 @@ export default function HybridHeader () {
       href: "/eventos",
       title:
         "Typically displayed as a progress bar.",
+      alt: "Some alternative text for  accesibility",
+    },
+        {
+      text: "Acerca",
+      href: "/acerca",
+      title:
+        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
       alt: "Some alternative text for  accesibility",
     },
     {

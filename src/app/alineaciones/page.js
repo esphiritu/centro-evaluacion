@@ -53,7 +53,7 @@ const soportes = [
 import resultados from "@/public/img/consulta-resultados.svg";
 import HeroImageEducation from "@/public/img/hero-image-education-3.png";
 
-export default function Cursos(params) {
+export default function Alineaciones(params) {
   return (
     <>
       <main className="w-full pt-[8rem]">

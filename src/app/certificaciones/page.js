@@ -6,16 +6,33 @@ import Image from "next/image";
 import cursos from "@/public/img/cursos.svg";
 import heroSection from "@/public/img/hero-section.png";
 import ISOimage from "@/public/img/depositphotos_356301122-stock-illustration-iso-9001-icon-standard-quality.jpg";
+import logoRedConocer from "@/public/img/logotipo-redConocer.png";
+import logoICEM from "@/public/img/Logo-ICEM.jpg";
 
 // Lucide icons
-import { Sprout, } from "lucide-react";
+import { Sprout, User, Brain,BookMarked } from "lucide-react";
 
 // Shandcn UI components
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, } from "@/components/ui/dialog";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,
+} from "@/components/ui/table";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 
 
@@ -26,6 +43,7 @@ import Footer from "@/components/organisms/Footer";
 import MainLink from "@/components/atoms/MainLink";
 import CtaButton from "@/components/atoms/CtaButton";
 import ButtonAlike from "@/components/atoms/ButtonAlike";
+import SecondaryButton from "@/components/atoms/SecondaryButton";
 
 // SVG elements
 const Headset = <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" /><path d="M21 16v2a4 4 0 0 1-4 4h-5" /></svg>
@@ -86,6 +104,201 @@ export default function Certificaciones(params) {
   return (
     <>
       <main className="w-full mt-6 pt-[8rem]">
+        <section>
+          {/* Estándares disponibles */}
+        <div className="w-full lg:container mb-10" id="certificaciones">
+          <h4 className="text-2xl md:text-3xl font-bold text-center pb-6 pt-[1.8rem] mb-[2.4rem]">
+            Certificaciones disponibles con Proyecta Empresarial
+          </h4>
+          <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
+            <Tabs defaultValue="educativo" className="w-full md:w-11/12">
+              <TabsList className="overflow-x-scroll no-scrollbar overflow-y-hidden">
+                <TabsTrigger value="educativo" className="rounded-full">
+                  <span className="inline">Sector educativo</span>
+                </TabsTrigger>
+                <TabsTrigger value="empresarial" className="rounded-full">
+                  <span className="inline">Sector empresarial</span>
+                </TabsTrigger>
+                <TabsTrigger value="gobierno" className="rounded-full">
+                  <span className="inline">Sector gobierno</span>
+                </TabsTrigger>
+                <TabsTrigger value="social" className="rounded-full">
+                  <span className="inline">Sector social</span>
+                </TabsTrigger>
+              </TabsList>
+              <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
+                <Table className="mt-2">
+                  {/* <TableCaption>
+                      <p className="w-full">Certificaciones</p>
+                    </TableCaption> */}
+                  <TableHeader className="text-xl bg-transparent">
+                    <TableRow className="">
+                      <TableHead
+                        className="w-2/12 md:1/6 lg:w-1/5 py-4">
+                        Código EC</TableHead>
+                      <TableHead
+                        className="w-7/12 md:4/6 lg:w-3/5 py-4">
+                        Estándar de competencia</TableHead>
+                      <TableHead
+                        className="w-3/12 md:1/6 lg:w-1/5 py-4">
+                      </TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody className="text-xl">
+                    {estandares.map(
+                      (estandar => {
+                        return (
+                          <TableRow
+                            key={estandar.id}
+                            className="group/item">
+                            <TableCell className="text-teal-600 text-left text-base lg:text-xl"><span className="bg-teal-100 px-3 py-2 rounded-sm">{estandar.title}</span></TableCell>
+                            <TableCell className="pl-2 pr-0 md:px-3 lg:px-2">
+                              <Drawer className="relative">
+                                <DrawerTrigger className="text-left text-base lg:text-xl">
+                                  {estandar.content}
+                                </DrawerTrigger>
+                                <DrawerContent>
+                                  <ScrollArea>
+                                    <DrawerHeader className="flex w-full">
+                                      <div className="content-center w-full mt-10 md:mt-4">
+                                        <DrawerTitle className="text-2xl mb-6 border border-collapse border-slate-200 shadow-md text-slate-800 rounded-sm py-4 px-6">
+                                          <div className="flex flex-row items-center justify-start space-x-7">
+                                            <h2 className="text-2xl text-teal-600">{estandar.title}</h2>
+                                            <p className="text-slate-900 dark:text-slate-300">{estandar.content}</p>
+                                          </div>
+                                        </DrawerTitle>
+                                        <DrawerDescription
+                                          className="text-lg">
+                                          Detalles del estándar de compencia
+                                        </DrawerDescription>
+                                        <Separator className="mt-3 w-full" />
+                                      </div>
+                                    </DrawerHeader>
+
+                                    <div className="w-full text-xl text-gray-700 dark:text-gray-400 lg:w-1/2 mx-auto px-5 py-2">
+                                      <p className="mb-6">
+                                        <span className="text-slate-800 dark:text-gray-200 font-bold">
+                                          Propósito: </span>
+                                        {estandar.proposito}
+                                      </p>
+                                      <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-3">
+                                        <li className="flex py-1">
+                                          <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                            <User className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                          </div>
+                                          <p className="mb-3 px-4">
+                                            <span className="text-slate-800 dark:text-gray-200 font-bold">Ocupaciones asociadas: </span>
+                                            {estandar.ocupaciones}
+                                          </p>
+                                        </li>
+                                        <li className="flex py-1">
+                                          <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                            <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                          </div>
+                                          <p className="mb-3 px-4">
+                                            <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel de Competencia: </span>
+                                            {estandar.snc}
+                                          </p>
+                                        </li>
+                                        <li className="flex py-1">
+                                          <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
+                                            <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
+                                          </div>
+                                          <p className="mb-3 px-4">
+                                            <span className="text-slate-800 dark:text-gray-200 font-bold">Comité desarrollador: </span>
+                                            {estandar.comite}
+                                          </p>
+                                        </li>
+                                      </ul>
+
+                                      <Button
+                                        variant="outline"
+                                        className="py-6 pl-3 pr-5 mt-5 text-xl text-white dark:text-gray-200 bg-gray-800 hover:bg-gray-300 text-center dark:hover:bg-gray-500">
+                                        <span className="pl-3 pr-3 py-6">Descargar</span>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="20"
+                                          height="20"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeWidth="2.25"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+                                      </Button>
+                                      <p className="text-sm text-muted-foreground py-4">Descarga la información completa del estándar de competencia</p>
+                                    </div>
+                                    <Separator className="mt-1 w-full" />
+                                    <DrawerFooter className="w-full lg:w-1/2 mx-auto">
+                                      <div className="flex flex-row place-content-end items-center">
+                                        <p className="text-2xl text-red-500 dark:text-red-400 font-bold mr-8 md:mr-10">
+                                          <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price}
+                                        </p>
+                                        <SecondaryButton href="./" linkText="Obtener" />
+                                      </div>
+                                      <div className="group">
+                                        <DrawerClose className="absolute top-0 right-5 mx-auto hover:bg-slate-100 text-slate-600 dark:text-slate-200 hover:text-slate-900 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300 z-20">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="48"
+                                            height="48"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="1.25"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
+                                          <div className="absolute right-1 lg:right-2 translate-x-0 lg:translate-x-1/2 translate-y-2 mt-3 flex-col items-center hidden group-hover:flex z-50">
+                                            <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+                                              <p className="pt-1 pb-1">Cerrar</p>
+                                            </span>
+                                          </div>
+                                        </DrawerClose>
+
+                                      </div>
+
+                                    </DrawerFooter>
+                                  </ScrollArea>
+                                </DrawerContent>
+                              </Drawer>
+                            </TableCell>
+                            <TableCell className="text-right px-0 lg:px-2">
+                              <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-md z-10 transition-colors ease-in-out duration-300">Obtener
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="lucide lucide-chevron-right ml-1 origin-left inline transition group-hover/details:translate-x-1 group-hover/details:text-white"><path d="m6 17 5-5-5-5" /></svg>
+                              </Link>
+                            </TableCell>
+                          </TableRow>
+                        )
+                      })
+                    )}
+                  </TableBody>
+                </Table>
+              </TabsContent>
+              <TabsContent value="empresarial">
+                Certificaciones disponibles para el sector productivo
+              </TabsContent>
+              <TabsContent value="gobierno">
+                Certificaciones para el sector del servicio público
+              </TabsContent>
+              <TabsContent value="social">
+                Certificaciones para las organizaciones sociales
+              </TabsContent>
+            </Tabs>
+          </div>
+        </div >
+        </section>
         <section className="container py-10 mt-[9rem]">
           <h4 className="text-3xl font-bold pt-[6rem] mb-4">Niveles de competencia</h4>
           <p className="w-full lg:w-5/6 text-xl text-muted-foreground">Nuestra misión es <strong>empoderar a nuestros clientes con soluciones educativas</strong> que impulsan el éxito y el crecimiento organizacional. Estamos dedicados a brindar un servicio excepcional, fomentar asociaciones a largo plazo y superar continuamente las expectativas.</p>
@@ -144,13 +357,25 @@ export default function Certificaciones(params) {
             </div>
             <Accordion type="single" collapsible className="w-full lg:w-1/2">
               <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionTrigger>¿La evaluación es presencial?</AccordionTrigger>
+                <AccordionContent>
+                  You can change your donation percentage, pause your donation, or opt out of donating at any time from the Payments & payouts section of your account.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>¿Qué se me entrega una vez aprobada la evaluación?</AccordionTrigger>
                 <AccordionContent>
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>How can I manage my time?</AccordionTrigger>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>¿Cuánto tardan en entregarme mi certificado?</AccordionTrigger>
+                <AccordionContent>
+                  You can change your donation percentage, pause your donation, or opt out of donating at any time from the Payments & payouts section of your account.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>¿Cuánto tiempio está vigente la certififcación?</AccordionTrigger>
                 <AccordionContent>
                   You can change your donation percentage, pause your donation, or opt out of donating at any time from the Payments & payouts section of your account.
                 </AccordionContent>

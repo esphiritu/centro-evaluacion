@@ -13,14 +13,14 @@ import SecondImage from "@/public/img/gallery-karen.jpg";
 import directoraGeneral from "@/public/img/pexels-anna-nekrashevich-7550826.jpg";
 import { Separator } from "@/components/ui/separator";
 
-export default function Soluciones() {
+export default function Acerca() {
   return (
     <>
       <main className="w-full pt-19 pt-[8rem]">
         <section>
 
         </section>
-        <section className="container">
+        {/* <section className="container">
           <div className=" mb-[10rem] mt-10">
             <h2 className="text-4xl text-center font-bold py-4 mb-6">Soluciones empresariales</h2>
             <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
@@ -101,7 +101,7 @@ export default function Soluciones() {
               </Card>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <section className="container pt-[9rem] mt-[9rem]" id="acerca">
         <div className="flex flex-col lg:flex-row justify-start">
@@ -161,17 +161,100 @@ export default function Soluciones() {
           <div className="absolute w-2 h-full bg-gray-400 dark:bg-gray-300 border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
         </div>
       </section>
-      <div className="container mt-[8rem]">
-        <h4 className="text-3xl font-bold pt-[6rem] mb-4">Más acerca de nosotros</h4>
-        <p className="text-2xl mb-[5rem] text-pretty text-muted-foreground font-light">Tenemos grandes planes</p>
-        <h5 className="text-3xl font-bold py-4">Contacto empresarial</h5>
-        <p className="w-full lg:w-2/3 text-xl mb-[5rem]">Confía en nosotros para ser tu socio estratégico. Juntos, construiremos un futuro sólido y próspero para tu negocio.</p>
-        <ul className="list-disc pl-5 text-xl text-gray-800 dark:text-gray-400">
-          <li>Dirección</li>
-          <li>Teléfono</li>
-          <li>Correo electrónico</li>
-        </ul>
-      </div>
+      <section>
+        <div className="container mt-[8rem]">
+          <h4 className="text-3xl font-bold pt-[6rem] mb-4">Más acerca de nosotros</h4>
+          <p className="text-2xl mb-[5rem] text-pretty text-muted-foreground font-light">Soluciones empresariales</p>
+
+          <div className=" mb-[10rem] mt-10">
+            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos soluciones de consultoría diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
+            <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
+              <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
+                <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                  <Presentation size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl text-left mt-8 mb-4">
+                  Capacitaciones
+                </h3>
+                <p className="text-lg text-muted-foreground text-left">
+                  Impulsa tu negocio con nuestras soluciones de capacitación personalizadas, diseñadas para potenciar el rendimiento de su equipo.
+                </p>
+              </li>
+              <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
+                <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                  <Rocket size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl text-left mt-8 mb-4">
+                  Consultoría
+                </h3>
+                <p className="text-lg text-muted-foreground text-left">
+                  Nuestro equipo trabajará contigo para identificar oportunidades, superar desafíos y alcanzar tus objetivos de manera eficiente.
+                </p>
+              </li>
+              <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
+                <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
+                  <Dumbbell size={32} strokeWidth={2} className="text-white" />
+                </div>
+                <h3 className="text-2xl text-left mt-8 mb-4">
+                  Coaching
+                </h3>
+                <p className="text-lg text-muted-foreground text-left">
+                  Construya liderazgo, mejore la toma de decisiones y maximize el impacto de los altos directivos en su organización.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-[10rem]">
+            <h3 className="text-3xl text-center font-bold py-10">Portafolio</h3>
+          </div>
+
+          <div className="border rounded-xl px-10 py-10">
+            <h3 className="w-full text-3xl text-center font-bold py-1 mb-6">Resultados medibles</h3>
+            <p className="w-5/6 text-2xl text-center text-pretty text-muted-foreground font-light mb-[2.5rem] mx-auto">
+              Nuestros servicios han ayudado a innumerables empresas a alcanzar un éxito medible. Ahorro de tiempo, reducción de costos, mayor productividad y mejor retorno de la inversión.
+            </p>
+            <div className="flex flex-col lg:flex-row justify-around py-10">
+              <Card>
+                <CardContent>
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <h4 className="text-5xl">32.720</h4>
+                  <p className="text-base">Horas ahorradas al año</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <h4 className="text-5xl">74%</h4>
+                  <p className="text-base">Incrementos en la productividad</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <h4 className="text-5xl">5.6x</h4>
+                  <p className="text-base">ROI recurrente</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <Check size={12} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white bg-teal-400 min-w-5 min-h-5 rounded-full p-[0.15rem] mb-4" />
+                  <h4 className="text-5xl">1.6</h4>
+                  <p className="text-base">Meses para recuperar la inversión</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        
+          <h5 className="text-3xl font-bold py-4">Contacto empresarial</h5>
+          <p className="w-full lg:w-2/3 text-xl mb-[5rem]">Confía en nosotros para ser tu socio estratégico. Juntos, construiremos un futuro sólido y próspero para tu negocio.</p>
+          <ul className="list-disc pl-5 text-xl text-gray-800 dark:text-gray-400">
+            <li>Dirección</li>
+            <li>Teléfono</li>
+            <li>Correo electrónico</li>
+          </ul>
+        </div>
+      </section>
       <Footer />
     </>);
 }
