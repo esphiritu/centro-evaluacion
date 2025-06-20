@@ -226,7 +226,7 @@ export default function Home({ Component, pageProps }) {
               <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn text-pretty">
                 Impulsa tu crecimiento profesional
               </h1>
-              <p className="text-xl md:text-2xl text-center lg:text-left text-white font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1">
+              <p className="text-xl md:text-2xl text-center lg:text-left text-white font-thin text-background py-6 md:py-1">
                 Respalda tus conocimientos y experiencia con <strong>certificaciones oficiales</strong>
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
@@ -483,8 +483,8 @@ export default function Home({ Component, pageProps }) {
             Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
           </p>
           <Dialog>
-            <DialogTrigger aria-describedby="prueba" className="flex items-center py-3 px-3 text-lg text-white dark:text-gray-200 bg-teal-500 hover:bg-teal-600 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
-              <p className="px-2">Solicitar información</p>
+            <DialogTrigger aria-describedby="prueba" className="py-3 px-4 text-lg text-center text-white dark:text-gray-200 bg-teal-500 hover:bg-teal-600 dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
+              Solicitar información
             </DialogTrigger>
             <DialogContent className="py-10 px-[2.5rem] lg:px-[3.5rem]" id="prueba">
               <DialogHeader className="mb-[0.5rem]">
@@ -495,7 +495,7 @@ export default function Home({ Component, pageProps }) {
               </DialogHeader>
               <div className="">
                 <ContactForm>
-                  <FormItemsEc />
+                  {/* <FormItemsEc /> */}
                 </ContactForm>
               </div>
             </DialogContent>

@@ -20,6 +20,7 @@ import {
 import MostPopularCourses from "@/components/cards/MostPopularCourses";
 import TypingEffect from "@/components/atoms/TypingEffect";
 import Footer from "@/components/organisms/Footer";
+import ProgramsCard from "@/components/cards/ProgramsCard";
 
 // Components Data
 const soportes = [
@@ -65,6 +66,15 @@ export default function Alineaciones(params) {
             Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo. Nuestros talleres,  programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
           </p>
         </section>
+        <div className="container w-full pb-10 pt-[3.6rem] mt-6">
+            <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4 pt-[5rem] mb-5">
+              Explora los programas que tenemos para tí
+            </h2>
+            <p className="text-muted-foreground text-2xl font-light text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">
+              Domina las habilidades más demandadas actualmente con capacitación personalizada en áreas como liderazgo, comunicación, marketing digital y más. Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
+            </p>
+            <ProgramsCard />
+          </div>
         <section className="">
           {/* Catálogo de cursos */}
           <div className="py-6 mt-6">
