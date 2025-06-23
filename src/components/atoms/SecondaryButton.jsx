@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function SecondaryButton({ href, linkText }) {
+export default function SecondaryButton({ href, linkText, alignment }) {
   return (
-    <p>
+    <p className={alignment === "center" ? "text-center" : "text-left"}>
       <Link
         href={href}
         className="

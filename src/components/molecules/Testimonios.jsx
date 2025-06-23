@@ -100,7 +100,7 @@ export default function Testimonios() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <div className="absolute -bottom-4 -md:bottom-[1rem] left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
+      <div className="absolute -bottom-10 -md:bottom-[2rem] left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
         <div className="flex items-center justify-center gap-2">
           {indicators.map((_, indx) => (
             <div

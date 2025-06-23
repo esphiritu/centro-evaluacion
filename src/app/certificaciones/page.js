@@ -10,17 +10,17 @@ import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
 
 // Lucide icons
-import { 
-  Sprout, 
-  User, 
-  Brain, 
-  BookMarked, 
-  FileInput, 
-  FileText, 
-  FlaskConical, 
-  TextSearch, 
+import {
+  Sprout,
+  User,
+  Brain,
+  BookMarked,
+  FileInput,
+  FileText,
+  FlaskConical,
+  TextSearch,
   SquareArrowOutUpRight,
-  ArrowDownToLine, 
+  ArrowDownToLine,
 } from "lucide-react";
 
 // Shandcn UI components
@@ -223,7 +223,7 @@ export default function Certificaciones(params) {
                                           <Button
                                             variant="link"
                                             className="py-6 pl-3 pr-5 mt-2 text-xl">
-                                            <ArrowDownToLine className="inline-block max-w-5"/>
+                                            <ArrowDownToLine className="inline-block max-w-5" />
                                             <span className="pl-3 pr-3 py-6">PDF</span>
                                           </Button>
                                           <p className="text-sm text-muted-foreground py-2">Descarga la información completa del estándar de competencia</p>
@@ -236,7 +236,7 @@ export default function Certificaciones(params) {
                                       <DrawerFooter className="w-full lg:w-1/2 mx-auto">
                                         <div className="flex flex-row place-content-end items-center">
                                           <p className="text-2xl text-red-500 dark:text-red-400 font-bold mr-8 md:mr-10">
-                                            <span className="text-sm text-muted-foreground font-thin line-through">{estandar.price}</span> {estandar.price}
+                                            <span className="text-sm text-muted-foreground line-through">{estandar.price}</span> {estandar.price}
                                           </p>
                                           <SecondaryButton href="./" linkText="Obtener" />
                                         </div>
@@ -310,49 +310,53 @@ export default function Certificaciones(params) {
           <Separator className="my-[5rem]" />
           <div className="container mb-10">
             <h3 className="text-3xl font-bold mb-10">Herramientas para tu avance</h3>
-            <div className="flex flex-col lg:flex-row space-x-10">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-x-6 gap-y-6">
               <Link href="./proceso" className="w-full lg:w-1/3">
-                <div className="border rounded-xl shadow-none hover:shadow-xl px-8 py-[3rem]">
-                  <FileInput size={42} className="mx-auto mb-6 text-teal-500" />
-                  <h2 className="text-2xl text-center font-bold mb-8">
+                <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
+                  <FileInput size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition-transform duration-200 delay-100 ease-out group-hover:scale-125 group-hover:transform-gpu mx-auto mb-10 text-teal-500" />
+                  <h2 className="text-2xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
                     Envía tu solicitud de evaluación
                   </h2>
-                  <p className="text-xl text-center font-thin">
+                  <p className="text-xl text-center">
                     Inicia aquí tu proceso de certificación
                   </p>
                 </div>
-                </Link>
-              <div className="border rounded-md shadow-none hover:shadow-xl w-full lg:w-1/3 px-8 py-10">
-                <FlaskConical size={42} className="mx-auto mb-6 text-teal-500" />
-                <h2 className="text-2xl text-center font-bold mb-8">
-                  Agenda tu prueba diagnóstica
-                </h2>
-                <p className="text-xl text-center font-thin">
-                  Asegúrate de estar preparad@
-                </p>
-              </div>
-              <div className="border rounded-md shadow-none hover:shadow-xl w-full lg:w-1/3 px-8 py-10">
-                <TextSearch size={42} className="mx-auto mb-6 text-teal-500" />
-                <h2 className="text-2xl text-center font-bold mb-8">
-                  Consulta el estatus de tu certificación
-                </h2>
-                <p className="text-xl text-center font-thin">
-                  Consulta si tu certificación fue aprobada
-                </p>
-              </div>
+              </Link>
+              <Link href="./proceso" className="w-full lg:w-1/3">
+                <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
+                  <FlaskConical size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition duration-300 delay-150 ease-out group-hover:scale-125 mx-auto mb-10 text-teal-500" />
+                  <h2 className="text-2xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                    Agenda tu prueba diagnóstica
+                  </h2>
+                  <p className="text-xl text-center">
+                    Asegúrate de estar preparad@
+                  </p>
+                </div>
+              </Link>
+              <Link href="./proceso" className="w-full lg:w-1/3">
+                <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
+                  <TextSearch size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition duration-300 delay-150 ease-out group-hover:scale-125 mx-auto mb-10 text-teal-500" />
+                  <h2 className="text-2xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                    Manténte al día
+                  </h2>
+                  <p className="text-xl text-center">
+                    Consulta el status de tu certificación
+                  </p>
+                </div>
+              </Link>
             </div>
           </div>
           <div className="container my-[9rem]">
             <h3 className="text-2xl font-semibold py-6">Documentos y requisitos del aspirante</h3>
             <div className="flex flex-col lg:flex-row gap-x-4">
               <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 py-6 dark:bg-slate-900">
-                <FileText className="min-w-10"/>
+                <FileText className="min-w-10" />
                 <p className="text-lg mb-5 leading-6 px-2">
                   Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
                 </p>
               </div>
               <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 py-6 dark:bg-slate-900">
-                <FileText className="min-w-10"/>
+                <FileText className="min-w-10" />
                 <p className="text-lg mb-5 leading-6 px-2">
                   Guía del candidato
                 </p>
@@ -369,22 +373,7 @@ export default function Certificaciones(params) {
               <h1 className="text-xl text-center text-slate-300 mb-10">
                 Estamos listos para asesorarte. Un experto te ayudará a resolver todas las dudas.
               </h1>
-              <Dialog>
-                <DialogTrigger className="block w-fit mx-auto">
-                  <ButtonAlike ButtonText="Contactar a un asesor" iconButton={Headset} className="" />
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>
-                      <p className="text-xl">Selecciona un tema con el que necesites ayuda.</p>
-                    </DialogTitle>
-                    <DialogDescription>
-
-                      <p>Lorem Ipsum tido width .</p>
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
+             
             </div>
           </div>
           <div className="container flex flex-col lg:flex-row my-10 py-[3rem] space-y-8">
@@ -441,24 +430,24 @@ export default function Certificaciones(params) {
         </div>
         <div className="container flex flex-row mb-[4rem]">
           <div className="max-w-fit h-fit lg:w-3/9 mt-5">
-                <div className="flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-700 rounded-lg px-6 py-6">
-                  <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
-                  <div className="py-3">
-                    <h5 className="text-center text-slate-900 dark:text-slate-200 text-base lg:text-lg font-bold px-3">Secure from the start</h5>
-                    <p className="text-center text-muted-foreground dark:text-white text-sm px-3">
-                      Procesos de evaluación acreditados
-                    </p>
-                  </div>
-                </div>
+            <div className="flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-700 rounded-lg px-6 py-6">
+              <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />
+              <div className="py-3">
+                <h5 className="text-center text-slate-900 dark:text-slate-200 text-base lg:text-lg font-bold px-3">Secure from the start</h5>
+                <p className="text-center text-muted-foreground dark:text-white text-sm px-3">
+                  Procesos de evaluación acreditados
+                </p>
               </div>
-              <div className="w-3/12 px-8 lg:px-[3.9rem] py-6 dark:bg-slate-900 mt-5">
-                <Link href="https://www.conocer.gob.mx/estandares-de-competencia/" target="_blank" className="text-lg text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-500 underline mb-4">
-                  CONOCER<SquareArrowOutUpRight className="inline-block p-1" />
-                </Link><br /> 
-                <Link href="https://www.icem.org.mx/" target="_blank" className="text-lg text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-500 underline mb-4">
-                  ICEM<SquareArrowOutUpRight className="inline-block p-1" />
-                </Link>
-              </div>
+            </div>
+          </div>
+          <div className="w-3/12 px-8 lg:px-[3.9rem] py-6 dark:bg-slate-900 mt-5">
+            <Link href="https://www.conocer.gob.mx/estandares-de-competencia/" target="_blank" className="text-lg text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-500 underline mb-4">
+              CONOCER<SquareArrowOutUpRight className="inline-block p-1" />
+            </Link><br />
+            <Link href="https://www.icem.org.mx/" target="_blank" className="text-lg text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-500 underline mb-4">
+              ICEM<SquareArrowOutUpRight className="inline-block p-1" />
+            </Link>
+          </div>
         </div>
       </main>
       <Footer />

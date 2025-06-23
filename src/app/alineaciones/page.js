@@ -59,11 +59,26 @@ export default function Alineaciones(params) {
     <>
       <main className="w-full pt-[8rem]">
         <section className="bg-slate-700 py-10 h-auto lg:h-[34rem]">
-          <h1 className="animate-fadeIn text-4xl text-center text-white font-bold pb-6">
+          {/* <h1 className="animate-fadeIn text-4xl text-center text-white font-bold pb-6">
             <TypingEffect />
-          </h1>
-          <p className="text-xl md:text-2xl text-center text-white text-pretty font-thin animate-fadeIn text-background drop-shadow-md py-6 md:py-1 w-full lg:w-2/3 mx-auto">
-            Invierte en tu futuro hoy. Permítenos ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo. Nuestros talleres,  programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
+          </h1> */}
+          <div id="textSlider" className="relative w-full mx-auto pl-0 md:pl-[4rem]">
+                      <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-white text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
+                        <p>Refuerza y desarrolla tus habilidades.</p>
+                      </div>
+                      <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
+                        <div className="h-[5.6rem] overflow-hidden">
+                          <div className="animate-scroller">
+                            <p className="text-teal-500 leading-[4.9rem] md:leading-[4.8rem]">Programas personalizados</p>
+                            <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Aprendizaje práctico</p>
+                            <p className="text-teal-500 leading-[4.7rem] md:leading-[4.6rem]">Programas flexibles</p>
+                            <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Instructores expertos</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          <p className="text-xl md:text-2xl text-center text-white text-pretty animate-fadeIn text-background drop-shadow-md py-6 md:py-1 w-full lg:w-2/3 mx-auto">
+            Invierte en tu futuro hoy. Nuestros talleres,  programas de capacitación están diseñados para equiparlo con las habilidades necesarias para sobresalir en su industria.
           </p>
         </section>
         <div className="container w-full pb-10 pt-[3.6rem] mt-6">

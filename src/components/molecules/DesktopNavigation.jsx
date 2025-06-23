@@ -36,7 +36,7 @@ export default function DesktopNavigation({ links }) {
                   white 
                   bg-transparent 
                   transition-all 
-                  duration-500 
+                  duration-200 
                   ease-in-out`}
                   href={link.href} 
                   alt={link.alt}>

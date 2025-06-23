@@ -1,7 +1,6 @@
 import "./globals.css";
 import { ThemeProvider } from 'next-themes';
 import HybridHeader from "@/components/organisms/HybridHeader"; 
-import { Toaster } from '@/components/ui/toaster';
 
 // Google Fonts
 import { Yantramanav } from "next/font/google";
@@ -32,8 +31,7 @@ export default function RootLayout({ children }) {
           <HybridHeader />
           {children}
         </ThemeProvider>
-        <Toaster />
       </body>
     </html>
   );
-}
+};

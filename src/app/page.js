@@ -10,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import ContactForm from "@/components/organisms/ContactForm";
 import {
   HoverCard,
   HoverCardContent,
@@ -24,13 +23,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogDescription, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogTrigger, 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 
 
@@ -42,6 +41,7 @@ import MainLink from "@/components/atoms/MainLink";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import AnimatedText from "@/components/molecules/AnimatedText";
 import FormItemsEc from "@/components/molecules/FormItemsEc";
+import ContactForm from "@/components/organisms/ContactForm";
 
 // Lucide icons
 import {
@@ -59,7 +59,8 @@ import {
   Hammer,
   Medal,
   CircleChevronRight,
-  Check
+  Check, 
+  Lock
 } from "lucide-react";
 
 // Custom icons
@@ -122,7 +123,7 @@ const criterios = [
     description: "Saber y entender",
     content: "Posesión de conceptos, teorías y principios que sustentan el desempeño de la función",
     borColor: "border-t-indigo-500/50",
-    icon: <Lightbulb strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
+    icon: <Lightbulb strokeWidth={1.75} size={50} absoluteStrokeWidth={true} className="mx-auto  mb-6" />,
   },
   {
     id: "00B",
@@ -130,7 +131,7 @@ const criterios = [
     description: "Ser capaz físicamente de desempeñar",
     content: "Realización de acciones que permiten observar su competencia",
     borColor: "border-t-blue-400/50",
-    icon: <Hammer strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
+    icon: <Hammer strokeWidth={1.75} size={50} absoluteStrokeWidth={true} className="mx-auto  mb-6" />,
   },
   {
     id: "00C",
@@ -138,7 +139,7 @@ const criterios = [
     description: "Tener disposición y actitud",
     content: "Predisposición a actuar con determinado comportamiento durante el desempeño",
     borColor: "border-t-orange-400/50",
-    icon: <Medal strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
+    icon: <Medal strokeWidth={1.75} size={50} absoluteStrokeWidth={true} className="mx-auto  mb-6" />,
   },
   {
     id: "00D",
@@ -146,7 +147,7 @@ const criterios = [
     description: "Tangibles resultado de la actividad",
     content: "Pueden ser manuales, informes, métricas de resultados",
     borColor: "border-t-gray-400",
-    icon: <BookOpenCheck strokeWidth={1.25} size={40} absoluteStrokeWidth={true} className="mx-auto" />,
+    icon: <BookOpenCheck strokeWidth={1.75} size={50} absoluteStrokeWidth={true} className="mx-auto mb-6" />,
   },
 ];
 
@@ -223,10 +224,10 @@ export default function Home({ Component, pageProps }) {
         <section className="relative h-[42rem]">
           <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-gradient-to-b lg:bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-[4rem]">
             <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start">
-              <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold tracking-normal lg:!leading-[3rem] py-3 animate-slideIn text-pretty">
+              <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold lg:!leading-[3rem] py-3 text-pretty">
                 Impulsa tu crecimiento profesional
               </h1>
-              <p className="text-xl md:text-2xl text-center lg:text-left text-white font-thin text-background py-6 md:py-1">
+              <p className="text-xl md:text-2xl text-center lg:text-left text-white text-background py-6 md:py-1">
                 Respalda tus conocimientos y experiencia con <strong>certificaciones oficiales</strong>
               </p>
               <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
@@ -238,7 +239,7 @@ export default function Home({ Component, pageProps }) {
                   <HoverCardContent className="flex justify-between items-start mt-4 p-3 bg-slate-50 dark:bg-slate-800">
                     <Award size={24} className="w-1/5 mt-1" />
                     <div className="w-4/5 pr-2">
-                      <h4 className="font-semibold mb-3">Ingresa tu solucitud</h4>
+                      <h4 className="font-semibold mb-1">Ingresa tu solucitud</h4>
                       <p className="text-muted-foreground text-sm">El proceso de certificación es más fácil ahora</p>
                     </div>
                   </HoverCardContent>
@@ -253,7 +254,7 @@ export default function Home({ Component, pageProps }) {
             </div>
           </div>
           <div className="animate-fadeIn absolute -bottom-[5vw] md:bottom-[2vw] right-2/4">
-            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-500 rounded-full border-1 border-slate-300 p-2 text-white">
+            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-500 rounded-full border-1 p-2 text-white">
               <Link href="#benefits">
                 <ArrowDown className="h-8 w-8" />
               </Link>
@@ -261,28 +262,28 @@ export default function Home({ Component, pageProps }) {
           </div>
         </section>
         <div className="container flex flex-col md:flex-row-reverse items-center justify-between mt-10 py-10">
-                  <h5 className="align-bottom text-3xl text-center lg:text-left font-light dark:text-slate-100 tracking-tight w-full md:w-1/3 mr-8">
-                    <span className="text-2xl font-normal">
-                    </span>Sistema Nacional de Competencias Laborales
-                  </h5>
-                  <Image
-                    src={logoRedConocer}
-                    alt="logotipo de Red CONOCER"
-                    width={170}
-                    className="mx-5" />
-                  <Image
-                    src={logoICEM}
-                    alt="logotipo de ICE México"
-                    width={170}
-                    className="mx-5" />
-                </div>
+          <h5 className="align-bottom text-3xl text-center lg:text-left font-light dark:text-slate-100 tracking-tight w-full md:w-1/3 mr-8">
+            <span className="text-2xl font-normal">
+            </span>Sistema Nacional de Competencias Laborales
+          </h5>
+          <Image
+            src={logoRedConocer}
+            alt="logotipo de Red CONOCER"
+            width={170}
+            className="mx-5" />
+          <Image
+            src={logoICEM}
+            alt="logotipo de ICE México"
+            width={170}
+            className="mx-5" />
+        </div>
         {/* Feature Section */}
         {/* Highlight the key benefits of getting certified through the company's educational programs. */}
         <section className="container h-auto lg:h-[32rem] mt-[6rem] pb-[2.7rem]">
           <div
             className="flex flex-col items-center justify-center h-full scroll-smooth"
             id="benefits">
-            <h2 className="scroll-m-40 text-3xl md:text-4xl text-center font-extrabold tracking-tight py-10 mt-10">Beneficios de la certificación laboral</h2>
+            <h2 className="scroll-m-40 text-3xl md:text-4xl text-center tracking-tight py-10 mt-10">Beneficios de la certificación laboral</h2>
             <ul
               className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-[2.7rem]">
               {benefits.map((benefit => {
@@ -389,23 +390,9 @@ export default function Home({ Component, pageProps }) {
 
         {/* Criterios de evaluación */}
         <div className="container mt-[6rem] mb-[8rem] py-10">
-          <div id="textSlider" className="relative w-full lg:w-1/2 mx-auto pl-0 md:pl-[4rem]">
-            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
-              <p>Refuerza cuatro aspectos clave.</p>
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 text-left text-2xl md:text-3xl font-bold m-0 min-w-fit">
-              <div className="h-[5.6rem] overflow-hidden">
-                <div className="animate-scroller">
-                  <p className="text-slate-500 leading-[4.9rem] md:leading-[4.8rem]">Saber</p>
-                  <p className="text-slate-500 leading-[4.5rem] md:leading-[4.5rem]">Saber hacer</p>
-                  <p className="text-slate-500 leading-[4.7rem] md:leading-[4.6rem]">Saber ser</p>
-                  <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Prepárate.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h3 className="text-center text-3xl font-bold py-6">Refuerza cuatro elementos clave. Prepárate</h3>
           <p className="w-full lg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
-              dark:text-slate-200 font-thin mb-1 pb-8 mx-auto">
+              dark:text-slate-200 mb-1 pb-8 mx-auto">
             Únase a nosotros para desarrollar las habilidades, la confianza así como los conocimientos para prosperar en un mundo competitivo y mejorar sus perspectivas profesionales.
           </p>
           <div className="px-0 lg:px-10 lg:border lg:border-slate-400 lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
@@ -419,7 +406,7 @@ export default function Home({ Component, pageProps }) {
                       <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden">
                         <CardHeader>
                           <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
-                            <span className="text-[#55ccc9] px-4 py-6">
+                            <span className="text-[#55ccc9]">
                               {criterio.icon}
                             </span>
                             <CardTitle className="text-center mb-3 font-normal">
@@ -494,9 +481,7 @@ export default function Home({ Component, pageProps }) {
                 </DialogDescription>
               </DialogHeader>
               <div className="">
-                <ContactForm>
-                  {/* <FormItemsEc /> */}
-                </ContactForm>
+
               </div>
             </DialogContent>
           </Dialog>
@@ -651,18 +636,18 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
           <MainLink href="./eventos" linkText="Próximos eventos" />
         </section>
-        <section className="container h-auto md:h-[36rem] flex flex-col lg:flex-row py-8 mt-[3rem] mb-[2rem]">
-          <div className="w-full lg:w-1/2 pr-10 mb-[3rem]">
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-1 uppercase tracking-[0.2rem]">
+        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-8 mt-[3rem] mb-[2rem]">
+          <div className="w-full lg:w-1/2 pr-10 mb-[2rem]">
+            <p className="text-lg text-center text-muted-foreground py-1 uppercase tracking-[0.2rem]">
               Reconocimiento nacional
             </p>
-            <h1 className="text-3xl md:text-4xl text-center lg:text-left font-bold pt-2 mb-4 md:leading-[3rem] px-0">
+            <h1 className="text-3xl md:text-4xl text-center font-bold pt-2 mb-4 md:leading-[3rem] px-0">
               ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
             </h1>
-            <p className="text-lg text-center lg:text-left text-muted-foreground py-2 mb-3 w-full md:w-3/4">
+            <p className="text-lg text-center text-muted-foreground py-2 mb-3 w-full lg:w-3/4 lg:mx-auto">
               Instituciones educativas, empresas y entidades gubernamentales en todo México confían en los procesos de evaluación de Proyecta Empresarial.
             </p>
-            <SecondaryButton href="./acerca#acerca" linkText="Acerca de nosotros" />
+            <SecondaryButton href="./acerca#acerca" linkText="Acerca de nosotros" alignment="center" />
           </div>
           <ul className="grid grid-cols-2 w-full lg:w-1/2 gap-9 lg:gap-5 mb-10 mr-10 py-10">
             <li className="text-md lg:text-xl text-center font-bold flex flex-col align-middle">
@@ -707,7 +692,7 @@ export default function Home({ Component, pageProps }) {
             </li>
           </ul>
         </section>
-        
+
         <section className="pb-[12rem] mt-5 h-auto dark:bg-slate-900 ">
           {/* Seccion de testimonios */}
           <div className="container py-[6rem]">
@@ -719,17 +704,20 @@ export default function Home({ Component, pageProps }) {
             <Testimonios />
           </div>
         </section>
-        <section className="bg-slate-600 py-[6rem] h-auto lg:h-[28rem] scroll-mt-28" id="asesor">
-          <div className="container flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/3 text-white">
-              <h2 className="text-3xl font-semibold leading-[2.4rem]">Asesoría personalizada durante el  <span className="text-teal-300">proceso de certificación</span></h2>
+        <section className="bg-slate-600 py-[6rem] h-auto scroll-mt-28" id="asesor">
+          <div className="container flex flex-col lg:flex-row gap-4">
+            <div className="w-full lg:w-2/5 text-white">
+              <h2 className="text-4xl font-bold leading-[2.6rem]">Asesoría personalizada durante el  <span className="text-teal-300">proceso de certificación</span></h2>
               <p className="text-xl mt-8">¡Hola! Soy <span className="font-bold">Patricia Martínez</span> asesor de Proyecta Empresarial, estoy para ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo.</p>
             </div>
-            <div className="w-full lg:w-2/3">
-              <div className="bg-white h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0">
-                <h3 className="text-2xl text-center text-slate-800 tracking-tight uppercase font-thin py-10">
-                  ¡Quiero obtener más información!
-                </h3>
+            <div className="w-full lg:w-3/5">
+              <div className="bg-white h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0 px-5 lg:px-[3.2rem] py-6">
+                <h3 className="text-2xl font-bold py-6">Datos de contacto</h3>
+                <ContactForm />
+              </div>
+              <div className="flex justify-center items-center leading-0 pt-5">
+                <Lock className="text-gray-100" strokeWidth={2.0} size={14} />
+                <p className="text-gray-100 text-sm pl-2 pt-1">Tus datos están protegidos por nuestra política de privacidad</p>
               </div>
             </div>
           </div>

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { X } from "lucide-react"
-
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, } from "@radix-ui/react-tooltip";
+import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Dialog = DialogPrimitive.Root
 
@@ -37,13 +37,17 @@ const DialogContent = React.forwardRef(({ className, children, ...props }, ref) 
       {...props}>
       {children}
       <DialogPrimitive.Close
-        className="absolute right-4 top-4 hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <X className="h-6 w-6" />
-        {/* <div className="absolute right-1 translate-x-0 lg:translate-x-1/2 translate-y-3 mt-3 flex-col items-center hidden group-hover:flex">
-          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
-            <p className="pt-1 pb-1">Cerrar</p>
-          </span>
-        </div> */}
+        className="group absolute right-4 top-4 hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+        <TooltipProvider>
+          <Tooltip asChild>
+            <TooltipTrigger asChild>
+              <X className="h-6 w-6" />
+            </TooltipTrigger>
+            <TooltipContent side="bottom">
+              <p className="text-white bg-slate-900 dark:text-black dark:bg-slate-400 px-2 py-1 mt-6 rounded-sm ">Cerrar</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

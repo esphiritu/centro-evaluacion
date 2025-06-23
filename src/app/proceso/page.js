@@ -1,6 +1,5 @@
 'use client';
-import FormItemsEc from "@/components/molecules/FormItemsEc";
-import ContactForm from "@/components/organisms/ContactForm";
+import MultiStepContactForm from "@/components/organisms/multi-step-contact-form";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info } from "lucide-react";
@@ -27,9 +26,7 @@ export default function Proceso({params}) {
           </Alert>
         </div>
         <div className="w-full lg:w-1/2 border-none lg:border-solid border-slate-200 rounded shadow-sm px-8 lg:px-[3rem] py-[3.5rem] bg-slate-50 dark:bg-slate-900">
-          <ContactForm>
-            <FormItemsEc />
-          </ContactForm>
+          <MultiStepContactForm />
         </div>
       </div>
     </main>

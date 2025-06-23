@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Handing over some animation to the GPU */
+.group-hover\:transform-gpu {
+  transform: translateZ(0); /* Forces GPU layer */
+}
+
   @layer base {
     :root {
       --background: 0 0% 100%;

@@ -49,7 +49,7 @@ function Footer() {
                   </DialogHeader>
                   <div className="">
                     <ContactForm>
-                      <FormItemsBuzon />
+                      {/* <FormItemsBuzon /> */}
                     </ContactForm>
                   </div>
                 </DialogContent>
