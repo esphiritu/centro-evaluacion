@@ -4,13 +4,14 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import es from "date-fns/locale/es";
 
 function FormItemsEvent() {
   return (
         <FormField
-          control={form.control}
+          control={control}
           name="date"
           id="date"
           render={({ field }) => (

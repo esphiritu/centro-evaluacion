@@ -48,9 +48,7 @@ function Footer() {
                     </DialogDescription>
                   </DialogHeader>
                   <div className="">
-                    <ContactForm>
-                      {/* <FormItemsBuzon /> */}
-                    </ContactForm>
+                    
                   </div>
                 </DialogContent>
               </Dialog>

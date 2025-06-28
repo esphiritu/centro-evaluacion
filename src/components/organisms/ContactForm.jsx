@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox } from "@/components/ui/checkbox";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
+import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 // Icons from Lucide
-import { User, Phone, Mail } from "lucide-react";
+import { User, Phone, Mail, CalendarIcon } from "lucide-react";
 // Z is the core library for defining and validating data structures using Zod schemas.
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -192,6 +195,43 @@ const PhoneField = React.memo(({ control }) => (
 ));
 PhoneField.displayName = 'PhoneField';
 
+const CalendarField = React.memo(({ control }) => (
+  <FormField
+          control={control}
+          name="date"
+          id="date"
+          render={({ field }) => (
+            <FormItem className="flex flex-col">
+              <FormLabel className="text-md font-bold">Fecha</FormLabel>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <FormControl>
+                    <Button
+                      variant={"outline"}
+                      className={cn("w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent", !field.value && "text-muted-foreground")}
+                    >
+                      {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
+                      <CalendarIcon className="ml-auto h-5 w-5 opacity-60" />
+                    </Button>
+                  </FormControl>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={field.value}
+                    onSelect={field.onChange}
+                    disabled={(date) => date < new Date() || date > new Date("2100-01-01")}
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
+              <FormDescription>Selecciona un día para la llamada</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+));
+
 const TermsCheckbox = React.memo(({ control }) => (
   <FormField
     control={control}
@@ -291,6 +331,8 @@ export default function ContactForm({ children }) {
           <EmailField control={form.control} />
         </div>
 
+        <CalendarField control={form.control} />
+
         {/* You'll need to implement the subject, EC, and date fields similarly */}
         {/* For example, if 'subject' is a select/dropdown: */}
         {/*
@@ -317,6 +359,7 @@ export default function ContactForm({ children }) {
           )}
         />
         */}
+    
 
         <div className="flex items-center space-x-2">
           <TermsCheckbox control={form.control} />

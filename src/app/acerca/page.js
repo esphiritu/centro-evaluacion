@@ -125,7 +125,7 @@ export default function Acerca() {
                   <p className="text-lg pt-6">Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.</p>
                 </div>
               </div>
-              <Separator className="w-full" decorative={true} />
+              <Separator className="w-full" />
             </div>
           </div>
         </div>
@@ -158,16 +158,16 @@ export default function Acerca() {
               </div>
             </div>
           </div>
-          <div className="absolute w-2 h-full bg-gray-400 dark:bg-gray-300 border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
+          <div className="absolute w-2 h-full bg-gray-400/50 dark:bg-gray-300 border-white shadow-md left-17 inset-0 lg:mx-auto lg:right-0 lg:left-0"></div>
         </div>
       </section>
       <section>
         <div className="container mt-[8rem]">
           <h4 className="text-3xl font-bold pt-[6rem] mb-4">Más acerca de nosotros</h4>
-          <p className="text-2xl mb-[5rem] text-pretty text-muted-foreground font-light">Soluciones empresariales</p>
+          <p className="text-2xl mb-[5rem] text-pretty text-muted-foreground">Soluciones empresariales</p>
 
           <div className=" mb-[10rem] mt-10">
-            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos soluciones de consultoría diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
+            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos consultoría diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
             <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
                 <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">

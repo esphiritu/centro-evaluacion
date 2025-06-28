@@ -440,7 +440,7 @@ export default function Certificaciones(params) {
               </div>
             </div>
           </div>
-          <div className="w-3/12 px-8 lg:px-[3.9rem] py-6 dark:bg-slate-900 mt-5">
+          <div className="w-3/12 px-8 lg:px-[3.9rem] py-6 mt-5">
             <Link href="https://www.conocer.gob.mx/estandares-de-competencia/" target="_blank" className="text-lg text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-500 underline mb-4">
               CONOCER<SquareArrowOutUpRight className="inline-block p-1" />
             </Link><br />

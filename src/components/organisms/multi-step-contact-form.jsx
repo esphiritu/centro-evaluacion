@@ -1,6 +1,7 @@
 "use client"
+import React from "react";
 import { useState } from "react";
-
+import { useRef, useEffect } from "react";
 import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, ImageIcon } from "lucide-react";
 import { format } from "date-fns";
 
@@ -20,90 +21,107 @@ import { Progress } from "@/components/ui/progress";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+// Modules added to enable the date picker in Spanish
+import es from "date-fns/locale/es";
 
 const formSchema = z.object({
   // Step 1: General Information
   firstName: z.string().min(2, {
-    message: "First name must be at least 2 characters.",
+    message: "Escribe al menos 2 caracteres",
   }),
   lastName: z.string().min(2, {
-    message: "Last name must be at least 2 characters.",
+    message: "Escribe al menos 2 caracteres",
   }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Ingresa un correo electrónico válido.",
   }),
   phone: z.string().min(10, {
-    message: "Please enter a valid phone number.",
+    message: "Número con almenos 10 dígitos.",
   }),
 
   // Step 2: Selection Controls
-  subject: z.string({
-    required_error: "Please select a subject.",
-  }),
+
   priority: z.string({
-    required_error: "Please select a priority level.",
+    required_error: "Selecciona una categoría laboral que mejor describa tu función laboral",
+  }),
+  sector: z.string({
+    required_error: "Selecciona una categoría laboral que mejor describa tu función laboral",
   }),
   services: z.array(z.string()).min(1, {
-    message: "Please select at least one service.",
+    message: "Selecciona un servicio.",
   }),
   preferredContact: z.string({
-    required_error: "Please select your preferred contact method.",
+    required_error: "Selecciona el principal método de contacto",
   }),
 
   // Step 3: Details
   date: z.date({
-    required_error: "Please select a preferred date.",
+    required_error: "Selecciona una fecha",
   }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
+  horario: z.string({
+    required_error: "Por favor selecciona en qué momento es conveniente contactarte",
   }),
-  budget: z.string({
-    required_error: "Please select a budget range.",
+  hour: z.string().min(2, {
+    message: "Ingresa una hora ideal para contactarte",
   }),
   files: z.array(z.any()).optional(),
 })
 
 const steps = [
   {
-    title: "General Information",
-    description: "Tell us about yourself",
+    title: "Información General",
+    description: "Vamos a estar en contacto contigo",
   },
   {
-    title: "Selection Controls",
-    description: "Choose your preferences",
+    title: "Información profesional y servicios requeridos",
+    description: "¿Cómo podemos ayudarte?",
   },
   {
-    title: "Details",
-    description: "Provide additional details",
+    title: "Cita para contactarte",
+    description: "¿Cuándo te gustaría que te contactemos?",
   },
 ]
 
 const services = [
-  { id: "web-design", label: "Web Design" },
-  { id: "web-development", label: "Web Development" },
-  { id: "mobile-app", label: "Mobile App Development" },
-  { id: "seo", label: "SEO Services" },
-  { id: "consulting", label: "Consulting" },
-  { id: "maintenance", label: "Website Maintenance" },
+  { id: "certificacion", label: "Certificación" },
+  { id: "alineacion ", label: "Alineación" },
+  { id: "capacitacion", label: "Capacitación empresarial" },
+  { id: "coaching", label: "Coaching empresarial" },
+  { id: "consultoria", label: "Consultoría empresarial" },
+  { id: "otro", label: "Otro servicio" },
 ]
 
 export default function MultiStepContactForm() {
   const [currentStep, setCurrentStep] = useState(0)
   const [uploadedFiles, setUploadedFiles] = useState([])
+  const [date, setDate] = useState(new Date())
+  const stepRefs = [
+  useRef(null), // Step 0: firstName
+  useRef(null), // Step 1: priority
+  useRef(null), // Step 2: date
+];
+
+  useEffect(() => {
+  if (stepRefs[currentStep]?.current) {
+    stepRefs[currentStep].current.focus();
+  }
+}, [currentStep]);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
+    mode: "onTouched", // or "onBlur"
+    delayError: 200,
     defaultValues: {
       firstName: "",
       lastName: "",
       email: "",
       phone: "",
-      subject: "",
       priority: "",
-      preferredContact: "email",
-      date: null,
-      message: "",
-      budget: "",
+      sector: "",
+      preferredContact: "phone",
+      date: date,
+      horario: "",
+      hour: "",
       // Initialize services as an empty array  
       services: [],
       files: [],
@@ -128,9 +146,9 @@ export default function MultiStepContactForm() {
       case 0:
         return ["firstName", "lastName", "email", "phone"]
       case 1:
-        return ["subject", "priority", "services", "preferredContact"]
+        return ["priority", "sector", "services", "preferredContact"]
       case 2:
-        return ["date", "message", "budget", "files"]
+        return ["date", "hour", "horario", "files"]
       default:
         return []
     }
@@ -182,9 +200,9 @@ export default function MultiStepContactForm() {
         type: file.type,
       })),
     }
-    console.log("Form Data:", formData)
-    console.log("Uploaded Files:", uploadedFiles)
-    alert(`Form submitted successfully with ${uploadedFiles.length} file(s)!`)
+    console.log("Tipo de archivo:", formData)
+    console.log("Archivos cargados:", uploadedFiles)
+    alert(`Información enviada con ${uploadedFiles.length} archivos adjuntos.`)
   }
 
 
@@ -202,16 +220,16 @@ export default function MultiStepContactForm() {
     default:
       progress = 0;
   }
-  
+
   return (
     (<div className="max-w-2xl mx-auto p-6">
       <Card>
         <CardHeader>
-          <CardTitle>Contact Us</CardTitle>
-          <CardDescription>
-            Step {currentStep + 1} of {steps.length}: {steps[currentStep].description}
-          </CardDescription>
+          <CardTitle className="text-2xl pb-6">Proyecta Empresarial</CardTitle>
           <Progress value={progress} className="w-full" />
+          <CardDescription className="py-2">
+            Paso {currentStep + 1} de {steps.length}: {steps[currentStep].description}
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -220,16 +238,15 @@ export default function MultiStepContactForm() {
               {currentStep === 0 && (
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">{steps[0].title}</h3>
-
                   <div className="grid grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>First Name</FormLabel>
+                          <FormLabel>Nombre</FormLabel>
                           <FormControl>
-                            <Input placeholder="John" {...field} />
+                            <Input ref={stepRefs[0]} placeholder="Juan" autoFocus={currentStep === 0} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -240,9 +257,9 @@ export default function MultiStepContactForm() {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Last Name</FormLabel>
+                          <FormLabel>Apellido paterno</FormLabel>
                           <FormControl>
-                            <Input placeholder="Doe" {...field} />
+                            <Input placeholder="Martínez" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -256,7 +273,7 @@ export default function MultiStepContactForm() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="john@example.com" {...field} />
+                          <Input placeholder="juan@mail.com" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -267,9 +284,9 @@ export default function MultiStepContactForm() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
+                        <FormLabel>Número de teléfono</FormLabel>
                         <FormControl>
-                          <Input placeholder="+1 (555) 123-4567" {...field} />
+                          <Input placeholder="(555) 123-4567" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -284,21 +301,21 @@ export default function MultiStepContactForm() {
 
                   <FormField
                     control={form.control}
-                    name="subject"
+                    name="priority"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subject</FormLabel>
+                        <FormLabel>Funcion laboral</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a subject" />
+                            <SelectTrigger ref={stepRefs[1]}>
+                              <SelectValue placeholder="Selecciona la mejor opción" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="general">General Inquiry</SelectItem>
-                            <SelectItem value="support">Technical Support</SelectItem>
-                            <SelectItem value="sales">Sales</SelectItem>
-                            <SelectItem value="partnership">Partnership</SelectItem>
+                            <SelectItem value="operativo">Operativo</SelectItem>
+                            <SelectItem value="administrativo">Administrativo</SelectItem>
+                            <SelectItem value="directivo">Directivo</SelectItem>
+                            <SelectItem value="independiente">Servicios independientes</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -307,26 +324,26 @@ export default function MultiStepContactForm() {
 
                   <FormField
                     control={form.control}
-                    name="priority"
+                    name="sector"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Priority Level</FormLabel>
+                        <FormLabel>Sector laboral</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Select priority" />
+                              <SelectValue placeholder="Selecciona una categoría" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="low">Low</SelectItem>
-                            <SelectItem value="medium">Medium</SelectItem>
-                            <SelectItem value="high">High</SelectItem>
-                            <SelectItem value="urgent">Urgent</SelectItem>
+                            <SelectItem value="general">Empresa privada</SelectItem>
+                            <SelectItem value="support">Entidad pública</SelectItem>
+                            <SelectItem value="sales">Organización social</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
                       </FormItem>
                     )} />
+
 
                   <FormField
                     control={form.control}
@@ -334,8 +351,8 @@ export default function MultiStepContactForm() {
                     render={() => (
                       <FormItem>
                         <div className="mb-4">
-                          <FormLabel className="text-base">Services Interested In</FormLabel>
-                          <FormDescription>Select all services you're interested in.</FormDescription>
+                          <FormLabel className="text-base">Servicios</FormLabel>
+                          <FormDescription>Selecciona los servicios de tu interés</FormDescription>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                           {services.map((service) => (
@@ -372,7 +389,7 @@ export default function MultiStepContactForm() {
                     name="preferredContact"
                     render={({ field }) => (
                       <FormItem className="space-y-3">
-                        <FormLabel>Preferred Contact Method</FormLabel>
+                        <FormLabel>Método principal de contacto</FormLabel>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
@@ -384,11 +401,11 @@ export default function MultiStepContactForm() {
                             </div>
                             <div className="flex items-center space-x-2">
                               <RadioGroupItem value="phone" id="phone" />
-                              <Label htmlFor="phone">Phone</Label>
+                              <Label htmlFor="phone">Teléfono</Label>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <RadioGroupItem value="both" id="both" />
-                              <Label htmlFor="both">Both Email and Phone</Label>
+                              <RadioGroupItem value="wa" id="wa" />
+                              <Label htmlFor="wa">WhatsApp</Label>
                             </div>
                           </RadioGroup>
                         </FormControl>
@@ -408,17 +425,19 @@ export default function MultiStepContactForm() {
                     name="date"
                     render={({ field }) => (
                       <FormItem className="flex flex-col">
-                        <FormLabel>Preferred Contact Date</FormLabel>
+                        <FormLabel className="text-md font-bold">Elige una fecha</FormLabel>
                         <Popover>
                           <PopoverTrigger asChild>
                             <FormControl>
                               <Button
+                                ref={stepRefs[2]}
+                                tabIndex={0}
                                 variant={"outline"}
                                 className={cn(
-                                  "w-[240px] pl-3 text-left font-normal",
+                                  "w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent",
                                   !field.value && "text-muted-foreground"
                                 )}>
-                                {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
+                                {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                               </Button>
                             </FormControl>
@@ -426,35 +445,32 @@ export default function MultiStepContactForm() {
                           <PopoverContent className="w-auto p-0" align="start">
                             <Calendar
                               mode="single"
-                              selected={field.value}
-                              onSelect={field.onChange}
-                              disabled={(date) => date < new Date() || date < new Date("1900-01-01")}
-                              initialFocus />
+                              selected={date}
+                              onSelect={setDate}
+                              className="rounded-lg border"
+                            />
                           </PopoverContent>
                         </Popover>
-                        <FormDescription>When would you prefer us to contact you?</FormDescription>
+                        <FormDescription>Selecciona un día para ponernos en contacto</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )} />
 
                   <FormField
                     control={form.control}
-                    name="budget"
+                    name="horario"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Budget Range</FormLabel>
+                        <FormLabel>Momento o parte del día</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Select your budget range" />
+                              <SelectValue placeholder="Por la mañana o por la tarde" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="under-5k">Under $5,000</SelectItem>
-                            <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                            <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                            <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                            <SelectItem value="over-50k">Over $50,000</SelectItem>
+                            <SelectItem value="temprano">Por la mañana</SelectItem>
+                            <SelectItem value="tarde">Por la tarde</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -463,18 +479,19 @@ export default function MultiStepContactForm() {
 
                   <FormField
                     control={form.control}
-                    name="message"
+                    name="hour"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel>Hora</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Tell us more about your project or inquiry..."
+                            placeholder="10 de la mañana o, 5 pm"
                             className="min-h-[120px]"
-                            {...field} />
+                            {...field}
+                            autoFocus={false} />
                         </FormControl>
-                        <FormDescription>Provide any additional details about your request.</FormDescription>
-                        <FormMessage />
+                        <FormDescription>¿A qué hora exacta te gustaría que te contactemos?</FormDescription>
+                        {form.formState.touchedFields.hour && <FormMessage />}
                       </FormItem>
                     )} />
 
@@ -483,7 +500,7 @@ export default function MultiStepContactForm() {
                     name="files"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>File Attachments</FormLabel>
+                        <FormLabel>Documentos de soporte <span className="text-gray-500 text-sm">(Opcional)</span></FormLabel>
                         <FormControl>
                           <div className="space-y-4">
                             <div
@@ -492,10 +509,10 @@ export default function MultiStepContactForm() {
                               <div className="mt-4">
                                 <label htmlFor="file-upload" className="cursor-pointer">
                                   <span className="mt-2 block text-sm font-medium text-gray-900">
-                                    Drop files here or click to upload
+                                    Arrasta archivos aquí o haz clic para subir
                                   </span>
                                   <span className="mt-1 block text-xs text-gray-500">
-                                    PNG, JPG, PDF, DOC up to 10MB each
+                                    PNG, JPG, PDF, DOC de hasta 10MB cada uno
                                   </span>
                                 </label>
                                 <input
@@ -511,7 +528,7 @@ export default function MultiStepContactForm() {
 
                             {uploadedFiles.length > 0 && (
                               <div className="space-y-2">
-                                <h4 className="text-sm font-medium">Uploaded Files:</h4>
+                                <h4 className="text-sm font-medium">Archivos enviados:</h4>
                                 {uploadedFiles.map((file, index) => (
                                   <div
                                     key={index}
@@ -537,7 +554,7 @@ export default function MultiStepContactForm() {
                             )}
                           </div>
                         </FormControl>
-                        <FormDescription>Upload any relevant documents or images (max 10MB per file)</FormDescription>
+                        <FormDescription>Envía certificados, títulos académicos, constacias de capacitación, etc.</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )} />
@@ -552,16 +569,16 @@ export default function MultiStepContactForm() {
                   onClick={prevStep}
                   disabled={currentStep === 0}>
                   <ChevronLeft className="w-4 h-4 mr-2" />
-                  Previous
+                  Anterior
                 </Button>
 
                 {currentStep < steps.length - 1 ? (
                   <Button type="button" onClick={nextStep}>
-                    Next
+                    Siguiente
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </Button>
                 ) : (
-                  <Button type="submit">Submit Form</Button>
+                  <Button type="submit">Enviar</Button>
                 )}
               </div>
             </form>

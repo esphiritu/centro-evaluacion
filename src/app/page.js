@@ -305,7 +305,7 @@ export default function Home({ Component, pageProps }) {
               }))}
             </ul>
           </div>
-          <MainLink href="#certificaciones" linkText="Ver certificaciones" />
+          <MainLink href="./certificaciones" linkText="Ver certificaciones" />
         </section>
 
         {/* Certification process section */}
@@ -469,22 +469,10 @@ export default function Home({ Component, pageProps }) {
           <p className="text-xl text-muted-foreground pt-1 pb-3 mb-5">
             Si eres un profesional en educación, un especialista en recursos humanos, o director general de una organización, la certificación te ayudará a mantenerte a la vanguardia en tu área
           </p>
-          <Dialog>
-            <DialogTrigger aria-describedby="prueba" className="py-3 px-4 text-lg text-center text-white dark:text-gray-200 bg-teal-500 hover:bg-teal-600 dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
-              Solicitar información
-            </DialogTrigger>
-            <DialogContent className="py-10 px-[2.5rem] lg:px-[3.5rem]" id="prueba">
-              <DialogHeader className="mb-[0.5rem]">
-                <DialogTitle className="text-3xl mb-4">Agenda una prueba diagnóstica</DialogTitle>
-                <DialogDescription className="text-base text-muted-foreground">
-                  Completa el formulario para agendar tu prueba.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="">
-
-              </div>
-            </DialogContent>
-          </Dialog>
+          <SecondaryButton
+            href="./prueba"
+            linkText="Agendar prueba"
+            className="text-center w-full md:w-fit" />
         </section>
         {/* Features List Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
@@ -711,7 +699,7 @@ export default function Home({ Component, pageProps }) {
               <p className="text-xl mt-8">¡Hola! Soy <span className="font-bold">Patricia Martínez</span> asesor de Proyecta Empresarial, estoy para ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo.</p>
             </div>
             <div className="w-full lg:w-3/5">
-              <div className="bg-white h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0 px-5 lg:px-[3.2rem] py-6">
+              <div className="bg-white dark:bg-gray-900 h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0 px-5 lg:px-[3.2rem] py-6">
                 <h3 className="text-2xl font-bold py-6">Datos de contacto</h3>
                 <ContactForm />
               </div>
