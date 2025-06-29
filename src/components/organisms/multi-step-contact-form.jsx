@@ -95,17 +95,6 @@ export default function MultiStepContactForm() {
   const [currentStep, setCurrentStep] = useState(0)
   const [uploadedFiles, setUploadedFiles] = useState([])
   const [date, setDate] = useState(new Date())
-  const stepRefs = [
-  useRef(null), // Step 0: firstName
-  useRef(null), // Step 1: priority
-  useRef(null), // Step 2: date
-];
-
-  useEffect(() => {
-  if (stepRefs[currentStep]?.current) {
-    stepRefs[currentStep].current.focus();
-  }
-}, [currentStep]);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -127,6 +116,45 @@ export default function MultiStepContactForm() {
       files: [],
     },
   })
+
+  // Define individual refs for the first interactive element of each step
+  const firstNameRef = useRef(null);
+  const priorityRef = useRef(null);
+  const dateButtonRef = useRef(null); // Ref for the date picker's trigger button
+  const hourTextareaRef = useRef(null); // Ref for the hour textarea to potentially blur it
+
+  useEffect(() => {
+    const focusElement = () => {
+      let targetRef = null;
+
+      if (currentStep === 0) {
+        targetRef = firstNameRef;
+      } else if (currentStep === 1) {
+        targetRef = priorityRef;
+      } else if (currentStep === 2) {
+        targetRef = dateButtonRef;
+
+        // Immediately after attempting to focus the date button,
+        // specifically blur the textarea if it somehow gained focus.
+        // This is a last-resort override for the stubborn textarea.
+        if (hourTextareaRef.current && document.activeElement === hourTextareaRef.current) {
+          hourTextareaRef.current.blur();
+        }
+      }
+
+      // Attempt to focus the target element's current DOM node
+      if (targetRef?.current) {
+        targetRef.current.focus();
+      }
+    };
+
+    // Use a setTimeout to ensure the DOM is fully rendered and hydrated
+    // before attempting to manipulate focus.
+    const timer = setTimeout(focusElement, 250); // Increased to 250ms
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, [currentStep]); // Dependencies: only re-run when currentStep changes. `form` is not needed here as we're using direct DOM focus.
+
 
   const nextStep = async () => {
     const fields = getFieldsForStep(currentStep)
@@ -246,7 +274,7 @@ export default function MultiStepContactForm() {
                         <FormItem>
                           <FormLabel>Nombre</FormLabel>
                           <FormControl>
-                            <Input ref={stepRefs[0]} placeholder="Juan" autoFocus={currentStep === 0} {...field} />
+                            <Input placeholder="Juan" {...field} ref={firstNameRef} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -307,7 +335,7 @@ export default function MultiStepContactForm() {
                         <FormLabel>Funcion laboral</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger ref={stepRefs[1]}>
+                            <SelectTrigger ref={priorityRef}>
                               <SelectValue placeholder="Selecciona la mejor opción" />
                             </SelectTrigger>
                           </FormControl>
@@ -430,8 +458,9 @@ export default function MultiStepContactForm() {
                           <PopoverTrigger asChild>
                             <FormControl>
                               <Button
-                                ref={stepRefs[2]}
-                                tabIndex={0}
+                                ref={dateButtonRef}
+                                tabIndex={0} // Ensure it's keyboard tabbable
+                                type="button" // Prevents form submission
                                 variant={"outline"}
                                 className={cn(
                                   "w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent",
@@ -488,10 +517,12 @@ export default function MultiStepContactForm() {
                             placeholder="10 de la mañana o, 5 pm"
                             className="min-h-[120px]"
                             {...field}
-                            autoFocus={false} />
+                            ref={hourTextareaRef}
+                          />
                         </FormControl>
                         <FormDescription>¿A qué hora exacta te gustaría que te contactemos?</FormDescription>
-                        {form.formState.touchedFields.hour && <FormMessage />}
+                         {/* Show error message only if the field is touched and has an error */}
+                        {form.formState.errors.hour && form.formState.touchedFields.hour && <FormMessage />}
                       </FormItem>
                     )} />
 
