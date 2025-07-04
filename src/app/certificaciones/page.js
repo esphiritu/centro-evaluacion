@@ -72,7 +72,6 @@ const estandares = [
     duracion: "1 hora en gabinete y 2 horas en campo, totalizando 3 horas",
     proposito: "El estándar de competencia impartición de cursos de formación del capital humano de manera presencial y grupal contempla las funciones sustantivas de preparar, conducir y evaluar cursos de capacitación. Preparar la sesión mediante la planeación de la sesión y la comprobación de la existencia y el funcionamiento de los recursos requeridos para la sesión. Conducir la sesión realizando el encuadre, desarrollo y cierre, empleando técnicas instruccionales y grupales que faciliten el proceso de aprendizaje. Evaluar el aprendizaje antes, durante y al final del curso, considerando la satisfacción de los participantes/capacitandos",
     requisitos: "Ninguno",
-    icon: estandarIcon,
     price: "$5,000 MXN",
   },
   {
@@ -88,7 +87,6 @@ const estandares = [
     duracion: "6 horas",
     proposito: "Servir como referente para la evaluación y certificación de las personas que se desempeñan como desarrolladores de cursos para formación en línea.",
     requisitos: "Ninguno",
-    icon: estandarIcon,
     price: "$5,500 MXN",
   },
   {
@@ -104,10 +102,13 @@ const estandares = [
     duracion: "2 horas en gabinete y 1 hora en campo, totalizando 3 horas",
     proposito: "Servir como referente para la evaluación y certificación de las personas que diseñan cursos de formación del capital humano de manera presencial grupal, diseñando cursos de capacitación presenciales, diseñando instrumentos para la evaluación de cursos de capacitación presenciales y desarrollando manuales del curso de capacitación presenciales",
     requisitos: "Ninguno",
-    icon: estandarIcon,
     price: "$5,800 MXN",
   },
-]
+];
+
+const myIcons = [
+  estandarIcon,
+];
 
 export default function Certificaciones(params) {
   return (
@@ -304,7 +305,8 @@ export default function Certificaciones(params) {
         </section>
         <section className="container py-10 mt-[9rem]">
           <h4 className="text-3xl font-bold pt-[6rem] mb-4">Guía completa para tu certificación</h4>
-          <p className="w-full lg:w-5/6 text-xl text-muted-foreground">Una explicación detallada y clara del proceso completo, desde la solicitud inicial hasta la emisión del certificado.</p>
+          <p className="w-full lg:w-5/6 text-xl text-muted-foreground py-6">Una explicación detallada y clara del proceso completo, desde la solicitud inicial hasta la emisión del certificado.</p>
+          <p className="text-2xl">Podría usar <strong>infografías</strong> o <strong>diagramas</strong> para hacerlo muy visual.</p>
         </section>
         <section className="py-2 h-auto">
           <Separator className="my-[5rem]" />

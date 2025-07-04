@@ -26,7 +26,7 @@ function Footer() {
               </div>
             </div>
             <div className="text-lg py-5">
-              <div className="bg-teal-400 rounded-full p-3 w-fit h-fit">
+              <div className="bg-slate-800 rounded-full p-3 w-fit h-fit">
                 <Mail size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold pt-5 pb-1">Buzón de quejas</p>
@@ -34,9 +34,9 @@ function Footer() {
 
 
               <Dialog>
-                <DialogTrigger aria-describedby="buzon" className="flex items-center py-3 pl-3 pr-5 text-lg text-white hover:text-gray-800 dark:text-gray-200 bg-gray-800 hover:bg-gray-300 text-center dark:hover:bg-gray-500 mt-5 mb-6 rounded-md">
-                  <span className="px-2"> Enviar comentarios</span>
+                <DialogTrigger aria-describedby="buzon" className="flex items-center py-3 text-lg text-gray-800 dark:text-gray-200 text-center hover:underline mt-5 mb-6 rounded-md">
                   <SendHorizontal size={20} strokeWidth={1.5} absoluteStrokeWidth={true} />
+                  <span className="px-3"> Enviar comentarios</span>
                 </DialogTrigger>
                 <DialogContent className="py-10 px-[2.5rem] lg:px-[4rem]" id="buzon">
                   <DialogHeader className="mb-[2rem]">
@@ -54,7 +54,7 @@ function Footer() {
               </Dialog>
             </div>
             <div className="text-lg py-5">
-              <div className="bg-teal-400 rounded-full p-3 w-fit h-fit">
+              <div className="bg-slate-800 rounded-full p-3 w-fit h-fit">
                 <MessageSquareText size={20} strokeWidth={1.5} absoluteStrokeWidth={true} className="text-white" />
               </div>
               <p className="font-bold pt-5 pb-1">Contáctanos ahora</p>
