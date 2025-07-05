@@ -1,8 +1,5 @@
 'use client';
-import AsesorForm from "@/components/organisms/multi-step-contact-form";
-import { Separator } from "@/components/ui/separator";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Info } from "lucide-react";
+import AsesorForm from "@/components/organisms/asesor-form";
 
 
 export default function Asesor({params}) {

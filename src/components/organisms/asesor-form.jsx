@@ -47,9 +47,7 @@ const formSchema = z.object({
   sector: z.string({
     required_error: "Selecciona una categoría laboral que mejor describa tu función laboral",
   }),
-  services: z.array(z.string()).min(1, {
-    message: "Selecciona un servicio.",
-  }),
+
   preferredContact: z.string({
     required_error: "Selecciona el principal método de contacto",
   }),
@@ -64,7 +62,6 @@ const formSchema = z.object({
   hour: z.string().min(2, {
     message: "Ingresa una hora ideal para contactarte",
   }),
-  files: z.array(z.any()).optional(),
 })
 
 const steps = [
@@ -74,26 +71,17 @@ const steps = [
   },
   {
     title: "Información profesional",
-    description: "¿Cómo podemos ayudarte?",
+    description: "Cuéntanos un poco más de tu área laboral",
   },
   {
-    title: "Cita para contactarte",
+    title: "Fecha para contactarte",
     description: "¿Cuándo te gustaría que te contactemos?",
   },
 ]
 
-const services = [
-  { id: "certificacion", label: "Certificación" },
-  { id: "alineacion ", label: "Alineación" },
-  { id: "capacitacion", label: "Capacitación empresarial" },
-  { id: "coaching", label: "Coaching empresarial" },
-  { id: "consultoria", label: "Consultoría empresarial" },
-  { id: "otro", label: "Otro servicio" },
-]
 
 export default function AsesorForm() {
   const [currentStep, setCurrentStep] = useState(0)
-  const [uploadedFiles, setUploadedFiles] = useState([])
   const [date, setDate] = useState(new Date())
 
   const form = useForm({
@@ -111,9 +99,6 @@ export default function AsesorForm() {
       date: date,
       horario: "",
       hour: "",
-      // Initialize services as an empty array  
-      services: [],
-      files: [],
     },
   })
 
@@ -174,63 +159,21 @@ export default function AsesorForm() {
       case 0:
         return ["firstName", "lastName", "email", "phone"]
       case 1:
-        return ["priority", "sector", "services", "preferredContact"]
+        return ["priority", "sector", "preferredContact"]
       case 2:
-        return ["date", "hour", "horario", "files"]
+        return ["date", "hour", "horario"]
       default:
         return []
     }
   }
 
-  const handleFileUpload = (event) => {
-    const files = Array.from(event.target.files || [])
-    const validFiles = files.filter((file) => {
-      const isValidType =
-        file.type.startsWith("image/") ||
-        file.type === "application/pdf" ||
-        file.type.startsWith("application/msword") ||
-        file.type.startsWith("application/vnd.openxmlformats-officedocument")
-      const isValidSize = file.size <= 10 * 1024 * 1024 // 10MB limit
-      return isValidType && isValidSize
-    })
-
-    setUploadedFiles((prev) => [...prev, ...validFiles])
-    form.setValue("files", [...uploadedFiles, ...validFiles])
-  }
-
-  const removeFile = (index) => {
-    const newFiles = uploadedFiles.filter((_, i) => i !== index)
-    setUploadedFiles(newFiles)
-    form.setValue("files", newFiles)
-  }
-
-  const formatFileSize = (bytes) => {
-    if (bytes === 0) return "0 Bytes"
-    const k = 1024
-    const sizes = ["Bytes", "KB", "MB", "GB"]
-    const i = Math.floor(Math.log(bytes) / Math.log(k))
-    return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-  }
-
-  const getFileIcon = (file) => {
-    if (file.type.startsWith("image/")) {
-      return <ImageIcon className="w-4 h-4" />;
-    }
-    return <FileText className="w-4 h-4" />;
-  }
 
   function onSubmit(values) {
     const formData = {
       ...values,
-      files: uploadedFiles.map((file) => ({
-        name: file.name,
-        size: file.size,
-        type: file.type,
-      })),
     }
-    console.log("Tipo de archivo:", formData)
-    console.log("Archivos cargados:", uploadedFiles)
-    alert(`Información enviada con ${uploadedFiles.length} archivos adjuntos.`)
+
+    alert(`Información enviada.`)
   }
 
 
@@ -260,10 +203,10 @@ export default function AsesorForm() {
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10">
               {/* Step 1: General Information */}
               {currentStep === 0 && (
-                <div className="space-y-4">
+                <div className="space-y-8">
                   <h3 className="text-2xl font-semibold">{steps[0].title}</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <FormField
@@ -371,46 +314,6 @@ export default function AsesorForm() {
                       </FormItem>
                     )} />
 
-
-                  <FormField
-                    control={form.control}
-                    name="services"
-                    render={() => (
-                      <FormItem>
-                        <div className="mb-4">
-                          <FormLabel className="text-base font-normal">Servicios</FormLabel>
-                          <FormDescription>Selecciona los servicios de tu interés</FormDescription>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          {services.map((service) => (
-                            <FormField
-                              key={service.id}
-                              control={form.control}
-                              name="services"
-                              render={({ field }) => {
-                                return (
-                                  (<FormItem
-                                    key={service.id}
-                                    className="flex flex-row items-center space-x-3 space-y-2">
-                                    <FormControl>
-                                      <Checkbox
-                                        checked={field.value?.includes(service.id)}
-                                        onCheckedChange={(checked) => {
-                                          return checked
-                                            ? field.onChange([...field.value, service.id])
-                                            : field.onChange(field.value?.filter((value) => value !== service.id));
-                                        }} />
-                                    </FormControl>
-                                    <FormLabel className="text-lg font-normal">{service.label}</FormLabel>
-                                  </FormItem>)
-                                );
-                              }} />
-                          ))}
-                        </div>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
-
                   <FormField
                     control={form.control}
                     name="preferredContact"
@@ -447,63 +350,66 @@ export default function AsesorForm() {
                 <div className="space-y-8">
                   <h3 className="text-2xl font-semibold">{steps[2].title}</h3>
 
-                  <FormField
-                    control={form.control}
-                    name="date"
-                    render={({ field }) => (
-                      <FormItem className="flex flex-col">
-                        <FormLabel className="text-base font-normal">Elige una fecha</FormLabel>
-                        <Popover>
-                          <PopoverTrigger asChild>
-                            <FormControl>
-                              <Button
-                                ref={dateButtonRef}
-                                tabIndex={0} // Ensure it's keyboard tabbable
-                                type="button" // Prevents form submission
-                                variant={"outline"}
-                                className={cn(
-                                  "w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent",
-                                  !field.value && "text-muted-foreground"
-                                )}>
-                                {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
-                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                              </Button>
-                            </FormControl>
-                          </PopoverTrigger>
-                          <PopoverContent className="w-auto p-0" align="start">
-                            <Calendar
-                              mode="single"
-                              selected={date}
-                              onSelect={setDate}
-                              className="rounded-lg border"
-                            />
-                          </PopoverContent>
-                        </Popover>
-                        <FormDescription>Selecciona un día para ponernos en contacto</FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
+                  <div className="flex flex-col lg:flex-row space-x-5">
+                    <FormField
+                      control={form.control}
+                      name="date"
+                      render={({ field }) => (
+                        <FormItem className="flex flex-col">
+                          <FormLabel className="text-base font-normal">Elige una fecha</FormLabel>
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <FormControl>
+                                <Button
+                                  ref={dateButtonRef}
+                                  tabIndex={0} // Ensure it's keyboard tabbable
+                                  type="button" // Prevents form submission
+                                  variant={"outline"}
+                                  className={cn(
+                                    "w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent",
+                                    !field.value && "text-muted-foreground"
+                                  )}>
+                                  {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
+                                  <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                </Button>
+                              </FormControl>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-auto p-0" align="start">
+                              <Calendar
+                                mode="single"
+                                selected={date}
+                                onSelect={setDate}
+                                className="rounded-lg border"
+                              />
+                            </PopoverContent>
+                          </Popover>
+                          <FormDescription>Selecciona un día para ponernos en contacto</FormDescription>
+                          <FormMessage />
+                        </FormItem>
+                      )} />
 
-                  <FormField
-                    control={form.control}
-                    name="horario"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-base font-normal">Momento o parte del día</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="text-lg">
-                              <SelectValue placeholder="Por la mañana o por la tarde" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="temprano" className="text-lg">Por la mañana</SelectItem>
-                            <SelectItem value="tarde" className="text-lg">Por la tarde</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
+                    {/* Campo de horario o parte del día */}
+                    <FormField
+                      control={form.control}
+                      name="horario"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-base font-normal">Momento o parte del día</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="text-lg">
+                                <SelectValue placeholder="Por la mañana o por la tarde" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="temprano" className="text-lg">Por la mañana</SelectItem>
+                              <SelectItem value="tarde" className="text-lg">Por la tarde</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )} />
+                  </div>
 
                   <FormField
                     control={form.control}
@@ -520,74 +426,11 @@ export default function AsesorForm() {
                           />
                         </FormControl>
                         <FormDescription>¿A qué hora exacta te gustaría que te contactemos?</FormDescription>
-                         {/* Show error message only if the field is touched and has an error */}
+                        {/* Show error message only if the field is touched and has an error */}
                         {form.formState.errors.hour && form.formState.touchedFields.hour && <FormMessage />}
                       </FormItem>
                     )} />
 
-                  <FormField
-                    control={form.control}
-                    name="files"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel htmlFor="file-upload">Documentos de soporte <span className="text-gray-500 text-sm">(Opcional)</span></FormLabel>
-                        <FormControl>
-                          <div className="space-y-4">
-                            <div
-                              className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
-                              <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                              <div className="mt-4">
-                                <label htmlFor="file-upload" className="cursor-pointer">
-                                  <span className="mt-2 block text-sm font-medium text-gray-900">
-                                    Arrasta archivos aquí o haz clic para subir
-                                  </span>
-                                  <span className="mt-1 block text-xs text-gray-500">
-                                    PNG, JPG, PDF, DOC de hasta 10MB cada uno
-                                  </span>
-                                </label>
-                                <input
-                                  id="file-upload"
-                                  name="file-upload"
-                                  type="file"
-                                  multiple
-                                  accept="image/*,.pdf,.doc,.docx"
-                                  className="sr-only"
-                                  onChange={handleFileUpload} />
-                              </div>
-                            </div>
-
-                            {uploadedFiles.length > 0 && (
-                              <div className="space-y-2">
-                                <h4 className="text-sm font-medium">Archivos enviados:</h4>
-                                {uploadedFiles.map((file, index) => (
-                                  <div
-                                    key={index}
-                                    className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                    <div className="flex items-center space-x-3">
-                                      {getFileIcon(file)}
-                                      <div>
-                                        <p className="text-sm font-medium text-gray-900">{file.name}</p>
-                                        <p className="text-xs text-gray-500">{formatFileSize(file.size)}</p>
-                                      </div>
-                                    </div>
-                                    <Button
-                                      type="button"
-                                      variant="ghost"
-                                      size="sm"
-                                      onClick={() => removeFile(index)}
-                                      className="text-red-500 hover:text-red-700">
-                                      <X className="w-4 h-4" />
-                                    </Button>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </FormControl>
-                        <FormDescription>Envía certificados, títulos académicos, constacias de capacitación, etc.</FormDescription>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
                 </div>
               )}
 
