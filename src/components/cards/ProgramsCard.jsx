@@ -50,8 +50,8 @@ const programs = [
 export default function CoursesCard() {
   return (
     programs.map((program => (
-      <div key={program.ProgramId} className="relative flex flex-col-reverse lg:flex-row justify-center mb-[2rem] md:mb-[7rem] py-4 md:pt-2 md:pb-10 w-full drop-shadow-lg">
-        <div className="w-full lg:w-1/2 text-left h-auto lg:h-[27rem] px-6 md:px-[3.5rem] py-6 lg:py-4 bg-white dark:bg-gray-800 lg:rounded-l-xl lg:rounded-r-none rounded-b-xl rounded-t-none">
+      <div key={program.ProgramId} className="relative flex flex-col-reverse lg:flex-row justify-center mb-8 md:mb-28 py-4 md:pt-2 md:pb-10 w-full drop-shadow-lg">
+        <div className="w-full lg:w-1/2 text-left h-auto lg:h-108 px-6 md:px-14 py-6 lg:py-4 bg-white dark:bg-gray-800 lg:rounded-l-xl lg:rounded-r-none rounded-b-xl rounded-t-none">
           <h2 className="text-2xl font-bold mb-1 mt-10">
             {program.ProgramName}
           </h2>
@@ -77,7 +77,7 @@ export default function CoursesCard() {
           </div>
           </div>
         </div>
-        <div className="relative w-full h-[18rem] lg:h-[27rem] lg:w-2/5 overflow-hidden">
+        <div className="relative w-full h-72 lg:h-108 lg:w-2/5 overflow-hidden">
           <Image
             src={program.programPic}
             alt={program.ProgramPicText}

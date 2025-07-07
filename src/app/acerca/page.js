@@ -16,14 +16,14 @@ import { Separator } from "@/components/ui/separator";
 export default function Acerca() {
   return (
     <>
-      <main className="w-full pt-19 pt-[8rem]">
+      <main className="w-full pt-19 pt-32">
         <section>
 
         </section>
         {/* <section className="container">
-          <div className=" mb-[10rem] mt-10">
+          <div className=" mb-40 mt-10">
             <h2 className="text-4xl text-center font-bold py-4 mb-6">Soluciones empresariales</h2>
-            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
+            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-20 mx-auto">Ofrecemos soluciones estratégicas diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
             <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
                 <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
@@ -61,13 +61,13 @@ export default function Acerca() {
             </ul>
           </div>
 
-          <div className="mb-[10rem]">
+          <div className="mb-40">
             <h3 className="text-3xl text-center font-bold py-10">Portafolio</h3>
           </div>
 
           <div className="border rounded-xl px-10 py-10">
             <h3 className="w-full text-3xl text-center font-bold py-1 mb-6">Resultados medibles</h3>
-            <p className="w-5/6 text-2xl text-center text-pretty text-muted-foreground font-light mb-[2.5rem] mx-auto">
+            <p className="w-5/6 text-2xl text-center text-pretty text-muted-foreground font-light mb-10 mx-auto">
               Nuestros servicios han ayudado a innumerables empresas a alcanzar un éxito medible. Ahorro de tiempo, reducción de costos, mayor productividad y mejor retorno de la inversión.
             </p>
             <div className="flex flex-col lg:flex-row justify-around py-10">
@@ -103,7 +103,7 @@ export default function Acerca() {
           </div>
         </section> */}
       </main>
-      <section className="container pt-[9rem] mt-[9rem]" id="acerca">
+      <section className="container pt-36 mt-36" id="acerca">
         <div className="flex flex-col lg:flex-row justify-start">
           <div className="w-full lg:w-1/2">
             <h4 className="text-3xl font-bold mb-4">Nuestro equipo</h4>
@@ -111,11 +111,11 @@ export default function Acerca() {
           </div>
           <div className="w-full lg:w-1/2">
             <div>
-              <div className="flex flex-col lg:flex-row justify-start items-start pl-0 lg:pl-10 pt-10 lg:pt-0 pb-[3rem]">
+              <div className="flex flex-col lg:flex-row justify-start items-start pl-0 lg:pl-10 pt-10 lg:pt-0 pb-12">
                 <div className="w-full lg:w-2/6">
                   <Image src={directoraGeneral} width={100} height={100} className="w-full rounded-xl cover-full" alt="Picture of ..."></Image>
                 </div>
-                <div className="w-full lg:w-4/6 py-[2rem] px-0 lg:px-[3.5rem] h-[14rem]">
+                <div className="w-full lg:w-4/6 py-8 px-0 lg:px-14 h-56">
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white pt-4">
                     Leslie Alexander
                   </h3>
@@ -129,10 +129,10 @@ export default function Acerca() {
             </div>
           </div>
         </div>
-        <h4 className="text-3xl font-bold pt-[7rem] mb-4">Podemos alcanzar grandes metas. Contigo</h4>
+        <h4 className="text-3xl font-bold pt-28 mb-4">Podemos alcanzar grandes metas. Contigo</h4>
       </section>
-      <section className="py-[6rem] bg-teal-100/50 dark:bg-gray-900 mt-[12rem]">
-        <h4 className="container text-3xl font-bold py-4 mb-[5rem]"> Acumulando <span className="bg-[#C5CAFF] whitespace-nowrap px-3 rounded-md dark:text-slate-900 font-bold">horas de experiencia</span></h4>
+      <section className="py-24 bg-teal-100/50 dark:bg-gray-900 mt-48">
+        <h4 className="container text-3xl font-bold py-4 mb-20"> Acumulando <span className="bg-[#C5CAFF] whitespace-nowrap px-3 rounded-md dark:text-slate-900 font-bold">horas de experiencia</span></h4>
         <div className="relative container px-10 flex flex-col space-y-8">
           {/* First milestone */}
           <div className="relative z-10">
@@ -162,12 +162,12 @@ export default function Acerca() {
         </div>
       </section>
       <section>
-        <div className="container mt-[8rem]">
-          <h4 className="text-3xl font-bold pt-[6rem] mb-4">Más acerca de nosotros</h4>
-          <p className="text-2xl mb-[5rem] text-pretty text-muted-foreground">Soluciones empresariales</p>
+        <div className="container mt-32">
+          <h4 className="text-3xl font-bold pt-24 mb-4">Más acerca de nosotros</h4>
+          <p className="text-2xl mb-20 text-pretty text-muted-foreground">Soluciones empresariales</p>
 
-          <div className=" mb-[10rem] mt-10">
-            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-[5rem] mx-auto">Ofrecemos consultoría diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
+          <div className=" mb-40 mt-10">
+            <p className="w-full lg:w-2/3 text-2xl text-muted-foreground text-pretty font-light text-center mb-20 mx-auto">Ofrecemos consultoría diseñadas para impulsar el crecimiento, optimizar operaciones y maximizar el potencial de tu negocio.</p>
             <ul className="flex flex-col sm:flex-col lg:flex-row justify-center items-baseline mt-8 mb-6">
               <li className="w-full lg:w-1/3 py-8 px-5 mx-2 lg:mx-auto">
                 <div className="bg-teal-500 w-fit h-fit p-4 rounded-full">
@@ -205,13 +205,13 @@ export default function Acerca() {
             </ul>
           </div>
 
-          <div className="mb-[10rem]">
+          <div className="mb-40">
             <h3 className="text-3xl text-center font-bold py-10">Portafolio</h3>
           </div>
 
           <div className="border rounded-xl px-10 py-10">
             <h3 className="w-full text-3xl text-center font-bold py-1 mb-6">Resultados medibles</h3>
-            <p className="w-5/6 text-2xl text-center text-pretty text-muted-foreground font-light mb-[2.5rem] mx-auto">
+            <p className="w-5/6 text-2xl text-center text-pretty text-muted-foreground font-light mb-10 mx-auto">
               Nuestros servicios han ayudado a innumerables empresas a alcanzar un éxito medible. Ahorro de tiempo, reducción de costos, mayor productividad y mejor retorno de la inversión.
             </p>
             <div className="flex flex-col lg:flex-row justify-around py-10">
@@ -247,7 +247,7 @@ export default function Acerca() {
           </div>
         
           <h5 className="text-3xl font-bold py-4">Contacto empresarial</h5>
-          <p className="w-full lg:w-2/3 text-xl mb-[5rem]">Confía en nosotros para ser tu socio estratégico. Juntos, construiremos un futuro sólido y próspero para tu negocio.</p>
+          <p className="w-full lg:w-2/3 text-xl mb-20">Confía en nosotros para ser tu socio estratégico. Juntos, construiremos un futuro sólido y próspero para tu negocio.</p>
           <ul className="list-disc pl-5 text-xl text-gray-800 dark:text-gray-400">
             <li>Dirección</li>
             <li>Teléfono</li>

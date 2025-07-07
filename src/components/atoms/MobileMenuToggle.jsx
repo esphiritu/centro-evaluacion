@@ -27,8 +27,8 @@ export default function MobileMenuToggle({ links }) {
           <span className="sr-only">dark mode</span>
         </SlimModeToggle>
         <div className="absolute -bottom-8 flex-col items-center hidden mb-5 group-hover:flex">
-          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg"><p className="pt-1 pb-1">Cambiar tema</p></span>
-          <div className="w-auto h-auto -mt-[2rem] rotate-45 bg-black dark:bg-slate-400"></div>
+          <span className="relative mr-8 rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg"><p className="pt-1 pb-1">Cambiar tema</p></span>
+          <div className="w-auto h-auto -mt-8 rotate-45 bg-black dark:bg-slate-400"></div>
         </div>
       </div>
 
@@ -42,16 +42,16 @@ export default function MobileMenuToggle({ links }) {
       >
         {isOpen ?
           <X absoluteStrokeWidth={true} strokeWidth={1.5} className="
-                    h-[1.5rem] 
-                    w-[1.5rem] 
+                    h-6 
+                    w-6 
                     rotate-0 
                     scale-100 
                     transition-transform 
                     dark:rotate-90 
                     dark:scale-100"></X>
           : <MenuIcon absoluteStrokeWidth={true} strokeWidth={1.5} className="
-                    h-[1.5rem] 
-                    w-[1.5rem] 
+                    h-6 
+                    w-6 
                     rotate-0 
                     scale-100 
                     transition-transform 
@@ -122,10 +122,10 @@ export function MobileMenu({ navigation }) {
             dark:hover:text-teal-400
             focus:bg-accent 
             focus:text-accent-foreground 
-            focus:outline-none 
+            focus:outline-hidden 
             disabled:pointer-events-none 
             disabled:opacity-50 
-            data-[active]:bg-accent/50 
+            data-active:bg-accent/50 
             data-[state=open]:bg-accent/50">
             {link.text}
           </Link>

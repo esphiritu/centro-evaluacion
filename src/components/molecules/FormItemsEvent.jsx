@@ -21,8 +21,8 @@ function FormItemsEvent() {
                 <PopoverTrigger asChild>
                   <FormControl>
                     <Button
-                      variant={"outline"}
-                      className={cn("w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent", !field.value && "text-muted-foreground")}
+                      variant={"outline-solid"}
+                      className={cn("w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent", !field.value && "text-muted-foreground")}
                     >
                       {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
                       <CalendarIcon className="ml-auto h-5 w-5 opacity-60" />

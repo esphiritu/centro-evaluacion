@@ -364,9 +364,9 @@ export default function AsesorForm() {
                                   ref={dateButtonRef}
                                   tabIndex={0} // Ensure it's keyboard tabbable
                                   type="button" // Prevents form submission
-                                  variant={"outline"}
+                                  variant={"outline-solid"}
                                   className={cn(
-                                    "w-[278px] h-[3.5rem] pl- 4 text-left font-normal text-lg hover:bg-transparent",
+                                    "w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent",
                                     !field.value && "text-muted-foreground"
                                   )}>
                                   {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
@@ -397,7 +397,7 @@ export default function AsesorForm() {
                           <FormLabel className="text-base font-normal">Momento o parte del día</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="text-lg h-[3.5rem]">
+                              <SelectTrigger className="text-lg h-14">
                                 <SelectValue placeholder="Por la mañana o por la tarde" />
                               </SelectTrigger>
                             </FormControl>

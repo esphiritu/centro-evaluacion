@@ -113,14 +113,14 @@ const myIcons = [
 export default function Certificaciones(params) {
   return (
     <>
-      <main className="w-full mt-6 pt-[8rem]">
+      <main className="w-full mt-6 pt-32">
         <section>
           {/* Estándares disponibles */}
           <div className="w-full lg:container mb-10" id="certificaciones">
             <h4 className="text-2xl md:text-3xl font-bold text-center pb-6 pt-[1.8rem] mb-[2.4rem]">
               Estándares de competencia disponibles con Proyecta Empresarial
             </h4>
-            <div className="flex flex-col lg:flex-row py-6 mb-[2rem]">
+            <div className="flex flex-col lg:flex-row py-6 mb-8">
               <Tabs defaultValue="educativo" className="w-full md:w-11/12">
                 <TabsList className="overflow-x-scroll no-scrollbar overflow-y-hidden">
                   <TabsTrigger value="educativo" className="rounded-full">
@@ -136,7 +136,7 @@ export default function Certificaciones(params) {
                     <span className="inline">Sector social</span>
                   </TabsTrigger>
                 </TabsList>
-                <TabsContent value="educativo" className="lg:pr-[4rem] px-0">
+                <TabsContent value="educativo" className="lg:pr-16 px-0">
                   <Table className="mt-2">
                     <TableCaption>
                       <p className="w-full">Consulta una lista completa de los estándares de competencia en CONOCER</p>
@@ -255,7 +255,7 @@ export default function Certificaciones(params) {
                                               strokeLinejoin="round"
                                               className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
                                             <div className="absolute right-1 lg:right-2 translate-x-0 lg:translate-x-1/2 translate-y-2 mt-3 flex-col items-center hidden group-hover:flex z-50">
-                                              <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+                                              <span className="relative mr-8 rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
                                                 <p className="pt-1 pb-1">Cerrar</p>
                                               </span>
                                             </div>
@@ -303,20 +303,20 @@ export default function Certificaciones(params) {
             </div>
           </div >
         </section>
-        <section className="container py-10 mt-[9rem]">
-          <h4 className="text-3xl font-bold pt-[6rem] mb-4">Guía completa para tu certificación</h4>
+        <section className="container py-10 mt-36">
+          <h4 className="text-3xl font-bold pt-24 mb-4">Guía completa para tu certificación</h4>
           <p className="w-full lg:w-5/6 text-xl text-muted-foreground py-6">Una explicación detallada y clara del proceso completo, desde la solicitud inicial hasta la emisión del certificado.</p>
           <p className="text-2xl">Podría usar <strong>infografías</strong> o <strong>diagramas</strong> para hacerlo muy visual.</p>
         </section>
         <section className="py-2 h-auto">
-          <Separator className="my-[5rem]" />
+          <Separator className="my-20" />
           <div className="container mb-10">
             <h3 className="text-3xl font-bold mb-10">Herramientas para tu avance</h3>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-x-6 gap-y-6">
               <Link href="./proceso" className="w-full lg:w-1/3">
-                <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
+                <div className="group border rounded-xl shadow-xl px-8 py-14">
                   <FileInput size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition-transform duration-200 delay-100 ease-out group-hover:scale-125 group-hover:transform-gpu mx-auto mb-10 text-teal-500" />
-                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100 font-bold mb-8">
                     Envía tu solicitud de evaluación
                   </h2>
                   <p className="text-lg text-center">
@@ -325,9 +325,9 @@ export default function Certificaciones(params) {
                 </div>
               </Link>
               <Link href="./proceso" className="w-full lg:w-1/3">
-                <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
+                <div className="group border rounded-xl shadow-xl px-8 py-14">
                   <FlaskConical size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition duration-300 delay-150 ease-out group-hover:scale-125 mx-auto mb-10 text-teal-500" />
-                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100 font-bold mb-8">
                     Agenda tu prueba diagnóstica
                   </h2>
                   <p className="text-lg text-center">
@@ -336,9 +336,9 @@ export default function Certificaciones(params) {
                 </div>
               </Link>
               <Link href="./proceso" className="w-full lg:w-1/3">
-                <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
+                <div className="group border rounded-xl shadow-xl px-8 py-14">
                   <TextSearch size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition duration-300 delay-150 ease-out group-hover:scale-125 mx-auto mb-10 text-teal-500" />
-                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-gray-100 font-bold mb-8">
                     Manténte al día
                   </h2>
                   <p className="text-lg text-center">
@@ -348,7 +348,7 @@ export default function Certificaciones(params) {
               </Link>
             </div>
           </div>
-          <div className="container my-[9rem]">
+          <div className="container my-36">
             <h3 className="text-2xl font-semibold py-6">Documentos y requisitos del aspirante</h3>
             <div className="flex flex-col gap-x-4 ga">
               <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 dark:bg-slate-900">
@@ -367,7 +367,7 @@ export default function Certificaciones(params) {
           </div>
         </section>
         <section className="mx-auto">
-          <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-[4rem] h-auto lg:h-[30rem]">
+          <div className="flex justify-center items-center bg-slate-700 dark:bg-slate-900 py-16 h-auto lg:h-120">
             <div className="px-2">
               <p className="text-4xl text-center text-white font-bold mb-3">
                 ¿Necesitas más ayuda?
@@ -378,9 +378,9 @@ export default function Certificaciones(params) {
              
             </div>
           </div>
-          <div className="container flex flex-col lg:flex-row my-10 py-[3rem] space-y-8">
+          <div className="container flex flex-col lg:flex-row my-10 py-12 space-y-8">
             <div className="w-full lg:w-1/2">
-              <h3 className="text-3xl font-bold leading-[4rem]">Preguntas frecuentes</h3>
+              <h3 className="text-3xl font-bold leading-16">Preguntas frecuentes</h3>
               <p className="texl-xl">¿Tienes más preguntas? <span className="underline">Contáctanos</span></p>
             </div>
             <Accordion type="single" collapsible className="w-full lg:w-1/2">
@@ -413,7 +413,7 @@ export default function Certificaciones(params) {
         </section>
 
         {/* Reclutamiento y recursos*/}
-        <div className="container flex flex-col lg:flex-row justify-center w-11/12lg:w-full h-auto md:h-[26rem] lg:h-[19rem] mb-[7rem] mt-[7rem] px-10 md:px-[4rem] py-8 rounded-xl mx-auto border">
+        <div className="container flex flex-col lg:flex-row justify-center w-11/12lg:w-full h-auto md:h-104 lg:h-76 mb-28 mt-28 px-10 md:px-16 py-8 rounded-xl mx-auto border">
           <div className="px-2 lg:px-6 pb-8 lg:self-start">
             <Sprout
               size={70}
@@ -430,7 +430,7 @@ export default function Certificaciones(params) {
             <MainLink href="./" linkText="Ver requisitos" />
           </div>
         </div>
-        <div className="container flex flex-row mb-[4rem]">
+        <div className="container flex flex-row mb-16">
           <div className="max-w-fit h-fit lg:w-3/9 mt-5">
             <div className="flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-700 rounded-lg px-6 py-6">
               <Image src={ISOimage} alt="ISO certification logo" width={50} height={50} className="" />

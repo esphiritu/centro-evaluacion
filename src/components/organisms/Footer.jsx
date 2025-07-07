@@ -6,9 +6,9 @@ function Footer() {
   return (
     <>
       <footer className="bg-slate-50 dark:bg-slate-900">
-        <div className="container py-[5rem]">
+        <div className="container py-20">
           <h4 className="text-xl font-bold pt-5">Proyecta empresarial</h4>
-          <span className="w-[7.5rem] h-[3px] bg-teal-300 inline-block"></span>
+          <span className="w-30 h-[3px] bg-teal-300 inline-block"></span>
           <div className="flex flex-col lg:flex-row md:justify-between justify-center">
             <div className="py-5">
               <h5 className="text-lg font-bold pt-4">Centro de evaluación autorizado</h5>
@@ -38,8 +38,8 @@ function Footer() {
                   <SendHorizontal size={20} strokeWidth={1.5} absoluteStrokeWidth={true} />
                   <span className="px-3"> Enviar comentarios</span>
                 </DialogTrigger>
-                <DialogContent className="py-10 px-[2.5rem] lg:px-[4rem]" id="buzon">
-                  <DialogHeader className="mb-[2rem]">
+                <DialogContent className="py-10 px-10 lg:px-16" id="buzon">
+                  <DialogHeader className="mb-8">
                     <div className="flex flex-row items-baseline space-x-5">
                       <DialogTitle className="text-3xl mb-4">Ayudanos a mejorar</DialogTitle>
                     </div>

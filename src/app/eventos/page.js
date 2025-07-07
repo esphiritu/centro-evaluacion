@@ -41,9 +41,9 @@ export default function Socios() {
         }}
         // autoplay={2900}
         >
-          <CarouselContent className="p-5 h-[38rem] mb-[5rem] pt-[8rem]">
+          <CarouselContent className="p-5 h-152 mb-20 pt-32">
             <CarouselItem className="dark:bg-slate-900 rounded-2xl py-10 text-gray-900 dark:text-gray-50">
-              <div className="px-[10rem]">
+              <div className="px-40">
                 <div className="mt-10 h-1/2">
                   <h1 className="font-bold text-xl md:text-3xl text-center mt-10 mb-6">Retos de la productividad de las
                     <span className="
@@ -94,7 +94,7 @@ export default function Socios() {
           <CarouselNext />
         </Carousel>
         <section>
-          <h2 className="text-3xl font-semibold text-center py-4 mb-[5rem]">Eventos destacados</h2>
+          <h2 className="text-3xl font-semibold text-center py-4 mb-20">Eventos destacados</h2>
           <div className="relative container flex flex-col lg:flex-row items-center">
             <div className="w-full lg:w-1/2 px-2 text-center pt-10">
               <h3 className="text-4xl font-bold text-gray-800 dark:text-white pt-2 mb-4">
@@ -103,7 +103,7 @@ export default function Socios() {
               <p className="text-xl mb-4">
                 Mejorar tu productividad y fortalecer tu empresa
               </p>
-              <span className="w-[7rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+              <span className="w-28 h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
               <div className="text-lg max-h-fit mt-10 mb-8">
                 <p className="pb-10 text-lg">Impartido por: Dra. Elisa Martínez A.</p>
                 <Sheet>
@@ -131,12 +131,12 @@ export default function Socios() {
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% dark:from-5% md:from-2% to-[#C5CAFF] dark:to-slate-600 to-27% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-40 inline-block w-full lg:w-4/5 h-132 bg-linear-to-b lg:bg-linear-to-r from-transparent from-20% dark:from-5% md:from-2% to-[#C5CAFF] dark:to-slate-600 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
 
-        <section className="container mt-[8rem]">
-          <h2 className="text-3xl font-bold py-4 mb-[5rem]">Nuestros presentadores</h2>
+        <section className="container mt-32">
+          <h2 className="text-3xl font-bold py-4 mb-20">Nuestros presentadores</h2>
 
         </section>
         <section className="container mb-10">
@@ -179,7 +179,7 @@ export default function Socios() {
             </div>
           </div>
         </section>
-        <section className="container flex flex-col md:flex-row justify-between mt-[8rem] mb-10">
+        <section className="container flex flex-col md:flex-row justify-between mt-32 mb-10">
           <h3 className="text-3xl font-bold">Conoce información importante de los eventos</h3>
         </section>
       </main>

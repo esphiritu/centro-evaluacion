@@ -221,17 +221,17 @@ import checkPointsImage from "@/public/img/pexels-fauxels-3184328.jpg";
 export default function Home({ Component, pageProps }) {
   return (
     <>
-      <main className="w-full pt-19 scroll-smooth pt-[8rem]">
-        <section className="relative h-[42rem]">
-          <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-gradient-to-b lg:bg-gradient-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-[4rem]">
+      <main className="w-full pt-19 scroll-smooth pt-32">
+        <section className="relative h-168">
+          <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-linear-to-b lg:bg-linear-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-16">
             <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start">
-              <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold lg:!leading-[3rem] py-3 text-pretty">
+              <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold lg:leading-12! py-3 text-pretty">
                 Impulsa tu crecimiento profesional
               </h1>
               <p className="text-xl md:text-2xl text-center lg:text-left text-white text-background py-6 md:py-1">
                 Respalda tus conocimientos y experiencia con <strong>certificaciones oficiales</strong>
               </p>
-              <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fadeIn ">
+              <div className="flex flex-col md:flex-row mt-1 md:mt-3 animate-fade-in ">
 
                 <HoverCard>
                   <HoverCardTrigger asChild>
@@ -254,8 +254,8 @@ export default function Home({ Component, pageProps }) {
               Fotografía
             </div>
           </div>
-          <div className="animate-fadeIn absolute -bottom-[5vw] md:bottom-[2vw] right-2/4">
-            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-500 rounded-full border-1 p-2 text-white">
+          <div className="animate-fade-in absolute -bottom-[5vw] md:bottom-[2vw] right-2/4">
+            <div className="animate-bounce transition-colors ease-in-out bg-gray-700 hover:bg-slate-500 rounded-full border p-2 text-white">
               <Link href="#benefits">
                 <ArrowDown className="h-8 w-8" />
               </Link>
@@ -280,7 +280,7 @@ export default function Home({ Component, pageProps }) {
         </div>
         {/* Feature Section */}
         {/* Highlight the key benefits of getting certified through the company's educational programs. */}
-        <section className="container h-auto lg:h-[32rem] mt-[6rem] pb-[2.7rem]">
+        <section className="container h-auto lg:h-128 mt-24 pb-[2.7rem]">
           <div
             className="flex flex-col items-center justify-center h-full scroll-smooth"
             id="benefits">
@@ -310,14 +310,14 @@ export default function Home({ Component, pageProps }) {
         </section>
 
         {/* Certification process section */}
-        <section className="container w-full py-10 mt-[3rem]">
+        <section className="container w-full py-10 mt-12">
           {/* Pasos para certificarse */}
-          <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-[4rem] pl-0 lg:pl-10">
+          <h2 className="text-2xl md:text-3xl text-center font-bold tracking-tight pt-10 mt-2 lg:mt-10 mb-16 pl-0 lg:pl-10">
             Antes de empezar. Conoce los pasos para la certificación
           </h2>
-          <div className="py-5 mb-[4rem] bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-[2rem]">
-            <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-[34rem]">
-              <div className="relative w-full lg:w-1/2 h-full mt-[2.5rem]">
+          <div className="py-5 mb-16 bg-blue-50/85 dark:bg-gray-900 rounded-xl px-5 lg:px-8">
+            <div className="flex flex-col lg:flex-row w-full py-3 mx-auto px-0 lg:px-10 h-auto lg:h-136">
+              <div className="relative w-full lg:w-1/2 h-full mt-10">
                 <Image
                   placeholder="empty"
                   priority={true}
@@ -333,13 +333,13 @@ export default function Home({ Component, pageProps }) {
                   }} />
                 <AnimatedText />
               </div>
-              <div className="w-full lg:w-1/2 pl-8 pt-10 lg:pt-2 md:pl-[2rem] mb-[2rem] mt-2 lg:mt-6">
+              <div className="w-full lg:w-1/2 pl-8 pt-10 lg:pt-2 md:pl-8 mb-8 mt-2 lg:mt-6">
                 {pasos.map((paso => {
                   return (
                     <div
                       key={paso.id}
-                      className="flex flex-col md:flex-row items-center md:items-start mb-1 lg:mb-[1.5rem] py-2">
-                      <div className="relative pl-4 md:pl-[6rem]">
+                      className="flex flex-col md:flex-row items-center md:items-start mb-1 lg:mb-6 py-2">
+                      <div className="relative pl-4 md:pl-24">
                         <span className="absolute -left-8 lg:left-9 top-2 lg:top-3 bg-gray-500 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
                           {paso.stepNumber}
                         </span>
@@ -371,9 +371,9 @@ export default function Home({ Component, pageProps }) {
 
         {/* Partners Section */}
         <div className="container py-5 h-auto">
-          <div className="flex flex-col-reverse lg:flex-row mt-[2.5rem]">
+          <div className="flex flex-col-reverse lg:flex-row mt-10">
             <div className="w-full lg:w-1/2">
-              <h2 className="w-full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-[2.5rem] mt-2 lg:mt-10 mb-4 pl-0 lg:pl-10">
+              <h2 className="w-full lg:w-4/5 text-2xl md:text-3xl text-pretty font-bold tracking-tight pt-10 mt-2 lg:mt-10 mb-4 pl-0 lg:pl-10">
                 La oportunidad para alcanzar tus metas profesionales
               </h2>
               <p className="w-full lg:w-4/5 text-lg md:text-xl text-muted-foreground text-pretty mb-8 pl-0 lg:pl-10">Procesos confiables respaldados por el Organismo Certificador más importante de America Latina: ICE México.</p>
@@ -390,7 +390,7 @@ export default function Home({ Component, pageProps }) {
         </div>
 
         {/* Criterios de evaluación */}
-        <div className="container mt-[6rem] mb-[8rem] py-10">
+        <div className="container mt-24 mb-32 py-10">
           <h3 className="text-center text-3xl font-bold py-6">Refuerza cuatro elementos clave. Prepárate</h3>
           <p className="w-full lg:w-3/4 text-xl text-center text-pretty text-muted-foreground 
               dark:text-slate-200 mb-1 pb-2 mx-auto">
@@ -404,7 +404,7 @@ export default function Home({ Component, pageProps }) {
                     <CarouselItem
                       className="group pb-7 mb-7 lg:pb-2 lg:mb-1"
                       key={criterio.id}>
-                      <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-[20rem] overflow-hidden">
+                      <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-80 overflow-hidden">
                         <CardHeader>
                           <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
                             <span className="text-[#55ccc9]">
@@ -454,7 +454,7 @@ export default function Home({ Component, pageProps }) {
         </div>
 
 
-        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-[4rem] my-10 px-10 lg:px-20 h-auto sm:h-auto md:h-[25rem] mt-[4rem] mb-[4rem] shadow-sm">
+        <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-16 my-10 px-10 lg:px-20 h-auto sm:h-auto md:h-100 mt-16 mb-16 shadow-xs">
           <Image
             src={diagnostico}
             width={100}
@@ -477,8 +477,8 @@ export default function Home({ Component, pageProps }) {
         </section>
         {/* Features List Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
-        <section className="container py-10 mb-[10rem] mt-[2rem]">
-          <div className="w-full mb-[5rem] text-center">
+        <section className="container py-10 mb-40 mt-8">
+          <div className="w-full mb-20 text-center">
             <h1 className="text-3xl md:text-4xl font-bold mt-8 mb-5">
               Convención anual 2024.
               Mejores momentos
@@ -498,7 +498,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[670px] lg:col-span-2 lg:row-span-2">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
                       <Image
                         src={coaching}
                         alt="Image showing a group of people"
@@ -510,7 +510,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-200">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-2xl text-center w-full dark:text-slate-900">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Capacitaciones
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -523,7 +523,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
                       <Image
                         src={presentation}
                         alt="Image showing a group of people"
@@ -535,7 +535,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#ffccaa]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Coaching
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -548,7 +548,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full  h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
                       <Image
                         src={session}
                         alt="Image showing a group of people"
@@ -560,7 +560,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#aaccff]">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Conferencias
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -573,7 +573,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
                       <Image
                         src={participants}
                         alt="Image showing a group of people"
@@ -585,7 +585,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#C5CAFF]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Talleres
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -598,7 +598,7 @@ export default function Home({ Component, pageProps }) {
               <CarouselItem className="w-full  h-320  md:h-[390px]  lg:h-[328px]  lg:col-span-1  lg:row-span-1">
                 <div className="group w-full h-full mx-auto">
                   <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow w-full h-full z-1 lg:z-20">
+                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
                       <Image
                         src={staged}
                         alt="Image showing a group of people"
@@ -609,7 +609,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-[#faccd4]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-base lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-200 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-200 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Consultoría
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -625,12 +625,12 @@ export default function Home({ Component, pageProps }) {
           </Carousel>
           <MainLink href="./eventos" linkText="Próximos eventos" />
         </section>
-        <section className="container h-auto md:h-[36rem] flex flex-col-reverse lg:flex-row py-8 mt-[3rem] mb-[2rem]">
-          <div className="w-full lg:w-1/2 pr-10 mb-[2rem]">
+        <section className="container h-auto md:h-144 flex flex-col-reverse lg:flex-row py-8 mt-12 mb-8">
+          <div className="w-full lg:w-1/2 pr-10 mb-8">
             <p className="text-lg text-center text-muted-foreground py-1 uppercase tracking-[0.2rem]">
               Reconocimiento nacional
             </p>
-            <h1 className="text-3xl md:text-4xl text-center font-bold pt-2 mb-4 md:leading-[3rem] px-0">
+            <h1 className="text-3xl md:text-4xl text-center font-bold pt-2 mb-4 md:leading-12 px-0">
               ¿Por qué evaluarme con <span className="bg-teal-200 whitespace-nowrap px-3 rounded-md text-gray-900 font-bold">Proyecta Empresarial</span>?
             </h1>
             <p className="text-lg text-center text-muted-foreground py-2 mb-3 w-full lg:w-3/4 lg:mx-auto">
@@ -682,18 +682,18 @@ export default function Home({ Component, pageProps }) {
           </ul>
         </section>
 
-        <section className="pb-[12rem] mt-5 h-auto dark:bg-slate-900 ">
+        <section className="pb-48 mt-5 h-auto dark:bg-slate-900 ">
           {/* Seccion de testimonios */}
-          <div className="container py-[6rem]">
+          <div className="container py-24">
             <h2 className="text-center text-3xl font-bold tracking-tight lg:text-4xl mb-4 mt-6">
               Casos de éxito
             </h2>
-            <span className="w-[4rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
+            <span className="w-16 h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
 
             <Testimonios />
           </div>
         </section>
-        <section className="bg-slate-600 py-[6rem] h-auto scroll-mt-20" id="asesor">
+        <section className="bg-slate-600 py-24 h-auto scroll-mt-20" id="asesor">
           <div className="container flex flex-col lg:flex-row">
             <div className="w-full lg:w-2/5 text-white py-10">
               <h2 className="text-4xl font-bold leading-[2.6rem]">Asesoría personalizada durante el  <span className="text-teal-300">proceso de certificación</span></h2>

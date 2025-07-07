@@ -56,7 +56,7 @@ export default function Testimonios() {
       setApi={setApi}
       className="relative"
     >
-      <CarouselContent className="p-0 md:p-5 h-auto md:h-[32rem]">
+      <CarouselContent className="p-0 md:p-5 h-auto md:h-128">
         <CarouselItem className="rounded-md py-10 px-6 md:px-10 text-gray-900 dark:text-gray-50">
           <div className="flex justify-center items-center w-full scroll-m-20">
             <Image src={testimonial} width={100} height={100} className="w-fit rounded-full" alt="Picture of ..."></Image>
@@ -100,7 +100,7 @@ export default function Testimonios() {
           </div>
         </CarouselItem>
       </CarouselContent>
-      <div className="absolute -bottom-10 -md:bottom-[2rem] left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-[2rem]">
+      <div className="absolute -bottom-10 -md:bottom-[2rem] left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-8">
         <div className="flex items-center justify-center gap-2">
           {indicators.map((_, indx) => (
             <div

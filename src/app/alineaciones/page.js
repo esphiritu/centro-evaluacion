@@ -57,8 +57,8 @@ import HeroImageEducation from "@/public/img/hero-image-education-3.png";
 export default function Alineaciones(params) {
   return (
     <>
-      <main className="w-full pt-[8rem]">
-        <section className="container py-10 h-auto lg:h-[34rem]">
+      <main className="w-full pt-32">
+        <section className="container py-10 h-auto lg:h-136">
           <div id="textSlider" className="relative w-full mx-auto">
             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-4 float-left text-2xl md:text-3xl m-0 pr-2 leading-[4.8rem] md:leading-[4.6rem] font-bold">
               <p>Refuerza y desarrolla tus habilidades.</p>
@@ -67,9 +67,9 @@ export default function Alineaciones(params) {
               <div className="h-[5.6rem] overflow-hidden">
                 <div className="animate-scroller">
                   <p className="text-teal-500 leading-[4.9rem] md:leading-[4.8rem]">Programas personalizados</p>
-                  <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Aprendizaje práctico</p>
+                  <p className="text-teal-500 leading-18 md:leading-18">Aprendizaje práctico</p>
                   <p className="text-teal-500 leading-[4.7rem] md:leading-[4.6rem]">Programas flexibles</p>
-                  <p className="text-teal-500 leading-[4.5rem] md:leading-[4.5rem]">Instructores expertos</p>
+                  <p className="text-teal-500 leading-18 md:leading-18">Instructores expertos</p>
                 </div>
               </div>
             </div>
@@ -79,10 +79,10 @@ export default function Alineaciones(params) {
           </p>
         </section>
         <div className="container w-full pb-10 pt-[3.6rem] mt-6">
-          <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4 pt-[5rem] mb-5">
+          <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4 pt-20 mb-5">
             Explora los programas que tenemos para tí
           </h2>
-          <p className="text-muted-foreground text-2xl font-light text-center pb-8 mb-[3rem] w-full lg:w-2/3 mx-auto text-pretty">
+          <p className="text-muted-foreground text-2xl font-light text-center pb-8 mb-12 w-full lg:w-2/3 mx-auto text-pretty">
             Domina las habilidades más demandadas actualmente con capacitación personalizada en áreas como liderazgo, comunicación, marketing digital y más. Creamos las mejores soluciones de preparación y fortalecimiento previo a evaluaciones.
           </p>
           <ProgramsCard />
@@ -92,7 +92,7 @@ export default function Alineaciones(params) {
           <div className="py-6 mt-6">
             <h2 className="text-4xl font-bold">Inscríbete hoy y <span className="text-teal-500">potencia tus habilidades</span></h2>
             <div className="container w-full flex flex-col lg:flex-row justify-center">
-              <div className="w-1/2 flex flex-col justify-center items-end mb-[4rem] gap-4">
+              <div className="w-1/2 flex flex-col justify-center items-end mb-16 gap-4">
                 {soportes.map(soporte => {
                   return (
                     <div className="flex flex-col-reverse lg:flex-row justify-center items-center py-6 w-[20rem]" key={soporte.id}>
@@ -115,18 +115,18 @@ export default function Alineaciones(params) {
               </div>
             </div>
 
-            <div className="container w-full lg:w-4/5 py-[3rem] mt-10">
+            <div className="container w-full lg:w-4/5 py-12 mt-10">
               <h2 className="scroll-m-20 text-2xl lg:text-3xl text-center font-bold tracking-normal pb-4">
                 Explora el catálogo de cursos con <span className="text-teal-500">reconocimiento oficial</span>
               </h2>
-              <p className="text-xl text-center text-gray-500 pb-8 mb-[5rem] w-full lg:w-2/3 mx-auto">
+              <p className="text-xl text-center text-gray-500 pb-8 mb-20 w-full lg:w-2/3 mx-auto">
                 Encuentra los mejores cursos de tu sector e industria para maximizar tus conocimientos y habilidades
               </p>
               <div className="flex flex-col lg:flex-row justify-center">
                 <div className="w-full lg:w-2/6 h-full bg-orange-400">
                   Habilidades digitales
                 </div>
-                <div className="w-full lg:w-4/6 py-[2rem] px-[3.5rem] h-auto border rounded-r-md">
+                <div className="w-full lg:w-4/6 py-8 px-14 h-auto border rounded-r-md">
                   <h3 className="relative text-2xl font-bold text-gray-800 dark:text-white pt-2">
                     Liderazgo para emprendedoras en la era de la IA
                     <span className="absolute -top-4 text-center text-sm font-normal leading-loose bg-red-400 text-white pl-2 pr-3 inline-block ml-1 rounded-full">
@@ -159,21 +159,21 @@ export default function Alineaciones(params) {
         </section>
 
         <section className="container">
-          <h2 className="scroll-m-20 text-2xl lg:text-3xl text-left font-bold tracking-normal pb-4 mb-3 lg:mb-9 mt-[8rem]">
+          <h2 className="scroll-m-20 text-2xl lg:text-3xl text-left font-bold tracking-normal pb-4 mb-3 lg:mb-9 mt-32">
             Cursos más populares
           </h2>
           <MostPopularCourses />
         </section>
 
         {/* Call to action section */}
-        <section className="w-full h-auto md:h-[38rem] animated-background bg-gradient-to-tr from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-200 to-59% border-b-[9px] border-t-[9px] mx-auto py-[6rem] px-4 lg:px-8 mt-[12rem]">
+        <section className="w-full h-auto md:h-152 animated-background bg-linear-to-tr from-indigo-300 from-1% via-emeral-300 via-30% to-emerald-200 to-59% border-b-[9px] border-t-[9px] mx-auto py-24 px-4 lg:px-8 mt-48">
           <div className="flex flex-col justify-center container items-center bg-white/40 dark:bg-slate-900/40 rounded-lg border-spacing-2 border-2 border-white dark:border-gray-400 py-8 text-center">
             <div className="w-full md:w-4/5 px-2 lg:px-2 pt-8 text-center">
               <p className="text-center text-base bg-blue-400 text-white px-4 py-[0.3rem] rounded-full leading-relaxed w-fit mx-auto mb-4">INVERSIÓN INTELIGENTE</p>
               <h5 className="text-3xl md:text-4xl text-center dark:text-white font-bold pt-3 mb-4 text-pretty w-full lg:w-3/4 mx-auto">
                 Libere su potencial con nuestros programas
               </h5>
-              <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-[1.5rem]">
+              <p className="text-xl md:text-2xl text-center text-pretty font-light dark:text-white mb-6">
                 Explore nuestra amplia gama de alineaciones, talleres y cursos diseñados para mejorar sus habilidades y conocimientos.
               </p>
             </div>

@@ -1,10 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-/* Handing over some animation to the GPU */
-.group-hover\:transform-gpu {
-  transform: translateZ(0); /* Forces GPU layer */
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility timeline-img {
+  @apply sm:absolute w-24 h-24 object-cover rounded-full shadow-xl border-[0.38rem] border-gray-400/75 dark:border-gray-300 lg:mx-auto lg:left-0 lg:right-0;
+}
+
+@utility timeline-container {
+  @apply relative pt-2 sm:pl-28 md:pt-0 lg:w-1/2 lg:ml-auto lg:pl-16;
+}
+
+@utility timeline-container-left {
+  @apply lg:ml-0 lg:mr-auto lg:pl-0 lg:pr-16;
+}
+
+@utility timeline-pointer {
+  @apply absolute inset-0 left-10 sm:top-11 sm:left-25 lg:left-14 h-4 w-4 transform rotate-45 bg-white dark:bg-gray-700;
+}
+
+@utility timeline-pointer-left {
+  @apply lg:left-auto lg:right-14;
+}
+
+@layer utilities {
+  /* Handing over some animation to the GPU */
+  .group-hover\:transform-gpu {
+    transform: translateZ(0); /* Forces GPU layer */
+  }
 }
 
   @layer base {
@@ -77,23 +117,5 @@
     }
     body {
       @apply bg-background text-foreground;
-    }
-  }
-
-  @layer components {
-    .timeline-img {
-      @apply sm:absolute w-24 h-24 object-cover rounded-full shadow-xl border-[0.38rem] border-gray-400/75 dark:border-gray-300 lg:mx-auto lg:left-0 lg:right-0;
-    }
-    .timeline-container {
-      @apply relative pt-2 sm:pl-28 md:pt-0 lg:w-1/2 lg:ml-auto lg:pl-16;
-    }
-    .timeline-container-left {
-      @apply lg:ml-0 lg:mr-auto lg:pl-0 lg:pr-16;
-    }
-    .timeline-pointer {
-      @apply  absolute inset-0 left-10 sm:top-11 sm:left-25 lg:left-14 h-4 w-4 transform rotate-45 bg-white dark:bg-gray-700;
-    }
-    .timeline-pointer-left {
-      @apply lg:left-auto lg:right-14;
     }
   }

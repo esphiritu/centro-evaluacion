@@ -7,10 +7,10 @@ import { Info } from "lucide-react";
 
 export default function Blog(params) {
   return (
-    <main className="container mb-10 pt-[8rem]">
-      <div className="w-full flex flex-col lg:flex-row h-auto lg:h-[36rem] justify-center items-start px-2 lg:px-3">
+    <main className="container mb-10 pt-32">
+      <div className="w-full flex flex-col lg:flex-row h-auto lg:h-144 justify-center items-start px-2 lg:px-3">
         <div className="relative w-full lg:w-1/2 flex flex-col lg:items-start justify-self-start rounded-lg text-slate-800 dark:text-slate-200 py-2 lg:py-8 lg:px-10 mt-2 lg:mt-10">
-          <h1 className="text-3xl text-left text-pretty font-bold md:leading-[2.5rem] pb-4">Solicitud de Certificación de Competencias Laborales
+          <h1 className="text-3xl text-left text-pretty font-bold md:leading-10 pb-4">Solicitud de Certificación de Competencias Laborales
           </h1>
           
 

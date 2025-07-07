@@ -72,7 +72,7 @@ export default function MostPopularCourses() {
       <CarouselContent className="flex lg:grid lg:grid-cols-2 lg:grid-rows-3 gap-4 -ml-1 py-4 px-2">
         <CarouselItem className="md:h-[390px] lg:h-[500px] lg:col-span-1 lg:row-span-3 pl-4 rounded-lg">
           <div className="flex flex-col">
-            <div className="h-[23rem] lg:h-[19rem] overflow-hidden">
+            <div className="h-92 lg:h-76 overflow-hidden">
               <Image
                 src={Chef}
                 alt="Alternative text"
@@ -94,7 +94,7 @@ export default function MostPopularCourses() {
               key={course.CourseId}
               className="w-full md:h-[130px] lg:h-[166px] lg:col-span-1 lg:row-span-1 px-0 rounded-lg">
               <div className="flex flex-col lg:flex-row w-full h-full mx-auto">
-                <div className="w-full lg:w-2/6 h-[23rem] lg:max-h-full overflow-hidden">
+                <div className="w-full lg:w-2/6 h-92 lg:max-h-full overflow-hidden">
                   <Image
                     src={course.CoursePic}
                     alt="A desktop image"
@@ -105,7 +105,7 @@ export default function MostPopularCourses() {
                       `}
                   />
                 </div>
-                <div className={`h-[14rem] lg:h-auto lg:w-4/6 text-left pl-8 py-6 shadow-md
+                <div className={`h-56 lg:h-auto lg:w-4/6 text-left pl-8 py-6 shadow-md
                   ${course.flexRowDirection === "lg:flex-row-reverse" ? "border lg:rounded-l-md lg:rounded-r-none" : "border lg:rounded-r-md lg:rounded-l-none"} 
                   ${course.flexColDirection === "flex-col-reverse" ? "" : ""}
                   `}>
