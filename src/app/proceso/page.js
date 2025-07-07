@@ -1,5 +1,5 @@
 'use client';
-import MultiStepContactForm from "@/components/organisms/multi-step-contact-form";
+import AtencionUsuarios from "@/components/organisms/atencion-usuarios";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info } from "lucide-react";
@@ -26,7 +26,8 @@ export default function Proceso({params}) {
           </Alert>
         </div>
         <div className="w-full lg:w-1/2 border-none lg:border-solid border-slate-200 rounded shadow-sm py-4 bg-slate-50 dark:bg-slate-900">
-          <MultiStepContactForm />
+          <AtencionUsuarios />
+          {/* <MultiStepContactForm /> */}
         </div>
       </div>
     </main>

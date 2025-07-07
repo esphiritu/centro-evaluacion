@@ -253,7 +253,7 @@ export default function MultiStepContactForm() {
     (<div className="max-w-2xl mx-auto px-6">
       <Card>
         <CardHeader>
-          <CardDescription className="py-2 text-center">
+          <CardDescription className="py-2 text-right">
             Paso {currentStep + 1}
           </CardDescription>
           <Progress value={progress} className="w-full" />

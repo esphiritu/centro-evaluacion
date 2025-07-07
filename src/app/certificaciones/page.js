@@ -191,7 +191,7 @@ export default function Certificaciones(params) {
                                             Propósito: </span>
                                           {estandar.proposito}
                                         </p>
-                                        <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-3">
+                                        <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-6 space-y-2">
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
                                               <User className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
@@ -223,9 +223,9 @@ export default function Certificaciones(params) {
                                         <div>
                                           <Button
                                             variant="link"
-                                            className="py-6 pl-3 pr-5 mt-2 text-xl">
-                                            <ArrowDownToLine className="inline-block max-w-5" />
-                                            <span className="pl-3 pr-3 py-6">PDF</span>
+                                            className="mt-2 text-lg">
+                                            <ArrowDownToLine className="inline-block" />
+                                            <span className="pl-1 pr-3 py-6">PDF</span>
                                           </Button>
                                           <p className="text-sm text-muted-foreground py-2">Descarga la información completa del estándar de competencia</p>
                                         </div>
@@ -316,10 +316,10 @@ export default function Certificaciones(params) {
               <Link href="./proceso" className="w-full lg:w-1/3">
                 <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
                   <FileInput size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition-transform duration-200 delay-100 ease-out group-hover:scale-125 group-hover:transform-gpu mx-auto mb-10 text-teal-500" />
-                  <h2 className="text-2xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
                     Envía tu solicitud de evaluación
                   </h2>
-                  <p className="text-xl text-center">
+                  <p className="text-lg text-center">
                     Inicia aquí tu proceso de certificación
                   </p>
                 </div>
@@ -327,10 +327,10 @@ export default function Certificaciones(params) {
               <Link href="./proceso" className="w-full lg:w-1/3">
                 <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
                   <FlaskConical size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition duration-300 delay-150 ease-out group-hover:scale-125 mx-auto mb-10 text-teal-500" />
-                  <h2 className="text-2xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
                     Agenda tu prueba diagnóstica
                   </h2>
-                  <p className="text-xl text-center">
+                  <p className="text-lg text-center">
                     Asegúrate de estar preparad@
                   </p>
                 </div>
@@ -338,10 +338,10 @@ export default function Certificaciones(params) {
               <Link href="./proceso" className="w-full lg:w-1/3">
                 <div className="group border rounded-xl shadow-xl px-8 py-[3.5rem]">
                   <TextSearch size={50} strokeWidth={2.1} absoluteStrokeWidth={true} className="transition duration-300 delay-150 ease-out group-hover:scale-125 mx-auto mb-10 text-teal-500" />
-                  <h2 className="text-2xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
+                  <h2 className="text-xl text-center text-gray-600 group-hover:text-gray-900 dark:text-gray-300 group-hover:dark:text-gray-100 font-bold mb-8">
                     Manténte al día
                   </h2>
-                  <p className="text-xl text-center">
+                  <p className="text-lg text-center">
                     Consulta el status de tu certificación
                   </p>
                 </div>
@@ -350,14 +350,14 @@ export default function Certificaciones(params) {
           </div>
           <div className="container my-[9rem]">
             <h3 className="text-2xl font-semibold py-6">Documentos y requisitos del aspirante</h3>
-            <div className="flex flex-col lg:flex-row gap-x-4">
-              <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 py-6 dark:bg-slate-900">
+            <div className="flex flex-col gap-x-4 ga">
+              <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 dark:bg-slate-900">
                 <FileText className="min-w-10" />
                 <p className="text-lg mb-5 leading-6 px-2">
                   Derechos y obligaciones de los usuarios del Sistema Nacional de Competencias
                 </p>
               </div>
-              <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 py-6 dark:bg-slate-900">
+              <div className="flex flex-row w-full lg:w-1/3 px-6 lg:px-8 dark:bg-slate-900">
                 <FileText className="min-w-10" />
                 <p className="text-lg mb-5 leading-6 px-2">
                   Guía del candidato

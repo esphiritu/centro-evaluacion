@@ -40,6 +40,7 @@ import CtaButton from "@/components/atoms/CtaButton";
 import MainLink from "@/components/atoms/MainLink";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
 import AnimatedText from "@/components/molecules/AnimatedText";
+import AsesorForm from "@/components/organisms/asesor-form";
 import FormItemsEc from "@/components/molecules/FormItemsEc";
 import ContactForm from "@/components/organisms/ContactForm";
 
@@ -339,7 +340,7 @@ export default function Home({ Component, pageProps }) {
                       key={paso.id}
                       className="flex flex-col md:flex-row items-center md:items-start mb-1 lg:mb-[1.5rem] py-2">
                       <div className="relative pl-4 md:pl-[6rem]">
-                        <span className="absolute -left-8 lg:left-9 top-2 lg:top-3 bg-gray-400 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
+                        <span className="absolute -left-8 lg:left-9 top-2 lg:top-3 bg-gray-500 text-white px-4 text-center content-center rounded-full min-w-10 min-h-10 mx-3">
                           {paso.stepNumber}
                         </span>
                         <div className="group pl-8">
@@ -391,11 +392,11 @@ export default function Home({ Component, pageProps }) {
         {/* Criterios de evaluación */}
         <div className="container mt-[6rem] mb-[8rem] py-10">
           <h3 className="text-center text-3xl font-bold py-6">Refuerza cuatro elementos clave. Prepárate</h3>
-          <p className="w-full lg:w-3/4 text-2xl text-center text-pretty text-muted-foreground 
-              dark:text-slate-200 mb-1 pb-8 mx-auto">
+          <p className="w-full lg:w-3/4 text-xl text-center text-pretty text-muted-foreground 
+              dark:text-slate-200 mb-1 pb-2 mx-auto">
             Únase a nosotros para desarrollar las habilidades, la confianza así como los conocimientos para prosperar en un mundo competitivo y mejorar sus perspectivas profesionales.
           </p>
-          <div className="px-0 lg:px-10 lg:border lg:border-slate-400 lg:rounded-xl lg:shadow-md mt-[2rem] mb-10 bg-white dark:bg-slate-700 text-right">
+          <div className="px-0 lg:px-10 mt-2 mb-3 text-right">
             <Carousel className="mb-6">
               <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 gap-3 auto-cols-max mt-3 px-6 lg:px-0">
                 {criterios.map((criterio => {
@@ -509,7 +510,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-200">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-2xl text-center w-full dark:text-slate-900">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Capacitaciones
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -534,7 +535,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#ffccaa]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Coaching
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -559,7 +560,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#aaccff]">
                       <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Conferencias
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -581,10 +582,10 @@ export default function Home({ Component, pageProps }) {
                         className="static inset-0 w-full h-full object-cover rounded-md"
                       />
                     </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#C5CAFF]">
+                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#C5CAFF]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Talleres
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -608,7 +609,7 @@ export default function Home({ Component, pageProps }) {
                     <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-[#faccd4]">
                       <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
                         <h1 className="text-base lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-200 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-full px-9 py-3 mx-4 md:mb-1 mt-6">
+                          <Link href="./" className="transition-all duration-200 ease-in-out bg-white/75 hover:lg:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
                             Consultoría
                             <ArrowRight className="inline-block ml-2" />
                           </Link>
@@ -692,16 +693,17 @@ export default function Home({ Component, pageProps }) {
             <Testimonios />
           </div>
         </section>
-        <section className="bg-slate-600 py-[6rem] h-auto scroll-mt-28" id="asesor">
-          <div className="container flex flex-col lg:flex-row gap-4">
-            <div className="w-full lg:w-2/5 text-white">
+        <section className="bg-slate-600 py-[6rem] h-auto scroll-mt-20" id="asesor">
+          <div className="container flex flex-col lg:flex-row">
+            <div className="w-full lg:w-2/5 text-white py-10">
               <h2 className="text-4xl font-bold leading-[2.6rem]">Asesoría personalizada durante el  <span className="text-teal-300">proceso de certificación</span></h2>
               <p className="text-xl mt-8">¡Hola! Soy <span className="font-bold">Patricia Martínez</span> asesor de Proyecta Empresarial, estoy para ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo.</p>
             </div>
             <div className="w-full lg:w-3/5">
-              <div className="bg-white dark:bg-gray-900 h-full rounded-md mx-0 lg:mx-10 mt-10 lg:mt-0 px-5 lg:px-[3.2rem] py-6">
-                <h3 className="text-2xl font-bold py-6">Datos de contacto</h3>
-                <ContactForm />
+              <div className="bg-white dark:bg-gray-900 h-full rounded-2xl mx-0 lg:mx-10 mt-10 lg:mt-0 pt-6">
+                {/* <h3 className="text-2xl font-bold py-6">Datos de contacto</h3> */}
+                <AsesorForm />
+                {/* <ContactForm /> */}
               </div>
               <div className="flex justify-center items-center leading-0 pt-5">
                 <Lock className="text-gray-100" strokeWidth={2.0} size={14} />

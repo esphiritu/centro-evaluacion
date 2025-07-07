@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { useRef, useEffect } from "react";
-import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, ImageIcon } from "lucide-react";
+import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, ImageIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
 
 import { cn } from "@/lib/utils";
@@ -27,10 +27,10 @@ import es from "date-fns/locale/es";
 const formSchema = z.object({
   // Step 1: General Information
   firstName: z.string().min(2, {
-    message: "Escribe al menos 2 caracteres",
+    message: "Tu nombre es necesario",
   }),
   lastName: z.string().min(2, {
-    message: "Escribe al menos 2 caracteres",
+    message: "Al menos un apellido paterno",
   }),
   email: z.string().email({
     message: "Ingresa un correo electrónico válido.",
@@ -66,7 +66,7 @@ const formSchema = z.object({
 
 const steps = [
   {
-    title: "Información General",
+    title: "Datos de contacto",
     description: "Vamos a estar en contacto contigo",
   },
   {
@@ -195,8 +195,8 @@ export default function AsesorForm() {
   return (
     (<div className="max-w-2xl mx-auto px-6">
       <Card>
-        <CardHeader>
-          <CardDescription className="py-2 text-center">
+        <CardHeader className="mb-3">
+          <CardDescription className="text-right">
             Paso {currentStep + 1}
           </CardDescription>
           <Progress value={progress} className="w-full" />
@@ -356,7 +356,7 @@ export default function AsesorForm() {
                       name="date"
                       render={({ field }) => (
                         <FormItem className="flex flex-col">
-                          <FormLabel className="text-base font-normal">Elige una fecha</FormLabel>
+                          <FormLabel className="text-base font-normal">Fecha</FormLabel>
                           <Popover>
                             <PopoverTrigger asChild>
                               <FormControl>
@@ -383,7 +383,7 @@ export default function AsesorForm() {
                               />
                             </PopoverContent>
                           </Popover>
-                          <FormDescription>Selecciona un día para ponernos en contacto</FormDescription>
+                          <FormDescription>Elige un día para ponernos en contacto</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )} />
@@ -393,11 +393,11 @@ export default function AsesorForm() {
                       control={form.control}
                       name="horario"
                       render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="w-full">
                           <FormLabel className="text-base font-normal">Momento o parte del día</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="text-lg">
+                              <SelectTrigger className="text-lg h-[3.5rem]">
                                 <SelectValue placeholder="Por la mañana o por la tarde" />
                               </SelectTrigger>
                             </FormControl>
@@ -419,8 +419,8 @@ export default function AsesorForm() {
                         <FormLabel className="text-base font-normal">Hora</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="10 de la mañana o, 5 pm"
-                            className="min-h-[120px] text-lg"
+                            placeholder="10 de la mañana o, 5:30 pm"
+                            className="min-h-[80px] text-lg"
                             {...field}
                             ref={hourTextareaRef}
                           />
@@ -437,21 +437,25 @@ export default function AsesorForm() {
               {/* Navigation Buttons */}
               <div className="flex justify-between pt-6">
                 <Button
+                  className="text-lg py-2"
                   type="button"
-                  variant="outline"
+                  variant="link"
                   onClick={prevStep}
                   disabled={currentStep === 0}>
-                  <ChevronLeft className="w-4 h-4 mr-2" />
+                  <ArrowLeft className="w-5 h-5 mr-1" />
                   Anterior
                 </Button>
 
                 {currentStep < steps.length - 1 ? (
-                  <Button type="button" onClick={nextStep}>
+                  <Button
+                    className="text-lg py-2" 
+                    type="button" 
+                    onClick={nextStep}>
                     Siguiente
-                    <ChevronRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-5 h-5 ml-1" />
                   </Button>
                 ) : (
-                  <Button type="submit">Enviar</Button>
+                  <Button className="text-lg py-2 px-4" type="submit">Enviar</Button>
                 )}
               </div>
             </form>

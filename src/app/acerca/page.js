@@ -131,8 +131,8 @@ export default function Acerca() {
         </div>
         <h4 className="text-3xl font-bold pt-[7rem] mb-4">Podemos alcanzar grandes metas. Contigo</h4>
       </section>
-      <section className="py-[6rem] bg-slate-100 dark:bg-gray-900 mt-[12rem]">
-        <h4 className="container text-3xl font-bold py-4 mb-[5rem]"> Acumulando <span className="bg-slate-500 whitespace-nowrap px-3 rounded-md text-white font-bold">horas de experiencia</span></h4>
+      <section className="py-[6rem] bg-teal-100/50 dark:bg-gray-900 mt-[12rem]">
+        <h4 className="container text-3xl font-bold py-4 mb-[5rem]"> Acumulando <span className="bg-[#C5CAFF] whitespace-nowrap px-3 rounded-md dark:text-slate-900 font-bold">horas de experiencia</span></h4>
         <div className="relative container px-10 flex flex-col space-y-8">
           {/* First milestone */}
           <div className="relative z-10">

@@ -1,5 +1,6 @@
 'use client';
 import ContactForm from "@/components/organisms/ContactForm";
+import MultiStepContactForm from "@/components/organisms/multi-step-contact-form";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info } from "lucide-react";
 
@@ -16,8 +17,8 @@ export default function Blog(params) {
           <p className="text-xl text-muted-foreground mt-8 pr-10">Completa los campos requeridos para iniciar el trámite de certificación laboral. Una vez recibida tu solicitud, uno de nuestros asesores
             se pondrá en contacto contigo para continuar el proceso.</p>
         </div>
-        <div className="relative w-full lg:w-1/2 border-none lg:border rounded shadow-none lg:shadow-lg px-0 lg:px-[3rem] py-[3.5rem]">
-          
+        <div className="relative w-full lg:w-1/2 border-none lg:border rounded shadow-none lg:shadow-lg">
+          <MultiStepContactForm />
         </div>
       </div>
     </main>

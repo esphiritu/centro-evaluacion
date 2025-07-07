@@ -105,10 +105,7 @@ export default function Socios() {
               </p>
               <span className="w-[7rem] h-[3px] bg-teal-400 block mb-6 mx-auto"></span>
               <div className="text-lg max-h-fit mt-10 mb-8">
-                <div className="flex mb-6 justify-center">
-                  <MapPin /><p className="pl-4 mr-6">Lugar: Cancún, México</p>
-                  <CalendarClock /><p className="pl-4">Fecha: noviembre 29, 2025</p>
-                </div>
+                <p className="pb-10 text-lg">Impartido por: Dra. Elisa Martínez A.</p>
                 <Sheet>
                   <SheetTrigger>
                     <div
@@ -126,11 +123,15 @@ export default function Socios() {
                     </SheetHeader>
                   </SheetContent>
                 </Sheet>
-                <p className="pt-10 text-lg">Impartido por: Dra. Elisa Martínez A.</p>
+                <div className="flex mt-10">
+                  <MapPin /><p className="pl-4 mr-6">Lugar: Cancún, México</p>
+                  <CalendarClock /><p className="pl-4">Fecha: noviembre 29, 2025</p>
+                </div>
+                
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% dark:from-5% md:from-2% to-slate-200 dark:to-slate-600 to-27% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-[10rem] inline-block w-full lg:w-4/5 h-[33rem] bg-gradient-to-b lg:bg-gradient-to-r from-transparent from-20% dark:from-5% md:from-2% to-[#C5CAFF] dark:to-slate-600 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
 

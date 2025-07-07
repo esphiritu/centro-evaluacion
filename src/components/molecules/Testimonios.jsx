@@ -113,21 +113,9 @@ export default function Testimonios() {
           ))}
         </div>
       </div>
-      <div className="relative group">
+      <div className="w-full lg:w-1/2 relative mx-auto">
+        <CarouselNext /> 
         <CarouselPrevious />
-        <div className="absolute right-15 lg:right-25 translate-x-0 lg:translate-x-1/2 translate-y-3/4 mt-3 flex-col items-center hidden group-hover:flex">
-          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
-            <p className="pt-1 pb-1">Anterior</p>
-          </span>
-        </div>
-      </div>
-      <div className="relative group">
-        <CarouselNext />
-        <div className="absolute right-1 lg:right-6 translate-x-0 lg:translate-x-1/2 translate-y-3/4 mt-3 flex-col items-center hidden group-hover:flex">
-          <span className="relative mr-[2rem] rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
-            <p className="pt-1 pb-1">Siguiente</p>
-          </span>
-        </div>
       </div>
     </Carousel>
   )
