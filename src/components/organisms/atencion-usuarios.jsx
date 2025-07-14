@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { useRef, useEffect } from "react";
-import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, Image, ArrowLeft, ArrowRight, File } from "lucide-react";
+import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, Image, ArrowLeft, ArrowRight, File, Trash2 } from "lucide-react";
 import { add, format } from "date-fns";
 
 import { cn } from "@/lib/utils";
@@ -124,11 +124,7 @@ export default function AtencionUsuarios() {
     const focusElement = () => {
       let targetRef = null;
 
-      if (currentStep === 0) {
-        targetRef = firstNameRef;
-      } else if (currentStep === 1) {
-        targetRef = priorityRef;
-      } else if (currentStep === 2) {
+      if (currentStep === 2) {
         targetRef = dateButtonRef;
 
         // Immediately after attempting to focus the date button,
@@ -300,7 +296,7 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel className="text-base font-normal">Nombre(s)</FormLabel>
                         <FormControl>
-                          <Input placeholder="Juan" {...field} ref={firstNameRef} />
+                          <Input placeholder="Juan" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -450,9 +446,9 @@ export default function AtencionUsuarios() {
                             <div
                               className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center hover:border-gray-400 transition-colors">
                               <div className="flex justify-center items-center space-x-4">
-                                <Image className="h-10 w-10 text-gray-600" strokeWidth={1.25} absoluteStrokeWidth />
-                                <Upload className="h-20 w-20 text-gray-600" strokeWidth={1.50} absoluteStrokeWidth />
                                 <File className="h-10 w-10 text-gray-600" strokeWidth={1.25} absoluteStrokeWidth />
+                                <Upload className="h-20 w-20 text-gray-600" strokeWidth={1.50} absoluteStrokeWidth />
+                                <Image className="h-10 w-10 text-gray-600" strokeWidth={1.25} absoluteStrokeWidth />
                               </div>
                               <div className="mt-4">
                                 <label htmlFor="file-upload" className="cursor-pointer">
@@ -460,7 +456,7 @@ export default function AtencionUsuarios() {
                                     Arrasta archivos aquí o <span className="text-teal-600">haz clic para subir</span>
                                   </span>
                                   <span className="mt-1 block text-xs text-gray-500">
-                                    PNG, JPG, PDF, DOC de hasta 10MB cada uno
+                                    PDF, DOC, PNG, JPG de hasta 10MB cada uno
                                   </span>
                                 </label>
                                 <input
@@ -494,7 +490,8 @@ export default function AtencionUsuarios() {
                                       size="sm"
                                       onClick={() => removeFile(index)}
                                       className="text-red-500 hover:text-red-700">
-                                      <X className="w-4 h-4" />
+                                      <Trash2 className="w-4 h-4" />
+                                      
                                     </Button>
                                   </div>
                                 ))}

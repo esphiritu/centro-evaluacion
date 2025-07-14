@@ -181,6 +181,7 @@ export default function Socios() {
         </section>
         <section className="container flex flex-col md:flex-row justify-between mt-32 mb-10">
           <h3 className="text-3xl font-bold">Conoce información importante de los eventos</h3>
+          
         </section>
       </main>
       <Footer />

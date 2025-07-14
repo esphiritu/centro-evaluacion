@@ -60,8 +60,9 @@ import {
   Hammer,
   Medal,
   CircleChevronRight,
-  Check, 
-  Lock
+  Check,
+  Lock,
+  ChevronRight
 } from "lucide-react";
 
 // Custom icons
@@ -183,7 +184,6 @@ const estandares = [
     duracion: "6 horas",
     proposito: "Servir como referente para la evaluación y certificación de las personas que se desempeñan como desarrolladores de cursos para formación en línea.",
     requisitos: "Ninguno",
-    icon: estandarIcon,
     price: "$5,500 MXN",
   },
   {
@@ -199,10 +199,47 @@ const estandares = [
     duracion: "2 horas en gabinete y 1 hora en campo, totalizando 3 horas",
     proposito: "Servir como referente para la evaluación y certificación de las personas que diseñan cursos de formación del capital humano de manera presencial grupal, diseñando cursos de capacitación presenciales, diseñando instrumentos para la evaluación de cursos de capacitación presenciales y desarrollando manuales del curso de capacitación presenciales",
     requisitos: "Ninguno",
-    icon: estandarIcon,
     price: "$5,800 MXN",
   },
 ]
+
+const EventsInfo = [{
+  title: "Coaching",
+  description: "Sesiones de coaching personalizadas para el desarrollo profesional.",
+  image: coaching,
+  alt: "Coaching",
+  link: "./coaching",
+},
+{
+  title: "Talleres",
+  description: "Participa en sesiones en vivo con expertos de la industria.",
+  image: session,
+  alt: "Sesiones en vivo",
+  link: "./coaching",
+},
+{
+  title: "Conferencias",
+  description: "Conoce a otros profesionales y expande tu red de contactos.",
+  image: staged,
+  alt: "Participantes",
+  link: "./coaching",
+},
+{
+  title: "Capacitaciones",
+  description: "Nos enfocamos en el desarrollo de habilidades, conocimientos y actitudes basadas en estándares de competencia.",
+  image: participants,
+  alt: "Staged",
+  link: "./coaching",
+},
+{
+  title: "Consultoría",
+  description: "Nos enfocamos en el desarrollo de habilidades, conocimientos y actitudes basadas en estándares de competencia.",
+  image: presentation,
+  alt: "Staged",
+  link: "./coaching",
+},
+];
+
 
 // images
 import logoRedConocer from "@/public/img/logotipo-redConocer.png";
@@ -217,13 +254,13 @@ import procesoImage from "@/public/img/pexels-pixabay-209151.jpg";
 import checkPointsImage from "@/public/img/pexels-fauxels-3184328.jpg";
 
 
-
 export default function Home({ Component, pageProps }) {
   return (
     <>
       <main className="w-full pt-19 scroll-smooth pt-32">
         <section className="relative h-168">
-          <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-linear-to-b lg:bg-linear-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17% rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-16">
+          {/* bg-linear-to-b lg:bg-linear-to-r from-teal-500 from-60% md:from-40% to-transparent dark:to-teal-600 to-17%  */}
+          <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center container h-full bg-teal-500 rounded-none lg:rounded-2xl mt-0 lg:mt-10 px-16">
             <div className="w-full lg:w-3/5 flex flex-col items-center lg:items-start">
               <h1 className="text-white text-3xl text-center lg:text-left md:text-5xl font-bold lg:leading-12! py-3 text-pretty">
                 Impulsa tu crecimiento profesional
@@ -347,14 +384,14 @@ export default function Home({ Component, pageProps }) {
                           <h3 className="text-xl md:text-left font-normal py-3">
                             {paso.title}
                           </h3>
-                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-150">
-                            <p className="text-muted-foreground text-xl mb-0 lg:mb-3 overflow-hidden">
+                          <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-250">
+                            <p className="text-muted-foreground text-lg mb-0 lg:mb-2 overflow-hidden">
                               {paso.description} <br />
                               <Link
                                 href="./"
-                                className="text-lg text-teal-600 hover:text-teal-700 dark:hover:text-teal-400 inline-block mt-5">
-                                <span className="text-xl">Ver más
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right ml-1 inline"><path d="m6 17 5-5-5-5" /></svg>
+                                className="text-lg text-teal-600 hover:text-teal-700 dark:hover:text-teal-400 inline-block mt-3">
+                                <span className="text-lg">Ver más
+                                  <ChevronRight className="inline-block ml-2 h-4 w-4" />
                                 </span>
                               </Link>
                             </p>
@@ -453,7 +490,7 @@ export default function Home({ Component, pageProps }) {
           <div className="w-fit float-right"><MainLink href="./" linkText="Explorar programas" /></div>
         </div>
 
-
+        
         <section className="container w-full bg-gray-50 dark:bg-slate-900 rounded-lg pt-10 pb-16 my-10 px-10 lg:px-20 h-auto sm:h-auto md:h-100 mt-16 mb-16 shadow-xs">
           <Image
             src={diagnostico}
@@ -475,7 +512,8 @@ export default function Home({ Component, pageProps }) {
             linkText="Agendar prueba"
             className="text-center w-full md:w-fit" />
         </section>
-        {/* Features List Section */}
+        
+        {/* Events Section */}
         {/* Overview of Workshops, Courses, and Training programs. */}
         <section className="container py-10 mb-40 mt-8">
           <div className="w-full mb-20 text-center">
@@ -493,136 +531,55 @@ export default function Home({ Component, pageProps }) {
               Participan escuelas, universidades y gobiernos en diferentes actividades
             </p>
           </div>
-          <Carousel className="mb-10">
-            <CarouselContent className="w-full flex lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-2">
-              <CarouselItem className="w-full h-[330px] md:h-[390px] lg:h-[670px] lg:col-span-2 lg:row-span-2">
-                <div className="group w-full h-full mx-auto">
-                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
-                      <Image
-                        src={coaching}
-                        alt="Image showing a group of people"
-                        quality={75}
-                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                        className="static inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-teal-200">
-                      <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-2xl text-center w-full dark:text-slate-900">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
-                            Capacitaciones
-                            <ArrowRight className="inline-block ml-2" />
-                          </Link>
-                        </h1>
-                      </div>
-                    </div>
+
+          <div className="w-full flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-2 gap-x-8 gap-y-8">
+
+            <div className="w-full mb-20">
+              <h1 className="text-3xl md:text-4xl font-bold mt-8 mb-5">
+                Convención anual 2024.
+                Mejores momentos
+              </h1>
+              <p className="
+              text-2xl 
+              font-light 
+              text-muted-foreground 
+              dark:text-slate-200 
+              py-3 
+              mb-4">
+                Participan escuelas, universidades y gobiernos en diferentes actividades
+              </p>
+            </div>
+            
+            {EventsInfo.map((event, index) => (
+              <div key={index} className="w-full h-full rounded-b-md">
+              <Link href={event.link}>
+                <div className="group hover:shadow-xl transition-all duration-200 ease-in-out rounded-b-md">
+                  <div className="h-64">
+                    <Image
+                      src={event.image}
+                      alt={event.alt}
+                      quality={75}
+                      sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (min-height: 1024px) 100vw, (max-height: 1200px) 50vw"
+                      className="static inset-0 w-full h-full object-cover rounded-t-md"
+                    />
+                  </div>
+                  <div className="text-lg text-left w-full dark:text-slate-900 pt-3 pb-5 px-6 border-b border-r border-l rounded-b-md">
+                    <h3 className="text-xl font-bold pt-3">{event.title}</h3>
+                    <p className="text-lg py-2">{event.description}</p>
+                    <span className="text-proyecta-600 group-hover:text-proyecta-700 transition-all duration-200 ease-in-out py-3 md:mb-1 mt-6 font-bold">
+                      Leer más
+                    </span>
                   </div>
                 </div>
-              </CarouselItem>
-              <CarouselItem className="w-full h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
-                <div className="group w-full h-full mx-auto">
-                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
-                      <Image
-                        src={presentation}
-                        alt="Image showing a group of people"
-                        quality={75}
-                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                        className="static inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#ffccaa]">
-                      <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
-                            Coaching
-                            <ArrowRight className="inline-block ml-2" />
-                          </Link>
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="w-full  h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
-                <div className="group w-full h-full mx-auto">
-                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
-                      <Image
-                        src={session}
-                        alt="Image showing a group of people"
-                        quality={75}
-                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                        className="static inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#aaccff]">
-                      <div className="backface-visible font-bold w-full h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
-                            Conferencias
-                            <ArrowRight className="inline-block ml-2" />
-                          </Link>
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="w-full h-320 md:h-[390px] lg:h-[328px] lg:col-span-1 lg:row-span-1">
-                <div className="group w-full h-full mx-auto">
-                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
-                      <Image
-                        src={participants}
-                        alt="Image showing a group of people"
-                        quality={75}
-                        sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, (max-height: 1024px) 100vw, (max-height: 1200px) 50vw"
-                        className="static inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180 lg:group-hover:rotate-y-0 duration-300 w-full h-full rounded-lg bg-transparent lg:bg-[#C5CAFF]">
-                      <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-lg lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-100 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
-                            Talleres
-                            <ArrowRight className="inline-block ml-2" />
-                          </Link>
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="w-full  h-320  md:h-[390px]  lg:h-[328px]  lg:col-span-1  lg:row-span-1">
-                <div className="group w-full h-full mx-auto">
-                  <div className="relative perspective-1000 transform-style-3d w-full h-full">
-                    <div className="absolute backface-hidden transform transition lg:group-hover:rotate-y-180 duration-300 rounded-lg shadow-sm w-full h-full z-1 lg:z-20">
-                      <Image
-                        src={staged}
-                        alt="Image showing a group of people"
-                        quality={75}
-                        className="static inset-0 w-full h-full object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="absolute backface-visible lg:transform transition lg:-rotate-y-180  lg:group-hover:rotate-y-0 duration-300 w-full  h-full rounded-lg bg-transparent lg:bg-[#faccd4]">
-                      <div className="backface-visible font-bold w-full  h-full flex justify-content items-center">
-                        <h1 className="text-base lg:text-xl text-center dark:text-slate-900 w-full">
-                          <Link href="./" className="transition-all duration-200 ease-in-out bg-white/75 lg:hover:bg-white/45 rounded-md px-9 py-3 mx-4 md:mb-1 mt-6">
-                            Consultoría
-                            <ArrowRight className="inline-block ml-2" />
-                          </Link>
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="lg:invisible" />
-            <CarouselNext className="lg:invisible" />
-          </Carousel>
+              </Link>
+            </div>
+            ))
+              }
+            
+
+          </div>
+
+
           <MainLink href="./eventos" linkText="Próximos eventos" />
         </section>
         <section className="container h-auto md:h-144 flex flex-col-reverse lg:flex-row py-8 mt-12 mb-8">

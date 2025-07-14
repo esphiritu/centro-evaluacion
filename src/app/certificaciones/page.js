@@ -171,26 +171,26 @@ export default function Certificaciones(params) {
                                     <ScrollArea>
                                       <DrawerHeader className="flex w-full">
                                         <div className="content-center w-full mt-10 md:mt-4">
-                                          <DrawerTitle className="text-2xl mb-6 border border-collapse border-slate-200 shadow-md text-slate-800 rounded-sm py-4 px-6">
+                                          <DrawerTitle className="text-xl mb-6 border border-collapse border-slate-200 shadow-md text-slate-800 rounded-sm py-4 px-6">
                                             <div className="flex flex-row items-center justify-start space-x-7">
                                               <h2 className="text-2xl text-teal-600">{estandar.title}</h2>
                                               <p className="text-slate-900 dark:text-slate-300">{estandar.content}</p>
                                             </div>
                                           </DrawerTitle>
                                           <DrawerDescription
-                                            className="text-lg">
-                                            Detalles del estándar de compencia
+                                            className="text-lg px-6">
+                                            <span className="text-slate-800 dark:text-gray-200 font-bold">
+                                            Propósito: </span>
+                                          {estandar.proposito}
                                           </DrawerDescription>
-                                          <Separator className="mt-3 w-full" />
+                                          {/* <Separator className="mt-3 w-full" /> */}
                                         </div>
                                       </DrawerHeader>
 
                                       <div className="w-full text-xl text-gray-700 dark:text-gray-400 lg:w-1/2 mx-auto px-5 py-2">
-                                        <p className="mb-6">
-                                          <span className="text-slate-800 dark:text-gray-200 font-bold">
-                                            Propósito: </span>
-                                          {estandar.proposito}
-                                        </p>
+                                        {/* <p className="mb-6">
+                                          
+                                        </p> */}
                                         <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-6 space-y-2">
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">

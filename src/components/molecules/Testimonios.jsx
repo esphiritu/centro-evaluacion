@@ -8,6 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 import { Quote } from "lucide-react";
 
@@ -100,6 +106,7 @@ export default function Testimonios() {
           </div>
         </CarouselItem>
       </CarouselContent>
+      {/* Dots indicators */}
       <div className="absolute -bottom-10 -md:bottom-[2rem] left-[50%] -translate-x-[50%] bg-slate-400 dark:bg-slate-900 max-w-min px-3 py-2 rounded-full h-8">
         <div className="flex items-center justify-center gap-2">
           {indicators.map((_, indx) => (
@@ -113,9 +120,26 @@ export default function Testimonios() {
           ))}
         </div>
       </div>
-      <div className="w-full lg:w-1/2 relative mx-auto">
-        <CarouselNext /> 
-        <CarouselPrevious />
+      {/* Navigation buttons */}
+      <div className="relative w-full lg:w-1/2 mx-auto">
+        {/* Next button */}
+        <div className="group flex flex-col items-center">
+          <CarouselNext />
+          <div className="absolute right-0 bottom-5 translate-x-1/2 -translate-y-1/2 flex-col items-center hidden mb-5 group-hover:flex">
+            <span className="relative mr-8 rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+              <p className="pt-1 pb-1 px-1">Siguiente</p></span>
+            <div className="w-auto h-auto -mt-8 rotate-45 bg-black dark:bg-slate-400"></div>
+          </div>
+        </div>
+        {/* Previous button */}
+        <div className="group flex flex-col items-center">
+          <CarouselPrevious />
+          <div className="absolute right-22 bottom-5 translate-x-1/2 -translate-y-1/2 flex-col items-center hidden mb-5 group-hover:flex">
+            <span className="relative mr-8 rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
+              <p className="pt-1 pb-1 px-1">Anterior</p></span>
+            <div className="w-auto h-auto -mt-8 rotate-45 bg-black dark:bg-slate-400"></div>
+          </div>
+        </div>
       </div>
     </Carousel>
   )

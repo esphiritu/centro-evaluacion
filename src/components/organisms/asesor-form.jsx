@@ -103,8 +103,6 @@ export default function AsesorForm() {
   })
 
   // Define individual refs for the first interactive element of each step
-  const firstNameRef = useRef(null);
-  const priorityRef = useRef(null);
   const dateButtonRef = useRef(null); // Ref for the date picker's trigger button
   const hourTextareaRef = useRef(null); // Ref for the hour textarea to potentially blur it
 
@@ -112,11 +110,7 @@ export default function AsesorForm() {
     const focusElement = () => {
       let targetRef = null;
 
-      if (currentStep === 0) {
-        targetRef = firstNameRef;
-      } else if (currentStep === 1) {
-        targetRef = priorityRef;
-      } else if (currentStep === 2) {
+      if (currentStep === 2) {
         targetRef = dateButtonRef;
 
         // Immediately after attempting to focus the date button,
@@ -216,7 +210,7 @@ export default function AsesorForm() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Nombre</FormLabel>
                           <FormControl>
-                            <Input placeholder="Juan" {...field} ref={firstNameRef} />
+                            <Input placeholder="Juan" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -277,7 +271,7 @@ export default function AsesorForm() {
                         <FormLabel className="text-base font-normal">Funcion laboral</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger ref={priorityRef} className="text-lg">
+                            <SelectTrigger className="text-lg">
                               <SelectValue placeholder="Selecciona la mejor opción" />
                             </SelectTrigger>
                           </FormControl>
@@ -356,7 +350,9 @@ export default function AsesorForm() {
                       name="date"
                       render={({ field }) => (
                         <FormItem className="flex flex-col">
-                          <FormLabel className="text-base font-normal">Fecha</FormLabel>
+                          <FormLabel className="text-base font-normal">
+                            Fecha
+                          </FormLabel>
                           <Popover>
                             <PopoverTrigger asChild>
                               <FormControl>
@@ -364,7 +360,7 @@ export default function AsesorForm() {
                                   ref={dateButtonRef}
                                   tabIndex={0} // Ensure it's keyboard tabbable
                                   type="button" // Prevents form submission
-                                  variant={"outline-solid"}
+                                  variant={"outline"}
                                   className={cn(
                                     "w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent",
                                     !field.value && "text-muted-foreground"
