@@ -20,15 +20,14 @@ export default function Proceso({params}) {
             <Info className="w-4 h-4 text-slate-400"/>
             {/* <AlertTitle>No te quedes fuera</AlertTitle> */}
             <AlertDescription className="text-lg text-muted-foreground mb-4">
-              Completa los campos requeridos para iniciar el trámite de certificación laboral. Una vez recibida tu solicitud, uno de nuestros asesores
+              Completa los pasos requeridos para iniciar el trámite de certificación laboral. Una vez recibida tu solicitud, uno de nuestros asesores
              se pondrá en contacto contigo para continuar el proceso.
             </AlertDescription>
           </Alert>
         </div>
         <div className="w-full lg:w-1/2 border-none lg:border-solid border-slate-200 rounded shadow-xs py-4 bg-slate-50 dark:bg-slate-900">
           <AtencionUsuarios />
-          {/* <MultiStepContactForm /> */}
-        </div>
+       </div>
       </div>
     </main>
   );

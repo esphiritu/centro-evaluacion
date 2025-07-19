@@ -441,7 +441,7 @@ export default function Home({ Component, pageProps }) {
                     <CarouselItem
                       className="group pb-7 mb-7 lg:pb-2 lg:mb-1"
                       key={criterio.id}>
-                      <Card className="relative w-full lg:w-12/12 lg:mx-0 xl:mx-0 mb-7 px-2 h-80 overflow-hidden">
+                      <Card className="bg-gray-100/50 rounded-md relative w-full lg:w-12/12 lg:mx-0 mb-7 px-2 h-60 overflow-hidden">
                         <CardHeader>
                           <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
                             <span className="text-[#55ccc9]">
@@ -455,7 +455,7 @@ export default function Home({ Component, pageProps }) {
                             </CardDescription>
                           </div>
                         </CardHeader>
-                        <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-sm">
+                        <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-md">
                           <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">
                             {criterio.content}
                           </p>
@@ -563,7 +563,7 @@ export default function Home({ Component, pageProps }) {
                       className="static inset-0 w-full h-full object-cover rounded-t-md"
                     />
                   </div>
-                  <div className="text-lg text-left w-full dark:text-slate-900 pt-3 pb-5 px-6 border-b border-r border-l rounded-b-md">
+                  <div className="text-lg text-left w-full dark:text-slate-200 pt-3 pb-5 px-6 border-b border-r border-l rounded-b-md">
                     <h3 className="text-xl font-bold pt-3">{event.title}</h3>
                     <p className="text-lg py-2">{event.description}</p>
                     <span className="text-proyecta-600 group-hover:text-proyecta-700 transition-all duration-200 ease-in-out py-3 md:mb-1 mt-6 font-bold">
@@ -650,17 +650,15 @@ export default function Home({ Component, pageProps }) {
             <Testimonios />
           </div>
         </section>
-        <section className="bg-slate-600 py-24 h-auto scroll-mt-20" id="asesor">
-          <div className="container flex flex-col lg:flex-row">
-            <div className="w-full lg:w-2/5 text-white py-10">
+        <section className="bg-slate-600 py-5 lg:py-24 h-auto scroll-mt-20" id="asesor">
+          <div className="container-none lg:container flex flex-col lg:flex-row">
+            <div className="w-full lg:w-2/5 text-white px-8 py-10">
               <h2 className="text-4xl font-bold leading-[2.6rem]">Asesoría personalizada durante el  <span className="text-teal-300">proceso de certificación</span></h2>
               <p className="text-xl mt-8">¡Hola! Soy <span className="font-bold">Patricia Martínez</span> asesor de Proyecta Empresarial, estoy para ayudarte a desarrollar las habilidades y la confianza para prosperar en un mundo competitivo.</p>
             </div>
             <div className="w-full lg:w-3/5">
-              <div className="bg-white dark:bg-gray-900 h-full rounded-2xl mx-0 lg:mx-10 mt-10 lg:mt-0 pt-6">
-                {/* <h3 className="text-2xl font-bold py-6">Datos de contacto</h3> */}
+              <div className="bg-white dark:bg-gray-900 h-full rounded-none lg:rounded-2xl mx-0 lg:mx-10 mt-10 lg:mt-0 pt-6">
                 <AsesorForm />
-                {/* <ContactForm /> */}
               </div>
               <div className="flex justify-center items-center leading-0 pt-5">
                 <Lock className="text-gray-100" strokeWidth={2.0} size={14} />

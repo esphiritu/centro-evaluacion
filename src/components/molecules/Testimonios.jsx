@@ -8,15 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
-
 import { Quote } from "lucide-react";
-
 import testimonial from "@/public/img/pexels-pisey-tuon-8567103-6112353.jpg";
 import testimonialOne from "@/public/img/pexels-italo-melo-881954-2379005.jpg";
 import testimonialTwo from "@/public/img/pexels-divinetechygirl-1181742.jpg";
