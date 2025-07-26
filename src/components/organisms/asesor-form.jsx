@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover";
-import { CalendarIcon, ArrowLeft, ArrowRight } from "lucide-react";
+import { CalendarIcon, ArrowLeft, ArrowRight, User, UserCheck, Mail, Phone } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -229,10 +229,16 @@ export default function AsesorForm() {
                       control={form.control}
                       name="firstName"
                       render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="relative">
+                          <User className="w-5 h-5 absolute top-13 left-3 pointer-events-none" />
                           <FormLabel className="text-base font-normal">Nombre</FormLabel>
                           <FormControl>
-                            <Input placeholder="Juan" {...field} required />
+                            <Input
+                              type="text" 
+                              className="pl-10"
+                              placeholder="Juan Alberto" 
+                              required
+                              {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -242,10 +248,15 @@ export default function AsesorForm() {
                       control={form.control}
                       name="lastName"
                       render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="relative">
+                          <UserCheck className="w-5 h-5 absolute top-13 left-3 pointer-events-none" />
                           <FormLabel className="text-base font-normal">Apellido paterno</FormLabel>
                           <FormControl>
-                            <Input placeholder="Martínez" {...field} required />
+                            <Input 
+                              className="pl-10"
+                              placeholder="Martínez"
+                              required
+                              {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -256,10 +267,16 @@ export default function AsesorForm() {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="relative">
+                        <Mail className="w-5 h-5 absolute top-13 left-3" />
                         <FormLabel className="text-base font-normal">Email</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="juan@mail.com" {...field} required />
+                          <Input
+                            className="pl-10"
+                            type="email" 
+                            placeholder="juan@mail.com" 
+                            required
+                            {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -269,10 +286,15 @@ export default function AsesorForm() {
                     control={form.control}
                     name="phone"
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className="relative">
+                        <Phone className="w-5 h-5 absolute top-13 left-3" />
                         <FormLabel className="text-base font-normal">Número de teléfono</FormLabel>
                         <FormControl>
-                          <Input placeholder="(555) 123-4567" {...field} required />
+                          <Input
+                            className="pl-10"
+                            placeholder="+52 (555) 123-4567" 
+                            required
+                            {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
