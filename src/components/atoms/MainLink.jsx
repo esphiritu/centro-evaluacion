@@ -13,7 +13,6 @@ function MainLink({ href, linkText }) {
           dark:text-teal-500
           hover:text-teal-700
           dark:hover:text-teal-400
-          dark:hover:bg-gray-800 
           rounded-full 
           transition-all duration-200
           py-3 pl-3 pr-3">

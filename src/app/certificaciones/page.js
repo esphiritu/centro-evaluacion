@@ -168,7 +168,7 @@ export default function Certificaciones(params) {
                                     {estandar.content}
                                   </DrawerTrigger>
                                   <DrawerContent>
-                                    <ScrollArea>
+                                    <ScrollArea className="h-200 w-auto">
                                       <DrawerHeader className="flex w-full">
                                         <div className="content-center w-full mt-10 md:mt-4">
                                           <DrawerTitle className="text-xl mb-6 border border-collapse border-slate-200 shadow-md text-slate-800 rounded-sm py-4 px-6">
@@ -194,7 +194,7 @@ export default function Certificaciones(params) {
                                         <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-6 space-y-2">
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
-                                              <User className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                              <User className="text-proyecta-500 dark:text-slate-100 min-w-6 min-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
                                               <span className="text-slate-800 dark:text-gray-200 font-bold">Ocupaciones asociadas: </span>
@@ -203,7 +203,7 @@ export default function Certificaciones(params) {
                                           </li>
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
-                                              <Brain className="text-slate-800 dark:text-slate-100 min-w-6 min-h-6" />
+                                              <Brain className="text-proyecta-500 dark:text-slate-100 min-w-6 min-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
                                               <span className="text-slate-800 dark:text-gray-200 font-bold">Nivel de Competencia: </span>
@@ -212,7 +212,7 @@ export default function Certificaciones(params) {
                                           </li>
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
-                                              <BookMarked className="text-slate-800 dark:text-slate-100 min-w-6 max-h-6" />
+                                              <BookMarked className="text-proyecta-500 dark:text-slate-100 min-w-6 max-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
                                               <span className="text-slate-800 dark:text-gray-200 font-bold">Comité desarrollador: </span>
@@ -256,7 +256,7 @@ export default function Certificaciones(params) {
                                               className="lucide lucide-circle"><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>
                                             <div className="absolute right-1 lg:right-2 translate-x-0 lg:translate-x-1/2 translate-y-2 mt-3 flex-col items-center hidden group-hover:flex z-50">
                                               <span className="relative mr-8 rounded-md z-60 p-2 text-sm leading-none text-white dark:text-black text-nowrap bg-black dark:bg-slate-400 shadow-lg">
-                                                <p className="pt-1 pb-1">Cerrar</p>
+                                                <p className="pt-1 pb-1 px-1">Cerrar</p>
                                               </span>
                                             </div>
                                           </DrawerClose>
@@ -269,7 +269,7 @@ export default function Certificaciones(params) {
                                 </Drawer>
                               </TableCell>
                               <TableCell className="text-right px-0 lg:px-2">
-                                <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-500 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-md z-10 transition-colors ease-in-out duration-300">Obtener
+                                <Link href="./" className="group/details visible lg:invisible lg:group-hover/item:visible text-base lg:text-xl text-teal-600 dark:text-teal-400 group-hover/details:text-teal-700 hover:text-white dark:hover:text-white hover/item:bg-teal-600 pl-3 pr-1 lg:pl-4 lg:pr-2 py-2 mr-2 rounded-md z-10 transition-colors ease-in-out duration-300">Obtener
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"

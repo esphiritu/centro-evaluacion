@@ -125,7 +125,7 @@ const criterios = [
     description: "Saber y entender",
     content: "Posesión de conceptos, teorías y principios que sustentan el desempeño de la función",
     borColor: "border-t-indigo-500/50",
-    icon: <Lightbulb strokeWidth={1.75} size={50} absoluteStrokeWidth={true} className="mx-auto  mb-6" />,
+    icon: <Lightbulb strokeWidth={1.75} size={50} absoluteStrokeWidth={true} className="mx-auto mb-6" />,
   },
   {
     id: "00B",
@@ -441,7 +441,7 @@ export default function Home({ Component, pageProps }) {
                     <CarouselItem
                       className="group pb-7 mb-7 lg:pb-2 lg:mb-1"
                       key={criterio.id}>
-                      <Card className="bg-gray-100/50 rounded-md relative w-full lg:w-12/12 lg:mx-0 mb-7 px-2 h-60 overflow-hidden">
+                      <Card className="bg-gray-100/50 dark:bg-slate-800 rounded-md relative w-full lg:w-12/12 lg:mx-0 mb-7 px-2 h-70 overflow-hidden">
                         <CardHeader>
                           <div className="absolute bottom-32 lg:bottom-16 right-0 left-0 lg:transform ease-in-out duration-300 lg:group-hover:bottom-32">
                             <span className="text-[#55ccc9]">
@@ -455,7 +455,7 @@ export default function Home({ Component, pageProps }) {
                             </CardDescription>
                           </div>
                         </CardHeader>
-                        <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-md">
+                        <CardContent className="absolute -bottom-2 lg:-bottom-6 right-0 w-full h-28 lg:h-0 lg:overflow-hidden lg:group-hover:overflow-visible lg:transform ease-in-out duration-300 lg:group-hover:h-2/5 text-white bg-gray-800 dark:bg-gray-600 group-hover:bg-slate-800 border-0 lg:border-b-0 rounded-b-md">
                           <p className="text-lg absolute top-0 text-left w-11/12 pr-3 pt-3">
                             {criterio.content}
                           </p>

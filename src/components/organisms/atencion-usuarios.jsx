@@ -77,7 +77,7 @@ const steps = [
     description: "Sus datos para la solicitud",
   },
   {
-    title: "Domicilio",
+    title: "Información de domicilio",
     description: "Adjunte documentos que respalden su solicitud",
   },
   {
@@ -149,7 +149,8 @@ export default function AtencionUsuarios() {
   }, [currentStep]); // Dependencies: only re-run when currentStep changes. `form` is not needed here as we're using direct DOM focus.
 
 
-  const nextStep = async () => {
+  const nextStep = async (e) => {
+    e?.preventDefault(); // Prevent form submission if event is passed
     const fields = getFieldsForStep(currentStep)
     const isValid = await form.trigger(fields)
 
@@ -247,13 +248,13 @@ export default function AtencionUsuarios() {
       <Card>
         <CardHeader className="mb-3">
           <CardDescription className="text-right">
-            Paso {currentStep + 1}
+            Paso {currentStep + 1}/3
           </CardDescription>
           <Progress value={progress} className="w-full" />
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
               {/* Step 1: General Information */}
               {currentStep === 0 && (
                 <div className="space-y-8">
@@ -267,7 +268,7 @@ export default function AtencionUsuarios() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Apellido paterno</FormLabel>
                           <FormControl>
-                            <Input placeholder="Martínez" {...field} />
+                            <Input placeholder="Martínez" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -281,7 +282,7 @@ export default function AtencionUsuarios() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Apellido materno</FormLabel>
                           <FormControl>
-                            <Input placeholder="López" {...field} />
+                            <Input placeholder="López" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -296,7 +297,7 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel className="text-base font-normal">Nombre(s)</FormLabel>
                         <FormControl>
-                          <Input placeholder="Juan" {...field} />
+                          <Input placeholder="Juan" {...field} required />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -309,7 +310,7 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel className="text-base font-normal">Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="juan@mail.com" {...field} />
+                          <Input type="email" placeholder="juan@mail.com" {...field} required />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -322,7 +323,7 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel className="text-base font-normal">Número de teléfono</FormLabel>
                         <FormControl>
-                          <Input placeholder="(555) 123-4567" {...field} />
+                          <Input placeholder="(555) 123-4567" {...field} required />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -343,7 +344,7 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel className="text-base font-normal">Calle, número interior o número exterior</FormLabel>
                         <FormControl>
-                          <Input placeholder="Calle, número exterior, número interior" {...field} />
+                          <Input placeholder="Heróico Colegio Militar, número 152" {...field} required />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -358,7 +359,7 @@ export default function AtencionUsuarios() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Colonia</FormLabel>
                           <FormControl>
-                            <Input placeholder="Valle Diamante" {...field} />
+                            <Input placeholder="Valle Diamante" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -372,7 +373,7 @@ export default function AtencionUsuarios() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Código Postal</FormLabel>
                           <FormControl>
-                            <Input placeholder="90342" {...field} />
+                            <Input placeholder="90342" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -389,7 +390,7 @@ export default function AtencionUsuarios() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Alcaldía o municipio</FormLabel>
                           <FormControl>
-                            <Input placeholder="Alcaldía Cuautemoc" {...field} />
+                            <Input placeholder="Alcaldía Cuautemoc" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -403,7 +404,7 @@ export default function AtencionUsuarios() {
                         <FormItem>
                           <FormLabel className="text-base font-normal">Estado</FormLabel>
                           <FormControl>
-                            <Input placeholder="Ciudad de México" {...field} />
+                            <Input placeholder="Ciudad de México" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -429,8 +430,8 @@ export default function AtencionUsuarios() {
               {currentStep === 2 && (
                 <div className="space-y-8">
                   <h3 className="text-2xl font-semibold">{steps[2].title}</h3>
-                  <p className="text-lg">Los siguientes documentos son necesarios para continuar con tu solicitud:</p>
-                  <ol className="list-decimal pl-6 mb-4 text-lg">
+                  <p className="text-xl">Los siguientes documentos son necesarios para continuar con tu solicitud:</p>
+                  <ol className="list-decimal pl-6 mb-8 text-lg">
                     <li>Identificación oficial</li>
                     <li>CURP</li>
                   </ol>
@@ -444,7 +445,7 @@ export default function AtencionUsuarios() {
                         <FormControl>
                           <div className="space-y-4">
                             <div
-                              className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center hover:border-gray-400 transition-colors">
+                              className="border-2 border-dashed border-gray-300 rounded-lg p-10 mt-2 text-center hover:border-gray-400 transition-colors bg-white dark:bg-slate-950">
                               <div className="flex justify-center items-center space-x-4">
                                 <File className="h-10 w-10 text-gray-600" strokeWidth={1.25} absoluteStrokeWidth />
                                 <Upload className="h-20 w-20 text-gray-600" strokeWidth={1.50} absoluteStrokeWidth />
@@ -452,7 +453,7 @@ export default function AtencionUsuarios() {
                               </div>
                               <div className="mt-4">
                                 <label htmlFor="file-upload" className="cursor-pointer">
-                                  <span className="mt-2 block text-base font-medium text-gray-900">
+                                  <span className="mt-2 block text-base font-medium">
                                     Arrasta archivos aquí o <span className="text-teal-600">haz clic para subir</span>
                                   </span>
                                   <span className="mt-1 block text-xs text-gray-500">

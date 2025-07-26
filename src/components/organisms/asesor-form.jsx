@@ -1,7 +1,9 @@
 "use client"
 import React from "react";
 import { useState } from "react";
-import { useRef, useEffect } from "react";
+// import { useMediaQuery } from "@/hooks/use-media-query";
+// import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover";
 import { CalendarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
@@ -10,10 +12,17 @@ import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+  DrawerFooter,
+  DrawerClose,
+} from '@/components/ui/drawer';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
@@ -35,31 +44,24 @@ const formSchema = z.object({
     message: "Ingresa un correo electrónico válido.",
   }),
   phone: z.string().min(10, {
-    message: "Número con almenos 10 dígitos.",
+    message: "Número con al menos 10 dígitos.",
   }),
-
-  // Step 2: Selection Controls
-
+  // Step 2: Professional Information
   priority: z.string({
-    required_error: "Selecciona una categoría laboral que mejor describa tu función laboral",
+    required_error: "Selecciona un área laboral en la que te desempeñas",
   }),
-  sector: z.string({
-    required_error: "Selecciona una categoría laboral que mejor describa tu función laboral",
+  puesto: z.string({
+    required_error: "Ingresa el puesto que desempeñas",
   }),
-
-  preferredContact: z.string({
-    required_error: "Selecciona el principal método de contacto",
+  estandar: z.string({
+    required_error: "Por favor selecciona el estándar de competencia que te interesa",
   }),
-
-  // Step 3: Details
+  // Step 3: Date and details
   date: z.date({
     required_error: "Selecciona una fecha",
   }),
-  horario: z.string({
-    required_error: "Por favor selecciona en qué momento es conveniente contactarte",
-  }),
-  hour: z.string().min(2, {
-    message: "Ingresa una hora ideal para contactarte",
+  preferredContact: z.string({
+    required_error: "Selecciona el principal método de contacto",
   }),
 });
 
@@ -69,71 +71,78 @@ const steps = [
     description: "Vamos a estar en contacto contigo",
   },
   {
-    title: "Información profesional",
+    title: "Información laboral y profesional",
     description: "Cuéntanos un poco más de tu área laboral",
   },
   {
-    title: "Fecha para contactarte",
+    title: "Datos para la entrevista",
     description: "¿Cuándo te gustaría que te contactemos?",
+  },
+];
+
+// Code for the Combox input
+
+const statuses = [
+  {
+    value: "backlog",
+    label: "Backlog",
+  },
+  {
+    value: "todo",
+    label: "Todo",
+  },
+  {
+    value: "in progress",
+    label: "In Progress",
+  },
+  {
+    value: "done",
+    label: "Done",
+  },
+  {
+    value: "canceled",
+    label: "Canceled",
   },
 ];
 
 export default function AsesorForm() {
   const [currentStep, setCurrentStep] = useState(0)
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState(undefined)
+  const [open, setOpen] = React.useState(false)
+  const [selectedTime, setSelectedTime] = React.useState(undefined)
+  const timeSlots = Array.from({ length: 37 }, (_, i) => {
+    const totalMinutes = i * 15
+    const hour = Math.floor(totalMinutes / 60) + 9
+    const minute = totalMinutes % 60
+    return `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`
+  })
+  const [openCombox, setOpenCombox] = React.useState(false);
+  const [selectedStatus, setSelectedStatus] = React.useState(null);
+  // const isDesktop = useMediaQuery("(min-width: 768px)");
 
+  // Default values for the form
   const form = useForm({
     resolver: zodResolver(formSchema),
     mode: "onTouched", // or "onBlur"
     delayError: 200,
     defaultValues: {
+      // Step 1: General Information
       firstName: "",
       lastName: "",
       email: "",
       phone: "",
+      // Step 2: Professional Information
       priority: "",
-      sector: "",
+      puesto: "",
+      estandar: "",
+      // Step 3: Date and details
+      date: undefined,
       preferredContact: "phone",
-      date: date,
-      horario: "",
-      hour: "",
     },
   });
 
-  // Define individual refs for the first interactive element of each step
-  const dateButtonRef = useRef(null); // Ref for the date picker's trigger button
-  const hourTextareaRef = useRef(null); // Ref for the hour textarea to potentially blur it
-
-  useEffect(() => {
-    const focusElement = () => {
-      let targetRef = null;
-
-      if (currentStep === 2) {
-        targetRef = dateButtonRef;
-
-        // Immediately after attempting to focus the date button,
-        // specifically blur the textarea if it somehow gained focus.
-        // This is a last-resort override for the stubborn textarea.
-        if (hourTextareaRef.current && document.activeElement === hourTextareaRef.current) {
-          hourTextareaRef.current.blur();
-        }
-      }
-
-      // Attempt to focus the target element's current DOM node
-      if (targetRef?.current) {
-        targetRef.current.focus();
-      }
-    };
-
-    // Use a setTimeout to ensure the DOM is fully rendered and hydrated
-    // before attempting to manipulate focus.
-    const timer = setTimeout(focusElement, 50); // Increased to 250ms
-
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, [currentStep]); // Dependencies: only re-run when currentStep changes. `form` is not needed here as we're using direct DOM focus.
-
-
-  const nextStep = async () => {
+  const nextStep = async (e) => {
+    e?.preventDefault(); // Prevent form submission if event is passed
     const fields = getFieldsForStep(currentStep)
     const isValid = await form.trigger(fields)
 
@@ -146,19 +155,22 @@ export default function AsesorForm() {
     setCurrentStep((prev) => Math.max(prev - 1, 0))
   }
 
+  // Function to get the fields for the current step
   const getFieldsForStep = (step) => {
     switch (step) {
       case 0:
         return ["firstName", "lastName", "email", "phone"]
       case 1:
-        return ["priority", "sector", "preferredContact"]
+        return ["priority", "puesto", "estandar"]
       case 2:
-        return ["date", "hour", "horario"]
+        return ["date", "preferredContact"]
       default:
         return []
     }
   }
 
+  // REVIEW NEEDED
+  // This section is commented out because it was part of an second approach to handle form submission with async operations.
   // I created a few state variables to control form submission
   const [submissionState, setSubmissionState] = useState({
     isSubmitting: false,
@@ -166,7 +178,6 @@ export default function AsesorForm() {
     isError: false,
     message: "",
   })
-
 
   // async function onSubmit(values) {
   //   try {
@@ -203,78 +214,53 @@ export default function AsesorForm() {
 
   function onSubmit(values) {
     const formData = {
-        ...values,
-      }
-     alert(`Información enviada.`);
+      ...values,
+      time: selectedTime, // Include the selected time
+    }
+    alert(`Información enviada.`);
   }
 
+  // Calculate progress based on the current step
   let progress = 0;
-    switch (currentStep) {
-      case 0:
-        progress = 0;
-        break;
-      case 1:
-        progress = 30;
-        break;
-      case 2:
-        progress = 60;
-        break;
-      default:
-        progress = 0;
-    }
+  switch (currentStep) {
+    case 0:
+      progress = 0;
+      break;
+    case 1:
+      progress = 30;
+      break;
+    case 2:
+      progress = 60;
+      break;
+    default:
+      progress = 0;
+  }
 
-    return (
-      (<div className="max-w-2xl mx-auto px-6">
-        <Card>
-          <CardHeader className="mb-3">
-            <CardDescription className="text-right">
-              Paso {currentStep + 1}
-            </CardDescription>
-            <Progress value={progress} className="w-full" />
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10">
-                {/* Step 1: General Information */}
-                {currentStep === 0 && (
-                  <div className="space-y-8">
-                    <h3 className="text-2xl font-semibold">{steps[0].title}</h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-base font-normal">Nombre</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Juan" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-
-                      <FormField
-                        control={form.control}
-                        name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-base font-normal">Apellido paterno</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Martínez" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                    </div>
-
+  return (
+    (<div className="max-w-2xl mx-auto px-6">
+      <Card>
+        <CardHeader className="mb-3">
+          <CardDescription className="text-right">
+            Paso {currentStep + 1}/3
+          </CardDescription>
+          <Progress value={progress} className="w-full" />
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10">
+              {/* Step 1: General Information */}
+              {currentStep === 0 && (
+                <div className="space-y-8">
+                  <h3 className="text-2xl font-semibold">{steps[0].title}</h3>
+                  <div className="grid grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
-                      name="email"
+                      name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-normal">Email</FormLabel>
+                          <FormLabel className="text-base font-normal">Nombre</FormLabel>
                           <FormControl>
-                            <Input placeholder="juan@mail.com" {...field} />
+                            <Input placeholder="Juan" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -282,226 +268,318 @@ export default function AsesorForm() {
 
                     <FormField
                       control={form.control}
-                      name="phone"
+                      name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-normal">Número de teléfono</FormLabel>
+                          <FormLabel className="text-base font-normal">Apellido paterno</FormLabel>
                           <FormControl>
-                            <Input placeholder="(555) 123-4567" {...field} />
+                            <Input placeholder="Martínez" {...field} required />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )} />
                   </div>
-                )}
 
-                {/* Step 2: Selection Controls */}
-                {currentStep === 1 && (
-                  <div className="space-y-8">
-                    <h3 className="text-2xl font-semibold">{steps[1].title}</h3>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Email</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="juan@mail.com" {...field} required />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
 
-                    <FormField
-                      control={form.control}
-                      name="priority"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-base font-normal">Funcion laboral</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger className="text-lg">
-                                <SelectValue placeholder="Selecciona la mejor opción" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="operativo" className="text-lg">Operativo</SelectItem>
-                              <SelectItem value="administrativo" className="text-lg">Administrativo</SelectItem>
-                              <SelectItem value="directivo" className="text-lg">Directivo</SelectItem>
-                              <SelectItem value="independiente" className="text-lg">Servicios independientes</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Número de teléfono</FormLabel>
+                        <FormControl>
+                          <Input placeholder="(555) 123-4567" {...field} required />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
+                </div>
+              )}
 
-                    <FormField
-                      control={form.control}
-                      name="sector"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-base font-normal">Sector laboral</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger className="text-lg">
-                                <SelectValue placeholder="Selecciona una categoría" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="general" className="text-lg">Empresa privada</SelectItem>
-                              <SelectItem value="support" className="text-lg">Entidad pública</SelectItem>
-                              <SelectItem value="sales" className="text-lg">Organización social</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
+              {/* Step 2: Selection Controls */}
+              {currentStep === 1 && (
+                <div className="space-y-10">
+                  <h3 className="text-2xl font-semibold">{steps[1].title}</h3>
 
-                    <FormField
-                      control={form.control}
-                      name="preferredContact"
-                      render={({ field }) => (
-                        <FormItem className="space-y-3">
-                          <FormLabel className="text-base font-normal">Método principal de contacto</FormLabel>
+                  <FormField
+                    control={form.control}
+                    name="priority"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Área laboral</FormLabel>
+                        <FormDescription>¿Cuál es el área laboral que desempeñas?</FormDescription>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <RadioGroup
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                              className="flex flex-row space-y-1 space-x-6">
-                              <div className="flex items-center space-x-3">
-                                <RadioGroupItem value="phone" id="phone" />
-                                <Label htmlFor="phone" className="text-lg font-normal">Teléfono</Label>
-                              </div>
-                              <div className="flex items-center space-x-3">
-                                <RadioGroupItem value="email" id="email" />
-                                <Label htmlFor="email" className="text-lg font-normal">Email</Label>
-                              </div>
-                              <div className="flex items-center space-x-3">
-                                <RadioGroupItem value="wa" id="wa" />
-                                <Label htmlFor="wa" className="text-lg font-normal">WhatsApp</Label>
-                              </div>
-                            </RadioGroup>
+                            <SelectTrigger className="text-lg">
+                              <SelectValue placeholder="Selecciona la mejor opción" />
+                            </SelectTrigger>
                           </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
-                  </div>
-                )}
+                          <SelectContent>
+                            <SelectItem value="operativo" className="text-lg">Operativo</SelectItem>
+                            <SelectItem value="administrativo" className="text-lg">Administrativo</SelectItem>
+                            <SelectItem value="directivo" className="text-lg">Directivo</SelectItem>
+                            <SelectItem value="independiente" className="text-lg">Servicios independientes</SelectItem>
+                            <SelectItem value="otra-area-laboral" className="text-lg">Otro</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
 
-                {/* Step 3: Details */}
-                {currentStep === 2 && (
-                  <div className="space-y-8">
-                    <h3 className="text-2xl font-semibold">{steps[2].title}</h3>
+                  <FormField
+                    control={form.control}
+                    name="puesto"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Puesto laboral</FormLabel>
+                        <FormControl>
+                            <Input placeholder="Asesor financiero" {...field} required />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
 
-                    <div className="flex flex-col lg:flex-row space-x-5">
-                      {/* Campo fecha */}
-                      <FormField
-                        control={form.control}
-                        name="date"
-                        render={({ field }) => (
-                          <FormItem className="flex flex-col">
-                            <FormLabel className="text-base font-normal">
-                              Fecha
-                            </FormLabel>
-                            <Popover>
-                              <PopoverTrigger asChild>
-                                <FormControl>
-                                  <Button
-                                    ref={dateButtonRef}
-                                    tabIndex={0} // Ensure it's keyboard tabbable
-                                    type="button" // Prevents form submission
-                                    variant={"outline"}
-                                    className={cn(
-                                      "w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent",
-                                      !field.value && "text-muted-foreground"
-                                    )}>
-                                    {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha</span>}
-                                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                                  </Button>
-                                </FormControl>
-                              </PopoverTrigger>
-                              <PopoverContent className="w-auto p-0" align="start">
-                                <Calendar
-                                  mode="single"
-                                  selected={field.value}
-                                  onSelect={field.onChange}
-                                  disabled={(date) => date < new Date()}
-                                  className="rounded-lg border"
-                                />
-                              </PopoverContent>
-                            </Popover>
-                            <FormDescription>Elige un día para ponernos en contacto</FormDescription>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-
-                      {/* Campo de horario o parte del día */}
-                      <FormField
-                        control={form.control}
-                        name="horario"
-                        render={({ field }) => (
-                          <FormItem className="w-full">
-                            <FormLabel className="text-base font-normal">Momento o parte del día</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger className="text-lg h-14">
-                                  <SelectValue placeholder="Por la mañana o por la tarde" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="temprano" className="text-lg">Por la mañana</SelectItem>
-                                <SelectItem value="tarde" className="text-lg">Por la tarde</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="hour"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-base font-normal">Hora</FormLabel>
+                  <FormField
+                    control={form.control}
+                    name="estandar"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Servicio de interes</FormLabel>
+                        <FormDescription>¿Qué servicio de Proyecta Empresarial te interesa?</FormDescription>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <Textarea
-                              placeholder="10 de la mañana o, 5:30 pm"
-                              className="min-h-[80px] text-lg"
-                              {...field}
-                              ref={hourTextareaRef}
+                            <SelectTrigger className="text-lg">
+                              <SelectValue placeholder="Selecciona una opción" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="ec-371" className="text-lg">Certificación laboral</SelectItem>
+                            <SelectItem value="ec-207.01" className="text-lg">Alineación a estándar</SelectItem>
+                            <SelectItem value="ec-64" className="text-lg">Prueba diagnóstica</SelectItem>
+                            <SelectItem value="otro-servicio" className="text-lg">Otro</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
+                </div>
+              )}
+
+              {/* Step 3: Details */}
+              {currentStep === 2 && (
+                <div className="space-y-10">
+                  <h3 className="text-2xl font-semibold">{steps[2].title}</h3>
+                  {/* Campo fecha */}
+                  <FormField
+                    control={form.control}
+                    name="date"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-col">
+                        <FormLabel className="text-base font-normal">
+                          Fecha
+                        </FormLabel>
+                        {/* <FormDescription>¿Cuándo te gustaría tener la entrevista?</FormDescription> */}
+                        <Drawer open={open} onOpenChange={setOpen}>
+                          <DrawerTrigger asChild>
+                            <FormControl>
+                              <Button
+                                tabIndex={0} // Ensure it's keyboard tabbable
+                                type="button" // Prevents form submission
+                                variant={"outline"}
+                                className={cn(
+                                  "w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent",
+                                  !date && "text-muted-foreground"
+                                )}>
+                                {date ? format(date, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha y hora</span>}
+                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                              </Button>
+                            </FormControl>
+                          </DrawerTrigger>
+                          <DrawerContent className="w-auto overflow-hidden p-0 md:pr-48">
+                            <DrawerHeader>
+                              <DrawerTitle className="text-center text-2xl">Selecciona una fecha</DrawerTitle>
+                              <DrawerDescription className="sr-only">¿Cuándo nos comunicamos contigo?</DrawerDescription>
+                            </DrawerHeader>
+                            <Calendar
+                              mode="single"
+                              selected={date}
+                              onSelect={setDate}
+                              disabled={(date) => date < new Date()}
+                              className="rounded-lg border mx-auto [--cell-size:clamp(0px,calc(100vw/7.5),52px)] mb-2"
                             />
+                            <div className="no-scrollbar inset-y-0 lg:right-1/4 right-0 flex max-h-72 w-full scroll-pb-6 flex-col gap-4 overflow-y-auto border-t p-6 lg:pt-10 lg:px-10 md:absolute md:max-h-none md:w-60 md:border-l md:border-t-0">
+                              <h4 className="text-center lg:text-left text-2xl font-bold">Selecciona hora</h4>
+                              <div className="grid gap-2">
+                                {timeSlots.map((time) => (
+                                  <Button
+                                    key={time}
+                                    variant={selectedTime === time ? "default" : "outline"}
+                                    onClick={() => setSelectedTime(time)}
+                                    className="w-full shadow-none text-lg"
+                                  >
+                                    {time}
+                                  </Button>
+                                ))}
+                              </div>
+                            </div>
+                            <DrawerFooter>
+                              {/* Show confirmation message for the selected date and time */}
+                              <div className="w-full lg:w-[400px] mx-auto text-md py-2">
+                                {date && selectedTime ? (
+                                  <>
+                                    La entrevista esta agendada para el {" "}
+                                    <span className="font-bold">
+                                      {" "}
+                                      {date?.toLocaleDateString("es-US", {
+                                        weekday: "long",
+                                        day: "numeric",
+                                        month: "long",
+                                      })}{" "}
+                                    </span>
+                                    a las <span className="font-bold">{selectedTime} horas</span>.
+                                  </>
+                                ) : (
+                                  <>Selecciona una fecha y hora para tu entrevista.</>
+                                )}
+                              </div>
+                              <DrawerClose asChild className="w-full lg:w-[400px] mx-auto">
+                                <Button className="text-xl">Continuar</Button>
+                              </DrawerClose>
+                            </DrawerFooter>
+                          </DrawerContent>
+                        </Drawer>
+                        <FormMessage />
+                        {selectedTime ? (
+                                <span className="text-base text-muted-foreground pl-2 py-1">
+                                  La entrevista se programará a las {selectedTime} horas.
+                                </span>
+                              ) : (
+                                <span className="text-base text-muted-foreground pl-2 py-1">
+                                  La entrevista es de carácter informativa.
+                                </span>
+                              )}
+                      </FormItem>
+                    )} />
+
+                  {/* Método de contacto */}
+                  <FormField
+                    control={form.control}
+                    name="preferredContact"
+                    render={({ field }) => (
+                      <FormItem className="space-y-8">
+                        <FormLabel className="text-base font-normal py-2">Método principal de contacto</FormLabel>
+                        <FormControl className="mt-6">
+                          <RadioGroup
+                            onValueChange={field.onChange}
+                            defaultValue={field.value}
+                            className="flex flex-row space-y-1 space-x-8">
+                            <div className="flex items-center space-x-3 has-checked:bg-proyecta-100/50 has-checked:border-teal-200 dark:has-checked:bg-proyecta-950 px-5 py-3 rounded-lg">
+                              <RadioGroupItem value="phone" id="phone" />
+                              <Label htmlFor="phone" className="text-lg font-normal pr-2">Teléfono</Label>
+                            </div>
+                            <div className="flex items-center space-x-3 has-checked:bg-proyecta-100/50 has-checked:border-teal-200 dark:has-checked:bg-proyecta-950 px-5 py-3 rounded-lg">
+                              <RadioGroupItem value="email" id="email" />
+                              <Label htmlFor="email" className="text-lg font-normal pr-2">Email</Label>
+                            </div>
+                            <div className="flex items-center space-x-3 has-checked:bg-proyecta-100/50 has-checked:border-teal-200 dark:has-checked:bg-proyecta-950 px-5 py-3 rounded-lg">
+                              <RadioGroupItem value="wa" id="wa" />
+                              <Label htmlFor="wa" className="text-lg font-normal pr-2">WhatsApp</Label>
+                            </div>
+                          </RadioGroup>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
+
+                  {/* Campo de horario o parte del día */}
+                  {/* <FormField
+                    control={form.control}
+                    name="horario"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormLabel className="text-base font-normal">Momento o parte del día</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="text-lg h-14">
+                              <SelectValue placeholder="Por la mañana o por la tarde" />
+                            </SelectTrigger>
                           </FormControl>
-                          <FormDescription>¿A qué hora exacta te gustaría que te contactemos?</FormDescription>
-                          {/* Show error message only if the field is touched and has an error */}
-                          {form.formState.errors.hour && form.formState.touchedFields.hour && <FormMessage />}
-                        </FormItem>
-                      )} />
+                          <SelectContent>
+                            <SelectItem value="temprano" className="text-lg">Por la mañana</SelectItem>
+                            <SelectItem value="tarde" className="text-lg">Por la tarde</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )} /> */}
 
-                  </div>
-                )}
+                  {/* <FormField
+                    control={form.control}
+                    name="hour"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Hora</FormLabel>
+                        <FormDescription>¿A qué hora exacta te gustaría que te contactemos?</FormDescription>
+                        <FormControl>
+                          <Textarea
+                            placeholder="10 de la mañana o, 5:30 pm"
+                            className="min-h-[80px] text-lg"
+                            {...field}
+                            ref={hourTextareaRef}
+                          />
+                        </FormControl>
+                        {form.formState.errors.hour && form.formState.touchedFields.hour && <FormMessage />}
+                      </FormItem>
+                    )} /> */}
+                  {/* Show error message only if the field is touched and has an error */}
+                </div>
+              )}
 
-                {/* Navigation Buttons */}
-                <div className="flex justify-between pt-6">
+              {/* Navigation Buttons */}
+              <div className="flex justify-between pt-6">
+                <Button
+                  className="text-lg py-2"
+                  type="button"
+                  variant="link"
+                  onClick={prevStep}
+                  disabled={currentStep === 0}>
+                  <ArrowLeft className="w-5 h-5 mr-1" />
+                  Anterior
+                </Button>
+
+                {currentStep === steps.length - 1 ? (
+                  <Button
+                    className="text-lg font-bold py-2 px-4"
+                    type="submit"
+                    disabled={submissionState.isSubmitting}>
+                    {submissionState.isSubmitting ? 'Enviando' : 'Enviar'}
+                  </Button>
+                ) : (
                   <Button
                     className="text-lg py-2"
-                    type="button"
-                    variant="link"
-                    onClick={prevStep}
-                    disabled={currentStep === 0}>
-                    <ArrowLeft className="w-5 h-5 mr-1" />
-                    Anterior
+                    type="button"  // Explicitly set type to button
+                    onClick={nextStep}>
+                    Siguiente
+                    <ArrowRight className="w-5 h-5 ml-1" />
                   </Button>
-
-                  {currentStep < steps.length - 1 ? (
-                    <Button
-                      className="text-lg py-2"
-                      type="button"
-                      onClick={nextStep}>
-                      Siguiente
-                      <ArrowRight className="w-5 h-5 ml-1" />
-                    </Button>
-                  ) : (
-                    <Button 
-                      className="text-lg py-2 px-4" 
-                      type="submit"
-                      disabled={submissionState.isSubmitting}>
-                      {submissionState.isSubmitting ? 'Enviando' : 'Enviar'}
-                    </Button>
-                  )}
-                </div>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-      </div>)
-    );
-  }
+                )}
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+    </div>)
+  );
+}
