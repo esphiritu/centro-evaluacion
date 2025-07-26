@@ -1,8 +1,6 @@
 "use client"
 import React from "react";
 import { useState } from "react";
-// import { useMediaQuery } from "@/hooks/use-media-query";
-// import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover";
 import { CalendarIcon, ArrowLeft, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
@@ -80,31 +78,6 @@ const steps = [
   },
 ];
 
-// Code for the Combox input
-
-const statuses = [
-  {
-    value: "backlog",
-    label: "Backlog",
-  },
-  {
-    value: "todo",
-    label: "Todo",
-  },
-  {
-    value: "in progress",
-    label: "In Progress",
-  },
-  {
-    value: "done",
-    label: "Done",
-  },
-  {
-    value: "canceled",
-    label: "Canceled",
-  },
-];
-
 export default function AsesorForm() {
   const [currentStep, setCurrentStep] = useState(0)
   const [date, setDate] = useState(undefined)
@@ -118,7 +91,6 @@ export default function AsesorForm() {
   })
   const [openCombox, setOpenCombox] = React.useState(false);
   const [selectedStatus, setSelectedStatus] = React.useState(null);
-  // const isDesktop = useMediaQuery("(min-width: 768px)");
 
   // Default values for the form
   const form = useForm({
@@ -344,6 +316,7 @@ export default function AsesorForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-base font-normal">Puesto laboral</FormLabel>
+                        <FormDescription>¿Cuál es el puesto laboral que desempeñas?</FormDescription>
                         <FormControl>
                             <Input placeholder="Asesor financiero" {...field} required />
                         </FormControl>
