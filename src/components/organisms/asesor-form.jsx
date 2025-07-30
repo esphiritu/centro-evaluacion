@@ -1,34 +1,25 @@
 "use client"
-import React from "react";
-import { useState } from "react";
-import { Popover, PopoverContent, PopoverTrigger, } from "@/components/ui/popover";
-import { CalendarIcon, ArrowLeft, ArrowRight, User, UserCheck, Mail, Phone } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-  DrawerFooter,
-  DrawerClose,
-} from '@/components/ui/drawer';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Progress } from "@/components/ui/progress";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-// Modules added to enable the date picker in Spanish
 import es from "date-fns/locale/es";
+import React from "react";
+import { z } from "zod";
+import { cn } from "@/lib/utils";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { format } from "date-fns";
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import { Progress } from "@/components/ui/progress";
+import { Calendar } from "@/components/ui/calendar";
+import { Checkbox } from "@/components/ui/checkbox";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState, useEffect } from "react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Drawer, DrawerContent, DrawerDescription, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerFooter, DrawerClose, } from '@/components/ui/drawer';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CalendarIcon, ArrowLeft, ArrowRight, User, UserCheck, Mail, Phone } from "lucide-react";
+// Modules added to enable the date picker in Spanish
 
 const formSchema = z.object({
   // Step 1: General Information
@@ -45,21 +36,26 @@ const formSchema = z.object({
     message: "Número con al menos 10 dígitos.",
   }),
   // Step 2: Professional Information
-  priority: z.string({
-    required_error: "Selecciona un área laboral en la que te desempeñas",
-  }),
-  puesto: z.string({
+  position: z.string({
     required_error: "Ingresa el puesto que desempeñas",
   }),
-  estandar: z.string({
-    required_error: "Por favor selecciona el estándar de competencia que te interesa",
+  category: z.string({
+    required_error: "Selecciona una categoría en la que te desempeñas",
   }),
-  // Step 3: Date and details
+  service: z.string({
+    required_error: "Por favor selecciona una opción",
+  }),
+  // Step 3: Date and time
   date: z.date({
-    required_error: "Selecciona una fecha",
+    required_error: "Selecciona una fecha y hora",
   }),
+  timeZone: z.string()
+  .optional(),
   preferredContact: z.string({
     required_error: "Selecciona el principal método de contacto",
+  }),
+  terms: z.boolean().refine((val) => val === true, {
+    message: "Debe aceptar los términos y condiciones",
   }),
 });
 
@@ -73,24 +69,23 @@ const steps = [
     description: "Cuéntanos un poco más de tu área laboral",
   },
   {
-    title: "Datos para la entrevista",
+    title: "Datos para la consulta profesional",
     description: "¿Cuándo te gustaría que te contactemos?",
   },
 ];
 
 export default function AsesorForm() {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [date, setDate] = useState(undefined)
-  const [open, setOpen] = React.useState(false)
-  const [selectedTime, setSelectedTime] = React.useState(undefined)
+  const [currentStep, setCurrentStep] = useState(0);
+  const [date, setDate] = useState(undefined);
+  const [open, setOpen] = React.useState(false);
+  const [selectedTime, setSelectedTime] = React.useState(undefined);
+  const [combinedDateTime, setCombinedDateTime] = useState(null);
   const timeSlots = Array.from({ length: 37 }, (_, i) => {
     const totalMinutes = i * 15
     const hour = Math.floor(totalMinutes / 60) + 9
     const minute = totalMinutes % 60
     return `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`
-  })
-  const [openCombox, setOpenCombox] = React.useState(false);
-  const [selectedStatus, setSelectedStatus] = React.useState(null);
+  });
 
   // Default values for the form
   const form = useForm({
@@ -104,28 +99,45 @@ export default function AsesorForm() {
       email: "",
       phone: "",
       // Step 2: Professional Information
-      priority: "",
-      puesto: "",
-      estandar: "",
+      position: "",
+      category: "",
+      service: "",
       // Step 3: Date and details
       date: undefined,
       preferredContact: "phone",
+      terms: false,
+      time: "",
     },
   });
 
-  const nextStep = async (e) => {
-    e?.preventDefault(); // Prevent form submission if event is passed
-    const fields = getFieldsForStep(currentStep)
-    const isValid = await form.trigger(fields)
+    // Calculate progress based on the current step
+  let progress = 0;
+  switch (currentStep) {
+    case 0:
+      progress = 0;
+      break;
+    case 1:
+      progress = 30;
+      break;
+    case 2:
+      progress = 60;
+      break;
+    default:
+      progress = 0;
+  }
 
-    if (isValid) {
-      setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))
+  // Effect to combine date + time when either changes
+  useEffect(() => {
+    if (date && selectedTime) {
+      const [hours, minutes] = selectedTime.split(':').map(Number);
+      const newDateTime = new Date(date);
+      newDateTime.setHours(hours, minutes);
+      setCombinedDateTime(newDateTime);
+
+      // Update form value
+      form.setValue('date', newDateTime);
     }
-  }
-
-  const prevStep = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 0))
-  }
+  }, [date, selectedTime, form]);
 
   // Function to get the fields for the current step
   const getFieldsForStep = (step) => {
@@ -133,9 +145,9 @@ export default function AsesorForm() {
       case 0:
         return ["firstName", "lastName", "email", "phone"]
       case 1:
-        return ["priority", "puesto", "estandar"]
+        return ["position", "category", "service"]
       case 2:
-        return ["date", "preferredContact"]
+        return ["date", "preferredContact", "terms"]
       default:
         return []
     }
@@ -189,23 +201,22 @@ export default function AsesorForm() {
       ...values,
       time: selectedTime, // Include the selected time
     }
-    alert(`Información enviada.`);
+    alert(`Información enviada para la fecha: ${values.date}`);
+    console.log(values);
   }
 
-  // Calculate progress based on the current step
-  let progress = 0;
-  switch (currentStep) {
-    case 0:
-      progress = 0;
-      break;
-    case 1:
-      progress = 30;
-      break;
-    case 2:
-      progress = 60;
-      break;
-    default:
-      progress = 0;
+  const nextStep = async (e) => {
+    e?.preventDefault(); // Prevent form submission if event is passed
+    const fields = getFieldsForStep(currentStep)
+    const isValid = await form.trigger(fields)
+
+    if (isValid) {
+      setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))
+    }
+  }
+
+  const prevStep = () => {
+    setCurrentStep((prev) => Math.max(prev - 1, 0))
   }
 
   return (
@@ -230,13 +241,13 @@ export default function AsesorForm() {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem className="relative">
-                          <User className="w-5 h-5 absolute top-13 left-3 pointer-events-none" />
+                          <User className="w-5 h-5 absolute top-13 left-3 text-muted-foreground pointer-events-none" />
                           <FormLabel className="text-base font-normal">Nombre</FormLabel>
                           <FormControl>
                             <Input
-                              type="text" 
+                              type="text"
                               className="pl-10"
-                              placeholder="Juan Alberto" 
+                              placeholder="Juan Alberto"
                               required
                               {...field} />
                           </FormControl>
@@ -249,10 +260,10 @@ export default function AsesorForm() {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem className="relative">
-                          <UserCheck className="w-5 h-5 absolute top-13 left-3 pointer-events-none" />
+                          <UserCheck className="w-5 h-5 absolute top-13 left-3 text-muted-foreground pointer-events-none" />
                           <FormLabel className="text-base font-normal">Apellido paterno</FormLabel>
                           <FormControl>
-                            <Input 
+                            <Input
                               className="pl-10"
                               placeholder="Martínez"
                               required
@@ -268,13 +279,13 @@ export default function AsesorForm() {
                     name="email"
                     render={({ field }) => (
                       <FormItem className="relative">
-                        <Mail className="w-5 h-5 absolute top-13 left-3" />
+                        <Mail className="w-5 h-5 absolute text-muted-foreground top-13 left-3" />
                         <FormLabel className="text-base font-normal">Email</FormLabel>
                         <FormControl>
                           <Input
                             className="pl-10"
-                            type="email" 
-                            placeholder="juan@mail.com" 
+                            type="email"
+                            placeholder="juan@mail.com"
                             required
                             {...field} />
                         </FormControl>
@@ -287,12 +298,12 @@ export default function AsesorForm() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem className="relative">
-                        <Phone className="w-5 h-5 absolute top-13 left-3" />
+                        <Phone className="w-5 h-5 absolute top-13 left-3 text-muted-foreground" />
                         <FormLabel className="text-base font-normal">Número de teléfono</FormLabel>
                         <FormControl>
                           <Input
                             className="pl-10"
-                            placeholder="+52 (555) 123-4567" 
+                            placeholder="+52 (555) 123-4567"
                             required
                             {...field} />
                         </FormControl>
@@ -304,19 +315,30 @@ export default function AsesorForm() {
 
               {/* Step 2: Selection Controls */}
               {currentStep === 1 && (
-                <div className="space-y-10">
+                <div className="space-y-8">
                   <h3 className="text-2xl font-semibold">{steps[1].title}</h3>
+                  <FormField
+                    control={form.control}
+                    name="position"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base font-normal">Posición o puesto laboral</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Asesor financiero, especialista en marketing" {...field} required />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )} />
 
                   <FormField
                     control={form.control}
-                    name="priority"
+                    name="category"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-normal">Área laboral</FormLabel>
-                        <FormDescription>¿Cuál es el área laboral que desempeñas?</FormDescription>
+                        <FormLabel className="text-base font-normal">Categoría</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="text-lg">
+                            <SelectTrigger className="text-xl">
                               <SelectValue placeholder="Selecciona la mejor opción" />
                             </SelectTrigger>
                           </FormControl>
@@ -325,7 +347,7 @@ export default function AsesorForm() {
                             <SelectItem value="administrativo" className="text-lg">Administrativo</SelectItem>
                             <SelectItem value="directivo" className="text-lg">Directivo</SelectItem>
                             <SelectItem value="independiente" className="text-lg">Servicios independientes</SelectItem>
-                            <SelectItem value="otra-area-laboral" className="text-lg">Otro</SelectItem>
+                            <SelectItem value="otra-categoria-laboral" className="text-lg">Otro</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -334,35 +356,21 @@ export default function AsesorForm() {
 
                   <FormField
                     control={form.control}
-                    name="puesto"
+                    name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-normal">Puesto laboral</FormLabel>
-                        <FormDescription>¿Cuál es el puesto laboral que desempeñas?</FormDescription>
-                        <FormControl>
-                            <Input placeholder="Asesor financiero" {...field} required />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )} />
-
-                  <FormField
-                    control={form.control}
-                    name="estandar"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-base font-normal">Servicio de interes</FormLabel>
+                        <FormLabel className="text-base font-normal">Servicio</FormLabel>
                         <FormDescription>¿Qué servicio de Proyecta Empresarial te interesa?</FormDescription>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="text-lg">
+                            <SelectTrigger className="text-xl">
                               <SelectValue placeholder="Selecciona una opción" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="ec-371" className="text-lg">Certificación laboral</SelectItem>
-                            <SelectItem value="ec-207.01" className="text-lg">Alineación a estándar</SelectItem>
-                            <SelectItem value="ec-64" className="text-lg">Prueba diagnóstica</SelectItem>
+                            <SelectItem value="certificacion" className="text-lg">Certificación laboral</SelectItem>
+                            <SelectItem value="alineacion" className="text-lg">Alineación a estándar</SelectItem>
+                            <SelectItem value="prueba" className="text-lg">Prueba diagnóstica</SelectItem>
                             <SelectItem value="otro-servicio" className="text-lg">Otro</SelectItem>
                           </SelectContent>
                         </Select>
@@ -372,7 +380,7 @@ export default function AsesorForm() {
                 </div>
               )}
 
-              {/* Step 3: Details */}
+              {/* Step 3: Details for interview */}
               {currentStep === 2 && (
                 <div className="space-y-10">
                   <h3 className="text-2xl font-semibold">{steps[2].title}</h3>
@@ -391,13 +399,14 @@ export default function AsesorForm() {
                             <FormControl>
                               <Button
                                 tabIndex={0} // Ensure it's keyboard tabbable
+                                name="calendar-button"
                                 type="button" // Prevents form submission
                                 variant={"outline"}
                                 className={cn(
                                   "w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent",
                                   !date && "text-muted-foreground"
                                 )}>
-                                {date ? format(date, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha y hora</span>}
+                                {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha y hora</span>}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                               </Button>
                             </FormControl>
@@ -409,8 +418,11 @@ export default function AsesorForm() {
                             </DrawerHeader>
                             <Calendar
                               mode="single"
-                              selected={date}
-                              onSelect={setDate}
+                              selected={field.value}
+                              onSelect={(selectedDate) => {
+                                field.onChange(selectedDate); // Update react-hook-form's state (this will ensure the date is properly registered in the form state)
+                                setDate(selectedDate); // Also update local state to use in the confirmation message
+                              }}
                               disabled={(date) => date < new Date()}
                               className="rounded-lg border mx-auto [--cell-size:clamp(0px,calc(100vw/7.5),52px)] mb-2"
                             />
@@ -434,7 +446,7 @@ export default function AsesorForm() {
                               <div className="w-full lg:w-[400px] mx-auto text-md py-2">
                                 {date && selectedTime ? (
                                   <>
-                                    La entrevista esta agendada para el {" "}
+                                    La consulta esta agendada para el {" "}
                                     <span className="font-bold">
                                       {" "}
                                       {date?.toLocaleDateString("es-US", {
@@ -446,25 +458,25 @@ export default function AsesorForm() {
                                     a las <span className="font-bold">{selectedTime} horas</span>.
                                   </>
                                 ) : (
-                                  <>Selecciona una fecha y hora para tu entrevista.</>
+                                  <>Selecciona una fecha y hora para la consulta.</>
                                 )}
                               </div>
-                              <DrawerClose asChild className="w-full lg:w-[400px] mx-auto">
-                                <Button className="text-xl">Continuar</Button>
+                              <DrawerClose asChild className="text-xl w-full lg:w-[400px] mx-auto">
+                                <Button className={selectedTime && date ? "bg-teal-500" : "bg-gray-700"}>Continuar</Button>
                               </DrawerClose>
                             </DrawerFooter>
                           </DrawerContent>
                         </Drawer>
                         <FormMessage />
                         {selectedTime ? (
-                                <span className="text-base text-muted-foreground pl-2 py-1">
-                                  La entrevista se programará a las {selectedTime} horas.
-                                </span>
-                              ) : (
-                                <span className="text-base text-muted-foreground pl-2 py-1">
-                                  La entrevista es de carácter informativa.
-                                </span>
-                              )}
+                          <span className="text-base text-muted-foreground pl-2 py-1">
+                            La entrevista se programará a las {selectedTime} horas.
+                          </span>
+                        ) : (
+                          <span className="text-base text-muted-foreground pl-2 py-1">
+                            La entrevista es de carácter informativo.
+                          </span>
+                        )}
                       </FormItem>
                     )} />
 
@@ -497,6 +509,27 @@ export default function AsesorForm() {
                         <FormMessage />
                       </FormItem>
                     )} />
+
+                  {/* Checkbox for terms and conditions */}
+                  <FormField
+                    control={form.control}
+                    name="terms"
+                    render={({ field }) => (
+                      <div className="flex items-center space-x-2">
+                        <FormControl>
+                          <Checkbox
+                            id="terms"
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                          />
+                        </FormControl>
+                        <FormLabel className="text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 pt-1 pl-2">
+                          Accepto términos y condiciones
+                        </FormLabel>
+                        <FormMessage />
+                      </div>
+                    )}
+                  />
 
                   {/* Campo de horario o parte del día */}
                   {/* <FormField

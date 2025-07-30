@@ -69,6 +69,9 @@ const formSchema = z.object({
     required_error: "Selecciona el principal método de contacto",
   }),
   files: z.array(z.any()).optional(),
+  terms: z.boolean().refine((val) => val === true, {
+    message: "Debe aceptar los términos y condiciones",
+  }),
 })
 
 const steps = [
@@ -88,10 +91,10 @@ const steps = [
 
 
 export default function AtencionUsuarios() {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [uploadedFiles, setUploadedFiles] = useState([])
-  const [date, setDate] = useState(new Date())
-
+  const [currentStep, setCurrentStep] = useState(0);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [date, setDate] = useState(new Date());
+  // Default values for the form
   const form = useForm({
     resolver: zodResolver(formSchema),
     mode: "onTouched", // or "onBlur"
@@ -111,12 +114,11 @@ export default function AtencionUsuarios() {
       channel: "phone",
       // Initialize services as an empty array  
       files: [],
+      terms: false,
     },
-  })
+  });
 
   // Define individual refs for the first interactive element of each step
-  const firstNameRef = useRef(null);
-  const priorityRef = useRef(null);
   const dateButtonRef = useRef(null); // Ref for the date picker's trigger button
   const hourTextareaRef = useRef(null); // Ref for the hour textarea to potentially blur it
 
@@ -246,7 +248,7 @@ export default function AtencionUsuarios() {
   return (
     (<div className="max-w-2xl mx-auto px-6">
       <Card>
-        <CardHeader className="mb-3">
+        <CardHeader className="mt-2">
           <CardDescription className="text-right">
             Paso {currentStep + 1}/3
           </CardDescription>
@@ -323,7 +325,7 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel className="text-base font-normal">Número de teléfono</FormLabel>
                         <FormControl>
-                          <Input placeholder="(555) 123-4567" {...field} required />
+                          <Input placeholder="+52 (555) 123-4567" {...field} required />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -342,15 +344,15 @@ export default function AtencionUsuarios() {
                     name="address"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-base font-normal">Calle, número interior o número exterior</FormLabel>
+                        <FormLabel className="text-base font-normal">Calle y número </FormLabel>
                         <FormControl>
-                          <Input placeholder="Heróico Colegio Militar, número 152" {...field} required />
+                          <Input placeholder="Heróico Colegio Militar, número 152 (o número exterior)" {...field} required />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )} />
 
-                  {/* Colonia field */}
+                  {/* District field */}
                   <div className="grid grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
@@ -428,7 +430,7 @@ export default function AtencionUsuarios() {
 
               {/* Step 3: Details */}
               {currentStep === 2 && (
-                <div className="space-y-8">
+                <div className="space-y-4">
                   <h3 className="text-2xl font-semibold">{steps[2].title}</h3>
                   <p className="text-xl">Los siguientes documentos son necesarios para continuar con tu solicitud:</p>
                   <ol className="list-decimal pl-6 mb-8 text-lg">
@@ -443,12 +445,12 @@ export default function AtencionUsuarios() {
                       <FormItem>
                         <FormLabel htmlFor="file-upload"><span className="font-normal">Carga los documentos aquí: </span></FormLabel>
                         <FormControl>
-                          <div className="space-y-4">
+                          <div className="space-y-3">
                             <div
                               className="border-2 border-dashed border-gray-300 rounded-lg p-10 mt-2 text-center hover:border-gray-400 transition-colors bg-white dark:bg-slate-950">
-                              <div className="flex justify-center items-center space-x-4">
+                              <div className="flex justify-center items-center space-x-3">
                                 <File className="h-10 w-10 text-gray-600" strokeWidth={1.25} absoluteStrokeWidth />
-                                <Upload className="h-20 w-20 text-gray-600" strokeWidth={1.50} absoluteStrokeWidth />
+                                <Upload className="h-18 w-18 text-gray-600" strokeWidth={1.50} absoluteStrokeWidth />
                                 <Image className="h-10 w-10 text-gray-600" strokeWidth={1.25} absoluteStrokeWidth />
                               </div>
                               <div className="mt-4">
@@ -492,7 +494,7 @@ export default function AtencionUsuarios() {
                                       onClick={() => removeFile(index)}
                                       className="text-red-500 hover:text-red-700">
                                       <Trash2 className="w-4 h-4" />
-                                      
+
                                     </Button>
                                   </div>
                                 ))}
@@ -504,7 +506,28 @@ export default function AtencionUsuarios() {
                         <FormMessage />
                       </FormItem>
                     )} />
-                
+
+                  {/* Checkbox for terms and conditions */}
+                  <FormField
+                    control={form.control}
+                    name="terms"
+                    render={({ field }) => (
+                      <div className="flex items-center space-x-2">
+                        <FormControl>
+                          <Checkbox
+                            id="terms"
+                            checked={field.value}
+                            onCheckedChange={field.onChange}
+                          />
+                        </FormControl>
+                        <FormLabel className="text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 pt-1 pl-2">
+                          Accepto términos y condiciones
+                        </FormLabel>
+                        <FormMessage />
+                      </div>
+                    )}
+                  />
+
                   {/* channel field */}
                   {/* <FormField
                     control={form.control}
