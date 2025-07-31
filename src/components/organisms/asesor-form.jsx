@@ -403,7 +403,7 @@ export default function AsesorForm() {
                                 type="button" // Prevents form submission
                                 variant={"outline"}
                                 className={cn(
-                                  "w-[278px] h-14 pl- 4 text-left font-normal text-lg hover:bg-transparent",
+                                  "w-[278px] h-14 pl- 4 text-left first-letter:uppercase font-normal text-lg hover:bg-transparent",
                                   !date && "text-muted-foreground"
                                 )}>
                                 {field.value ? format(field.value, "EEEE, d MMMM yyyy", { locale: es }) : <span>Elige una fecha y hora</span>}

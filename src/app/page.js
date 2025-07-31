@@ -274,8 +274,8 @@ export default function Home({ Component, pageProps }) {
                   <HoverCardTrigger asChild>
                     <CtaButton href="./proceso" linkText="Comenzar ahora" className="text-center" />
                   </HoverCardTrigger>
-                  <HoverCardContent className="flex justify-between items-start mt-4 p-3 bg-slate-50 dark:bg-slate-800">
-                    <Award size={24} className="w-1/5 mt-1" />
+                  <HoverCardContent className="flex justify-between items-start mt-4 p-3 bg-slate-100 dark:bg-slate-800">
+                    <Award size={24} className="w-fit text-white ml-1 mt-1 p-1 bg-blue-500 rounded-full" />
                     <div className="w-4/5 pr-2">
                       <h4 className="font-semibold mb-1">Ingresa tu solucitud</h4>
                       <p className="text-muted-foreground text-sm">El proceso de certificación es más fácil ahora</p>

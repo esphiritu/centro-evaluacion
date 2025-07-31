@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { useRef, useEffect } from "react";
-import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, Image, ArrowLeft, ArrowRight, File, Trash2 } from "lucide-react";
+import { CalendarIcon, ChevronLeft, ChevronRight, Upload, X, FileText, Image, ArrowLeft, ArrowRight, File, Trash2, ImageIcon } from "lucide-react";
 import { add, format } from "date-fns";
 
 import { cn } from "@/lib/utils";

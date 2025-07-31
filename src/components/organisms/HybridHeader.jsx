@@ -42,8 +42,7 @@ export default function HybridHeader () {
     },
   ];
   return (
-    <header className="
-      fixed 
+    <header className="fixed 
       top-0 
       flex 
       justify-between
@@ -52,7 +51,7 @@ export default function HybridHeader () {
       dark:bg-slate-900 
       content-center
       w-full 
-      py-4 
+      py-2 
       z-50">
       <span className="flex justify-start">
         <Link href={"/"} className="mr-5 text-pretty text-2xl underline">Proyecta Empresarial</Link>
