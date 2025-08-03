@@ -282,8 +282,8 @@ export default function Home({ Component, pageProps }) {
                     </div>
                   </HoverCardContent>
                 </HoverCard>
-                <Link className="scroll-smooth transition-all duration-300 ease-in-out hover:bg-white/15 text-center md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="#asesor">
-                  <span className="whitespace-nowrap">Comenzar con un asesor <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" /></span>
+                <Link className="scroll-smooth transition-all duration-300 ease-in-out hover:bg-white/15 text-center md:text-xl rounded-sm text-white px-4 py-3 mx-0 lg:mx-4 md:mb-1 mt-6 max-w-fit" href="./certificaciones">
+                  <span className="whitespace-nowrap">Ver certificaciones <CircleChevronRight strokeWidth={1.50} size={20} className="text-white inline" /></span>
                 </Link>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function Home({ Component, pageProps }) {
               }))}
             </ul>
           </div>
-          <MainLink href="./certificaciones" linkText="Ver certificaciones" />
+          <MainLink href="./" linkText="Ver más beneficios" />
         </section>
 
         {/* Certification process section */}

@@ -10,40 +10,19 @@ import logoRedConocer from "@/public/img/logotipo-redConocer.png";
 import logoICEM from "@/public/img/Logo-ICEM.jpg";
 
 // Lucide icons
-import {
-  Sprout,
-  User,
-  Brain,
-  BookMarked,
-  FileInput,
-  FileText,
-  FlaskConical,
-  TextSearch,
-  SquareArrowOutUpRight,
-  ArrowDownToLine,
-} from "lucide-react";
+import { Sprout, User, UsersRound, Brain, BookMarked, FileInput, FileText, FlaskConical, TextSearch, SquareArrowOutUpRight, ArrowDownToLine, } from "lucide-react";
 
 // Shandcn UI components
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, } from "@/components/ui/dialog";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow,
-} from "@/components/ui/table";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, } from "@/components/ui/tooltip"
+import { Tabs, TabsContent, TabsList, TabsTrigger, } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, } from "@/components/ui/dialog";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow, } from "@/components/ui/table";
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger, } from "@/components/ui/drawer";
 
 
 
@@ -53,6 +32,7 @@ import Footer from "@/components/organisms/Footer";
 import MainLink from "@/components/atoms/MainLink";
 import ButtonAlike from "@/components/atoms/ButtonAlike";
 import SecondaryButton from "@/components/atoms/SecondaryButton";
+import SecondaryLink from "@/components/atoms/SecondaryLink";
 
 // SVG elements
 const Headset = <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-headset"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" /><path d="M21 16v2a4 4 0 0 1-4 4h-5" /></svg>
@@ -171,7 +151,7 @@ export default function Certificaciones(params) {
                                     <ScrollArea className="h-200 w-auto">
                                       <DrawerHeader className="flex w-full">
                                         <div className="content-center w-full mt-10 md:mt-4">
-                                          <DrawerTitle className="text-xl mb-6 border border-collapse border-slate-200 shadow-md text-slate-800 rounded-sm py-4 px-6">
+                                          <DrawerTitle className="text-xl mb-6 border-1 border-slate-100 shadow-sm text-slate-800 rounded-sm py-4 px-6 bg-gray-50 dark:bg-slate-900">
                                             <div className="flex flex-row items-center justify-start space-x-7">
                                               <h2 className="text-2xl text-teal-600">{estandar.title}</h2>
                                               <p className="text-slate-900 dark:text-slate-300">{estandar.content}</p>
@@ -180,8 +160,8 @@ export default function Certificaciones(params) {
                                           <DrawerDescription
                                             className="text-lg px-6">
                                             <span className="text-slate-800 dark:text-gray-200 font-bold">
-                                            Propósito: </span>
-                                          {estandar.proposito}
+                                              Propósito: </span>
+                                            {estandar.proposito}
                                           </DrawerDescription>
                                           {/* <Separator className="mt-3 w-full" /> */}
                                         </div>
@@ -194,7 +174,7 @@ export default function Certificaciones(params) {
                                         <ul className="w-full text-lg mb-3 border rounded-sm px-3 lg:px-8 py-6 space-y-2">
                                           <li className="flex py-1">
                                             <div className="bg-slate-100 dark:bg-slate-700 w-fit max-h-10 rounded-full px-2 py-2 mb-1">
-                                              <User className="text-proyecta-500 dark:text-slate-100 min-w-6 min-h-6" />
+                                              <UsersRound className="text-proyecta-500 dark:text-slate-100 min-w-6 min-h-6" />
                                             </div>
                                             <p className="mb-3 px-4">
                                               <span className="text-slate-800 dark:text-gray-200 font-bold">Ocupaciones asociadas: </span>
@@ -220,17 +200,23 @@ export default function Certificaciones(params) {
                                             </p>
                                           </li>
                                         </ul>
-                                        <div>
-                                          <Button
-                                            variant="link"
-                                            className="mt-2 text-lg">
-                                            <ArrowDownToLine className="inline-block" />
-                                            <span className="pl-1 pr-3 py-6">PDF</span>
-                                          </Button>
-                                          <p className="text-sm text-muted-foreground py-2">Descarga la información completa del estándar de competencia</p>
-                                        </div>
-                                        <div>
-                                          <MainLink href="./" linkText="Agendar prueba diagnóstica" />
+                                        <div className="flex flex-row justify-between items-center">
+                                          <TooltipProvider>
+                                            <Tooltip>
+                                              <TooltipTrigger asChild>
+                                                <Button
+                                                  variant="link"
+                                                  className="text-lg">
+                                                  <ArrowDownToLine className="inline-block" />
+                                                  <span className="pl-1 pr-3 py-6">PDF</span>
+                                                </Button>
+                                              </TooltipTrigger>
+                                              <TooltipContent>
+                                                Descarga la información completa del estándar de competencia
+                                              </TooltipContent>
+                                            </Tooltip>
+                                          </TooltipProvider>
+                                          <SecondaryLink className="inline-block py-6" href="./" linkText="Agendar prueba diagnóstica" />
                                         </div>
                                       </div>
                                       <Separator className="mt-1 w-full" />
@@ -239,7 +225,7 @@ export default function Certificaciones(params) {
                                           <p className="text-2xl text-red-500 dark:text-red-400 font-bold mr-8 md:mr-10">
                                             <span className="text-sm text-muted-foreground line-through">{estandar.price}</span> {estandar.price}
                                           </p>
-                                          <SecondaryButton href="./" linkText="Obtener" />
+                                          <SecondaryButton href="./" linkText="Iniciar certificación" />
                                         </div>
                                         <div className="group">
                                           <DrawerClose className="absolute top-0 right-5 mx-auto hover:bg-slate-100 text-slate-600 dark:text-slate-200 hover:text-slate-900 dark:hover:bg-slate-800 rounded-full transition-colors ease-in-out duration-300 z-20">
@@ -375,7 +361,7 @@ export default function Certificaciones(params) {
               <h1 className="text-xl text-center text-slate-300 mb-10">
                 Estamos listos para asesorarte. Un experto te ayudará a resolver todas las dudas.
               </h1>
-             
+
             </div>
           </div>
           <div className="container flex flex-col lg:flex-row my-10 py-12 space-y-8">

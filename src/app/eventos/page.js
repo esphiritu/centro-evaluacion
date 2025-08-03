@@ -17,7 +17,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { CalendarDays, CalendarClock, Clock, MapPin } from "lucide-react";
+import { CalendarDays, CalendarClock, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // Images
 import Convencion from "@/public/img/Convencion-2024.jpg";
@@ -31,68 +31,24 @@ import ButtonAlike from "@/components/atoms/ButtonAlike";
 // Lucide icons
 import { Check } from "lucide-react";
 
+// Shadcn UI components
+import { Separator } from "@/components/ui/separator";
+
 export default function Socios() {
   return (
     <>
-      <main className="w-full pt-10">
-        <Carousel opts={{
-          align: "center",
-          loop: true,
-        }}
-        // autoplay={2900}
-        >
-          <CarouselContent className="p-5 h-152 mb-20 pt-32">
-            <CarouselItem className="dark:bg-slate-900 rounded-2xl py-10 text-gray-900 dark:text-gray-50">
-              <div className="px-40">
-                <div className="mt-10 h-1/2">
-                  <h1 className="font-bold text-xl md:text-3xl text-center mt-10 mb-6">Retos de la productividad de las
-                    <span className="
-                      before:block 
-                      before:absolute 
-                      before:-inset-1 
-                      before:-skew-y-2 
-                      before:bg-teal-600 
-                      before:rounded-md 
-                      relative 
-                      inline-block 
-                      ml-2">
-                      <span className="relative text-white text-center px-1">
-                        empresas manufactureras
-                      </span>
-                    </span></h1>
-                  <p className="mb-10 text-lg">Impartido por: Elisa M. A.</p>
+      <main className="w-full pt-20">
+        <div className="container py-10 space-y-5">
+          <p className="text-2xl font-bold">EN VIVO 1 de agosto, 7:35 a.m. EDT (1135 UTC)</p>
+          <Separator className="w-full mx-auto mb-8" />
+          <div className="flex justify-between items-center">
+            <h1 className="text-4xl font-bold">Foro Internacional de Consultoría y Capacitación</h1>
+            <p className="text-xl mt-4">Cobertura en vivo de todas las pláticas con los invitados especiales</p>
+            <ArrowRight size={30} className="text-white top-5 left-7 bg-blue-500 rounded-full p-1 z-20" />
+          </div>
+        </div>
 
-                </div>
-                {/* Información general del evento */}
-                <div className="flex flex-col lg:flex-row justify-between mt-8 items-center">
-                  {/* Fecha y hora del evento */}
-                  <div className="flex">
-                    <div className="flex items-center mb-4">
-                      <Clock className="size-6" />
-                      <time className="uppercase text-left text-xl font-light px-5" dateTime="20:00">8:00 pm</time>
-                    </div>
-                    <div className="flex mb-4 items-center">
-                      <CalendarDays className="size-6" />
-                      <time dateTime="2024-09-28" className="uppercase text-left text-xl font-light px-5">28 SEP 2024</time>
-                    </div>
-                  </div>
 
-                  <Button className="bg-teal-600 hover:bg-teal-700 px-4 text-lg text-white font-extrabold mt-5">Regístrate</Button>
-                </div>
-                <p className="text-base md:text-lg text-right mt-6"><span className="font-bold">Webinar gratuito.</span> Cupo limitado</p>
-              </div>
-
-            </CarouselItem>
-            <CarouselItem>
-              <h1 className="text-2xl md:text-3xl">Presentación del libro</h1>
-            </CarouselItem>
-            <CarouselItem>
-              <h1 className="text-2xl md:text-3xl">Conferencia Digital</h1>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
         <section>
           <h2 className="text-3xl font-semibold text-center py-4 mb-20">Eventos destacados</h2>
           <div className="relative container flex flex-col lg:flex-row items-center">
@@ -127,11 +83,11 @@ export default function Socios() {
                   <MapPin /><p className="pl-4 mr-6">Lugar: Cancún, México</p>
                   <CalendarClock /><p className="pl-4">Fecha: noviembre 29, 2025</p>
                 </div>
-                
+
               </div>
             </div>
             <Image src={Convencion} alt="Convención anual 2024" className="w-full lg:w-1/2 rounded-2xl" />
-            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-40 inline-block w-full lg:w-4/5 h-132 bg-linear-to-b lg:bg-linear-to-r from-transparent from-20% dark:from-5% md:from-2% to-[#C5CAFF] dark:to-slate-600 to-27% rounded-2xl -z-10"></span>
+            <span className="absolute top-4 lg:-top-10 left-1/6 lg:left-40 inline-block w-full lg:w-4/5 h-132 bg-linear-to-b lg:bg-linear-to-r from-transparent from-20% dark:from-5% md:from-2% to-gray-100 dark:to-slate-600 to-27% rounded-2xl -z-10"></span>
           </div>
         </section>
 
@@ -181,7 +137,7 @@ export default function Socios() {
         </section>
         <section className="container flex flex-col md:flex-row justify-between mt-32 mb-10">
           <h3 className="text-3xl font-bold">Conoce información importante de los eventos</h3>
-          
+
         </section>
       </main>
       <Footer />
